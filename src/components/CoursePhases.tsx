@@ -76,32 +76,32 @@ export function CoursePhases() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
 
-        {phases.map((phase, i) => (
-          <div
-            key={i}
-            className="glassmorphism p-8 rounded-2xl relative group overflow-hidden transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(0,71,255,0.15)]"
-          >
-            {/* Hover glow effect */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+          {phases.map((phase, i) => (
+            <div
+              key={i}
+              className="glassmorphism p-8 rounded-2xl relative group overflow-hidden transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(0,71,255,0.15)]"
+            >
+              {/* Hover glow effect */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-            <div className="mb-6 w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/30 transition-colors">
-              {phase.icon}
+              <div className="mb-6 w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/30 transition-colors">
+                {phase.icon}
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 font-outfit leading-tight">{phase.title}</h3>
+              <h4 className="text-base font-bold text-gray-300 mb-4 font-outfit" dir="rtl">{phase.arabicTitle}</h4>
+              <p className="text-gray-400 font-inter text-sm leading-relaxed">
+                {phase.description}
+              </p>
+
+              <div className="mt-6 flex items-center text-sm font-semibold text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                Explore Phase <span className="ml-2">→</span>
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-white mb-2 font-outfit leading-tight">{phase.title}</h3>
-            <h4 className="text-base font-bold text-gray-300 mb-4 font-outfit" dir="rtl">{phase.arabicTitle}</h4>
-            <p className="text-gray-400 font-inter text-sm leading-relaxed">
-              {phase.description}
-            </p>
-
-            <div className="mt-6 flex items-center text-sm font-semibold text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
-              Explore Phase <span className="ml-2">→</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-    </section >
+    </section>
   );
 }
