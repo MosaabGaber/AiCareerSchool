@@ -2,12 +2,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ITEMS = [
-  { text: 'Ads', images: ['/examples/ad-1.jpg', '/examples/ad-2.jpg', '/examples/ad-3.jpg'] },
+  { text: 'Ads', images: ['/examples/commercials-1.jpg', '/examples/commercials-2.jpg', '/examples/commercials-3.jpg'] },
   { text: 'UGC', images: ['/examples/ugc-1.jpg', '/examples/ugc-2.jpg', '/examples/ugc-3.jpg'] },
   { text: 'Branding', images: ['/examples/branding-1.jpg', '/examples/branding-2.jpg', '/examples/branding-3.jpg'] },
   { text: 'Social Media Content', images: ['/examples/social-1.jpg', '/examples/social-2.jpg', '/examples/social-3.jpg'] },
   { text: 'Cartoons', images: ['/examples/cartoons-1.jpg', '/examples/cartoons-2.jpg', '/examples/cartoons-3.jpg'] },
-  { text: 'Commercials', images: ['/examples/commercials-1.jpg', '/examples/commercials-2.jpg', '/examples/commercials-3.jpg'] },
+  { text: 'Commercials', images: ['/examples/ad-1.jpg', '/examples/ad-2.jpg', '/examples/ad-3.jpg'] },
 ];
 
 export function LearnToCreate() {
