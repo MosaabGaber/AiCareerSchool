@@ -9,10 +9,13 @@ import { ShieldCheck } from 'lucide-react';
 import { PromptsModal } from './components/PromptsModal';
 import { Routes, Route, Link } from 'react-router-dom';
 import { ContactPage } from './components/ContactPage';
+import { InfoModal } from './components/InfoModal';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPromptsModalOpen, setIsPromptsModalOpen] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
 
 
   useEffect(() => {
@@ -208,8 +211,8 @@ function App() {
           {/* Bottom row */}
           <div className="flex items-center text-sm text-gray-500 gap-6">
             <span className="flex items-center gap-1"><ShieldCheck size={16} /> SSL Secured</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors cursor-pointer">Privacy</button>
+            <button onClick={() => setIsTermsOpen(true)} className="hover:text-white transition-colors cursor-pointer">Terms</button>
             <Link to="/contact" className="hover:text-white transition-colors text-white/80">Contact</Link>
           </div>
         </div>
@@ -242,6 +245,20 @@ function App() {
       <PromptsModal
         isOpen={isPromptsModalOpen}
         onClose={() => setIsPromptsModalOpen(false)}
+      />
+
+      <InfoModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
+        title="Privacy Policy"
+        content="AI Career School respects your privacy. We collect basic information such as your name and email when you enroll in our courses. This information is used solely to provide you with course access and updates. We do not sell or share your personal data with third parties. We may use cookies to improve your browsing experience on our website. By using our website, you consent to our privacy practices. If you have any questions, contact us at theaicareerschoo@gmail.com."
+      />
+
+      <InfoModal
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
+        title="Terms of Service"
+        content="By enrolling in AI Career School courses, you agree to the following terms. All course content is for personal use only and may not be shared, resold, or distributed without written permission. Course access is granted to the individual purchaser only. We reserve the right to update course content at any time. Refunds are handled on a case-by-case basis — contact us within 7 days of purchase. AI Career School is not responsible for any outcomes or results from applying course knowledge. For questions contact us at theaicareerschoo@gmail.com."
       />
     </div>
   );
