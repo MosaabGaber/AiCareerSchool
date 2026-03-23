@@ -62,7 +62,7 @@ export function ContactPage() {
             </div>
             <div>
               <p className="text-xs text-white/50 mb-0.5 font-medium uppercase tracking-wider">Address</p>
-              <p className="font-medium text-white/90 leading-relaxed text-sm">Makram Ebeid street, Nasr City, Cairo, Egypt</p>
+              <p className="font-medium text-white/90 leading-relaxed text-sm" dir="rtl">شارع المشروع السويسري- الحي العاشر، مدينة نصر أول - القاهرة</p>
             </div>
           </div>
         </div>
