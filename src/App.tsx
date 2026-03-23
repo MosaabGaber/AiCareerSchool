@@ -157,6 +157,17 @@ function App() {
             <main>
               <Hero onJoinClick={() => setIsModalOpen(true)} />
               <LearnToCreate />
+
+              {/* Pricing Section */}
+              <section className="py-24 flex flex-col items-center justify-center text-center px-4 relative z-10">
+                <span className="text-gray-400 font-medium tracking-widest uppercase mb-4 text-sm mt-8">Course Price:</span>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 mb-3 mt-2">
+                  <span className="text-5xl md:text-6xl font-outfit font-bold text-white tracking-tight">Pay LE 950</span>
+                  <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-600">instead of LE 2,500</span>
+                </div>
+                <span className="text-neongreen font-medium text-lg tracking-wide mb-8">for a limited time</span>
+              </section>
+
               <CoursePhases />
               <ReviewsCarousel />
             </main>
