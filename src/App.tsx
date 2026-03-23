@@ -7,6 +7,8 @@ import { ReviewsCarousel } from './components/ReviewsCarousel';
 import { LearnToCreate } from './components/LearnToCreate';
 import { ShieldCheck } from 'lucide-react';
 import { PromptsModal } from './components/PromptsModal';
+import { Routes, Route, Link } from 'react-router-dom';
+import { ContactPage } from './components/ContactPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -146,12 +148,15 @@ function App() {
 
 
 
-      <main>
-        <Hero onJoinClick={() => setIsModalOpen(true)} />
-        <LearnToCreate />
-        <CoursePhases />
-        <ReviewsCarousel />
-      </main>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <main>
+              <Hero onJoinClick={() => setIsModalOpen(true)} />
+              <LearnToCreate />
+              <CoursePhases />
+              <ReviewsCarousel />
+            </main>
 
       <footer className="border-t border-white/10 py-10 mt-12 relative z-10">
         <div className="container mx-auto px-6 flex flex-col items-center gap-6">
@@ -205,6 +210,7 @@ function App() {
             <span className="flex items-center gap-1"><ShieldCheck size={16} /> SSL Secured</span>
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <Link to="/contact" className="hover:text-white transition-colors text-white/80">Contact</Link>
           </div>
         </div>
       </footer>
@@ -223,6 +229,10 @@ function App() {
         </svg>
       </a>
 
+          </>
+        } />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
 
       <PaymentModal
         isOpen={isModalOpen}
