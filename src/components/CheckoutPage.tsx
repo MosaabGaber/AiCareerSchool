@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function CheckoutPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-4 relative z-10 py-20">
       <div className="absolute top-8 left-8 z-50">
-        <Link 
-          to="/" 
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10"
+        <button 
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 cursor-pointer"
         >
           <ArrowLeft size={20} />
           <span className="font-medium text-sm">Back to Home</span>
-        </Link>
+        </button>
       </div>
 
       <motion.div
@@ -65,6 +67,12 @@ export function CheckoutPage() {
                 Send on WhatsApp
               </a>
             </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-gray-500 text-sm font-medium" dir="rtl">
+              More payment methods coming soon / طرق دفع إضافية قريباً
+            </p>
           </div>
         </div>
       </motion.div>
