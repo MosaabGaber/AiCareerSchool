@@ -12,7 +12,7 @@ export function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-4 relative z-10 py-20">
-      <div className="absolute top-8 left-8 z-100">
+      <div className="absolute top-20 left-8 z-100">
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 cursor-pointer"
