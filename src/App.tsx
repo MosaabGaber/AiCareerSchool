@@ -10,6 +10,7 @@ import { PromptsModal } from './components/PromptsModal';
 import { Routes, Route, Link } from 'react-router-dom';
 import { ContactPage } from './components/ContactPage';
 import { InfoModal } from './components/InfoModal';
+import { CheckoutPage } from './components/CheckoutPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -217,6 +218,14 @@ function App() {
             >
               Prompts
             </button>
+
+            {/* Checkout Button */}
+            <Link
+              to="/checkout"
+              className="ml-2 px-5 py-1.5 rounded-full border border-white/30 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm font-medium tracking-wide flex items-center justify-center"
+            >
+              Checkout
+            </Link>
           </div>
 
           {/* Bottom row */}
@@ -246,6 +255,7 @@ function App() {
           </>
         } />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
 
       <PaymentModal
