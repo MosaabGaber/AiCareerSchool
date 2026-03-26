@@ -17,6 +17,7 @@ function App() {
   const [isPromptsModalOpen, setIsPromptsModalOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [isRefundOpen, setIsRefundOpen] = useState(false);
 
 
   useEffect(() => {
@@ -233,6 +234,7 @@ function App() {
             <span className="flex items-center gap-1"><ShieldCheck size={16} /> SSL Secured</span>
             <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors cursor-pointer">Privacy</button>
             <button onClick={() => setIsTermsOpen(true)} className="hover:text-white transition-colors cursor-pointer">Terms</button>
+            <button onClick={() => setIsRefundOpen(true)} className="hover:text-white transition-colors cursor-pointer">Refund Policy</button>
             <Link to="/contact" className="hover:text-white transition-colors text-white/80">Contact</Link>
           </div>
         </div>
@@ -280,6 +282,13 @@ function App() {
         onClose={() => setIsTermsOpen(false)}
         title="Terms of Service"
         content="By enrolling in AI Career School courses, you agree to the following terms. All course content is for personal use only and may not be shared, resold, or distributed without written permission. Course access is granted to the individual purchaser only. We reserve the right to update course content at any time. Refunds are handled on a case-by-case basis — contact us within 7 days of purchase. AI Career School is not responsible for any outcomes or results from applying course knowledge. For questions contact us at theaicareerschoo@gmail.com."
+      />
+
+      <InfoModal
+        isOpen={isRefundOpen}
+        onClose={() => setIsRefundOpen(false)}
+        title="AI Career School - Refund Policy"
+        content="Refunds are handled on a case-by-case basis. If you're not satisfied with your purchase, please contact us within 2 days of purchase at: theaicareerschool@gmail.com — Include your full name, purchase date, and reason for the refund request. Refunds are processed within 5-7 business days if approved. Once refunded, course access will be revoked immediately. For any questions, contact us at theaicareerschool@gmail.com"
       />
     </div>
   );
