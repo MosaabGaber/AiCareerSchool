@@ -34,7 +34,7 @@ export function CheckoutPage() {
         initial={{ scale: 0.95, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="relative w-full max-w-2xl bg-white rounded-2xl p-8 md:p-12 border border-gray-200 shadow-xl overflow-hidden"
+        className="relative w-full max-w-2xl"
       >
         <div className="text-center mb-8 mt-2">
           <h1 className="text-3xl md:text-4xl font-outfit font-bold text-black mb-4">
@@ -46,14 +46,14 @@ export function CheckoutPage() {
         </div>
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
-          
+
           <form onSubmit={handleSubmit} className="space-y-4 mb-8">
             <div className="text-center mb-6">
               <p className="text-lg md:text-xl text-gray-800">
                 Step #1: Fill in your details below
               </p>
             </div>
-            
+
             <div>
               <input
                 type="text"
