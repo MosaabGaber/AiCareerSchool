@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { InfoModal } from './InfoModal';
 
 export function CheckoutPage() {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [isRefundOpen, setIsRefundOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ export function CheckoutPage() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   return (
@@ -36,7 +38,7 @@ export function CheckoutPage() {
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
         className="relative w-full max-w-2xl"
       >
-        <div className="text-center mb-8 mt-2">
+        <div className="text-center mb-8 pt-20 mt-2">
           <h1 className="text-3xl md:text-4xl font-outfit font-bold text-black mb-4">
             Get Lifetime Access to The Course
           </h1>
@@ -125,6 +127,28 @@ export function CheckoutPage() {
           </div>
         </div>
       </motion.div>
+
+      {/* Simple Footer */}
+      <footer className="w-full max-w-2xl mt-12 mb-4 border-t border-gray-200 pt-6">
+        <div className="flex flex-row items-center justify-center gap-6 text-sm text-gray-500">
+          <Link to="/contact" className="hover:text-black transition-colors cursor-pointer">
+            Contact
+          </Link>
+          <button
+            onClick={() => setIsRefundOpen(true)}
+            className="hover:text-black transition-colors cursor-pointer"
+          >
+            Refund Policy
+          </button>
+        </div>
+      </footer>
+
+      <InfoModal
+        isOpen={isRefundOpen}
+        onClose={() => setIsRefundOpen(false)}
+        title="AI Career School - Refund Policy"
+        content="Refunds are handled on a case-by-case basis. If you're not satisfied with your purchase, please contact us within 2 days of purchase at: theaicareerschool@gmail.com — Include your full name, purchase date, and reason for the refund request. Refunds are processed within 5-7 business days if approved. Once refunded, course access will be revoked immediately. For any questions, contact us at theaicareerschool@gmail.com"
+      />
     </div>
   );
 }
