@@ -33,23 +33,23 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
             </button>
             <div className="text-center mb-6 mt-2">
               <h2 className="text-2xl font-outfit font-bold text-white mb-2">
-                Course Starts <span className="text-neongreen glow-text">March 25th</span>
+                Course Starts <span className="text-neongreen glow-text">Available NOW</span>
               </h2>
-              <p className="text-xl font-bold text-white mb-1">Pre-Register NOW</p>
+              <p className="text-xl font-bold text-white mb-1">Register NOW</p>
               <p className="text-xl font-bold text-neongreen mb-4" dir="rtl">الحق مكانك الآن</p>
             </div>
-            
+
             <div className="bg-white/5 rounded-xl p-6 mb-6 border border-white/5">
               <div className="text-center mb-4">
                 <p className="text-lg text-gray-300">Step #1: Pay <span className="text-neongreen font-bold">LE 950</span> instead of <span className="line-through text-gray-500">LE 2,200</span> using one of the following payment methods</p>
               </div>
-              
+
               <div className="space-y-4 mt-6">
                 <div className="bg-darkspace/50 p-4 rounded-lg border border-white/10 text-center">
                   <p className="text-white font-medium mb-2">Instapay Transaction: <span className="text-neongreen">@mosaabgaber</span></p>
-                  <a 
-                    href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3" 
-                    target="_blank" 
+                  <a
+                    href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                   >
@@ -59,10 +59,10 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
 
                 <div className="bg-darkspace/50 p-4 rounded-lg border border-white/10 text-center">
                   <p className="text-gray-400 text-sm mb-2">Save the transaction screen to confirm the order</p>
-                  <p className="text-white font-medium mb-2">Send a screenshot and email to this number:<br/><span className="text-neongreen">+201065716446</span></p>
-                  <a 
-                    href="https://wa.link/hc7cmh" 
-                    target="_blank" 
+                  <p className="text-white font-medium mb-2">Send a screenshot and email to this number:<br /><span className="text-neongreen">+201065716446</span></p>
+                  <a
+                    href="https://wa.link/hc7cmh"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] border border-[#25D366]/50 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
                   >
