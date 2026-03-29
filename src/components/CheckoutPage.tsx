@@ -13,6 +13,7 @@ export function CheckoutPage() {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -25,7 +26,7 @@ export function CheckoutPage() {
     try {
       const { error } = await supabase
         .from('Enrollments')
-        .insert([{ name: fullName, email }]);
+        .insert([{ name: fullName, email, address }]);
 
       if (error) throw error;
       setSubmitSuccess(true);
@@ -57,7 +58,7 @@ export function CheckoutPage() {
         initial={{ scale: 0.95, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="relative w-full max-w-2xl"
+        className="relative w-full max-w-4xl"
       >
         <div className="text-center mb-8 pt-20 mt-2">
           <h1 className="text-3xl md:text-4xl font-outfit font-bold text-black mb-4">
@@ -96,6 +97,15 @@ export function CheckoutPage() {
               </div>
               <div>
                 <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  placeholder="Your Address / عنوانك (Optional)"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
+                />
+              </div>
+              <div>
+                <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -114,39 +124,69 @@ export function CheckoutPage() {
             </form>
           )}
 
-          <div className="text-center mb-6 border-t border-gray-200 pt-8">
-            <p className="text-lg md:text-xl text-gray-800">
-              Step #2: Pay <span className="text-[#1a9a46] font-bold">LE 950</span> instead of <span className="line-through text-gray-500">LE 2,500</span>
-            </p>
-          </div>
+          <div className="flex flex-col md:flex-row-reverse gap-8 items-start border-t border-gray-200 pt-8 mt-4">
+            {/* Payment Summary Box */}
+            <div className="w-full md:w-[320px] shrink-0 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <h3 className="text-black font-bold text-xl mb-6">Order Summary</h3>
+              <div className="text-gray-800 mb-6 font-medium text-base">
+                AI Career School Course
+              </div>
+              
+              <div className="flex gap-2 mb-6">
+                <input 
+                  type="text" 
+                  placeholder="Promo Code" 
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] bg-white text-black text-sm" 
+                />
+                <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors text-sm font-medium">
+                  Apply
+                </button>
+              </div>
 
-          <div className="space-y-6 mt-8">
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
-              <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber</span></p>
-              <a
-                href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
-              >
-                Open Instapay Link
-              </a>
+              <div className="border-t border-gray-200 pt-4 flex justify-between items-center mt-auto">
+                <span className="text-black font-bold text-lg">Total:</span>
+                <span className="text-[#1a9a46] font-bold text-xl">LE 950</span>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
-              <p className="text-gray-500 text-sm mb-3">Save the transaction screen to confirm the order</p>
-              <p className="text-black font-medium mb-4 text-lg">
-                Send a screenshot and email to this number:<br />
-                <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
-              </p>
-              <a
-                href="https://wa.link/hc7cmh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
-              >
-                Send on WhatsApp
-              </a>
+            {/* Payment Methods Section */}
+            <div className="flex-1 w-full">
+              <div className="text-center md:text-left mb-6">
+                <p className="text-lg md:text-xl text-gray-800">
+                  Step #2: Pay <span className="text-[#1a9a46] font-bold">LE 950</span> instead of <span className="line-through text-gray-500">LE 2,500</span>
+                </p>
+                <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
+                  <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber</span></p>
+                  <a
+                    href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                  >
+                    Open Instapay Link
+                  </a>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
+                  <p className="text-gray-500 text-sm mb-3">Save the transaction screen to confirm the order</p>
+                  <p className="text-black font-medium mb-4 text-lg">
+                    Send a screenshot and email to this number:<br />
+                    <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
+                  </p>
+                  <a
+                    href="https://wa.link/hc7cmh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
+                  >
+                    Send on WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -159,7 +199,7 @@ export function CheckoutPage() {
       </motion.div>
 
       {/* Simple Footer */}
-      <footer className="w-full max-w-2xl mt-12 mb-4 border-t border-gray-200 pt-6">
+      <footer className="w-full max-w-4xl mt-12 mb-4 border-t border-gray-200 pt-6">
         <div className="flex flex-row items-center justify-center gap-6 text-sm text-gray-500">
           <Link to="/contact" className="hover:text-black transition-colors cursor-pointer">
             Contact
