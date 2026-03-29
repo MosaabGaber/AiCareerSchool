@@ -24,7 +24,7 @@ export function CheckoutPage() {
     setIsSubmitting(true);
     try {
       const { error } = await supabase
-        .from('enrollments')
+        .from('Enrollments')
         .insert([{ name: fullName, email }]);
 
       if (error) throw error;
