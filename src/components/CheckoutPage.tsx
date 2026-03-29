@@ -3,17 +3,38 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { InfoModal } from './InfoModal';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://xgadpsudjrlgrvhofqkd.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhnYWRwc3VkanJsZ3J2aG9mcWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3MzM4MDIsImV4cCI6MjA5MDMwOTgwMn0.ZkjHb1XNa7Svt_sngzVT_uG7KFshoNAOpVV_D-xWJTA';
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export function CheckoutPage() {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would probably send data to a backend or save to state.
-    // For now, it just prevents default form submission behavior.
+    if (!fullName || !email) return;
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('enrollments')
+        .insert([{ name: fullName, email }]);
+
+      if (error) throw error;
+      setSubmitSuccess(true);
+    } catch (error) {
+      console.error('Error saving enrollment:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -49,40 +70,49 @@ export function CheckoutPage() {
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
 
-          <form onSubmit={handleSubmit} className="space-y-4 mb-8">
-            <div className="text-center mb-6">
-              <p className="text-lg md:text-xl text-gray-800">
-                Step #1: Fill in your details below
+          {submitSuccess ? (
+            <div className="text-center mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-green-800 font-medium text-lg">
+                Details confirmed successfully! Please proceed to payment.
               </p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4 mb-8">
+              <div className="text-center mb-6">
+                <p className="text-lg md:text-xl text-gray-800">
+                  Step #1: Fill in your details below
+                </p>
+              </div>
 
-            <div>
-              <input
-                type="text"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                placeholder="Your Full Name / اسمك بالكامل"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your Email Address / بريدك الإلكتروني"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-lg shadow-[#25D366]/30"
-            >
-              Confirm Details
-            </button>
-          </form>
+              <div>
+                <input
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="Your Full Name / اسمك بالكامل"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email Address / بريدك الإلكتروني"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-[#25D366] hover:bg-[#20bd5a] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-lg shadow-[#25D366]/30"
+              >
+                {isSubmitting ? 'Confirming...' : 'Confirm Details'}
+              </button>
+            </form>
+          )}
 
           <div className="text-center mb-6 border-t border-gray-200 pt-8">
             <p className="text-lg md:text-xl text-gray-800">
