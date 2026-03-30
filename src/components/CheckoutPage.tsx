@@ -44,19 +44,7 @@ export function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative z-10 py-20">
-      {/* Top Order Summary Bar */}
-      <div className="absolute top-0 left-0 right-0 w-full bg-[#f7f7f7] border-b border-gray-200 px-4 md:px-8 py-4 z-[110] flex justify-between items-center">
-        <button className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors cursor-pointer">
-          <span className="font-medium">Order summary</span>
-          <ChevronDown size={18} className="text-gray-500" />
-        </button>
-        <div className="flex items-center gap-3">
-          <span className="text-gray-500 line-through text-sm">EGP 2,500</span>
-          <span className="text-black font-bold text-lg">EGP 950</span>
-        </div>
-      </div>
-
-      <div className="absolute top-24 left-8 z-[100]">
+      <div className="absolute top-20 left-8 z-[100]">
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full border border-gray-200 cursor-pointer"
@@ -72,7 +60,19 @@ export function CheckoutPage() {
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
         className="relative w-full max-w-4xl"
       >
-        <div className="text-center mb-8 pt-20 mt-2">
+        {/* Order Summary Bar */}
+        <div className="w-full bg-[#f7f7f7] border border-gray-200 rounded-xl px-4 md:px-6 py-4 flex justify-between items-center mb-8 mt-20">
+          <button className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors cursor-pointer">
+            <span className="font-medium">Order summary</span>
+            <ChevronDown size={18} className="text-gray-500" />
+          </button>
+          <div className="flex items-center gap-3">
+            <span className="text-gray-500 line-through text-sm">EGP 2,500</span>
+            <span className="text-black font-bold text-lg">EGP 950</span>
+          </div>
+        </div>
+
+        <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-outfit font-bold text-black mb-4">
             Get Lifetime Access to The Course
           </h1>
