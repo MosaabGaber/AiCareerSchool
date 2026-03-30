@@ -9,6 +9,10 @@
 }
 
 @layer base {
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
   body {
     background-color: var(--color-darkspace);
     color: white;
@@ -26,10 +30,18 @@
     box-shadow: 0 0 10px rgba(1, 240, 142, 0.2), inset 0 0 10px rgba(1, 240, 142, 0.1);
   }
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(30, 30, 35, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
   }
   
   @keyframes marquee {

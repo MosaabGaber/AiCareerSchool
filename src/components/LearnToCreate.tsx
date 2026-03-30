@@ -90,7 +90,6 @@ export function LearnToCreate() {
           style={{
             transform: `translateX(calc(-${activeIndex * 100}vw))`,
             transition: 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
-            willChange: 'transform',
           }}
         >
           {ITEMS.map((item) => (
@@ -152,7 +151,6 @@ export function LearnToCreate() {
                 transition: 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
                 zIndex: isCentered ? 20 : 10 - Math.abs(offset),
                 perspective: 1000,
-                willChange: 'transform',
                 pointerEvents: 'none',
               }}
             >
@@ -164,7 +162,6 @@ export function LearnToCreate() {
                     zIndex: imgIndex === 1 ? 2 : 1,
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
-                    willChange: 'transform',
                     transform: 'translateZ(0)',
                   }}
                 >
