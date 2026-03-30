@@ -16,24 +16,44 @@ export function CheckoutPage() {
   const [address, setAddress] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
 
     setIsSubmitting(true);
+    setErrorMsg('');
     try {
       const { error } = await supabase
         .from('Enrollments')
         .insert([{ name: fullName, email, address }]);
 
       if (error) throw error;
-      setSubmitSuccess(true);
-    } catch (error) {
-      console.error('Error saving enrollment:', error);
-      alert('An error occurred. Please try again.');
-    } finally {
+      
+      const response = await fetch('/api/create-intention', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: fullName,
+          email,
+          address,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.client_secret) {
+        const PAYMOB_PUBLIC_KEY = 'egy_pk_test_IkJizSwsZKedwtNA8eypxlIxH9xqxcJ1';
+        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=${PAYMOB_PUBLIC_KEY}&clientSecret=${data.client_secret}`;
+      } else {
+        throw new Error(data.error || 'Failed to initialize payment');
+      }
+    } catch (error: any) {
+      console.error('Error saving enrollment or proceeding to payment:', error);
+      setErrorMsg(error.message || 'An error occurred. Please try again.');
       setIsSubmitting(false);
     }
   };
@@ -83,19 +103,19 @@ export function CheckoutPage() {
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
 
-          {submitSuccess ? (
-            <div className="text-center mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-800 font-medium text-lg">
-                Details confirmed successfully! Please proceed to payment.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 mb-8">
-              <div className="text-center mb-6">
-                <p className="text-lg md:text-xl text-gray-800">
-                  Step #1: Fill in your details below
+          <form onSubmit={handleSubmit} className="space-y-4 mb-8">
+            {errorMsg && (
+              <div className="text-center mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-medium text-sm">
+                  {errorMsg}
                 </p>
               </div>
+            )}
+            <div className="text-center mb-6">
+              <p className="text-lg md:text-xl text-gray-800">
+                Step #1: Fill in your details below
+              </p>
+            </div>
 
               <div>
                 <input
@@ -134,7 +154,6 @@ export function CheckoutPage() {
                 {isSubmitting ? 'Confirming...' : 'Confirm Details'}
               </button>
             </form>
-          )}
 
           <div className="flex flex-col md:flex-row-reverse gap-8 items-start border-t border-gray-200 pt-8 mt-4">
             {/* Payment Summary Box */}
