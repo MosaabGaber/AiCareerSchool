@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ChevronDown, CreditCard, ArrowRightLeft } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { InfoModal } from './InfoModal';
 import { createClient } from '@supabase/supabase-js';
@@ -17,10 +17,13 @@ export function CheckoutPage() {
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay'>('card');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
+
+    if (paymentMethod === 'instapay') return;
 
     setIsSubmitting(true);
     setErrorMsg('');
@@ -103,8 +106,9 @@ export function CheckoutPage() {
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
 
-          <form onSubmit={handleSubmit} className="space-y-4 mb-8">
-            {errorMsg && (
+          <form onSubmit={handleSubmit}>
+            <div className="space-y-4 mb-8">
+              {errorMsg && (
               <div className="text-center mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-red-800 font-medium text-sm">
                   {errorMsg}
@@ -146,14 +150,7 @@ export function CheckoutPage() {
                   required
                 />
               </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#25D366] hover:bg-[#20bd5a] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-lg shadow-[#25D366]/30"
-              >
-                {isSubmitting ? 'Confirming...' : 'Confirm Details'}
-              </button>
-            </form>
+            </div>
 
           <div className="flex flex-col md:flex-row-reverse gap-8 items-start border-t border-gray-200 pt-8 mt-4">
             {/* Payment Summary Box */}
@@ -189,37 +186,89 @@ export function CheckoutPage() {
                 <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
               </div>
 
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
-                  <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber</span></p>
-                  <a
-                    href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
-                  >
-                    Open Instapay Link
-                  </a>
-                </div>
+              {/* Tabs */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <button
+                  type="button"
+                  onClick={() => setPaymentMethod('card')}
+                  className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${
+                    paymentMethod === 'card'
+                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
+                >
+                  <div className="flex items-center gap-2 text-black">
+                    <CreditCard size={24} />
+                    <svg className="w-5 h-5" viewBox="0 0 384 512" fill="currentColor">
+                      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                    </svg>
+                  </div>
+                  <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Card or Apple Pay</span>
+                </button>
 
-                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center flex flex-col items-center">
-                  <p className="text-gray-500 text-sm mb-3">Save the transaction screen to confirm the order</p>
-                  <p className="text-black font-medium mb-4 text-lg">
-                    Send a screenshot and email to this number:<br />
-                    <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
-                  </p>
-                  <a
-                    href="https://wa.link/hc7cmh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
-                  >
-                    Send on WhatsApp
-                  </a>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setPaymentMethod('instapay')}
+                  className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${
+                    paymentMethod === 'instapay'
+                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
+                >
+                  <div className="flex items-center text-black">
+                    <ArrowRightLeft size={24} />
+                  </div>
+                  <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Instapay</span>
+                </button>
               </div>
+
+              {/* Dynamic Content */}
+              {paymentMethod === 'card' && (
+                <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 text-lg"
+                  >
+                    {isSubmitting ? 'Processing...' : 'Pay Now - EGP 950'}
+                  </button>
+                </div>
+              )}
+
+              {paymentMethod === 'instapay' && (
+                <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                  <div className="bg-white p-6 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
+                    <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber</span></p>
+                    <a
+                      href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                    >
+                      Open Instapay Link
+                    </a>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
+                    <p className="text-gray-500 text-sm mb-3">Save the transaction screen to confirm the order</p>
+                    <p className="text-black font-medium mb-4 text-lg">
+                      Send a screenshot and email to this number:<br />
+                      <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
+                    </p>
+                    <a
+                      href="https://wa.link/hc7cmh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
+                    >
+                      Send on WhatsApp
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+          </form>
 
           <div className="text-center mt-8">
             <p className="text-gray-500 text-sm font-medium" dir="rtl">
