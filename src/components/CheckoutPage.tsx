@@ -152,7 +152,7 @@ export function CheckoutPage() {
               </div>
             </div>
 
-          <div className="flex flex-col md:flex-row-reverse gap-8 items-start border-t border-gray-200 pt-8 mt-4">
+          <div className="flex flex-col-reverse md:flex-row-reverse gap-8 items-start border-t border-gray-200 pt-8 mt-4">
             {/* Payment Summary Box */}
             <div className="w-full md:w-[320px] shrink-0 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
               <h3 className="text-black font-bold text-xl mb-6">Order Summary</h3>
