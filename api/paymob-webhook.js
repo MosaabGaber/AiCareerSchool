@@ -6,11 +6,13 @@ export default async function handler(req, res) {
   const body = req.body;
   console.log('Full webhook body:', JSON.stringify(body));
   
-  const isSuccess = body?.success === true || body?.obj?.success === true;
-  const orderId = body?.id || body?.obj?.id || body?.order?.id;
-  const email = body?.billing_data?.email || body?.obj?.billing_data?.email;
+  const isSuccess = body?.transaction?.success === true;
+  const orderId = body?.transaction?.order?.id;
+  const email = body?.intention?.intention_detail?.billing_data?.email;
+  const amount = body?.transaction?.amount_cents;
+  const firstName = body?.intention?.intention_detail?.billing_data?.first_name;
 
-  console.log(`Payment ${isSuccess ? 'SUCCESS' : 'FAILED'} - Order: ${orderId}, Email: ${email}`);
+  console.log(`Payment ${isSuccess ? 'SUCCESS' : 'FAILED'} - Order: ${orderId}, Email: ${email}, Amount: ${amount}, Name: ${firstName}`);
 
   return res.status(200).json({ received: true });
 }
