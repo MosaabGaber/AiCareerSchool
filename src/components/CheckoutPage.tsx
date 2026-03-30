@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronDown } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { InfoModal } from './InfoModal';
 import { createClient } from '@supabase/supabase-js';
@@ -44,7 +44,19 @@ export function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative z-10 py-20">
-      <div className="absolute top-20 left-8 z-[100]">
+      {/* Top Order Summary Bar */}
+      <div className="absolute top-0 left-0 right-0 w-full bg-[#f7f7f7] border-b border-gray-200 px-4 md:px-8 py-4 z-[110] flex justify-between items-center">
+        <button className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors cursor-pointer">
+          <span className="font-medium">Order summary</span>
+          <ChevronDown size={18} className="text-gray-500" />
+        </button>
+        <div className="flex items-center gap-3">
+          <span className="text-gray-500 line-through text-sm">EGP 2,500</span>
+          <span className="text-black font-bold text-lg">EGP 950</span>
+        </div>
+      </div>
+
+      <div className="absolute top-24 left-8 z-[100]">
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full border border-gray-200 cursor-pointer"
@@ -131,12 +143,12 @@ export function CheckoutPage() {
               <div className="text-gray-800 mb-6 font-medium text-base">
                 AI Career School Course
               </div>
-              
+
               <div className="flex gap-2 mb-6">
-                <input 
-                  type="text" 
-                  placeholder="Promo Code" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] bg-white text-black text-sm" 
+                <input
+                  type="text"
+                  placeholder="Promo Code"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] bg-white text-black text-sm"
                 />
                 <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors text-sm font-medium">
                   Apply
