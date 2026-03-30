@@ -36,6 +36,7 @@ export default async function handler(req, res) {
           state: 'Cairo',
         },
         redirection_url: 'https://www.aicareerschool.com/checkout',
+        notification_url: 'https://www.aicareerschool.com/api/paymob-webhook',
       }),
     });
 
