@@ -94,10 +94,6 @@ export function CoursePhases() {
               <p className="text-gray-400 font-inter text-sm leading-relaxed">
                 {phase.description}
               </p>
-
-              <div className="mt-6 flex items-center text-sm font-semibold text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                Explore Phase <span className="ml-2">→</span>
-              </div>
             </div>
           ))}
         </div>
