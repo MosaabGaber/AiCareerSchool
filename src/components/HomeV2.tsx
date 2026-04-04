@@ -23,7 +23,7 @@ export function HomeV2({
   return (
     <>
       <main>
-        <Hero onJoinClick={() => navigate('/checkout')} />
+        <Hero onJoinClick={() => navigate('/checkout')} showVideo={true} />
         <LearnToCreate />
 
         {/* Pricing Section */}
@@ -34,6 +34,53 @@ export function HomeV2({
             <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-600">instead of LE 2,500</span>
           </div>
           <span className="text-neongreen font-medium text-lg tracking-wide mb-8">for a limited time</span>
+        </section>
+
+        {/* Student Results Section */}
+        <section className="py-12 px-6 container mx-auto relative z-10 max-w-6xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-outfit font-bold text-white tracking-tight" dir="rtl">
+              نتائج الطلاب
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                <iframe 
+                  src="https://player.mediadelivery.net/embed/631325/5ed1633b-2b53-466b-adcd-c47bbf4079cb?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
+                  loading="lazy" 
+                  style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+            </div>
+            
+            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                <iframe 
+                  src="https://player.mediadelivery.net/embed/631325/3010c6f6-3ec2-4ff3-8b44-40bff2951bd8?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
+                  loading="lazy" 
+                  style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+            </div>
+            
+            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                <iframe 
+                  src="https://player.mediadelivery.net/embed/631325/74663dce-354a-43f0-be2e-7387416bda57?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
+                  loading="lazy" 
+                  style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </section>
 
         <CoursePhases />
