@@ -11,6 +11,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { ContactPage } from './components/ContactPage';
 import { InfoModal } from './components/InfoModal';
 import { CheckoutPage } from './components/CheckoutPage';
+import { HomeV2 } from './components/HomeV2';
 
 function App() {
   const navigate = useNavigate();
@@ -259,6 +260,14 @@ function App() {
         } />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/v2" element={
+          <HomeV2
+            setIsPromptsModalOpen={setIsPromptsModalOpen}
+            setIsPrivacyOpen={setIsPrivacyOpen}
+            setIsTermsOpen={setIsTermsOpen}
+            setIsRefundOpen={setIsRefundOpen}
+          />
+        } />
       </Routes>
 
       <PaymentModal
