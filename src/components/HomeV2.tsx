@@ -3,6 +3,7 @@ import { Hero } from './Hero';
 import { LearnToCreate } from './LearnToCreate';
 import { CoursePhases } from './CoursePhases';
 import { ReviewsCarousel } from './ReviewsCarousel';
+import { FAQ } from './FAQ';
 import { ShieldCheck } from 'lucide-react';
 
 interface HomeV2Props {
@@ -96,6 +97,7 @@ export function HomeV2({
 
         <CoursePhases />
         <ReviewsCarousel />
+        <FAQ />
       </main>
 
       <footer className="border-t border-white/10 py-10 mt-12 relative z-10">
