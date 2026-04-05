@@ -78,9 +78,9 @@ export function CheckoutPage() {
       </div>
 
       <motion.div
-        initial={{ scale: 0.95, opacity: 0, y: 20 }}
+        initial={{ scale: 1, opacity: 1, y: 0 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        transition={{ duration: 0 }}
         className="relative w-full max-w-4xl"
       >
         {/* Order Summary Bar */}

@@ -30,9 +30,9 @@ export function ExamplesGallery() {
           {examples.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ scale: 0.98 }}
               className={`rounded-2xl overflow-hidden relative group cursor-pointer ${item.span}`}
