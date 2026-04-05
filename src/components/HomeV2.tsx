@@ -34,6 +34,17 @@ export function HomeV2({
             <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-600">instead of LE 2,500</span>
           </div>
           <span className="text-neongreen font-medium text-lg tracking-wide mb-8">for a limited time</span>
+          
+          <div className="mt-2 flex flex-col items-center gap-3">
+            <span className="text-gray-500 font-medium text-sm" dir="rtl">طرق الدفع المتاحة</span>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <img src="/payment/insta.png" alt="Instapay" className="h-[50px] w-auto object-contain" />
+              <img src="/payment/voda.png" alt="Vodafone Cash" className="h-[50px] w-auto object-contain" />
+              <img src="/payment/telda.png" alt="Telda" className="h-[50px] w-auto object-contain" />
+              <img src="/payment/visa.png" alt="Visa" className="h-[50px] w-auto object-contain" />
+              <img src="/payment/master.png" alt="Mastercard" className="h-[50px] w-auto object-contain" />
+            </div>
+          </div>
         </section>
 
         {/* Student Results Section */}
