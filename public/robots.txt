@@ -1,0 +1,39 @@
+# AI Career School - robots.txt
+# Last updated: April 2026
+
+# Allow all crawlers (Google, Bing, etc.)
+User-agent: *
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing (needed for Microsoft Copilot)
+User-agent: Bingbot
+Allow: /
+User-agent: msnbot
+Allow: /
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Claude / Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://aicareerschool.com/sitemap.xml
