@@ -4,18 +4,15 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: "هل الكورس بالعربي؟",
-    answer: "أيوه، الكورس كله بالعربي 100% — شرح ومحتوى وأمثلة."
+    answer: "أيوه، الكورس كله بالعربي 100%، شرح ومحتوى وأمثلة."
   },
   {
     question: "هل محتاج خبرة سابقة؟",
     answer: "لا خالص. بنبدأ من الصفر تماماً. الكورس مصمم لأي حد حتى لو عمره ما فتح أداة AI قبل كده."
   },
+
   {
-    question: "الأدوات اللي هنستخدمها مجانية ولا مدفوعة؟",
-    answer: "بنغطي الاتنين. بنستخدم أدوات بريميم وبنوريك كمان بدائل مجانية — أنت بتختار اللي يناسب ميزانيتك."
-  },
-  {
-    question: "الأدوات بتتغير بسرعة — الكورس ازاي بيتابع التطور؟",
+    question: "الأدوات بتتغير بسرعة، الكورس ازاي بيتابع التطور؟",
     answer: "الكورس بيتحدث كل 3 لـ 5 أيام بأحدث الأدوات والتقنيات. اشتراكك بيضمنلك كل التحديثات المستقبلية."
   }
 ];
@@ -40,7 +37,7 @@ export function FAQ() {
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <div 
+              <div
                 key={i}
                 className="glassmorphism p-6 rounded-2xl relative group transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(0,71,255,0.15)] cursor-pointer bg-white/5 border border-white/10"
                 onClick={() => toggleFAQ(i)}
@@ -53,8 +50,8 @@ export function FAQ() {
                     <ChevronDown className={`text-gray-300 transition-colors ${isOpen ? 'text-blue-400' : ''}`} size={24} />
                   </div>
                 </div>
-                
-                <div 
+
+                <div
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
