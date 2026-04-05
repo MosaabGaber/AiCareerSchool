@@ -12,6 +12,8 @@ import { ContactPage } from './components/ContactPage';
 import { InfoModal } from './components/InfoModal';
 import { CheckoutPage } from './components/CheckoutPage';
 import { HomeV2 } from './components/HomeV2';
+import { BlogIndex } from './components/BlogIndex';
+import { BlogPost } from './components/BlogPost';
 
 function App() {
   const navigate = useNavigate();
@@ -252,6 +254,8 @@ function App() {
         } />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/v2" element={
           <HomeV2
             setIsPromptsModalOpen={setIsPromptsModalOpen}
