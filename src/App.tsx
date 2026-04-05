@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import Lenis from 'lenis';
+import { useState } from 'react';
+
 import { Hero } from './components/Hero';
 import { PaymentModal } from './components/PaymentModal';
 import { CoursePhases } from './components/CoursePhases';
@@ -21,14 +21,6 @@ function App() {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isRefundOpen, setIsRefundOpen] = useState(false);
 
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-      lerp: 0.08
-    });
-    return () => lenis.destroy();
-  }, []);
 
   return (
     <div className="font-inter bg-darkspace min-h-screen text-white selection:bg-neongreen selection:text-darkspace">

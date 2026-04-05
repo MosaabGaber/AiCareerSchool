@@ -9,6 +9,10 @@
 }
 
 @layer base {
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
 
   body {
     background-color: var(--color-darkspace);
@@ -23,16 +27,18 @@
   .glow-text {
     text-shadow: 0 0 10px rgba(1, 240, 142, 0.5), 0 0 20px rgba(1, 240, 142, 0.3);
   }
+
   .glow-border {
     box-shadow: 0 0 10px rgba(1, 240, 142, 0.2), inset 0 0 10px rgba(1, 240, 142, 0.1);
   }
+
   .glassmorphism {
     background: rgba(30, 30, 35, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.05);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   @media (min-width: 768px) {
     .glassmorphism {
       background: rgba(255, 255, 255, 0.03);
@@ -40,15 +46,19 @@
       -webkit-backdrop-filter: blur(12px);
     }
   }
-  
+
   @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  
+
   .animate-marquee {
     animation: marquee 20s linear infinite;
     display: inline-block;
   }
 }
-
