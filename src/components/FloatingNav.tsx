@@ -1,12 +1,20 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 export function FloatingNav() {
   const router = useRouter();
+  const pathname = usePathname();
+
+  const handleJoinNow = () => {
+    if (pathname === '/v2') {
+      window.dispatchEvent(new CustomEvent('open-v2-payment'));
+    } else {
+      router.push('/checkout');
+    }
+  };
   
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4 px-4">
@@ -60,7 +68,7 @@ export function FloatingNav() {
 
         {/* Right: JOIN NOW button */}
         <button
-          onClick={() => router.push('/checkout')}
+          onClick={handleJoinNow}
           className="shrink-0 bg-blue-500 hover:bg-blue-400 text-white font-bold px-6 py-2.5 rounded-full text-sm tracking-widest uppercase transition-all duration-200 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_28px_rgba(59,130,246,0.7)] active:scale-95 font-inter"
         >
           JOIN NOW
