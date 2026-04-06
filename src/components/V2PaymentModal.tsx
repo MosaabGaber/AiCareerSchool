@@ -1,5 +1,8 @@
 'use client';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare function fbq(...args: any[]): void;
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
@@ -232,6 +235,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                         href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 950})}
                         className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                         style={{
                           background: 'linear-gradient(135deg, #01F08E, #00c6ff)',
@@ -361,6 +365,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                         href="https://wa.link/hc7cmh"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 950})}
                         className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                         style={{
                           background: '#25D366',

@@ -66,9 +66,9 @@ export function LearnToCreate() {
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={activeIndex}
-                  initial={{ y: 40, opacity: 0, scale: 0.95 }}
+                  initial={{ y: 40, opacity: 1, scale: 0.95 }}
                   animate={{ y: 0, opacity: 1, scale: 1 }}
-                  exit={{ y: -40, opacity: 0, scale: 0.95 }}
+                  exit={{ y: -40, opacity: 1, scale: 0.95 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30, duration: 0.5 }}
                   className="text-transparent bg-clip-text bg-gradient-to-r from-neongreen to-softcyan glow-text absolute left-0 right-0 md:text-left text-center drop-shadow-[0_0_15px_rgba(1,240,142,0.3)]"
                 >

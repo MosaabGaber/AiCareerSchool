@@ -14,16 +14,16 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
       {isOpen && (
         <div key="payment-modal" className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
             onClick={onClose}
             className="absolute inset-0 bg-darkspace/80 backdrop-blur-md"
           />
           <motion.div
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            initial={{ scale: 0.95, 1, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            exit={{ scale: 0.95, opacity: 1, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
             className="relative z-10 w-full max-w-md rounded-2xl p-8 border border-neongreen/20 shadow-[0_0_30px_rgba(1,240,142,0.1)] overflow-hidden"
             style={{
