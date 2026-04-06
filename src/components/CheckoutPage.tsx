@@ -1,7 +1,12 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronDown, CreditCard, ArrowRightLeft } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+
 import { InfoModal } from './InfoModal';
 import { createClient } from '@supabase/supabase-js';
 
@@ -10,7 +15,7 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export function CheckoutPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
@@ -69,7 +74,7 @@ export function CheckoutPage() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative z-10 py-20">
       <div className="absolute top-24 md:top-20 left-8 z-[100]">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => router.push('/')}
           className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full border border-gray-200 cursor-pointer"
         >
           <ArrowLeft size={20} />
@@ -279,7 +284,7 @@ export function CheckoutPage() {
       {/* Simple Footer */}
       <footer className="w-full max-w-4xl mt-12 mb-4 border-t border-gray-200 pt-6">
         <div className="flex flex-row items-center justify-center gap-6 text-sm text-gray-500">
-          <Link to="/contact" className="hover:text-black transition-colors cursor-pointer">
+          <Link href="/contact" className="hover:text-black transition-colors cursor-pointer">
             Contact
           </Link>
           <button

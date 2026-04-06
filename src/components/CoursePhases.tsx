@@ -1,3 +1,5 @@
+'use client';
+
 import { BookOpen, Sparkles, Wand2, Video } from 'lucide-react';
 
 const phases = [

@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 import { Mail, Phone, MapPin, ArrowLeft } from 'lucide-react';
 
 export function ContactPage() {
@@ -13,8 +15,7 @@ export function ContactPage() {
           boxShadow: '0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)',
         }}
       >
-        <Link
-          to="/"
+        <Link href="/"
           className="inline-flex items-center text-sm font-medium text-white/50 hover:text-white mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />

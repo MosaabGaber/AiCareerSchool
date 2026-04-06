@@ -1,4 +1,11 @@
-import { Link, useParams, Navigate } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { redirect } from 'next/navigation';
+
+
+
 
 import { blogPosts } from '../data/blogData';
 
@@ -8,8 +15,8 @@ export function BlogPost() {
   const articleInfo = blogPosts.find((post) => post.slug === slug);
 
   if (!slug || !articleInfo) {
-    // If article not found, redirect to blog index (or build a 404)
-    return <Navigate to="/blog" replace />;
+    // If article not found, `app/blog/[slug]/page.tsx` handles 404.
+    return null;
   }
 
   return (
@@ -20,11 +27,11 @@ export function BlogPost() {
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-gray-400 font-inter">
             <li>
-              <Link to="/" className="hover:text-neongreen transition-colors">الرئيسية</Link>
+              <Link href="/" className="hover:text-neongreen transition-colors">الرئيسية</Link>
             </li>
             <li className="text-gray-600">/</li>
             <li>
-              <Link to="/blog" className="hover:text-neongreen transition-colors">المدونة</Link>
+              <Link href="/blog" className="hover:text-neongreen transition-colors">المدونة</Link>
             </li>
             <li className="text-gray-600">/</li>
             <li className="text-gray-200" aria-current="page">
@@ -85,8 +92,7 @@ export function BlogPost() {
               <p className="text-gray-300 md:text-lg mb-8 max-w-xl mx-auto relative z-10">
                 جاهز تحترف أدوات الذكاء الاصطناعي وتنتج محتوى تجاري؟ اشترك في الكورس الشامل اللي بيتحدث كل 3-5 أيام بـ 950 جنيه بس.
               </p>
-              <Link 
-                to="/checkout" 
+              <Link href="/checkout" 
                 className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg px-8 py-4 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:-translate-y-1 relative z-10 w-full sm:w-auto"
               >
                 انضم للكورس الآن

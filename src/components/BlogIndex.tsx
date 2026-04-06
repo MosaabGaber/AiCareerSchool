@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
 
 import { blogPosts } from '../data/blogData';
 
@@ -20,7 +22,7 @@ export function BlogIndex() {
 
         {/* Featured Post (Top) */}
         <section className="mb-16">
-          <Link to="/blog/best-ai-tools-2026" className="block group">
+          <Link href="/blog/best-ai-tools-2026" className="block group">
             <article className="glassmorphism rounded-2xl overflow-hidden flex flex-col md:flex-row items-center border border-white/10 hover:border-neongreen/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(1,240,142,0.15)] relative">
               <div className="w-full md:w-1/2 aspect-video overflow-hidden">
                 <img 
@@ -51,7 +53,7 @@ export function BlogIndex() {
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <Link to={`/blog/${post.slug}`} key={post.slug} className="group">
+              <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
                 <article className="glassmorphism rounded-2xl overflow-hidden h-full flex flex-col border border-white/10 hover:border-blue-500/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
                   <div className="aspect-video w-full overflow-hidden relative">
                     <img 

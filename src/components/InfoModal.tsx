@@ -1,3 +1,5 @@
+'use client';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
@@ -12,7 +14,7 @@ export function InfoModal({ isOpen, onClose, title, content }: InfoModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div key="info-modal" className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -25,9 +27,11 @@ export function InfoModal({ isOpen, onClose, title, content }: InfoModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="relative w-full max-w-2xl glassmorphism rounded-2xl p-8 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] overflow-hidden"
+            className="relative z-10 w-full max-w-2xl rounded-2xl p-8 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] overflow-hidden"
             style={{
-              background: 'rgba(20, 25, 45, 0.95)',
+              background: 'rgba(20, 25, 45, 0.97)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
             }}
           >
             <button

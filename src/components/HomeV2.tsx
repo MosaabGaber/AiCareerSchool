@@ -1,4 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Hero } from './Hero';
 import { LearnToCreate } from './LearnToCreate';
 import { CoursePhases } from './CoursePhases';
@@ -19,12 +22,12 @@ export function HomeV2({
   setIsTermsOpen,
   setIsRefundOpen
 }: HomeV2Props) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <>
       <main>
-        <Hero onJoinClick={() => navigate('/checkout')} showVideo={true} />
+        <Hero onJoinClick={() => router.push('/checkout')} showVideo={true} />
         <LearnToCreate />
 
         {/* Pricing Section */}
@@ -147,8 +150,7 @@ export function HomeV2({
             </button>
 
             {/* Checkout Button */}
-            <Link
-              to="/checkout"
+            <Link href="/checkout"
               className="ml-2 px-5 py-1.5 rounded-full border border-white/30 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm font-medium tracking-wide flex items-center justify-center"
             >
               Checkout
@@ -161,7 +163,7 @@ export function HomeV2({
             <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors cursor-pointer">Privacy</button>
             <button onClick={() => setIsTermsOpen(true)} className="hover:text-white transition-colors cursor-pointer">Terms</button>
             <button onClick={() => setIsRefundOpen(true)} className="hover:text-white transition-colors cursor-pointer">Refund Policy</button>
-            <Link to="/contact" className="hover:text-white transition-colors text-white/80">Contact</Link>
+            <Link href="/contact" className="hover:text-white transition-colors text-white/80">Contact</Link>
           </div>
         </div>
       </footer>
