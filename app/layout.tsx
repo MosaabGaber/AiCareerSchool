@@ -161,7 +161,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <FloatingNav />
 
-          <div className="relative z-10 w-full h-full flex flex-col pt-13">
+          <div className="relative z-10 w-full h-full flex flex-col pt-11">
             {children}
           </div>
         </ModalProvider>
