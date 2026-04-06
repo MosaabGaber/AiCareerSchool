@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <main>
-        <Hero onJoinClick={() => router.push('/checkout')} />
+        <Hero onJoinClick={() => router.push('/checkout')} showVideo={true} />
         <LearnToCreate />
 
         {/* Pricing Section */}
