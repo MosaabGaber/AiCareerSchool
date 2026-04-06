@@ -1,25 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const dummyPosts = [
-  {
-    slug: 'ai-video-tools-kling-veo',
-    title: 'إزاي تعمل فيديو بالذكاء الاصطناعي بـ Kling و Veo',
-    excerpt: 'تعرف على اقوى الأدوات الحالية لإنتاج الفيديوهات السينمائية باستخدام تقنيات الذكاء الاصطناعي الحديثة مع أمثلة عملية.',
-    image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop',
-  },
-  {
-    slug: 'midjourney-prompt-engineering-guide',
-    title: 'هندسة الأوامر في Midjourney: دليل احترافي',
-    excerpt: 'تعلم كيف تكتب أوامر (Prompts) دقيقة للحصول على صور فوتوريالستيك لاستخدامها في الحملات الإعلانية.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop',
-  },
-  {
-    slug: 'elevenlabs-voice-cloning',
-    title: 'أفضل طرق انتاج محتوى صوتي باستخدام ElevenLabs',
-    excerpt: 'خطوة بخطوة للتعليق الصوتي واستنساخ الأصوات العربية لإنشاء محتوى يوتيوب وتيك توك بدون الحاجة لمعدات تسجيل.',
-    image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1000&auto=format&fit=crop',
-  },
-];
+import { blogPosts } from '../data/blogData';
 
 export function BlogIndex() {
   return (
@@ -69,7 +50,7 @@ export function BlogIndex() {
         {/* Article Grid */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {dummyPosts.map((post) => (
+            {blogPosts.map((post) => (
               <Link to={`/blog/${post.slug}`} key={post.slug} className="group">
                 <article className="glassmorphism rounded-2xl overflow-hidden h-full flex flex-col border border-white/10 hover:border-blue-500/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
                   <div className="aspect-video w-full overflow-hidden relative">
