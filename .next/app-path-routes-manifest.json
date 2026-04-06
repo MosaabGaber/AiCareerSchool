@@ -1,0 +1,9 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/blog/page": "/blog",
+  "/checkout/page": "/checkout",
+  "/page": "/",
+  "/contact/page": "/contact",
+  "/v2/page": "/v2",
+  "/blog/[slug]/page": "/blog/[slug]"
+}
