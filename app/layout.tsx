@@ -140,7 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-inter bg-darkspace min-h-screen text-white selection:bg-neongreen selection:text-darkspace">
         <ModalProvider>
           {/* Global Background Gradient Blobs */}
-          <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
             {/* Top-center: large purple/pink — behind hero headline */}
             <div style={{ position: 'absolute', top: '-15%', left: '50%', transform: 'translateX(-50%)', width: '900px', height: '900px', background: 'radial-gradient(circle, rgba(140,40,220,0.38) 0%, rgba(180,30,140,0.18) 40%, transparent 68%)', filter: 'blur(70px)' }} />
             {/* Top-right: blue */}
@@ -160,7 +160,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           <FloatingNav />
-          
+
           <div className="relative z-10 w-full h-full flex flex-col pt-20">
             {children}
           </div>

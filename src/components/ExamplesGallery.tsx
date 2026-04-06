@@ -33,8 +33,6 @@ export function ExamplesGallery() {
             <motion.div
               key={item.id}
               initial={{ opacity: 1, scale: 1 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ scale: 0.98 }}
               className={`rounded-2xl overflow-hidden relative group cursor-pointer ${item.span}`}
@@ -42,7 +40,7 @@ export function ExamplesGallery() {
               {/* Placeholder for actual AI generated assets, using vibrant gradients */}
               <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-80 mix-blend-overlay`} />
               <div className="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-colors duration-500" />
-              
+
               <div className="absolute inset-0 flex items-center justify-center p-8">
                 <span className="text-white/30 font-bold text-2xl tracking-widest font-outfit uppercase mix-blend-overlay">
                   {item.type === 'video' ? 'AI Video' : 'AI Image'}

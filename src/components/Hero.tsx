@@ -35,7 +35,7 @@ export function Hero({ onJoinClick, showVideo }: HeroProps) {
               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe
                   src="https://player.mediadelivery.net/embed/631325/71395d57-c96a-40fe-b62a-c2def1c653a6?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
-                  loading="lazy"
+                  loading="eager"
                   style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
                   allowFullScreen={true}
