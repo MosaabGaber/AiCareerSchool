@@ -141,7 +141,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                           <CreditCard size={26} style={{ color: '#818cf8' }} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-white font-bold text-lg font-outfit">ادفع بالفيزا أو الماستركارد</p>
+                          <p className="text-white font-bold text-lg font-outfit">ادفع بالفيزا أو الماستركارد (خارج مصر)</p>
                           <p className="text-gray-400 text-sm mt-0.5">Visa / Mastercard / Debit Card</p>
                         </div>
                         <ArrowRight size={18} className="text-gray-500 group-hover:text-indigo-400 transition-colors flex-shrink-0" style={{ transform: 'scaleX(-1)' }} />
@@ -266,7 +266,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                         اضغط على الرابط وهيودّيك على تطبيق Instapay تدفع على طول
                       </p>
                       <a
-                        href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
+                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 950})}
