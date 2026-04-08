@@ -5,7 +5,7 @@ declare function fbq(...args: any[]): void;
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, CreditCard } from 'lucide-react';
 
 type Step = 'choose' | 'instapay' | 'vodafone';
 
@@ -113,6 +113,40 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                     </div>
 
                     <div className="flex flex-col gap-4">
+                      {/* Visa / Mastercard option (LemonSqueezy) */}
+                      <a
+                        href="https://aicareerschool.lemonsqueezy.com/checkout/buy/b2ae09ba-a9a8-4649-bbcf-fde6c76092da?embed=1"
+                        className="lemonsqueezy-button group w-full flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right no-underline"
+                        style={{
+                          background: 'rgba(255,255,255,0.04)',
+                          borderColor: 'rgba(99,102,241,0.25)',
+                          textDecoration: 'none',
+                        }}
+                        onMouseEnter={e => {
+                          (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(99,102,241,0.08)';
+                          (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(99,102,241,0.55)';
+                          (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 20px rgba(99,102,241,0.15)';
+                        }}
+                        onMouseLeave={e => {
+                          (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.04)';
+                          (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(99,102,241,0.25)';
+                          (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                        }}
+                      >
+                        {/* Credit card icon */}
+                        <div
+                          className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+                          style={{ background: 'rgba(99,102,241,0.12)', border: '1.5px solid rgba(99,102,241,0.35)' }}
+                        >
+                          <CreditCard size={26} style={{ color: '#818cf8' }} />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white font-bold text-lg font-outfit">ادفع بالفيزا أو الماستركارد</p>
+                          <p className="text-gray-400 text-sm mt-0.5">Visa / Mastercard / Debit Card</p>
+                        </div>
+                        <ArrowRight size={18} className="text-gray-500 group-hover:text-indigo-400 transition-colors flex-shrink-0" style={{ transform: 'scaleX(-1)' }} />
+                      </a>
+
                       {/* Instapay option */}
                       <button
                         onClick={() => setStep('instapay')}

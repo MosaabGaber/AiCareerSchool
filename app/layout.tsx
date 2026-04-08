@@ -136,6 +136,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Script
+          id="lemonsqueezy"
+          src="https://assets.lemonsqueezy.com/lemon.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="font-inter bg-darkspace min-h-screen text-white selection:bg-neongreen selection:text-darkspace">
         <ModalProvider>
