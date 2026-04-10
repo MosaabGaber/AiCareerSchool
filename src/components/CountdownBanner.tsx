@@ -52,9 +52,9 @@ export function CountdownBanner() {
   if (time.expired) {
     return (
       <div
-        className="w-full py-2 text-center fixed top-0 z-[90]"
+        className="w-full py-1 text-center fixed top-0 z-[90]"
         style={{
-          background: 'linear-gradient(90deg, hsla(190, 100%, 50%, 0.9) 0%, hsla(200, 80%, 45%, 0.9) 30%, hsla(280, 60%, 50%, 0.9) 70%, hsla(320, 80%, 55%, 0.9) 100%)',
+          background: 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
           borderBottom: '1px solid transparent',
         }}
       >
@@ -67,9 +67,9 @@ export function CountdownBanner() {
 
   return (
     <div
-      className="w-full py-2 fixed top-0 z-[90] overflow-hidden"
+      className="w-full py-1 fixed top-0 z-[90] overflow-hidden"
       style={{
-        background: 'linear-gradient(90deg, hsla(190, 100%, 50%, 0.9) 0%, hsla(200, 80%, 45%, 0.9) 30%, hsla(280, 60%, 50%, 0.9) 70%, hsla(320, 80%, 55%, 0.9) 100%)',
+        background: 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
         borderBottom: '1px solid transparent',
       }}
     >
@@ -103,13 +103,13 @@ export function CountdownBanner() {
         <div className="overflow-hidden flex-1 min-w-0">
           <div
             className="whitespace-nowrap inline-block"
-            style={{ animation: 'marquee 12s linear infinite' }}
+            style={{ animation: 'marquee 6s linear infinite' }}
             dir="rtl"
           >
-            <span className="text-white font-outfit font-bold text-xs mx-4">
+            <span className="text-white font-outfit font-bold text-sm mx-4">
               ⏳ العرض لأول 200 شخص فقط
             </span>
-            <span className="text-white font-outfit font-bold text-xs mx-4">
+            <span className="text-white font-outfit font-bold text-sm mx-4">
               ⏳ العرض لأول 200 شخص فقط
             </span>
           </div>
