@@ -54,8 +54,8 @@ export function CountdownBanner() {
       <div
         className="w-full py-2 text-center fixed top-0 z-[90]"
         style={{
-          background: 'rgba(180, 230, 0, 0.85)',
-          borderBottom: '1px solid rgba(180, 230, 0, 0.95)',
+          background: 'hsla(71, 100%, 50%, 0.75)',
+          borderBottom: '1px solid hsla(71, 100%, 50%, 0.93)',
         }}
       >
         <span className="text-white font-outfit font-bold text-sm">
@@ -69,8 +69,8 @@ export function CountdownBanner() {
     <div
       className="w-full py-2 fixed top-0 z-[90] overflow-hidden"
       style={{
-        background: 'rgba(200, 255, 0, 0.25)',
-        borderBottom: '1px solid rgba(200, 255, 0, 0.4)',
+        background: 'hsla(71, 100%, 50%, 0.75)',
+        borderBottom: '1px solid hsla(71, 100%, 50%, 0.93)',
       }}
     >
       {/* Desktop */}
