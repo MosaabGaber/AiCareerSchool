@@ -46,7 +46,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
       {isOpen && (
         <div
           key="v2-payment-modal"
-          className="fixed inset-0 z-[9998] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9998] flex items-center justify-center p-3 pt-16 sm:p-4 sm:pt-4"
         >
           {/* Backdrop */}
           <motion.div
@@ -67,7 +67,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.92, opacity: 0, y: 24 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="relative z-10 w-full max-w-md rounded-2xl overflow-hidden"
+            className="relative z-10 w-full max-w-md rounded-2xl overflow-hidden max-h-[85vh] flex flex-col"
             style={{
               background: 'linear-gradient(145deg, rgba(18,22,45,0.98) 0%, rgba(12,16,32,0.99) 100%)',
               border: '1px solid rgba(1,240,142,0.18)',
@@ -84,7 +84,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
             </button>
 
             {/* Content container */}
-            <div className="p-7 pt-6" dir="rtl">
+            <div className="p-4 pt-3 sm:p-7 sm:pt-6 overflow-y-auto" dir="rtl">
               {/* === STEP 1: Choose === */}
               <AnimatePresence mode="wait">
                 {step === 'choose' && (
@@ -95,11 +95,11 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.22 }}
                   >
-                    <div className="text-center mb-7">
+                    <div className="text-center mb-4 sm:mb-7">
                       <p className="text-sm text-gray-400 mb-1 tracking-wide uppercase font-medium">
                         اختار طريقة الدفع
                       </p>
-                      <h2 className="text-2xl font-outfit font-bold text-white">
+                      <h2 className="text-xl sm:text-2xl font-outfit font-bold text-white">
                         إدفع{' '}
                         <span
                           className="text-transparent bg-clip-text"
@@ -112,11 +112,11 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       <p className="text-gray-500 line-through text-sm mt-1">بدلاً من LE 2,500</p>
                     </div>
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2 sm:gap-4">
                       {/* Visa / Mastercard option (LemonSqueezy) */}
                       <a
                         href="https://aicareerschool.lemonsqueezy.com/checkout/buy/b2ae09ba-a9a8-4649-bbcf-fde6c76092da?embed=1"
-                        className="lemonsqueezy-button group w-full flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right no-underline"
+                        className="lemonsqueezy-button group w-full flex items-center gap-3 p-3 sm:p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right no-underline"
                         style={{
                           background: 'rgba(255,255,255,0.04)',
                           borderColor: 'rgba(99,102,241,0.25)',
@@ -135,13 +135,14 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       >
                         {/* Credit card icon */}
                         <div
-                          className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+                          className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
                           style={{ background: 'rgba(99,102,241,0.12)', border: '1.5px solid rgba(99,102,241,0.35)' }}
                         >
-                          <CreditCard size={26} style={{ color: '#818cf8' }} />
+                          <CreditCard size={20} className="sm:hidden" style={{ color: '#818cf8' }} />
+                          <CreditCard size={26} className="hidden sm:block" style={{ color: '#818cf8' }} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-white font-bold text-lg font-outfit">ادفع بالفيزا أو الماستركارد (خارج مصر)</p>
+                          <p className="text-white font-bold text-sm sm:text-lg font-outfit">ادفع بالفيزا أو الماستركارد (خارج مصر)</p>
                           <p className="text-gray-400 text-sm mt-0.5">Visa / Mastercard / Debit Card</p>
                         </div>
                         <ArrowRight size={18} className="text-gray-500 group-hover:text-indigo-400 transition-colors flex-shrink-0" style={{ transform: 'scaleX(-1)' }} />
@@ -150,7 +151,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       {/* Instapay option */}
                       <button
                         onClick={() => setStep('instapay')}
-                        className="group w-full flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right"
+                        className="group w-full flex items-center gap-3 p-3 sm:p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right"
                         style={{
                           background: 'rgba(255,255,255,0.04)',
                           borderColor: 'rgba(1,240,142,0.25)',
@@ -168,13 +169,13 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       >
                         {/* InstaPay logo */}
                         <div
-                          className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+                          className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
                           style={{ background: 'rgba(1,240,142,0.1)', border: '1.5px solid rgba(1,240,142,0.3)' }}
                         >
                           <img
                             src="/payment/insta.png"
                             alt="Instapay"
-                            className="w-10 h-10 object-contain"
+                            className="w-7 h-7 sm:w-10 sm:h-10 object-contain"
                             onError={e => {
                               (e.target as HTMLImageElement).style.display = 'none';
                               (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
@@ -183,7 +184,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                           <span className="hidden text-neongreen text-xs font-bold">IP</span>
                         </div>
                         <div className="flex-1">
-                          <p className="text-white font-bold text-lg font-outfit">Instapay</p>
+                          <p className="text-white font-bold text-sm sm:text-lg font-outfit">Instapay</p>
                           <p className="text-gray-400 text-sm mt-0.5">ادفع عن طريق تطبيق Instapay</p>
                         </div>
                         <ArrowRight size={18} className="text-gray-500 group-hover:text-neongreen transition-colors flex-shrink-0" style={{ transform: 'scaleX(-1)' }} />
@@ -192,7 +193,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       {/* Vodafone Cash option */}
                       <button
                         onClick={() => setStep('vodafone')}
-                        className="group w-full flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right"
+                        className="group w-full flex items-center gap-3 p-3 sm:p-5 rounded-xl border transition-all duration-200 cursor-pointer text-right"
                         style={{
                           background: 'rgba(255,255,255,0.04)',
                           borderColor: 'rgba(230,0,0,0.25)',
@@ -210,13 +211,13 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                       >
                         {/* Vodafone Cash logo */}
                         <div
-                          className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+                          className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
                           style={{ background: 'rgba(230,0,0,0.1)', border: '1.5px solid rgba(230,0,0,0.3)' }}
                         >
                           <img
                             src="/payment/voda.png"
                             alt="Vodafone Cash"
-                            className="w-10 h-10 object-contain"
+                            className="w-7 h-7 sm:w-10 sm:h-10 object-contain"
                             onError={e => {
                               (e.target as HTMLImageElement).style.display = 'none';
                               (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
@@ -225,7 +226,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                           <span className="hidden text-red-500 text-xs font-bold">VC</span>
                         </div>
                         <div className="flex-1">
-                          <p className="text-white font-bold text-lg font-outfit">فودافون كاش</p>
+                          <p className="text-white font-bold text-sm sm:text-lg font-outfit">فودافون كاش</p>
                           <p className="text-gray-400 text-sm mt-0.5">ادفع عن طريق فودافون كاش</p>
                         </div>
                         <ArrowRight size={18} className="text-gray-500 group-hover:text-red-400 transition-colors flex-shrink-0" style={{ transform: 'scaleX(-1)' }} />
@@ -242,7 +243,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.22 }}
-                    className="flex flex-col gap-5"
+                    className="flex flex-col gap-3 sm:gap-5"
                   >
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-2 mb-2">
@@ -253,7 +254,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
 
                     {/* Step 1 card */}
                     <div
-                      className="rounded-xl p-5 text-center flex flex-col items-center gap-3"
+                      className="rounded-xl p-3.5 sm:p-5 text-center flex flex-col items-center gap-2 sm:gap-3"
                       style={{ background: 'rgba(1,240,142,0.06)', border: '1px solid rgba(1,240,142,0.2)' }}
                     >
                       <div
@@ -291,7 +292,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
 
                     {/* Step 2 card */}
                     <div
-                      className="rounded-xl p-5 text-center flex flex-col items-center gap-3"
+                      className="rounded-xl p-3.5 sm:p-5 text-center flex flex-col items-center gap-2 sm:gap-3"
                       style={{ background: 'rgba(37,211,102,0.05)', border: '1px solid rgba(37,211,102,0.2)' }}
                     >
                       <div
@@ -340,7 +341,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.22 }}
-                    className="flex flex-col gap-5"
+                    className="flex flex-col gap-3 sm:gap-5"
                   >
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-2 mb-2">
@@ -351,7 +352,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
 
                     {/* Step 1 card */}
                     <div
-                      className="rounded-xl p-5 text-center flex flex-col items-center gap-3"
+                      className="rounded-xl p-3.5 sm:p-5 text-center flex flex-col items-center gap-2 sm:gap-3"
                       style={{ background: 'rgba(230,0,0,0.06)', border: '1px solid rgba(230,0,0,0.2)' }}
                     >
                       <div
@@ -383,7 +384,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
 
                     {/* Step 2 card */}
                     <div
-                      className="rounded-xl p-5 text-center flex flex-col items-center gap-3"
+                      className="rounded-xl p-3.5 sm:p-5 text-center flex flex-col items-center gap-2 sm:gap-3"
                       style={{ background: 'rgba(37,211,102,0.05)', border: '1px solid rgba(37,211,102,0.2)' }}
                     >
                       <div
