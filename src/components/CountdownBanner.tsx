@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 const TARGET_DATE = new Date('2026-04-13T23:59:59+02:00').getTime();
@@ -23,6 +25,20 @@ function pad(n: number) {
   return n.toString().padStart(2, '0');
 }
 
+function TimeBox({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="flex flex-col items-center">
+      <div
+        className="rounded-md font-bold text-white text-sm md:text-base px-2 py-0.5 min-w-[32px] md:min-w-[36px] text-center"
+        style={{ background: 'rgba(1, 240, 142, 0.2)', border: '1px solid rgba(1, 240, 142, 0.3)' }}
+      >
+        {value}
+      </div>
+      <span className="text-[9px] md:text-[10px] text-white/50 mt-0.5">{label}</span>
+    </div>
+  );
+}
+
 export function CountdownBanner() {
   const [time, setTime] = useState(getTimeLeft());
 
@@ -36,11 +52,13 @@ export function CountdownBanner() {
   if (time.expired) {
     return (
       <div
-        className="w-full py-3 text-center border-b border-white/10 sticky top-0 z-[60]"
-        style={{ background: 'rgba(20, 25, 45, 0.95)', backdropFilter: 'blur(12px)' }}
-        dir="rtl"
+        className="w-full py-2 text-center sticky top-0 z-[60]"
+        style={{
+          background: 'linear-gradient(90deg, rgba(1, 240, 142, 0.15) 0%, rgba(15, 240, 252, 0.15) 50%, rgba(1, 240, 142, 0.15) 100%)',
+          borderBottom: '1px solid rgba(1, 240, 142, 0.2)',
+        }}
       >
-        <span className="text-white font-outfit font-bold text-sm md:text-base">
+        <span className="text-white font-outfit font-bold text-sm">
           انتهى العرض
         </span>
       </div>
@@ -49,16 +67,54 @@ export function CountdownBanner() {
 
   return (
     <div
-      className="w-full py-3 text-center border-b border-white/10 sticky top-0 z-[60]"
-      style={{ background: 'rgba(20, 25, 45, 0.95)', backdropFilter: 'blur(12px)' }}
-      dir="rtl"
+      className="w-full py-2 sticky top-0 z-[60] overflow-hidden"
+      style={{
+        background: 'linear-gradient(90deg, rgba(1, 240, 142, 0.1) 0%, rgba(15, 240, 252, 0.1) 50%, rgba(1, 240, 142, 0.1) 100%)',
+        borderBottom: '1px solid rgba(1, 240, 142, 0.15)',
+      }}
     >
-      <span className="text-white font-outfit font-medium text-sm md:text-base">
-        العرض لأول 200 شخص فقط وينتهي خلال{' '}
-      </span>
-      <span className="text-neongreen font-outfit font-bold text-sm md:text-base">
-        {pad(time.days)} يوم : {pad(time.hours)} ساعة : {pad(time.minutes)} دقيقة : {pad(time.seconds)} ثانية
-      </span>
+      {/* Desktop */}
+      <div className="hidden md:flex items-center justify-center gap-4" dir="rtl">
+        <span className="text-white/90 font-outfit font-medium text-sm">
+          ⏳ العرض لأول 200 شخص فقط وينتهي خلال
+        </span>
+        <div className="flex items-center gap-1.5" dir="ltr">
+          <TimeBox value={pad(time.days)} label="Days" />
+          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <TimeBox value={pad(time.hours)} label="Hours" />
+          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <TimeBox value={pad(time.minutes)} label="Min" />
+          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <TimeBox value={pad(time.seconds)} label="Sec" />
+        </div>
+      </div>
+
+      {/* Mobile - scrolling text with timer */}
+      <div className="md:hidden flex items-center justify-center gap-3 px-2">
+        <div className="flex-shrink-0 flex items-center gap-1" dir="ltr">
+          <TimeBox value={pad(time.days)} label="D" />
+          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <TimeBox value={pad(time.hours)} label="H" />
+          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <TimeBox value={pad(time.minutes)} label="M" />
+          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <TimeBox value={pad(time.seconds)} label="S" />
+        </div>
+        <div className="overflow-hidden flex-1 min-w-0">
+          <div
+            className="whitespace-nowrap inline-block"
+            style={{ animation: 'marquee 12s linear infinite' }}
+            dir="rtl"
+          >
+            <span className="text-white/90 font-outfit font-medium text-xs mx-4">
+              ⏳ العرض لأول 200 شخص فقط
+            </span>
+            <span className="text-white/90 font-outfit font-medium text-xs mx-4">
+              ⏳ العرض لأول 200 شخص فقط
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
