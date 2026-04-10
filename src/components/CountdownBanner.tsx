@@ -30,7 +30,7 @@ function TimeBox({ value, label }: { value: string; label: string }) {
     <div className="flex flex-col items-center">
       <div
         className="rounded-md font-bold text-white text-sm md:text-base px-2 py-0.5 min-w-[32px] md:min-w-[36px] text-center"
-        style={{ background: 'rgba(1, 240, 142, 0.2)', border: '1px solid rgba(1, 240, 142, 0.3)' }}
+        style={{ background: 'rgba(1, 240, 142, 0.4)', border: '1px solid rgba(1, 240, 142, 0.6)' }}
       >
         {value}
       </div>
