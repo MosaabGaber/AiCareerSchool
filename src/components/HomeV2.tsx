@@ -36,7 +36,7 @@ export function HomeV2({
   return (
     <>
       <CountdownBanner />
-      <main className="mt-10">
+      <main className="mt-6">
         <Hero onJoinClick={() => setIsPaymentOpen(true)} showVideo={true} />
         <LearnToCreate />
 
