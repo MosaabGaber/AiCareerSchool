@@ -9,6 +9,7 @@ import { ReviewsCarousel } from './ReviewsCarousel';
 import { FAQ } from './FAQ';
 import { ShieldCheck } from 'lucide-react';
 import { V2PaymentModal } from './V2PaymentModal';
+import { CountdownBanner } from './CountdownBanner';
 
 interface HomeV2Props {
   setIsPromptsModalOpen: (val: boolean) => void;
@@ -34,6 +35,7 @@ export function HomeV2({
 
   return (
     <>
+      <CountdownBanner />
       <main>
         <Hero onJoinClick={() => setIsPaymentOpen(true)} showVideo={true} />
         <LearnToCreate />
