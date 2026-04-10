@@ -75,7 +75,7 @@ export function CountdownBanner() {
     >
       {/* Desktop */}
       <div className="hidden md:flex items-center justify-center gap-4" dir="rtl">
-        <span className="text-white/90 font-outfit font-medium text-sm">
+        <span className="text-white font-outfit font-bold text-sm">
           ⏳ العرض لأول 200 شخص فقط وينتهي خلال
         </span>
         <div className="flex items-center gap-1.5" dir="ltr">
@@ -106,10 +106,10 @@ export function CountdownBanner() {
             style={{ animation: 'marquee 12s linear infinite' }}
             dir="rtl"
           >
-            <span className="text-white/90 font-outfit font-medium text-xs mx-4">
+            <span className="text-white font-outfit font-bold text-xs mx-4">
               ⏳ العرض لأول 200 شخص فقط
             </span>
-            <span className="text-white/90 font-outfit font-medium text-xs mx-4">
+            <span className="text-white font-outfit font-bold text-xs mx-4">
               ⏳ العرض لأول 200 شخص فقط
             </span>
           </div>
