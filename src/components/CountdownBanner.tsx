@@ -69,8 +69,8 @@ export function CountdownBanner() {
     <div
       className="w-full py-2 fixed top-0 z-[90] overflow-hidden"
       style={{
-        background: 'hsla(71, 100%, 50%, 0.75)',
-        borderBottom: '1px solid hsla(71, 100%, 50%, 0.93)',
+        background: 'hsla(160, 100%, 47%, 0.85)',
+        borderBottom: '1px solid hsla(160, 100%, 47%, 0.95)',
       }}
     >
       {/* Desktop */}
