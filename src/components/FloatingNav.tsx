@@ -15,9 +15,9 @@ export function FloatingNav() {
       router.push('/checkout');
     }
   };
-  
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-4 px-4">
+    <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-12 px-4">
       <nav
         className="w-full max-w-4xl flex items-center justify-between gap-4 pl-4 pr-3 py-3 rounded-full border border-white/10"
         style={{
@@ -34,7 +34,7 @@ export function FloatingNav() {
           </div>
           <span className="hidden sm:block font-outfit font-bold text-sm text-white/80 tracking-tight whitespace-nowrap">AI Career School</span>
         </Link>
-        
+
         {/* Center: scrolling marquee */}
         <div className="flex-1 overflow-hidden mx-3 min-w-0" style={{ direction: 'ltr' }}>
           <motion.div
