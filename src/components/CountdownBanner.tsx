@@ -52,7 +52,7 @@ export function CountdownBanner() {
   if (time.expired) {
     return (
       <div
-        className="w-full py-2 text-center sticky top-0 z-[60]"
+        className="w-full py-2 text-center fixed top-0 z-[80]"
         style={{
           background: 'linear-gradient(90deg, rgba(1, 240, 142, 0.15) 0%, rgba(15, 240, 252, 0.15) 50%, rgba(1, 240, 142, 0.15) 100%)',
           borderBottom: '1px solid rgba(1, 240, 142, 0.2)',
@@ -67,7 +67,7 @@ export function CountdownBanner() {
 
   return (
     <div
-      className="w-full py-2 sticky top-0 z-[60] overflow-hidden"
+      className="w-full py-2 fixed top-0 z-[80] overflow-hidden"
       style={{
         background: 'linear-gradient(90deg, rgba(1, 240, 142, 0.1) 0%, rgba(15, 240, 252, 0.1) 50%, rgba(1, 240, 142, 0.1) 100%)',
         borderBottom: '1px solid rgba(1, 240, 142, 0.15)',
