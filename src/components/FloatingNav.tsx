@@ -17,7 +17,7 @@ export function FloatingNav() {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-12 px-4">
+    <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-14 px-4">
       <nav
         className="w-full max-w-4xl flex items-center justify-between gap-4 pl-4 pr-3 py-3 rounded-full border border-white/10"
         style={{
