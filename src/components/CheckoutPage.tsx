@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronDown, CreditCard, ArrowRightLeft } from 'lucide-react';
+import { ArrowLeft, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -18,24 +18,23 @@ export function CheckoutPage() {
   const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay' | 'vodafone'>('card');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
 
-    if (paymentMethod === 'instapay') return;
+    if (paymentMethod === 'instapay' || paymentMethod === 'vodafone') return;
 
     setIsSubmitting(true);
     setErrorMsg('');
     try {
       const { error } = await supabase
         .from('Enrollments')
-        .insert([{ name: fullName, email, address }]);
+        .insert([{ name: fullName, email }]);
 
       if (error) throw error;
 
@@ -47,7 +46,6 @@ export function CheckoutPage() {
         body: JSON.stringify({
           name: fullName,
           email,
-          address,
         }),
       });
 
@@ -136,15 +134,7 @@ export function CheckoutPage() {
                   required
                 />
               </div>
-              <div>
-                <input
-                  type="text"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  placeholder="Your Address / عنوانك (Optional)"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
-                />
-              </div>
+
               <div>
                 <input
                   type="email"
@@ -192,7 +182,7 @@ export function CheckoutPage() {
                 </div>
 
                 {/* Tabs */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('card')}
@@ -201,11 +191,9 @@ export function CheckoutPage() {
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                   >
-                    <div className="flex items-center gap-2 text-black">
-                      <CreditCard size={24} />
-                      <svg className="w-5 h-5" viewBox="0 0 384 512" fill="currentColor">
-                        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
-                      </svg>
+                    <div className="flex items-center gap-2">
+                      <img src="/payment/visa.png" alt="Visa" className="h-8 w-auto" />
+                      <img src="/payment/master.png" alt="Mastercard" className="h-8 w-auto" />
                     </div>
                     <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Card or Apple Pay</span>
                   </button>
@@ -218,10 +206,24 @@ export function CheckoutPage() {
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                   >
-                    <div className="flex items-center text-black">
-                      <ArrowRightLeft size={24} />
+                    <div className="flex items-center">
+                      <img src="/payment/insta.png" alt="InstaPay" className="h-8 w-auto" />
                     </div>
                     <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Instapay</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('vodafone')}
+                    className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${paymentMethod === 'vodafone'
+                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      }`}
+                  >
+                    <div className="flex items-center">
+                      <img src="/payment/voda.png" alt="Vodafone Cash" className="h-8 w-auto" />
+                    </div>
+                    <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Vodafone Cash</span>
                   </button>
                 </div>
 
@@ -257,6 +259,30 @@ export function CheckoutPage() {
                       <p className="text-black font-medium mb-4 text-lg">
                         Send a screenshot and email to this number:<br />
                         <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
+                      </p>
+                      <a
+                        href="https://wa.link/hc7cmh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
+                      >
+                        Send on WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod === 'vodafone' && (
+                  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <div className="bg-white p-6 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
+                      <p className="text-black font-medium mb-3 text-lg">Send <span className="text-[#1a9a46] font-bold">LE 950</span> via Vodafone Cash to:</p>
+                      <p className="text-[#1a9a46] font-bold text-2xl mb-3">+201065716446</p>
+                      <p className="text-gray-500 text-sm">Save the transaction screenshot to confirm the order</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
+                      <p className="text-black font-medium mb-4 text-lg">
+                        Send the screenshot and your email on WhatsApp:
                       </p>
                       <a
                         href="https://wa.link/hc7cmh"
