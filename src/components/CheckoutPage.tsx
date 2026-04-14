@@ -286,10 +286,10 @@ export function CheckoutPage() {
                     {paymentMethod === 'vodafone' && (
                       <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">+201008176408</span>
+                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
                         </p>
                         <p className="text-gray-600 text-sm mb-4 text-left">
-                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">+201008176408</span>
+                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                         </p>
 
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
