@@ -1,8 +1,129 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-export function ThankYouPage() {
+function ThankYouContent() {
+  const searchParams = useSearchParams();
+  const isSuccess = searchParams.get('success') === 'true';
+
+  if (!isSuccess) {
+    /* ── Payment failed / no success param ── */
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center px-4 py-16"
+        dir="rtl"
+      >
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0, y: 30 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+          className="relative w-full max-w-lg text-center rounded-2xl overflow-hidden p-8 sm:p-12"
+          style={{
+            background:
+              'linear-gradient(145deg, rgba(18,22,45,0.98) 0%, rgba(12,16,32,0.99) 100%)',
+            border: '1px solid rgba(239,68,68,0.25)',
+            boxShadow:
+              '0 0 80px rgba(239,68,68,0.08), 0 25px 60px rgba(0,0,0,0.5)',
+          }}
+        >
+          {/* Decorative glow */}
+          <div
+            className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+            }}
+          />
+
+          {/* Error icon */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.2 }}
+            className="relative mx-auto mb-6 w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center"
+            style={{
+              background: 'rgba(239,68,68,0.12)',
+              border: '2px solid rgba(239,68,68,0.35)',
+            }}
+          >
+            <svg
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ef4444"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="relative text-2xl sm:text-3xl font-outfit font-bold mb-4 text-red-400"
+          >
+            حدث خطأ في الدفع
+          </motion.h1>
+
+          {/* Message */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="relative text-gray-400 text-base sm:text-lg leading-relaxed mb-8"
+          >
+            للأسف لم تتم عملية الدفع بنجاح. ممكن تحاول تاني أو تتواصل معانا لو
+            محتاج مساعدة.
+          </motion.p>
+
+          {/* Retry CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <Link
+              href="/checkout"
+              className="relative inline-flex items-center justify-center gap-2 font-bold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-200 no-underline hover:scale-105 active:scale-95"
+              style={{
+                background: 'linear-gradient(135deg, #ef4444, #f97316)',
+                color: '#fff',
+                boxShadow: '0 0 30px rgba(239,68,68,0.3)',
+                textDecoration: 'none',
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg>
+              حاول مرة أخرى
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    );
+  }
+
+  /* ── Payment succeeded ── */
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4 py-16"
@@ -135,5 +256,19 @@ export function ThankYouPage() {
         </div>
       </motion.div>
     </div>
+  );
+}
+
+export function ThankYouPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+        </div>
+      }
+    >
+      <ThankYouContent />
+    </Suspense>
   );
 }

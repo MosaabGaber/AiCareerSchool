@@ -35,7 +35,7 @@ export default async function handler(req, res) {
           country: 'EG',
           state: 'Cairo',
         },
-        redirection_url: 'https://www.aicareerschool.com/checkout',
+        redirection_url: 'https://www.aicareerschool.com/thank-you',
         notification_url: 'https://www.aicareerschool.com/api/paymob-webhook',
       }),
     });
