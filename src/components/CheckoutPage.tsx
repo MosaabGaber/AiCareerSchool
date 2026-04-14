@@ -191,7 +191,7 @@ export function CheckoutPage() {
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'card'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-2">
                         <img src="/payment/visa.png" alt="Visa" className="h-8 w-auto" />
@@ -221,7 +221,7 @@ export function CheckoutPage() {
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center">
                         <img src="/payment/insta.png" alt="InstaPay" className="h-8 w-auto" />
@@ -275,7 +275,7 @@ export function CheckoutPage() {
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center">
                         <img src="/payment/voda.png" alt="Vodafone Cash" className="h-8 w-auto" />
@@ -286,10 +286,10 @@ export function CheckoutPage() {
                     {paymentMethod === 'vodafone' && (
                       <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">+201065716446</span>
+                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">+201008176408</span>
                         </p>
                         <p className="text-gray-600 text-sm mb-4 text-left">
-                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">+201065716446</span>
+                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">+201008176408</span>
                         </p>
 
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
