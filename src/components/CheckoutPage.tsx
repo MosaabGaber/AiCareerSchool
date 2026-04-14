@@ -230,30 +230,35 @@ export function CheckoutPage() {
                     </button>
 
                     {paymentMethod === 'instapay' && (
-                      <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                        <div className="bg-white p-4 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
-                          <p className="text-black font-medium mb-3 text-sm">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber2</span></p>
+                      <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                          ادفع 950 جنيه عن طريق InstaPay على <span className="text-[#1a9a46]">@mosaabgaber2</span>
+                        </p>
+                        <p className="text-gray-600 text-sm mb-4 text-left">
+                          Pay LE 950 via InstaPay to <span className="text-[#1a9a46] font-semibold">@mosaabgaber2</span>
+                        </p>
+
+                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                          احفظ صورة التحويل وابعتها على الواتساب
+                        </p>
+                        <p className="text-gray-600 text-sm mb-5 text-left">
+                          Save the transaction screenshot and send it on WhatsApp
+                        </p>
+
+                        <div className="flex flex-col gap-3">
                           <a
                             href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-4 py-2 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                            className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                           >
                             Open Instapay Link
                           </a>
-                        </div>
-
-                        <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
-                          <p className="text-gray-500 text-xs mb-2">Save the transaction screen to confirm the order</p>
-                          <p className="text-black font-medium mb-3 text-sm">
-                            Send screenshot & email to:<br />
-                            <span className="text-[#1a9a46] mt-1 block">+201065716446</span>
-                          </p>
                           <a
                             href="https://wa.link/hc7cmh"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                            className="w-full text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
                           >
                             Send on WhatsApp
                           </a>
@@ -279,26 +284,29 @@ export function CheckoutPage() {
                     </button>
 
                     {paymentMethod === 'vodafone' && (
-                      <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                        <div className="bg-white p-4 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
-                          <p className="text-black font-medium mb-2 text-sm">Send <span className="text-[#1a9a46] font-bold">LE 950</span> via Vodafone Cash to:</p>
-                          <p className="text-[#1a9a46] font-bold text-xl mb-2">+201065716446</p>
-                          <p className="text-gray-500 text-xs">Save the transaction screenshot to confirm the order</p>
-                        </div>
+                      <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">+201065716446</span>
+                        </p>
+                        <p className="text-gray-600 text-sm mb-4 text-left">
+                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">+201065716446</span>
+                        </p>
 
-                        <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
-                          <p className="text-black font-medium mb-3 text-sm">
-                            Send the screenshot and your email on WhatsApp:
-                          </p>
-                          <a
-                            href="https://wa.link/hc7cmh"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
-                          >
-                            Send on WhatsApp
-                          </a>
-                        </div>
+                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                          احفظ صورة التحويل وابعتها على الواتساب
+                        </p>
+                        <p className="text-gray-600 text-sm mb-5 text-left">
+                          Save the transaction screenshot and send it on WhatsApp
+                        </p>
+
+                        <a
+                          href="https://wa.link/hc7cmh"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
+                        >
+                          Send on WhatsApp
+                        </a>
                       </div>
                     )}
                   </div>
