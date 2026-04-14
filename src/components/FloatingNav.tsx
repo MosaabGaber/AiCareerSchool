@@ -10,7 +10,7 @@ export function FloatingNav() {
 
   const handleJoinNow = () => {
     if (pathname === '/v2') {
-      window.dispatchEvent(new CustomEvent('open-v2-payment'));
+      window.location.href = '/checkout';
     } else {
       router.push('/checkout');
     }

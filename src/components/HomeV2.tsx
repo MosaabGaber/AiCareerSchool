@@ -37,7 +37,7 @@ export function HomeV2({
     <>
       <CountdownBanner />
       <main className="mt-6">
-        <Hero onJoinClick={() => setIsPaymentOpen(true)} showVideo={true} />
+        <Hero onJoinClick={() => window.location.href = '/checkout'} showVideo={true} />
         <LearnToCreate />
 
         {/* Pricing Section */}
