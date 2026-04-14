@@ -187,8 +187,8 @@ export function CheckoutPage() {
                     type="button"
                     onClick={() => setPaymentMethod('card')}
                     className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'card'
-                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                   >
                     <div className="flex items-center gap-2">
@@ -202,8 +202,8 @@ export function CheckoutPage() {
                     type="button"
                     onClick={() => setPaymentMethod('instapay')}
                     className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
-                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                   >
                     <div className="flex items-center">
@@ -216,8 +216,8 @@ export function CheckoutPage() {
                     type="button"
                     onClick={() => setPaymentMethod('vodafone')}
                     className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
-                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                   >
                     <div className="flex items-center">
@@ -243,9 +243,9 @@ export function CheckoutPage() {
                 {paymentMethod === 'instapay' && (
                   <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
                     <div className="bg-white p-6 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
-                      <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber</span></p>
+                      <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber2</span></p>
                       <a
-                        href="https://ipn.eg/S/mosaabgaber/instapay/5MzMB3"
+                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
