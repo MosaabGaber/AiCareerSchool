@@ -181,120 +181,128 @@ export function CheckoutPage() {
                   <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
                 </div>
 
-                {/* Tabs */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod('card')}
-                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'card'
-                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <img src="/payment/visa.png" alt="Visa" className="h-8 w-auto" />
-                      <img src="/payment/master.png" alt="Mastercard" className="h-8 w-auto" />
-                    </div>
-                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Card or Apple Pay</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod('instapay')}
-                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
-                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
-                  >
-                    <div className="flex items-center">
-                      <img src="/payment/insta.png" alt="InstaPay" className="h-8 w-auto" />
-                    </div>
-                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Instapay</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod('vodafone')}
-                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
-                      ? 'border-[#1a9a46] bg-[#f0fdf4]'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
-                      }`}
-                  >
-                    <div className="flex items-center">
-                      <img src="/payment/voda.png" alt="Vodafone Cash" className="h-8 w-auto" />
-                    </div>
-                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Vodafone Cash</span>
-                  </button>
-                </div>
-
-                {/* Dynamic Content */}
-                {paymentMethod === 'card' && (
-                  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                {/* Payment Methods - each with instructions below its own button */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 items-start">
+                  {/* Card Column */}
+                  <div className="flex flex-col gap-4">
                     <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 text-lg"
+                      type="button"
+                      onClick={() => setPaymentMethod('card')}
+                      className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'card'
+                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      }`}
                     >
-                      {isSubmitting ? 'Processing...' : 'Pay Now - EGP 950'}
+                      <div className="flex items-center gap-2">
+                        <img src="/payment/visa.png" alt="Visa" className="h-8 w-auto" />
+                        <img src="/payment/master.png" alt="Mastercard" className="h-8 w-auto" />
+                      </div>
+                      <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Card or Apple Pay</span>
                     </button>
+
+                    {paymentMethod === 'card' && (
+                      <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 text-base"
+                        >
+                          {isSubmitting ? 'Processing...' : 'Pay Now - EGP 950'}
+                        </button>
+                      </div>
+                    )}
                   </div>
-                )}
 
-                {paymentMethod === 'instapay' && (
-                  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
-                    <div className="bg-white p-6 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
-                      <p className="text-black font-medium mb-3 text-lg">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber2</span></p>
-                      <a
-                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
-                      >
-                        Open Instapay Link
-                      </a>
-                    </div>
+                  {/* InstaPay Column */}
+                  <div className="flex flex-col gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod('instapay')}
+                      className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
+                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        <img src="/payment/insta.png" alt="InstaPay" className="h-8 w-auto" />
+                      </div>
+                      <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Instapay</span>
+                    </button>
 
-                    <div className="bg-white p-6 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
-                      <p className="text-gray-500 text-sm mb-3">Save the transaction screen to confirm the order</p>
-                      <p className="text-black font-medium mb-4 text-lg">
-                        Send a screenshot and email to this number:<br />
-                        <span className="text-[#1a9a46] mt-2 block">+201065716446</span>
-                      </p>
-                      <a
-                        href="https://wa.link/hc7cmh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
-                      >
-                        Send on WhatsApp
-                      </a>
-                    </div>
+                    {paymentMethod === 'instapay' && (
+                      <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                        <div className="bg-white p-4 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
+                          <p className="text-black font-medium mb-3 text-sm">Instapay Transaction: <span className="text-[#1a9a46]">@mosaabgaber2</span></p>
+                          <a
+                            href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-gray-100 hover:bg-gray-200 text-black px-4 py-2 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                          >
+                            Open Instapay Link
+                          </a>
+                        </div>
+
+                        <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
+                          <p className="text-gray-500 text-xs mb-2">Save the transaction screen to confirm the order</p>
+                          <p className="text-black font-medium mb-3 text-sm">
+                            Send screenshot & email to:<br />
+                            <span className="text-[#1a9a46] mt-1 block">+201065716446</span>
+                          </p>
+                          <a
+                            href="https://wa.link/hc7cmh"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                          >
+                            Send on WhatsApp
+                          </a>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
 
-                {paymentMethod === 'vodafone' && (
-                  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
-                    <div className="bg-white p-6 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
-                      <p className="text-black font-medium mb-3 text-lg">Send <span className="text-[#1a9a46] font-bold">LE 950</span> via Vodafone Cash to:</p>
-                      <p className="text-[#1a9a46] font-bold text-2xl mb-3">+201065716446</p>
-                      <p className="text-gray-500 text-sm">Save the transaction screenshot to confirm the order</p>
-                    </div>
+                  {/* Vodafone Cash Column */}
+                  <div className="flex flex-col gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod('vodafone')}
+                      className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
+                        ? 'border-[#1a9a46] bg-[#f0fdf4]'
+                        : 'border-gray-200 bg-white hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        <img src="/payment/voda.png" alt="Vodafone Cash" className="h-8 w-auto" />
+                      </div>
+                      <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Vodafone Cash</span>
+                    </button>
 
-                    <div className="bg-white p-6 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
-                      <p className="text-black font-medium mb-4 text-lg">
-                        Send the screenshot and your email on WhatsApp:
-                      </p>
-                      <a
-                        href="https://wa.link/hc7cmh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-6 py-3 rounded-lg transition-colors text-sm font-medium"
-                      >
-                        Send on WhatsApp
-                      </a>
-                    </div>
+                    {paymentMethod === 'vodafone' && (
+                      <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                        <div className="bg-white p-4 rounded-xl border-2 border-[#1a9a46]/20 shadow-sm text-center flex flex-col items-center">
+                          <p className="text-black font-medium mb-2 text-sm">Send <span className="text-[#1a9a46] font-bold">LE 950</span> via Vodafone Cash to:</p>
+                          <p className="text-[#1a9a46] font-bold text-xl mb-2">+201065716446</p>
+                          <p className="text-gray-500 text-xs">Save the transaction screenshot to confirm the order</p>
+                        </div>
+
+                        <div className="bg-white p-4 rounded-xl border-2 border-gray-100 shadow-sm text-center flex flex-col items-center">
+                          <p className="text-black font-medium mb-3 text-sm">
+                            Send the screenshot and your email on WhatsApp:
+                          </p>
+                          <a
+                            href="https://wa.link/hc7cmh"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                          >
+                            Send on WhatsApp
+                          </a>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </form>
