@@ -232,10 +232,10 @@ export function CheckoutPage() {
                     {paymentMethod === 'instapay' && (
                       <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          ادفع 950 جنيه عن طريق InstaPay على <span className="text-[#1a9a46]">@mosaabgaber2</span>
+                          ادفع 950 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
                         </p>
                         <p className="text-gray-600 text-sm mb-4 text-left">
-                          Pay LE 950 via InstaPay to <span className="text-[#1a9a46] font-semibold">@mosaabgaber2</span>
+                          Pay LE 950 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
                         </p>
 
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
