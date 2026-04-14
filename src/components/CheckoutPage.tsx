@@ -186,7 +186,7 @@ export function CheckoutPage() {
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('card')}
-                    className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${paymentMethod === 'card'
+                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'card'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
@@ -195,13 +195,13 @@ export function CheckoutPage() {
                       <img src="/payment/visa.png" alt="Visa" className="h-8 w-auto" />
                       <img src="/payment/master.png" alt="Mastercard" className="h-8 w-auto" />
                     </div>
-                    <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Card or Apple Pay</span>
+                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Card or Apple Pay</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('instapay')}
-                    className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${paymentMethod === 'instapay'
+                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
@@ -209,13 +209,13 @@ export function CheckoutPage() {
                     <div className="flex items-center">
                       <img src="/payment/insta.png" alt="InstaPay" className="h-8 w-auto" />
                     </div>
-                    <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Instapay</span>
+                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Instapay</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setPaymentMethod('vodafone')}
-                    className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer ${paymentMethod === 'vodafone'
+                    className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
@@ -223,7 +223,7 @@ export function CheckoutPage() {
                     <div className="flex items-center">
                       <img src="/payment/voda.png" alt="Vodafone Cash" className="h-8 w-auto" />
                     </div>
-                    <span className="font-semibold text-black text-left leading-tight text-sm">Pay with Vodafone Cash</span>
+                    <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Vodafone Cash</span>
                   </button>
                 </div>
 
