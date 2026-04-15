@@ -181,7 +181,7 @@ export function CheckoutPage() {
                   <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
                 </div>
 
-                {/* Payment Methods - each with instructions below its own button */}
+                {/* Payment Methods - buttons in grid, instructions full-width on desktop */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 items-start">
                   {/* Card Column */}
                   <div className="flex flex-col gap-4">
@@ -229,8 +229,9 @@ export function CheckoutPage() {
                       <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Instapay</span>
                     </button>
 
+                    {/* Mobile only: instructions inline under button */}
                     {paymentMethod === 'instapay' && (
-                      <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="sm:hidden bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
                           ادفع 950 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
                         </p>
@@ -283,8 +284,9 @@ export function CheckoutPage() {
                       <span className="font-semibold text-black leading-tight text-sm text-center">Pay with Vodafone Cash</span>
                     </button>
 
+                    {/* Mobile only: instructions inline under button */}
                     {paymentMethod === 'vodafone' && (
-                      <div className="bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="sm:hidden bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
                           ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
                         </p>
@@ -311,6 +313,71 @@ export function CheckoutPage() {
                     )}
                   </div>
                 </div>
+
+                {/* Desktop only: full-width instruction panels below the grid */}
+                {paymentMethod === 'instapay' && (
+                  <div className="hidden sm:block bg-white rounded-xl border-2 border-gray-200 p-6 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300 mb-8">
+                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                      ادفع 950 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
+                    </p>
+                    <p className="text-gray-600 text-sm mb-4 text-left">
+                      Pay LE 950 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
+                    </p>
+
+                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                      احفظ صورة التحويل وابعتها على الواتساب
+                    </p>
+                    <p className="text-gray-600 text-sm mb-5 text-left">
+                      Save the transaction screenshot and send it on WhatsApp
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                      >
+                        Open Instapay Link
+                      </a>
+                      <a
+                        href="https://wa.link/hc7cmh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
+                      >
+                        Send on WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod === 'vodafone' && (
+                  <div className="hidden sm:block bg-white rounded-xl border-2 border-gray-200 p-6 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300 mb-8">
+                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                      ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
+                    </p>
+                    <p className="text-gray-600 text-sm mb-4 text-left">
+                      Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
+                    </p>
+
+                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                      احفظ صورة التحويل وابعتها على الواتساب
+                    </p>
+                    <p className="text-gray-600 text-sm mb-5 text-left">
+                      Save the transaction screenshot and send it on WhatsApp
+                    </p>
+
+                    <a
+                      href="https://wa.link/hc7cmh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
+                    >
+                      Send on WhatsApp
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </form>
