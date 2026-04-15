@@ -1,13 +1,19 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
   const isSuccess = searchParams.get('success') === 'true';
+
+  useEffect(() => {
+    if (isSuccess && typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Purchase', { currency: 'EGP', value: 950 });
+    }
+  }, [isSuccess]);
 
   if (!isSuccess) {
     /* ── Payment failed / no success param ── */
