@@ -44,6 +44,21 @@ export function Hero({ onJoinClick, showVideo }: HeroProps) {
             </div>
           )}
 
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <button
+              onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-transparent border border-white/30 text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition cursor-pointer"
+            >
+              تفاصيل الكورس
+            </button>
+            <button
+              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-transparent border border-white/30 text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition cursor-pointer"
+            >
+              أسئلة شائعة
+            </button>
+          </div>
+
           <p className="text-[0.85rem] md:text-[0.95rem] text-gray-400 mb-8 md:mb-4 max-w-2xl mx-auto font-inter">
             Turn your imagination into stunning visuals. Learn the latest AI tools, prompt engineering, and production workflows to stay ahead of the curve.
           </p>

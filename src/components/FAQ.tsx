@@ -35,7 +35,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="faq" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-outfit font-bold text-white mb-4" dir="rtl">
