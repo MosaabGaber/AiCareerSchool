@@ -22,6 +22,8 @@ export function CheckoutPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay' | 'vodafone'>('card');
+  const [showPaymobIframe, setShowPaymobIframe] = useState(false);
+  const [clientSecret, setClientSecret] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,8 +54,8 @@ export function CheckoutPage() {
       const data = await response.json();
 
       if (data.client_secret) {
-        const PAYMOB_PUBLIC_KEY = 'egy_pk_live_XUoAxwNsU13axDyyPivhFkPAh6EDSwIy';
-        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=${PAYMOB_PUBLIC_KEY}&clientSecret=${data.client_secret}`;
+        setClientSecret(data.client_secret);
+        setShowPaymobIframe(true);
       } else {
         throw new Error(data.error || 'Failed to initialize payment');
       }
@@ -109,7 +111,25 @@ export function CheckoutPage() {
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
 
-          <form onSubmit={handleSubmit}>
+          {showPaymobIframe ? (
+            <div className="flex flex-col items-center w-full">
+              <div className="w-full flex justify-end mb-4">
+                <button
+                  onClick={() => setShowPaymobIframe(false)}
+                  className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded-lg font-bold text-sm transition-colors cursor-pointer"
+                  dir="rtl"
+                >
+                  رجوع
+                </button>
+              </div>
+              <iframe
+                src={`https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_live_XUoAxwNsU13axDyyPivhFkPAh6EDSwIy&clientSecret=${clientSecret}`}
+                className="w-full h-[500px] md:h-[700px] rounded-xl border border-gray-200 shadow-sm"
+              />
+            </div>
+          ) : (
+            <>
+              <form onSubmit={handleSubmit}>
             <div className="space-y-4 mb-8">
               {errorMsg && (
                 <div className="text-center mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -389,6 +409,8 @@ export function CheckoutPage() {
               More payment methods coming soon / طرق دفع إضافية قريباً
             </p>
           </div>
+            </>
+          )}
         </div>
       </motion.div>
 
