@@ -24,6 +24,10 @@ const faqs = [
   {
     question: "هل في شهادة بعد الكورس؟",
     answer: "أيوه، بتاخد شهادة إتمام بعد ما تخلص الكورس تقدر تضيفها على LinkedIn أو البورتفوليو بتاعك."
+  },
+  {
+    question: "إيه الأدوات اللي هنتعلمها في الكورس؟",
+    answer: "سنستخدم مجموعة من الأدوات المجانية وأخرى توفر مزايا مدفوعة منها: Nanobanan, Veo, Kling, Higgsfield, Freepik, Weavy, Seedance, Canva, ElevenLabs, Heygen"
   }
 ];
 
