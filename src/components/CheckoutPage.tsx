@@ -17,7 +17,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export function CheckoutPage() {
   const router = useRouter();
   const [fullName, setFullName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -25,7 +25,7 @@ export function CheckoutPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !phoneNumber) return;
+    if (!fullName || !email) return;
 
     if (paymentMethod === 'instapay' || paymentMethod === 'vodafone') return;
 
@@ -34,7 +34,7 @@ export function CheckoutPage() {
     try {
       const { error } = await supabase
         .from('Enrollments')
-        .insert([{ name: fullName, phone_number: phoneNumber }]);
+        .insert([{ name: fullName, email }]);
 
       if (error) throw error;
 
@@ -137,10 +137,10 @@ export function CheckoutPage() {
 
               <div>
                 <input
-                  type="tel"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder="Your Phone Number / رقم تليفونك"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email Address / بريدك الإلكتروني"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
                 />
