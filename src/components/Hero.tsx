@@ -47,13 +47,13 @@ export function Hero({ onJoinClick, showVideo }: HeroProps) {
           <div className="flex items-center justify-center gap-3 mb-6">
             <button
               onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-transparent border border-white/30 text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition cursor-pointer"
+              className="bg-transparent border border-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:border-blue-400/60 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               تفاصيل الكورس
             </button>
             <button
               onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-transparent border border-white/30 text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition cursor-pointer"
+              className="bg-transparent border border-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:border-blue-400/60 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               أسئلة شائعة
             </button>
