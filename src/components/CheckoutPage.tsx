@@ -96,7 +96,7 @@ export function CheckoutPage() {
           </button>
           <div className="flex items-center gap-3">
             <span className="text-gray-500 line-through text-sm">EGP 2,500</span>
-            <span className="text-black font-bold text-lg">EGP 950</span>
+            <span className="text-black font-bold text-lg">EGP 1,200</span>
           </div>
         </div>
 
@@ -188,7 +188,7 @@ export function CheckoutPage() {
 
                 <div className="border-t border-gray-200 pt-4 flex justify-between items-center mt-auto">
                   <span className="text-black font-bold text-lg">Total:</span>
-                  <span className="text-[#1a9a46] font-bold text-xl">LE 950</span>
+                  <span className="text-[#1a9a46] font-bold text-xl">EGP 1,200</span>
                 </div>
               </div>
 
@@ -196,7 +196,7 @@ export function CheckoutPage() {
               <div className="flex-1 w-full">
                 <div className="text-center md:text-left mb-6">
                   <p className="text-lg md:text-xl text-gray-800">
-                    Step #2: Pay <span className="text-[#1a9a46] font-bold">LE 950</span> instead of <span className="line-through text-gray-500">LE 2,500</span>
+                    Step #2: Pay <span className="text-[#1a9a46] font-bold">EGP 1,200</span> instead of <span className="line-through text-gray-500">LE 2,500</span>
                   </p>
                   <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
                 </div>
@@ -227,7 +227,7 @@ export function CheckoutPage() {
                           disabled={isSubmitting}
                           className="w-full bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 text-base"
                         >
-                          {isSubmitting ? 'Processing...' : 'Pay Now - EGP 950'}
+                          {isSubmitting ? 'Processing...' : 'Pay Now - EGP 1,200'}
                         </button>
                       </div>
                     )}
@@ -253,10 +253,10 @@ export function CheckoutPage() {
                     {paymentMethod === 'instapay' && (
                       <div className="sm:hidden bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          ادفع 950 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
+                          ادفع 1,200 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
                         </p>
                         <p className="text-gray-600 text-sm mb-4 text-left">
-                          Pay LE 950 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
+                          Pay EGP 1,200 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
                         </p>
 
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
@@ -271,7 +271,7 @@ export function CheckoutPage() {
                             href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 950}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)})}
+                            onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)})}
                             className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                           >
                             Open Instapay Link
@@ -293,7 +293,7 @@ export function CheckoutPage() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'AddToCart', {currency: 'EGP', value: 950}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
+                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
@@ -309,10 +309,10 @@ export function CheckoutPage() {
                     {paymentMethod === 'vodafone' && (
                       <div className="sm:hidden bg-white rounded-xl border-2 border-gray-200 p-6 mt-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300">
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
+                          ادفع 1,200 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
                         </p>
                         <p className="text-gray-600 text-sm mb-4 text-left">
-                          Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
+                          Pay EGP 1,200 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                         </p>
 
                         <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
@@ -339,10 +339,10 @@ export function CheckoutPage() {
                 {paymentMethod === 'instapay' && (
                   <div className="hidden sm:block bg-white rounded-xl border-2 border-gray-200 p-6 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300 mb-8">
                     <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                      ادفع 950 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
+                      ادفع 1,200 جنيه عن طريق InstaPay على <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] underline" dir="ltr" style={{ display: 'inline-block' }}>@mosaabgaber2</a>
                     </p>
                     <p className="text-gray-600 text-sm mb-4 text-left">
-                      Pay LE 950 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
+                      Pay EGP 1,200 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
                     </p>
 
                     <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
@@ -357,7 +357,7 @@ export function CheckoutPage() {
                         href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 950}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)})}
+                        onClick={() => fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)})}
                         className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                       >
                         Open Instapay Link
@@ -377,10 +377,10 @@ export function CheckoutPage() {
                 {paymentMethod === 'vodafone' && (
                   <div className="hidden sm:block bg-white rounded-xl border-2 border-gray-200 p-6 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300 mb-8">
                     <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                      ادفع 950 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
+                      ادفع 1,200 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
                     </p>
                     <p className="text-gray-600 text-sm mb-4 text-left">
-                      Pay LE 950 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
+                      Pay EGP 1,200 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                     </p>
 
                     <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">

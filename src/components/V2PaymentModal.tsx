@@ -105,7 +105,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                           className="text-transparent bg-clip-text"
                           style={{ backgroundImage: 'linear-gradient(90deg, #01F08E, #00c6ff)' }}
                         >
-                          LE 950
+                          EGP 1,200
                         </span>{' '}
                         دلوقتي
                       </h2>
@@ -270,7 +270,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                         href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => fbq('track', 'AddToCart', { currency: 'EGP', value: 950 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) })}
+                        onClick={() => fbq('track', 'AddToCart', { currency: 'EGP', value: 1200 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) })}
                         className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                         style={{
                           background: 'linear-gradient(135deg, #01F08E, #00c6ff)',
@@ -400,7 +400,7 @@ export function V2PaymentModal({ isOpen, onClose }: V2PaymentModalProps) {
                         href="https://wa.link/hc7cmh"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => fbq('track', 'AddToCart', { currency: 'EGP', value: 950 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) })}
+                        onClick={() => fbq('track', 'AddToCart', { currency: 'EGP', value: 1200 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) })}
                         className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                         style={{
                           background: '#25D366',
