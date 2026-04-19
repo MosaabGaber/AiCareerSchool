@@ -13,12 +13,12 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: 95000,
+        amount: 120000,
         currency: 'EGP',
         payment_methods: [parseInt(process.env.PAYMOB_INTEGRATION_ID)],
         items: [{
           name: 'AI Career School Course',
-          amount: 95000,
+          amount: 120000,
           description: 'Lifetime access to AI Career School',
           quantity: 1
         }],
