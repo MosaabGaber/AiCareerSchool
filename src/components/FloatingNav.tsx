@@ -9,7 +9,7 @@ export function FloatingNav() {
   const pathname = usePathname();
 
   const handleJoinNow = () => {
-    if (pathname === '/v2') {
+    if (pathname === '/v2' || pathname === '/real-estate') {
       window.location.href = '/checkout';
     } else {
       router.push('/checkout');
@@ -53,13 +53,13 @@ export function FloatingNav() {
               <div key={i} className="flex">
                 <span className="text-white/70 mx-3">Join</span>
                 <span className="text-blue-400 font-bold mx-1">1,200+</span>
-                <span className="text-white/70 mx-1">students</span>
+                <span className="text-white/70 mx-1">{pathname === '/real-estate' ? 'AGENTS' : 'students'}</span>
                 <span className="text-white/30 mx-3">•</span>
-                <span className="text-neongreen mx-3">اهم مهارة في 2026</span>
+                <span className="text-neongreen mx-3">{pathname === '/real-estate' ? 'اهم أداة للسمسار في 2026' : 'اهم مهارة في 2026'}</span>
                 <span className="text-white/30 mx-3">•</span>
                 <span className="text-white/70 mx-3">ENROLLMENT NOW OPEN</span>
                 <span className="text-white/30 mx-3">•</span>
-                <span className="text-blue-400 font-bold mx-1">اكثر من 1,200 طالب</span>
+                <span className="text-blue-400 font-bold mx-1">{pathname === '/real-estate' ? 'اكثر من 1,200 سمسار' : 'اكثر من 1,200 طالب'}</span>
                 <span className="text-white/30 mx-3">•</span>
               </div>
             ))}
