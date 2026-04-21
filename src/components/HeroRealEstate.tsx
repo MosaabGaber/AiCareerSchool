@@ -68,9 +68,10 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
             <button
               onClick={onJoinClick}
               className="bg-transparent border-2 border-neongreen text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-neongreen hover:text-darkspace transition-all duration-300 glow-border group flex items-center gap-2"
+              dir="rtl"
             >
-              Join now
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              اشترك الآن
+              <span className="group-hover:-translate-x-1 transition-transform flex items-center group-hover:rtl:translate-x-0 rtl:rotate-180">→</span>
             </button>
           </motion.div>
         </motion.div>
