@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Clock, Infinity, Award } from 'lucide-react';
 
 const phases = [
   {
@@ -70,9 +70,23 @@ export function CoursePhases() {
           <h2 className="text-4xl md:text-5xl font-outfit font-bold text-white mb-4">
             The <span className="text-neongreen glow-text">Curriculum</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-inter">
+          <p className="text-gray-400 max-w-2xl mx-auto font-inter mb-8">
             A step-by-step roadmap to go from absolute beginner to professional AI visual artist.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
+              <Clock size={16} className="text-neongreen" />
+              <span className="text-white text-sm font-outfit">9 ساعات محتوى</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
+              <Infinity size={16} className="text-neongreen" />
+              <span className="text-white text-sm font-outfit italic">وصول مدى الحياة</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
+              <Award size={16} className="text-neongreen" />
+              <span className="text-white text-sm font-outfit">شهادة إتمام الدورة</span>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-4" dir="rtl">
