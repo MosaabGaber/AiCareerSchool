@@ -74,9 +74,10 @@ export function CoursePhases() {
             A step-by-step roadmap to go from absolute beginner to professional AI visual artist.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10" dir="ltr">
               <Clock size={16} className="text-neongreen" />
-              <span className="text-white text-sm font-outfit">9+ ساعات محتوى</span>
+              <span className="text-white text-sm font-outfit" dir="ltr">9+</span>
+              <span className="text-white text-sm font-outfit" dir="rtl">ساعات محتوى</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
               <Infinity size={16} className="text-neongreen" />
