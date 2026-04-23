@@ -71,7 +71,7 @@ export function FloatingNav() {
           onClick={handleJoinNow}
           className="shrink-0 bg-blue-500 hover:bg-blue-400 text-white font-bold px-6 py-2.5 rounded-full text-sm tracking-widest uppercase transition-all duration-200 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_28px_rgba(59,130,246,0.7)] active:scale-95 font-inter"
         >
-          JOIN NOW
+          {pathname === '/v2' ? 'إشترك الآن' : 'JOIN NOW'}
         </button>
       </nav>
     </div>
