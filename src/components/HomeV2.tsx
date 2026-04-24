@@ -117,8 +117,8 @@ export function HomeV2({
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               {VIDEOS.map((src, idx) => (
-                <div key={idx} className="min-w-[85%] md:min-w-[calc(33.333%-1rem)] shrink-0 snap-center md:snap-start rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-                  <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                <div key={idx} className="min-w-[calc(50%-0.5rem)] md:min-w-[calc(33.333%-1rem)] shrink-0 snap-center md:snap-start rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                  <div style={{ position: 'relative', paddingTop: '177.78%' }}>
                     <iframe
                       src={src}
                       loading="lazy"
