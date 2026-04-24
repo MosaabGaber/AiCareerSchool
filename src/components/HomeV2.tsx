@@ -96,18 +96,18 @@ export function HomeV2({
           <div className="relative group">
             <button 
               onClick={scrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 z-20 w-12 h-12 bg-darkspace/80 hover:bg-darkspace border border-white/20 rounded-full hidden md:flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-20 w-8 h-8 bg-orange-500 hover:bg-orange-400 border border-white/20 rounded-full flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
               aria-label="Previous"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={16} />
             </button>
             
             <button 
               onClick={scrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 z-20 w-12 h-12 bg-darkspace/80 hover:bg-darkspace border border-white/20 rounded-full hidden md:flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-20 w-8 h-8 bg-orange-500 hover:bg-orange-400 border border-white/20 rounded-full flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
               aria-label="Next"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={16} />
             </button>
 
             <div 
