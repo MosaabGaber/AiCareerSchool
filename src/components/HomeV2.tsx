@@ -39,14 +39,18 @@ export function HomeV2({
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -carouselRef.current.offsetWidth, behavior: 'smooth' });
+    if (carouselRef.current && carouselRef.current.children.length > 0) {
+      const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      carouselRef.current.scrollBy({ left: -(cardWidth + gap) * 2, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: carouselRef.current.offsetWidth, behavior: 'smooth' });
+    if (carouselRef.current && carouselRef.current.children.length > 0) {
+      const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      carouselRef.current.scrollBy({ left: (cardWidth + gap) * 2, behavior: 'smooth' });
     }
   };
 
@@ -112,12 +116,12 @@ export function HomeV2({
 
             <div 
               ref={carouselRef}
-              className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              className="flex gap-4 md:gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
               dir="ltr"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               {VIDEOS.map((src, idx) => (
-                <div key={idx} className="min-w-[calc(50%-0.5rem)] md:min-w-[calc(33.333%-1rem)] shrink-0 snap-center md:snap-start rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                <div key={idx} className="min-w-[42%] md:min-w-[calc(33.333%-1rem)] shrink-0 rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
                   <div style={{ position: 'relative', paddingTop: '177.78%' }}>
                     <iframe
                       src={src}
