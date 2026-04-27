@@ -1,7 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const VIDEOS = [
+  "https://player.mediadelivery.net/embed/631325/5ed1633b-2b53-466b-adcd-c47bbf4079cb?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/3010c6f6-3ec2-4ff3-8b44-40bff2951bd8?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/74663dce-354a-43f0-be2e-7387416bda57?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/8faa0a23-d62b-45cc-88a1-9fe656532e8f?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/b0bc555e-ff1f-496e-a577-67fa605b8644?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/f035ddc9-c48e-4cea-b2a0-6fc0f16d8e17?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/d1d7092f-674b-4053-b3cf-d75e0191eae8?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+  "https://player.mediadelivery.net/embed/631325/3ca5cc9d-3958-4e2a-be93-15cc09ec9fd1?autoplay=false&loop=false&muted=false&preload=true&responsive=true",
+];
 import { Hero } from '../src/components/Hero';
 import { CoursePhases } from '../src/components/CoursePhases';
 import { ReviewsCarousel } from '../src/components/ReviewsCarousel';
@@ -13,6 +25,23 @@ import { CountdownBanner } from '../src/components/CountdownBanner';
 
 export default function HomePage() {
   const router = useRouter();
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current && carouselRef.current.children.length > 0) {
+      const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      carouselRef.current.scrollBy({ left: -(cardWidth + gap) * 2, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current && carouselRef.current.children.length > 0) {
+      const cardWidth = (carouselRef.current.children[0] as HTMLElement).offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      carouselRef.current.scrollBy({ left: (cardWidth + gap) * 2, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -37,21 +66,43 @@ export default function HomePage() {
               نتائج الطلاب
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                <iframe src="https://player.mediadelivery.net/embed/631325/5ed1633b-2b53-466b-adcd-c47bbf4079cb?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="eager" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowFullScreen={true}></iframe>
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                <iframe src="https://player.mediadelivery.net/embed/631325/3010c6f6-3ec2-4ff3-8b44-40bff2951bd8?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="eager" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowFullScreen={true}></iframe>
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                <iframe src="https://player.mediadelivery.net/embed/631325/74663dce-354a-43f0-be2e-7387416bda57?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="eager" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowFullScreen={true}></iframe>
-              </div>
+
+          <div className="relative group">
+            <button 
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-20 w-8 h-8 bg-orange-500 hover:bg-orange-400 border border-white/20 rounded-full flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            
+            <button 
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-20 w-8 h-8 bg-orange-500 hover:bg-orange-400 border border-white/20 rounded-full flex items-center justify-center text-white transition-all shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110"
+              aria-label="Next"
+            >
+              <ChevronRight size={16} />
+            </button>
+
+            <div 
+              ref={carouselRef}
+              className="flex gap-4 md:gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              dir="ltr"
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
+              {VIDEOS.map((src, idx) => (
+                <div key={idx} className="min-w-[42%] md:min-w-[calc(33.333%-1rem)] shrink-0 rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                  <div style={{ position: 'relative', paddingTop: '177.78%' }}>
+                    <iframe
+                      src={src}
+                      loading="lazy"
+                      style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
+                      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                      allowFullScreen={true}
+                    ></iframe>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
