@@ -189,12 +189,12 @@ export function HomeV2({
             </button>
 
             {/* Checkout Button */}
-            <button
-              onClick={() => setIsPaymentOpen(true)}
+            <Link
+              href="/checkout"
               className="ml-2 px-5 py-1.5 rounded-full border border-white/30 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 text-sm font-medium tracking-wide flex items-center justify-center cursor-pointer"
             >
               Checkout
-            </button>
+            </Link>
           </div>
 
           {/* Bottom row */}
