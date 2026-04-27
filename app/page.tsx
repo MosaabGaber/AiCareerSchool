@@ -8,6 +8,7 @@ import { ReviewsCarousel } from '../src/components/ReviewsCarousel';
 import { LearnToCreate } from '../src/components/LearnToCreate';
 import { FAQ } from '../src/components/FAQ';
 import { Footer } from '../src/components/Footer';
+import { CountdownBanner } from '../src/components/CountdownBanner';
 
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
 
   return (
     <>
+      <CountdownBanner />
       <main>
         <Hero onJoinClick={() => router.push('/checkout')} showVideo={true} />
         <LearnToCreate />
