@@ -273,7 +273,7 @@ export function CheckoutPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => {
-                              fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                              fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
                               (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
                             }}
                             className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
@@ -297,7 +297,7 @@ export function CheckoutPage() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
+                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
@@ -363,7 +363,7 @@ export function CheckoutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {
-                          fbq('track', 'AddToCart', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                          fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
                           (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
                         }}
                         className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"

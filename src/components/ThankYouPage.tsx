@@ -12,7 +12,7 @@ function ThankYouContent() {
   useEffect(() => {
     if (isSuccess && typeof window !== 'undefined') {
       if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'Purchase', { currency: 'EGP', value: 950 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
+        (window as any).fbq('track', 'Purchase', { currency: 'EGP', value: 1200 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
       }
       (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP' });
     }
