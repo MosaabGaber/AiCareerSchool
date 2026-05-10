@@ -3,7 +3,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, address } = req.body;
+  const { name, email, address, amount } = req.body;
+  const finalAmount = amount || 120000;
 
   try {
     const response = await fetch('https://accept.paymob.com/v1/intention/', {
@@ -13,12 +14,12 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: 120000,
+        amount: finalAmount,
         currency: 'EGP',
         payment_methods: [parseInt(process.env.PAYMOB_INTEGRATION_ID)],
         items: [{
           name: 'AI Career School Course',
-          amount: 120000,
+          amount: finalAmount,
           description: 'Lifetime access to AI Career School',
           quantity: 1
         }],

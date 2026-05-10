@@ -1,5 +1,12 @@
 {
-  "/v2/page": "app/v2/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/checkout/page": "app/checkout/page.js",
-  "/page": "app/page.js"
+  "/blog/page": "app/blog/page.js",
+  "/real-estate-checkout/page": "app/real-estate-checkout/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/real-estate/page": "app/real-estate/page.js",
+  "/v2/page": "app/v2/page.js",
+  "/thank-you/page": "app/thank-you/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js"
 }

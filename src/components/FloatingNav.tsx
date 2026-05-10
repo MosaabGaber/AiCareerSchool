@@ -9,7 +9,9 @@ export function FloatingNav() {
   const pathname = usePathname();
 
   const handleJoinNow = () => {
-    if (pathname === '/v2' || pathname === '/real-estate') {
+    if (pathname === '/real-estate') {
+      window.location.href = '/real-estate-checkout';
+    } else if (pathname === '/v2') {
       window.location.href = '/checkout';
     } else {
       router.push('/checkout');
