@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     description: 'تعلم إنشاء صور وفيديوهات احترافية بالذكاء الاصطناعي. كورس عربي شامل بأدوات Kling و Veo و ElevenLabs.',
     images: ['https://aicareerschool.com/og-image.png'],
   },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 const jsonLd = {
