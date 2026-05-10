@@ -76,7 +76,7 @@ export function CheckoutPageRealEstate() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative z-10 py-20">
       <div className="absolute top-24 md:top-20 left-8 z-[100]">
         <button
-          onClick={() => router.push('/v2')}
+          onClick={() => router.push('/real-estate')}
           className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full border border-gray-200 cursor-pointer"
         >
           <ArrowLeft size={20} />
