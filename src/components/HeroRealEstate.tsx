@@ -17,14 +17,12 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
           transition={{ duration: 0 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-[2rem] md:text-[3.5rem] font-outfit font-extrabold text-white leading-tight mb-3 tracking-tight">
-            Sell More Properties with <span className="text-transparent bg-clip-text bg-gradient-to-r from-neongreen to-softcyan glow-text inline-block">
-              AI Image & Video
-            </span>
+          <h1 className="text-[2rem] md:text-[3.5rem] font-outfit font-extrabold text-white leading-tight mb-3 tracking-tight" dir="rtl">
+            بيع عقارات أكتر باستخدام الذكاء الاصطناعي
           </h1>
 
-          <h2 className="text-[1.6rem] font-outfit font-semibold text-white mb-4 tracking-wide" dir="rtl">
-            بيع أكتر عقارات باستخدام الذكاء الاصطناعي
+          <h2 className="text-[1.6rem] font-outfit font-semibold text-white mb-4 tracking-wide">
+            Sell More Properties with <span className="text-transparent bg-clip-text bg-gradient-to-r from-neongreen to-softcyan glow-text inline-block">AI Image & Video</span>
           </h2>
 
           {showVideo && (
