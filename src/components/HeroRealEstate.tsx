@@ -27,7 +27,7 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
 
           {showVideo && (
             <div className="w-full max-w-4xl mx-auto my-12 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(30,80,255,0.2)]">
-              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+              <div className="relative pt-[177.78%] md:pt-[56.25%]">
                 <iframe
                   src="https://player.mediadelivery.net/embed/631325/969c4fa3-19d7-4d88-b745-b7789c98afe5?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                   loading="eager"
