@@ -4,11 +4,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ITEMS = [
-  { text: 'Property Ads', images: ['/examples/branding-1.jpg', '/examples/branding-2.jpg', '/examples/branding-3.jpg'] },
-  { text: 'Social Media Content', images: ['/examples/ad-1.jpg', '/examples/ad-2.jpg', '/examples/ad-3.jpg'] },
-  { text: 'Property Tours', images: ['/examples/commercials-1.jpg', '/examples/commercials-2.jpg', '/examples/commercials-3.jpg'] },
-  { text: 'Interior Design', images: ['/examples/ugc-1.jpg', '/examples/ugc-2.jpg', '/examples/ugc-3.jpg'] },
-  { text: 'Floor Plans', images: ['/examples/social-1.jpg', '/examples/social-2.jpg', '/examples/social-3.jpg'] },
+  { text: 'Property Ads' },
+  { text: 'Social Media Content' },
+  { text: 'Property Tours' },
+  { text: 'Interior Design' },
+  { text: 'Floor Plans' },
 ];
 
 export function LearnToCreateRealEstate() {
