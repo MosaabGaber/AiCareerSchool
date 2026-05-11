@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HeroRealEstate } from './HeroRealEstate';
 import { LearnToCreateRealEstate } from './LearnToCreateRealEstate';
-import { CoursePhases } from './CoursePhases';
+import { CoursePhasesRealEstate } from './CoursePhasesRealEstate';
 import { ReviewsCarouselRealEstate } from './ReviewsCarouselRealEstate';
 import { FAQRealEstate } from './FAQRealEstate';
 import { ShieldCheck } from 'lucide-react';
@@ -120,7 +120,7 @@ export function HomeRealEstate({
           </div>
         </section>
 
-        <CoursePhases />
+        <CoursePhasesRealEstate />
         <ReviewsCarouselRealEstate />
         <FAQRealEstate />
       </main>
