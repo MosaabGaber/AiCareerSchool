@@ -69,11 +69,11 @@ export function HomeRealEstate({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe
-                  src="https://player.mediadelivery.net/embed/631325/5ed1633b-2b53-466b-adcd-c47bbf4079cb?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                  src="https://player.mediadelivery.net/embed/631325/61e5a57b-71d3-4e91-88a9-31199dd341d8?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                   loading="eager"
                   style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
@@ -85,7 +85,7 @@ export function HomeRealEstate({
             <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe
-                  src="https://player.mediadelivery.net/embed/631325/3010c6f6-3ec2-4ff3-8b44-40bff2951bd8?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                  src="https://player.mediadelivery.net/embed/631325/88f4c7b2-1589-496d-902e-ee5397328d41?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                   loading="eager"
                   style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
@@ -97,7 +97,19 @@ export function HomeRealEstate({
             <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe
-                  src="https://player.mediadelivery.net/embed/631325/74663dce-354a-43f0-be2e-7387416bda57?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                  src="https://player.mediadelivery.net/embed/631325/3ca5cc9d-3958-4e2a-be93-15cc09ec9fd1?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                  loading="lazy"
+                  style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+              <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                <iframe
+                  src="https://player.mediadelivery.net/embed/631325/ec34ab93-cdb9-457e-953f-5a82c9465a43?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                   loading="lazy"
                   style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"

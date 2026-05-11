@@ -29,7 +29,7 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
             <div className="w-full max-w-4xl mx-auto my-12 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(30,80,255,0.2)]">
               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                 <iframe
-                  src="https://player.mediadelivery.net/embed/631325/71395d57-c96a-40fe-b62a-c2def1c653a6?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                  src="https://player.mediadelivery.net/embed/631325/969c4fa3-19d7-4d88-b745-b7789c98afe5?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                   loading="eager"
                   style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }}
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
