@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ITEMS = [
@@ -13,41 +13,13 @@ const ITEMS = [
 
 export function LearnToCreateRealEstate() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [offsetBase, setOffsetBase] = useState(420);
-
-  const touchStartX = useRef<number | null>(null);
-
-  const goTo = useCallback((index: number) => {
-    setActiveIndex((index + ITEMS.length) % ITEMS.length);
-  }, []);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const deltaX = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(deltaX) > 40) {
-      if (deltaX > 0) goTo(activeIndex + 1);
-      else goTo(activeIndex - 1);
-    }
-    touchStartX.current = null;
-  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setOffsetBase(window.innerWidth < 768 ? 280 : 450);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % ITEMS.length);
     }, 2800);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       clearInterval(interval);
     };
   }, []);
@@ -79,106 +51,7 @@ export function LearnToCreateRealEstate() {
         </div>
       </div>
 
-      {/* ── MOBILE CAROUSEL ── */}
-      {/* Each slide is a vertical stack of 3 images; the track slides by 100vw per step */}
-      <div
-        className="md:hidden relative w-full"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div
-          className="flex"
-          style={{
-            transform: `translateX(calc(-${activeIndex * 100}vw))`,
-            transition: 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        >
-          {ITEMS.map((item) => (
-            <div
-              key={item.text}
-              className="flex-shrink-0 w-screen flex flex-col items-center gap-3 px-5"
-              style={{ pointerEvents: 'none' }}
-            >
-              {item.images.map((imgSrc, imgIndex) => (
-                <div
-                  key={imgIndex}
-                  className="w-[90vw] rounded-2xl overflow-hidden"
-                  style={{
-                    height: '280px',
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    transform: 'translateZ(0)',
-                  }}
-                >
-                  <img
-                    src={imgSrc}
-                    alt={`${item.text} visual ${imgIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
 
-        {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-4">
-          {ITEMS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              style={{ pointerEvents: 'auto' }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === activeIndex ? 'bg-neongreen scale-125' : 'bg-white/30'
-                }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* ── DESKTOP CAROUSEL ── */}
-      <div className="hidden md:flex relative w-full h-[350px] items-center justify-center mt-10">
-        {ITEMS.map((item, index) => {
-          const offset = index - activeIndex;
-          const isCentered = index === activeIndex;
-          const xPx = offset * (offsetBase * 2.5);
-          const rotateY = offset * -15;
-
-          return (
-            <div
-              key={item.text}
-              className="absolute flex items-center justify-center gap-8"
-              style={{
-                transform: `translateX(${xPx}px) rotateY(${rotateY}deg) translateZ(0)`,
-                transition: 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                zIndex: isCentered ? 20 : 10 - Math.abs(offset),
-                perspective: 1000,
-                pointerEvents: 'none',
-              }}
-            >
-              {item.images.map((imgSrc, imgIndex) => (
-                <div
-                  key={`${item.text}-${imgIndex}`}
-                  className="relative w-[250px] h-[350px] rounded-[2rem] overflow-hidden"
-                  style={{
-                    zIndex: imgIndex === 1 ? 2 : 1,
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    transform: 'translateZ(0)',
-                  }}
-                >
-                  <img
-                    src={imgSrc}
-                    alt={`${item.text} visual ${imgIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          );
-        })}
-
-
-      </div>
     </section>
   );
 }
