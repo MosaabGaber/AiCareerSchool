@@ -11,10 +11,15 @@ function ThankYouContent() {
 
   useEffect(() => {
     if (isSuccess && typeof window !== 'undefined') {
+      const referrer = document.referrer || '';
+      const isRegularCheckout = referrer.includes('/checkout') && !referrer.includes('real-estate');
+      const value = isRegularCheckout ? 1200 : 1500;
+      const content_name = isRegularCheckout ? undefined : 'Real Estate Course';
+
       if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'Purchase', { currency: 'EGP', value: 1200 }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
+        (window as any).fbq('track', 'Purchase', { currency: 'EGP', value, ...(content_name && { content_name }) }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
       }
-      (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP' });
+      (window as any).ttq?.track('Purchase', { value, currency: 'EGP', ...(content_name && { content_name }) });
     }
   }, [isSuccess]);
 

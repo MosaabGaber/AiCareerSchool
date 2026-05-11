@@ -57,6 +57,7 @@ export function CheckoutPageRealEstate() {
       if (data.client_secret) {
         setClientSecret(data.client_secret);
         setShowPaymobIframe(true);
+        (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
       } else {
         throw new Error(data.error || 'Failed to initialize payment');
@@ -274,7 +275,7 @@ export function CheckoutPageRealEstate() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => {
-                              fbq('track', 'Purchase', {currency: 'EGP', value: 1500}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                              (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                               (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                             }}
                             className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
@@ -298,7 +299,7 @@ export function CheckoutPageRealEstate() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'Purchase', {currency: 'EGP', value: 1500}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
+                      onClick={() => { setPaymentMethod('vodafone'); }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
@@ -331,7 +332,10 @@ export function CheckoutPageRealEstate() {
                           href="https://wa.link/hc7cmh"
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={() => (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' })}
+                          onClick={() => {
+                            (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                            (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
+                          }}
                           className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
                         >
                           Send on WhatsApp
@@ -364,7 +368,7 @@ export function CheckoutPageRealEstate() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => {
-                          fbq('track', 'Purchase', {currency: 'EGP', value: 1500}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                          (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                           (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                         }}
                         className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
@@ -403,7 +407,10 @@ export function CheckoutPageRealEstate() {
                       href="https://wa.link/hc7cmh"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' })}
+                      onClick={() => {
+                        (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                        (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
+                      }}
                       className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
                     >
                       Send on WhatsApp
