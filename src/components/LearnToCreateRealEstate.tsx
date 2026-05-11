@@ -25,7 +25,7 @@ export function LearnToCreateRealEstate() {
   }, []);
 
   return (
-    <section id="showcase" className="pt-0 pb-4 md:pb-32 overflow-hidden relative">
+    <section id="showcase" className="pt-0 pb-4 md:pb-8 overflow-hidden relative">
 
 
       {/* Heading */}
