@@ -61,7 +61,7 @@ export function CoursePhasesRealEstate() {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10" dir="rtl">
               <span className="text-white text-sm font-outfit">ساعات محتوى</span>
-              <span className="text-white text-sm font-outfit" dir="ltr">9+</span>
+              <span className="text-white text-sm font-outfit" dir="ltr">5+</span>
               <Clock size={16} className="text-neongreen" />
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
