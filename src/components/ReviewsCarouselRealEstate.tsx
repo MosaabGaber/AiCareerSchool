@@ -22,19 +22,19 @@ export function ReviewsCarouselRealEstate() {
   return (
     <section id="reviews" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 text-center mb-16 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-outfit font-bold text-white mb-4">
-          Trusted by <span className="text-softcyan glow-text">1,200+</span> students
+        <h2 className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 mb-4">
+          Trusted by <span className="text-[#00944d] glow-text">1,200+</span> students
         </h2>
-        <div className="flex justify-center gap-1 text-neongreen mb-4">
+        <div className="flex justify-center gap-1 text-[#00944d] mb-4">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} fill="currentColor" size={24} />)}
         </div>
-        <p className="text-gray-400">Average rating of 4.9/5 stars across all graduates</p>
+        <p className="text-gray-600">Average rating of 4.9/5 stars across all graduates</p>
       </div>
 
       <div className="relative w-full flex overflow-x-hidden">
         {/* Left/Right fading gradients — desktop only */}
-        <div className="hidden md:block absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-darkspace to-transparent z-20" />
-        <div className="hidden md:block absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-darkspace to-transparent z-20" />
+        <div className="hidden md:block absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-20" />
+        <div className="hidden md:block absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-20" />
 
         <motion.div
           className="flex gap-6 px-6"
@@ -52,27 +52,27 @@ export function ReviewsCarouselRealEstate() {
             <div
               key={i}
               dir="rtl"
-              className="w-[85vw] md:w-[350px] shrink-0 glassmorphism p-[1.2rem] md:p-8 rounded-2xl border border-white/5 flex flex-col"
+              className="w-[85vw] md:w-[350px] shrink-0 bg-white p-[1.2rem] md:p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col"
             >
               <div className="flex items-center gap-2 mb-6">
-                <div className="flex items-center gap-1 text-neongreen">
+                <div className="flex items-center gap-1 text-[#00944d]">
                   {[1, 2, 3, 4, 5].map(star => (
                     <Star
                       key={star}
                       size={16}
-                      className={star <= Math.round(review.rating) ? "fill-current" : "text-gray-600 opacity-30"}
+                      className={star <= Math.round(review.rating) ? "fill-current" : "text-gray-300"}
                     />
                   ))}
                 </div>
-                <span className="text-white font-bold text-sm mx-2">{review.rating}</span>
+                <span className="text-gray-900 font-bold text-sm mx-2">{review.rating}</span>
               </div>
-              <p className="text-gray-300 font-inter text-[0.85rem] md:text-lg italic mb-6 grow leading-relaxed">"{review.text}"</p>
+              <p className="text-gray-600 font-inter text-[0.85rem] md:text-lg italic mb-6 grow leading-relaxed">"{review.text}"</p>
               <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-gray-600 flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-12 h-12 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-700 font-bold text-xl">
                   {review.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-bold font-outfit text-[0.9rem] md:text-lg">{review.name}</h4>
+                  <h4 className="text-gray-900 font-bold font-outfit text-[0.9rem] md:text-lg">{review.name}</h4>
                 </div>
               </div>
             </div>

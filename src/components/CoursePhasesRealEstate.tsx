@@ -52,25 +52,25 @@ export function CoursePhasesRealEstate() {
     <section id="curriculum" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 max-w-3xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-outfit font-bold text-white mb-4">
-            The <span className="text-neongreen glow-text">Curriculum</span>
+          <h2 className="text-4xl md:text-5xl font-outfit font-bold text-gray-900 mb-4">
+            The <span className="text-[#00944d] glow-text">Curriculum</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-inter mb-8">
+          <p className="text-gray-600 max-w-2xl mx-auto font-inter mb-8">
             A step-by-step roadmap to go from absolute beginner to professional AI visual artist.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10" dir="rtl">
-              <span className="text-white text-sm font-outfit">ساعات محتوى</span>
-              <span className="text-white text-sm font-outfit" dir="ltr">5+</span>
-              <Clock size={16} className="text-neongreen" />
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm" dir="rtl">
+              <span className="text-gray-900 text-sm font-outfit">ساعات محتوى</span>
+              <span className="text-gray-900 text-sm font-outfit" dir="ltr">5+</span>
+              <Clock size={16} className="text-[#00944d]" />
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
-              <Infinity size={16} className="text-neongreen" />
-              <span className="text-white text-sm font-outfit italic">وصول مدى الحياة</span>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm">
+              <Infinity size={16} className="text-[#00944d]" />
+              <span className="text-gray-900 text-sm font-outfit italic">وصول مدى الحياة</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glassmorphism bg-white/5 border border-white/10">
-              <Award size={16} className="text-neongreen" />
-              <span className="text-white text-sm font-outfit">شهادة إتمام الدورة</span>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm">
+              <Award size={16} className="text-[#00944d]" />
+              <span className="text-gray-900 text-sm font-outfit">شهادة إتمام الدورة</span>
             </div>
           </div>
         </div>
@@ -81,15 +81,15 @@ export function CoursePhasesRealEstate() {
             return (
               <div
                 key={i}
-                className="glassmorphism p-6 rounded-2xl relative group transition-all duration-300 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(0,71,255,0.15)] cursor-pointer bg-white/5 border border-white/10"
+                className="p-6 rounded-2xl relative group transition-all duration-300 hover:border-gray-300 hover:shadow-md cursor-pointer bg-white border border-gray-200 shadow-sm"
                 onClick={() => togglePhase(i)}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg md:text-xl font-bold text-white font-outfit leading-tight m-0 text-right">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 font-outfit leading-tight m-0 text-right">
                     {phase.arabicTitle}
                   </h3>
-                  <div className={`w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 bg-blue-500/20 border-blue-500/50' : ''}`}>
-                    <ChevronDown className={`text-gray-300 transition-colors ${isOpen ? 'text-blue-400' : ''}`} size={24} />
+                  <div className={`w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center border border-gray-200 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 bg-blue-50 border-blue-200' : ''}`}>
+                    <ChevronDown className={`text-gray-400 transition-colors ${isOpen ? 'text-blue-500' : ''}`} size={24} />
                   </div>
                 </div>
 
@@ -97,8 +97,8 @@ export function CoursePhasesRealEstate() {
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
-                    <h4 className="text-base font-bold text-[#1a9a46] mb-2 font-outfit text-left" dir="ltr">{phase.title}</h4>
-                    <p className="text-gray-400 font-inter text-sm md:text-base leading-relaxed m-0 text-left" dir="ltr">
+                    <h4 className="text-base font-bold text-[#00944d] mb-2 font-outfit text-left" dir="ltr">{phase.title}</h4>
+                    <p className="text-gray-600 font-inter text-sm md:text-base leading-relaxed m-0 text-left" dir="ltr">
                       {phase.description}
                     </p>
                   </div>

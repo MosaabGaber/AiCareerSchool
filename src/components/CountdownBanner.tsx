@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const TARGET_DATE = new Date('2026-05-29T23:59:59+02:00').getTime();
 
@@ -41,6 +42,8 @@ function TimeBox({ value, label }: { value: string; label: string }) {
 
 export function CountdownBanner() {
   const [time, setTime] = useState(getTimeLeft());
+  const pathname = usePathname();
+  const isRealEstate = pathname === '/real-estate';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,7 +57,7 @@ export function CountdownBanner() {
       <div
         className="w-full py-1 text-center fixed top-0 z-[90]"
         style={{
-          background: 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
+          background: isRealEstate ? '#00944d' : 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
           borderBottom: '1px solid transparent',
         }}
       >
@@ -69,7 +72,7 @@ export function CountdownBanner() {
     <div
       className="w-full py-1 fixed top-0 z-[90] overflow-hidden"
       style={{
-        background: 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
+        background: isRealEstate ? '#00944d' : 'linear-gradient(90deg, hsla(195, 80%, 35%, 0.95) 0%, hsla(190, 90%, 45%, 0.95) 35%, hsla(185, 85%, 55%, 0.95) 65%, hsla(180, 80%, 50%, 0.95) 100%)',
         borderBottom: '1px solid transparent',
       }}
     >
@@ -80,11 +83,11 @@ export function CountdownBanner() {
         </span>
         <div className="flex items-center gap-1.5" dir="ltr">
           <TimeBox value={pad(time.days)} label="Days" />
-          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-sm mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.hours)} label="Hours" />
-          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-sm mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.minutes)} label="Min" />
-          <span className="text-neongreen font-bold text-sm mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-sm mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.seconds)} label="Sec" />
         </div>
       </div>
@@ -93,11 +96,11 @@ export function CountdownBanner() {
       <div className="md:hidden flex items-center justify-center gap-3 px-2">
         <div className="flex-shrink-0 flex items-center gap-1" dir="ltr">
           <TimeBox value={pad(time.days)} label="D" />
-          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-xs mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.hours)} label="H" />
-          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-xs mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.minutes)} label="M" />
-          <span className="text-neongreen font-bold text-xs mt-[-10px]">:</span>
+          <span className={`${isRealEstate ? 'text-white' : 'text-neongreen'} font-bold text-xs mt-[-10px]`}>:</span>
           <TimeBox value={pad(time.seconds)} label="S" />
         </div>
         <div className="overflow-hidden flex-1 min-w-0">

@@ -17,12 +17,12 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
           transition={{ duration: 0 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-[2rem] md:text-[3.5rem] font-outfit font-extrabold text-white leading-tight mb-3 tracking-tight" dir="rtl">
+          <h1 className="text-[2rem] md:text-[3.5rem] font-outfit font-extrabold text-gray-900 leading-tight mb-3 tracking-tight" dir="rtl">
             بيع عقارات أكتر باستخدام الذكاء الاصطناعي
           </h1>
 
-          <h2 className="text-[1.6rem] font-outfit font-semibold text-white mb-4 tracking-wide">
-            Sell More Properties with <span className="text-transparent bg-clip-text bg-gradient-to-r from-neongreen to-softcyan glow-text inline-block">AI Image & Video</span>
+          <h2 className="text-[1.6rem] font-outfit font-semibold text-gray-900 mb-4 tracking-wide">
+            Sell More Properties with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00944d] to-[#00944d] glow-text inline-block">AI Image & Video</span>
           </h2>
 
           {showVideo && (
@@ -42,19 +42,19 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
           <div className="flex items-center justify-center gap-3 mb-6">
             <button
               onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-transparent border border-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:border-blue-400/60 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-900 rounded-full px-6 py-2 font-outfit text-sm hover:bg-gray-50 transition-all duration-300 cursor-pointer"
             >
               تفاصيل الكورس
             </button>
             <button
               onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-transparent border border-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:border-blue-400/60 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] text-white rounded-full px-6 py-2 font-outfit text-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-900 rounded-full px-6 py-2 font-outfit text-sm hover:bg-gray-50 transition-all duration-300 cursor-pointer"
             >
               أسئلة شائعة
             </button>
           </div>
 
-          <p className="text-[0.85rem] md:text-[0.95rem] text-gray-400 mb-8 md:mb-4 max-w-2xl mx-auto font-inter" dir="rtl">
+          <p className="text-[0.85rem] md:text-[0.95rem] text-gray-600 mb-8 md:mb-4 max-w-2xl mx-auto font-inter" dir="rtl">
             حوّل عقاراتك لمحتوى بصري احترافي. صور، فيديوهات، جولات افتراضية، وإعلانات ممولة — كلها بالذكاء الاصطناعي بدون مصور أو مصمم.
           </p>
 
@@ -65,7 +65,7 @@ export function HeroRealEstate({ onJoinClick, showVideo }: HeroProps) {
           >
             <button
               onClick={onJoinClick}
-              className="bg-transparent border-2 border-neongreen text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-neongreen hover:text-darkspace transition-all duration-300 glow-border group flex items-center gap-2"
+              className="bg-transparent border-2 border-[#00944d] text-[#00944d] px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#00944d] hover:text-white transition-all duration-300 group flex items-center gap-2"
               dir="rtl"
             >
               اشترك الآن
