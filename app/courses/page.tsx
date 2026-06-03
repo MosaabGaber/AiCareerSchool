@@ -208,14 +208,33 @@ export default function CoursesPage() {
           </div>
         )}
 
-        {/* 1. Breadcrumb */}
+        {/* 1. Header Section (headline + subtitles) */}
+        <div className="w-full max-w-6xl mx-auto text-center mb-16 flex flex-col items-center mt-2">
+          <div className="bg-darkspace rounded-3xl p-4 mb-8 shadow-sm">
+            <img src="/logo.png" alt="AI Career School" className="w-20 md:w-28 h-auto" />
+          </div>
+          
+          <h1 className="text-[2.2rem] md:text-[4rem] font-outfit font-extrabold text-[#0f172a] leading-tight mb-6 tracking-tight" dir="rtl">
+            أقوى منصة عربية لتعلم الذكاء الاصطناعي
+          </h1>
+          
+          <h2 className="text-[1.2rem] md:text-[1.6rem] font-outfit font-medium text-gray-600 mb-4 max-w-3xl leading-relaxed" dir="rtl">
+            كن دايماً متقدم على الكل — تعلم أحدث أدوات AI وطبقها في شغلك فوراً
+          </h2>
+          
+          <p className="text-gray-500 font-inter text-sm md:text-base tracking-[0.2em] uppercase mt-2 mb-10 font-semibold">
+            The #1 Arabic AI Learning Platform
+          </p>
+        </div>
+
+        {/* 2. Breadcrumb */}
         <div className="w-full max-w-[1000px] mx-auto flex items-center gap-2 text-sm text-gray-500 mb-6" dir="rtl">
           <Link href="/" className="hover:text-[#2563eb] transition-colors font-outfit">الرئيسية</Link>
           <ChevronLeft size={14} />
           <span className="text-gray-900 font-semibold font-outfit">الكورسات</span>
         </div>
 
-        {/* 2. Search and Filters */}
+        {/* 3. Search and Filters */}
         <div className="w-full max-w-[1000px] mx-auto mb-16 flex flex-col gap-6" dir="rtl">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-gray-100 pb-6">
             <h2 className="text-2xl font-outfit font-bold text-[#0f172a]">تصفح الكورسات</h2>
@@ -258,49 +277,6 @@ export default function CoursesPage() {
             <select className="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none focus:border-[#2563eb] shadow-sm" value={selectedSort} onChange={e => setSelectedSort(e.target.value)}>
               {['الأحدث', 'الأعلى تقييماً', 'الأكثر مبيعاً'].map(l => <option key={l} value={l}>{l}</option>)}
             </select>
-          </div>
-        </div>
-
-        {/* 3. Header Section (headline, subtitle, stats bar) */}
-        <div className="w-full max-w-6xl mx-auto text-center mb-16 flex flex-col items-center">
-          <div className="bg-darkspace rounded-3xl p-4 mb-8 shadow-sm">
-            <img src="/logo.png" alt="AI Career School" className="w-20 md:w-28 h-auto" />
-          </div>
-          
-          <h1 className="text-[2.2rem] md:text-[4rem] font-outfit font-extrabold text-[#0f172a] leading-tight mb-6 tracking-tight" dir="rtl">
-            أقوى منصة عربية لتعلم الذكاء الاصطناعي
-          </h1>
-          
-          <h2 className="text-[1.2rem] md:text-[1.6rem] font-outfit font-medium text-gray-600 mb-4 max-w-3xl leading-relaxed" dir="rtl">
-            كن دايماً متقدم على الكل — تعلم أحدث أدوات AI وطبقها في شغلك فوراً
-          </h2>
-          
-          <p className="text-gray-500 font-inter text-sm md:text-base tracking-[0.2em] uppercase mt-2 mb-10 font-semibold">
-            The #1 Arabic AI Learning Platform
-          </p>
-
-          <div className="w-full bg-[#eff6ff] rounded-2xl max-w-6xl mx-auto py-12 px-8 flex flex-col items-center shadow-sm border border-blue-100">
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 mb-6" dir="rtl">
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+1,200</span>
-                <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">طالب</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4.9/5</span>
-                <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">تقييم</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+10</span>
-                <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">أدوات AI</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4</span>
-                <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">كورسات متخصصة</span>
-              </div>
-            </div>
-            <p className="text-gray-500 text-sm font-outfit font-medium tracking-wide px-4 text-center mt-2" dir="rtl">
-              بيتحدث كل 3-5 أيام بأحدث الأدوات
-            </p>
           </div>
         </div>
 
@@ -451,6 +427,31 @@ export default function CoursesPage() {
           </div>
         </div>
 
+        {/* 7. Stats Bar */}
+        <div className="w-full bg-[#eff6ff] rounded-2xl max-w-6xl mx-auto py-12 px-8 flex flex-col items-center shadow-sm border border-blue-100 mb-16">
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 mb-6" dir="rtl">
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+1,200</span>
+              <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">طالب</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4.9/5</span>
+              <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">تقييم</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+10</span>
+              <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">أدوات AI</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4</span>
+              <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">كورسات متخصصة</span>
+            </div>
+          </div>
+          <p className="text-gray-500 text-sm font-outfit font-medium tracking-wide px-4 text-center mt-2" dir="rtl">
+            بيتحدث كل 3-5 أيام بأحدث الأدوات
+          </p>
+        </div>
+
         {/* Social Proof Notification */}
         <AnimatePresence>
           {notification && (
@@ -483,7 +484,7 @@ export default function CoursesPage() {
 
       </main>
 
-      {/* 7. Footer */}
+      {/* 8. Footer */}
       <Footer />
     </>
   );
