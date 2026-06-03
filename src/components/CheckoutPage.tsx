@@ -239,7 +239,10 @@ export function CheckoutPage() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => setPaymentMethod('instapay')}
+                      onClick={() => {
+                        setPaymentMethod('instapay');
+                        (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
+                      }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
@@ -299,7 +302,11 @@ export function CheckoutPage() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => { setPaymentMethod('vodafone'); fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)}); }}
+                      onClick={() => {
+                        setPaymentMethod('vodafone');
+                        fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                        (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
+                      }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
