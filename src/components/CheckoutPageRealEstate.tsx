@@ -59,7 +59,7 @@ export function CheckoutPageRealEstate() {
         setShowPaymobIframe(true);
         (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-        (window as any).ttq?.track('PlaceAnOrder', { value: 1500, currency: 'EGP', content_type: 'product', content_name: 'AI for Real Estate Course' });
+        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       } else {
         throw new Error(data.error || 'Failed to initialize payment');
       }
@@ -271,19 +271,19 @@ export function CheckoutPageRealEstate() {
                         </p>
 
                         <div className="flex flex-col gap-3">
-                          <a
-                            href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => {
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
                               (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                               (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                              (window as any).ttq?.track('PlaceAnOrder', { value: 1500, currency: 'EGP', content_type: 'product', content_name: 'AI for Real Estate Course' });
+                              (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                              window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
                             }}
                             className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                           >
                             Open Instapay Link
-                          </a>
+                          </button>
                           <a
                             href="https://wa.link/hc7cmh"
                             target="_blank"
@@ -330,19 +330,19 @@ export function CheckoutPageRealEstate() {
                           Save the transaction screenshot and send it on WhatsApp
                         </p>
 
-                        <a
-                          href="https://wa.link/hc7cmh"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => {
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
                             (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                             (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                            (window as any).ttq?.track('PlaceAnOrder', { value: 1500, currency: 'EGP', content_type: 'product', content_name: 'AI for Real Estate Course' });
+                            (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                            window.open('https://wa.link/hc7cmh', '_blank');
                           }}
                           className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
                         >
                           Send on WhatsApp
-                        </a>
+                        </button>
                       </div>
                     )}
                   </div>
@@ -366,19 +366,19 @@ export function CheckoutPageRealEstate() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <a
-                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => {
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
                           (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                           (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                          (window as any).ttq?.track('PlaceAnOrder', { value: 1500, currency: 'EGP', content_type: 'product', content_name: 'AI for Real Estate Course' });
+                          (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                          window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
                         }}
                         className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                       >
                         Open Instapay Link
-                      </a>
+                      </button>
                       <a
                         href="https://wa.link/hc7cmh"
                         target="_blank"
@@ -407,19 +407,19 @@ export function CheckoutPageRealEstate() {
                       Save the transaction screenshot and send it on WhatsApp
                     </p>
 
-                    <a
-                      href="https://wa.link/hc7cmh"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
                         (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                        (window as any).ttq?.track('PlaceAnOrder', { value: 1500, currency: 'EGP', content_type: 'product', content_name: 'AI for Real Estate Course' });
+                        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                        window.open('https://wa.link/hc7cmh', '_blank');
                       }}
                       className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
                     >
                       Send on WhatsApp
-                    </a>
+                    </button>
                   </div>
                 )}
               </div>
