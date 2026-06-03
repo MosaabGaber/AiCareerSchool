@@ -241,7 +241,10 @@ export function CheckoutPageRealEstate() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => setPaymentMethod('instapay')}
+                      onClick={() => {
+                        setPaymentMethod('instapay');
+                        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                      }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
@@ -301,7 +304,10 @@ export function CheckoutPageRealEstate() {
                   <div className="flex flex-col gap-4">
                     <button
                       type="button"
-                      onClick={() => { setPaymentMethod('vodafone'); }}
+                      onClick={() => {
+                        setPaymentMethod('vodafone');
+                        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                      }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                         ? 'border-[#1a9a46] bg-[#f0fdf4]'
                         : 'border-gray-200 bg-white hover:border-gray-300'
