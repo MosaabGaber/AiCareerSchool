@@ -9,20 +9,22 @@ export const metadata: Metadata = {
 
 export default function CoursesPage() {
   return (
-    <main className="min-h-screen bg-darkspace flex flex-col items-center pb-20 pt-24 px-4 md:px-8 relative z-10 selection:bg-neongreen selection:text-darkspace">
+    <main className="min-h-screen bg-white flex flex-col items-center pb-20 pt-24 px-4 md:px-8 relative z-10 selection:bg-blue-600 selection:text-white">
       
       {/* Header Section */}
       <div className="w-full max-w-6xl mx-auto text-center mb-16 flex flex-col items-center mt-8">
         {/* Logo at the top centered */}
-        <img src="/logo.png" alt="AI Career School" className="w-24 md:w-32 h-auto mb-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
+        <div className="bg-darkspace rounded-3xl p-4 mb-8 shadow-sm">
+          <img src="/logo.png" alt="AI Career School" className="w-20 md:w-28 h-auto" />
+        </div>
         
         {/* Big Arabic headline */}
-        <h1 className="text-[2.2rem] md:text-[4rem] font-outfit font-extrabold text-white leading-tight mb-6 tracking-tight drop-shadow-lg" dir="rtl">
+        <h1 className="text-[2.2rem] md:text-[4rem] font-outfit font-extrabold text-[#0f172a] leading-tight mb-6 tracking-tight" dir="rtl">
           أقوى منصة عربية لتعلم الذكاء الاصطناعي
         </h1>
         
         {/* Subtitle in Arabic */}
-        <h2 className="text-[1.2rem] md:text-[1.6rem] font-outfit font-medium text-gray-300 mb-4 max-w-3xl leading-relaxed" dir="rtl">
+        <h2 className="text-[1.2rem] md:text-[1.6rem] font-outfit font-medium text-gray-600 mb-4 max-w-3xl leading-relaxed" dir="rtl">
           كن دايماً متقدم على الكل — تعلم أحدث أدوات AI وطبقها في شغلك فوراً
         </h2>
         
@@ -36,30 +38,28 @@ export default function CoursesPage() {
       <div className="w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-24" dir="rtl">
         
         {/* Course 1 (Available) */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col group relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-neongreen/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col group relative">
           
-          <div className="h-56 bg-darkspace/50 flex flex-col items-center justify-center border-b border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-darkspace to-darkspace"></div>
-            <span className="text-gray-400 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI Content Creation</span>
-            <div className="absolute top-4 right-4 bg-neongreen/10 border border-neongreen/30 text-neongreen px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 shadow-[0_0_10px_rgba(37,211,102,0.2)]">
+          <div className="h-56 bg-[#eff6ff] flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden">
+            <span className="text-[#1e3a5f] font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI Content Creation</span>
+            <div className="absolute top-4 right-4 bg-[#00944d] text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
               متاح الآن
             </div>
           </div>
           
           <div className="p-8 flex flex-col flex-grow relative z-10">
-            <h3 className="text-[1.4rem] font-outfit font-bold text-white mb-2 leading-snug">
+            <h3 className="text-[1.4rem] font-outfit font-bold text-[#0f172a] mb-2 leading-snug">
               صناعة المحتوى بالذكاء الاصطناعي
             </h3>
-            <p className="text-neongreen text-sm font-semibold mb-5 tracking-wide">
+            <p className="text-[#2563eb] text-sm font-semibold mb-5 tracking-wide">
               صور، فيديوهات، إعلانات، UGC، براندينج
             </p>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed font-inter">
+            <p className="text-gray-600 text-sm mb-8 flex-grow leading-relaxed font-inter">
               إتعلم تعمل محتوى بصري احترافي بالذكاء الاصطناعي من الصفر. صور، فيديوهات، إعلانات ممولة، وأكتر.
             </p>
-            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
-              <span className="text-2xl font-bold text-white font-outfit tracking-tight">1,200 EGP</span>
-              <Link href="/v2" className="bg-transparent border-2 border-neongreen text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold hover:bg-neongreen hover:text-darkspace transition-all duration-300 glow-border group-hover:shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+              <span className="text-2xl font-bold text-[#0f172a] font-outfit tracking-tight">1,200 EGP</span>
+              <Link href="/v2" className="bg-[#2563eb] text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold hover:bg-[#1d4ed8] transition-all duration-300">
                 اشترك الآن
               </Link>
             </div>
@@ -67,30 +67,28 @@ export default function CoursesPage() {
         </div>
 
         {/* Course 2 (Available) */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col group relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-neongreen/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col group relative">
           
-          <div className="h-56 bg-darkspace/50 flex flex-col items-center justify-center border-b border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-darkspace to-darkspace"></div>
-            <span className="text-gray-400 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI for Real Estate</span>
-            <div className="absolute top-4 right-4 bg-neongreen/10 border border-neongreen/30 text-neongreen px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 shadow-[0_0_10px_rgba(37,211,102,0.2)]">
+          <div className="h-56 bg-[#eff6ff] flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden">
+            <span className="text-[#1e3a5f] font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI for Real Estate</span>
+            <div className="absolute top-4 right-4 bg-[#00944d] text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
               متاح الآن
             </div>
           </div>
           
           <div className="p-8 flex flex-col flex-grow relative z-10">
-            <h3 className="text-[1.4rem] font-outfit font-bold text-white mb-2 leading-snug">
+            <h3 className="text-[1.4rem] font-outfit font-bold text-[#0f172a] mb-2 leading-snug">
               الذكاء الاصطناعي للعقارات والتصميم الداخلي
             </h3>
-            <p className="text-neongreen text-sm font-semibold mb-5 tracking-wide">
+            <p className="text-[#2563eb] text-sm font-semibold mb-5 tracking-wide">
               صور عقارية، جولات افتراضية، فيديوهات تسويقية
             </p>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed font-inter">
+            <p className="text-gray-600 text-sm mb-8 flex-grow leading-relaxed font-inter">
               حوّل عقاراتك ومشاريعك لمحتوى بصري احترافي بالذكاء الاصطناعي بدون مصور أو مصمم.
             </p>
-            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
-              <span className="text-2xl font-bold text-white font-outfit tracking-tight">1,500 EGP</span>
-              <Link href="/real-estate" className="bg-transparent border-2 border-neongreen text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold hover:bg-neongreen hover:text-darkspace transition-all duration-300 glow-border group-hover:shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+              <span className="text-2xl font-bold text-[#0f172a] font-outfit tracking-tight">1,500 EGP</span>
+              <Link href="/real-estate" className="bg-[#2563eb] text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold hover:bg-[#1d4ed8] transition-all duration-300">
                 اشترك الآن
               </Link>
             </div>
@@ -98,28 +96,27 @@ export default function CoursesPage() {
         </div>
 
         {/* Course 3 (Coming Soon) */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col relative opacity-90">
-          <div className="h-56 bg-darkspace/50 flex flex-col items-center justify-center border-b border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-darkspace to-darkspace"></div>
-            <span className="text-gray-600 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI Automation</span>
-            <div className="absolute top-4 right-4 bg-amber-500/10 border border-amber-500/30 text-amber-500 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
+        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 flex flex-col relative opacity-90">
+          <div className="h-56 bg-gray-50 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden">
+            <span className="text-gray-400 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">AI Automation</span>
+            <div className="absolute top-4 right-4 bg-amber-500 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
               قريباً
             </div>
           </div>
           
-          <div className="p-8 flex flex-col flex-grow relative z-10 grayscale-[30%]">
-            <h3 className="text-[1.4rem] font-outfit font-bold text-gray-300 mb-2 leading-snug">
+          <div className="p-8 flex flex-col flex-grow relative z-10">
+            <h3 className="text-[1.4rem] font-outfit font-bold text-gray-500 mb-2 leading-snug">
               الأتمتة بالذكاء الاصطناعي
             </h3>
-            <p className="text-amber-500/80 text-sm font-semibold mb-5 tracking-wide">
+            <p className="text-amber-600 text-sm font-semibold mb-5 tracking-wide">
               أتمتة المهام، الـ workflows، وتوفير الوقت
             </p>
             <p className="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-inter">
               إتعلم تأتمت شغلك بالكامل بالذكاء الاصطناعي وتوفر ساعات من العمل اليومي.
             </p>
-            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
-              <span className="text-2xl font-bold text-gray-600 font-outfit tracking-tight">---</span>
-              <button disabled className="bg-gray-800/40 border border-gray-700/50 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+              <span className="text-2xl font-bold text-gray-400 font-outfit tracking-tight">---</span>
+              <button disabled className="bg-gray-200 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
                 قريباً
               </button>
             </div>
@@ -127,28 +124,27 @@ export default function CoursesPage() {
         </div>
 
         {/* Course 4 (Coming Soon) */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col relative opacity-90">
-          <div className="h-56 bg-darkspace/50 flex flex-col items-center justify-center border-b border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 via-darkspace to-darkspace"></div>
-            <span className="text-gray-600 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">General AI</span>
-            <div className="absolute top-4 right-4 bg-amber-500/10 border border-amber-500/30 text-amber-500 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
+        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md transition-all duration-300 flex flex-col relative opacity-90">
+          <div className="h-56 bg-gray-50 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden">
+            <span className="text-gray-400 font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase">General AI</span>
+            <div className="absolute top-4 right-4 bg-amber-500 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10">
               قريباً
             </div>
           </div>
           
-          <div className="p-8 flex flex-col flex-grow relative z-10 grayscale-[30%]">
-            <h3 className="text-[1.4rem] font-outfit font-bold text-gray-300 mb-2 leading-snug">
+          <div className="p-8 flex flex-col flex-grow relative z-10">
+            <h3 className="text-[1.4rem] font-outfit font-bold text-gray-500 mb-2 leading-snug">
               الذكاء الاصطناعي العام — كن في المقدمة دايماً
             </h3>
-            <p className="text-amber-500/80 text-sm font-semibold mb-5 tracking-wide">
+            <p className="text-amber-600 text-sm font-semibold mb-5 tracking-wide">
               كل جديد في عالم AI في مكان واحد
             </p>
             <p className="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-inter">
               كورس شامل يغطي كل أدوات وتطورات الذكاء الاصطناعي عشان تفضل دايماً متقدم على الكل.
             </p>
-            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
-              <span className="text-2xl font-bold text-gray-600 font-outfit tracking-tight">---</span>
-              <button disabled className="bg-gray-800/40 border border-gray-700/50 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+              <span className="text-2xl font-bold text-gray-400 font-outfit tracking-tight">---</span>
+              <button disabled className="bg-gray-200 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
                 قريباً
               </button>
             </div>
@@ -158,26 +154,26 @@ export default function CoursesPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="w-full max-w-4xl mx-auto border-t border-white/10 pt-12 pb-10 flex flex-col items-center">
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 mb-8" dir="rtl">
+      <div className="w-full bg-[#eff6ff] rounded-2xl max-w-6xl mx-auto py-12 px-8 flex flex-col items-center mb-10 shadow-sm border border-blue-100">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 mb-6" dir="rtl">
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-white mb-2">+1,200</span>
-            <span className="text-gray-400 text-sm font-outfit font-medium tracking-wide">طالب</span>
+            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+1,200</span>
+            <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">طالب</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-white mb-2">4.9/5</span>
-            <span className="text-gray-400 text-sm font-outfit font-medium tracking-wide">تقييم</span>
+            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4.9/5</span>
+            <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">تقييم</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-white mb-2">+10</span>
-            <span className="text-gray-400 text-sm font-outfit font-medium tracking-wide">أدوات AI</span>
+            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">+10</span>
+            <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">أدوات AI</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-white mb-2">4</span>
-            <span className="text-gray-400 text-sm font-outfit font-medium tracking-wide">كورسات متخصصة</span>
+            <span className="text-3xl md:text-4xl font-outfit font-extrabold text-[#1d4ed8] mb-2">4</span>
+            <span className="text-gray-600 text-sm font-outfit font-semibold tracking-wide">كورسات متخصصة</span>
           </div>
         </div>
-        <p className="text-gray-500 text-sm font-outfit font-medium tracking-wide px-4 text-center" dir="rtl">
+        <p className="text-gray-500 text-sm font-outfit font-medium tracking-wide px-4 text-center mt-2" dir="rtl">
           بيتحدث كل 3-5 أيام بأحدث الأدوات
         </p>
       </div>
@@ -188,7 +184,7 @@ export default function CoursesPage() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.5)] hover:shadow-[0_4px_28px_rgba(37,211,102,0.8)] hover:scale-110 active:scale-95 transition-all duration-200"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_4px_28px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-200"
         style={{ width: '56px', height: '56px', background: '#25D366' }}
       >
         <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
