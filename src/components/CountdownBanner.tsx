@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-const TARGET_DATE = new Date('2026-06-03T23:59:59+02:00').getTime();
+const TARGET_DATE = new Date('2026-06-06T23:59:59+02:00').getTime();
 
 function getTimeLeft() {
   const now = Date.now();
