@@ -21,8 +21,6 @@ import { LearnToCreate } from '../src/components/LearnToCreate';
 import { FAQ } from '../src/components/FAQ';
 import { Footer } from '../src/components/Footer';
 import { CountdownBanner } from '../src/components/CountdownBanner';
-import { CourseContentSection } from '../src/components/CourseContentSection';
-
 
 export default function HomePage() {
   const router = useRouter();
@@ -48,8 +46,7 @@ export default function HomePage() {
     <>
       <CountdownBanner />
       <main>
-        <Hero onJoinClick={() => router.push('/checkout')} showVideo={true} />
-        <CourseContentSection />
+        <Hero onJoinClick={() => router.push('/checkout')} />
         <LearnToCreate />
 
         {/* Pricing Section */}

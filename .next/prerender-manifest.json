@@ -1,7 +1,7 @@
 {
   "version": 4,
   "routes": {
-    "/blog": {
+    "/checkout": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -14,8 +14,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
+      "srcRoute": "/checkout",
+      "dataRoute": "/checkout.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -73,6 +73,31 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/_not-found": {
+      "initialStatus": 404,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/_not-found",
+      "dataRoute": "/_not-found.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/real-estate-checkout": {
       "experimentalBypassFor": [
         {
@@ -88,6 +113,30 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/real-estate-checkout",
       "dataRoute": "/real-estate-checkout.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/real-estate": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/real-estate",
+      "dataRoute": "/real-estate.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -169,55 +218,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/_not-found": {
-      "initialStatus": 404,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/_not-found",
-      "dataRoute": "/_not-found.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/contact": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -242,7 +242,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/real-estate": {
+    "/courses": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -255,8 +255,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/real-estate",
-      "dataRoute": "/real-estate.rsc",
+      "srcRoute": "/courses",
+      "dataRoute": "/courses.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -266,7 +266,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/checkout": {
+    "/blog": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -279,8 +279,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/checkout",
-      "dataRoute": "/checkout.rsc",
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/contact": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -320,8 +344,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "a68fbd1ca681ed4f47f478b40e0a1512",
-    "previewModeSigningKey": "12eba1097f8b927144a5a3fad2089c0b2d34e5778aa407dd077cd91b47fdeac1",
-    "previewModeEncryptionKey": "3dd2a173ac4f1fce9d4c794c659b8c835109bbbbe4ffdf4a9eaa291cc508c19f"
+    "previewModeId": "4b38589352c7cb12095e537dadb064b3",
+    "previewModeSigningKey": "43ad7bcb3002cc695174c6f61eedc8f0db58cd1ed991e788c68ca54bd1f518e8",
+    "previewModeEncryptionKey": "428458877406872d3f774bcbe52fdff1f5a8a212c895f09c84d22c4f9e5d4e27"
   }
 }

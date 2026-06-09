@@ -1,11 +1,12 @@
 {
   "/_not-found/page": "/_not-found",
-  "/checkout/page": "/checkout",
   "/blog/page": "/blog",
-  "/real-estate-checkout/page": "/real-estate-checkout",
-  "/contact/page": "/contact",
   "/page": "/",
   "/real-estate/page": "/real-estate",
+  "/contact/page": "/contact",
+  "/checkout/page": "/checkout",
+  "/courses/page": "/courses",
+  "/real-estate-checkout/page": "/real-estate-checkout",
   "/v2/page": "/v2",
   "/thank-you/page": "/thank-you",
   "/blog/[slug]/page": "/blog/[slug]"

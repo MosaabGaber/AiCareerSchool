@@ -60,6 +60,12 @@
       "namedRegex": "^/contact(?:/)?$"
     },
     {
+      "page": "/courses",
+      "regex": "^/courses(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/courses(?:/)?$"
+    },
+    {
       "page": "/real-estate",
       "regex": "^/real\\-estate(?:/)?$",
       "routeKeys": {},
