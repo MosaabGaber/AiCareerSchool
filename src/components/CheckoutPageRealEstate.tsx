@@ -18,6 +18,7 @@ export function CheckoutPageRealEstate() {
   const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -36,7 +37,7 @@ export function CheckoutPageRealEstate() {
     try {
       const { error } = await supabase
         .from('Enrollments')
-        .insert([{ name: fullName, email }]);
+        .insert([{ name: fullName, email, phone_number: phoneNumber }]);
 
       if (error) throw error;
 
@@ -154,6 +155,17 @@ export function CheckoutPageRealEstate() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Your Full Name / اسمك بالكامل"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  placeholder="Your Phone Number / رقم تليفونك"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
                 />
