@@ -18,6 +18,7 @@ export function CheckoutPage() {
   const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isRefundOpen, setIsRefundOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -27,23 +28,28 @@ export function CheckoutPage() {
 
   const saveLead = async () => {
     try {
-      if (!email) return;
+      if (!email && !phoneNumber) return;
 
-      const { data: existingLeads } = await supabase
-        .from('leads')
-        .select('id')
-        .eq('email', email)
-        .limit(1);
+      let query = supabase.from('leads').select('id');
+      if (email && phoneNumber) {
+        query = query.or(`email.eq.${email},phone_number.eq.${phoneNumber}`);
+      } else if (email) {
+        query = query.eq('email', email);
+      } else if (phoneNumber) {
+        query = query.eq('phone_number', phoneNumber);
+      }
+
+      const { data: existingLeads } = await query.limit(1);
 
       if (existingLeads && existingLeads.length > 0) {
         await supabase
           .from('leads')
-          .update({ name: fullName, email, page: 'main-checkout' })
+          .update({ name: fullName, email, phone_number: phoneNumber, page: 'main-checkout' })
           .eq('id', existingLeads[0].id);
       } else {
         await supabase
           .from('leads')
-          .insert([{ name: fullName, email, page: 'main-checkout' }]);
+          .insert([{ name: fullName, email, phone_number: phoneNumber, page: 'main-checkout' }]);
       }
     } catch (err) {
       console.error('Failed to auto-save lead:', err);
@@ -61,7 +67,7 @@ export function CheckoutPage() {
     try {
       const { error } = await supabase
         .from('Enrollments')
-        .insert([{ name: fullName, email }]);
+        .insert([{ name: fullName, email, phone_number: phoneNumber }]);
 
       if (error) throw error;
 
@@ -178,6 +184,18 @@ export function CheckoutPage() {
                   onChange={(e) => setFullName(e.target.value)}
                   onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Full Name / اسمك بالكامل"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
+                  placeholder="Your Phone Number / رقم تليفونك"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
                 />
