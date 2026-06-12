@@ -73,7 +73,7 @@ const COURSE_CONTENT = [
 ];
 
 export function CourseContentSection() {
-  const [openChapter, setOpenChapter] = useState<number | null>(0);
+  const [openChapter, setOpenChapter] = useState<number | null>(null);
   const [openLesson, setOpenLesson] = useState<{ chapter: number, lesson: number } | null>(null);
 
   const toggleChapter = (index: number) => {
