@@ -25,6 +25,31 @@ export function CheckoutPage() {
   const [showPaymobIframe, setShowPaymobIframe] = useState(false);
   const [clientSecret, setClientSecret] = useState('');
 
+  const saveLead = async () => {
+    try {
+      if (!email) return;
+
+      const { data: existingLeads } = await supabase
+        .from('leads')
+        .select('id')
+        .eq('email', email)
+        .limit(1);
+
+      if (existingLeads && existingLeads.length > 0) {
+        await supabase
+          .from('leads')
+          .update({ name: fullName, email, page: 'main-checkout' })
+          .eq('id', existingLeads[0].id);
+      } else {
+        await supabase
+          .from('leads')
+          .insert([{ name: fullName, email, page: 'main-checkout' }]);
+      }
+    } catch (err) {
+      console.error('Failed to auto-save lead:', err);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
@@ -151,6 +176,7 @@ export function CheckoutPage() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Full Name / اسمك بالكامل"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
@@ -162,6 +188,7 @@ export function CheckoutPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Email Address / بريدك الإلكتروني"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required

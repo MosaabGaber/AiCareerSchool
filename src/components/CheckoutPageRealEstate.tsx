@@ -26,6 +26,36 @@ export function CheckoutPageRealEstate() {
   const [showPaymobIframe, setShowPaymobIframe] = useState(false);
   const [clientSecret, setClientSecret] = useState('');
 
+  const saveLead = async () => {
+    try {
+      if (!email && !phoneNumber) return;
+
+      let query = supabase.from('leads').select('id');
+      if (email && phoneNumber) {
+        query = query.or(`email.eq.${email},phone_number.eq.${phoneNumber}`);
+      } else if (email) {
+        query = query.eq('email', email);
+      } else if (phoneNumber) {
+        query = query.eq('phone_number', phoneNumber);
+      }
+
+      const { data: existingLeads } = await query.limit(1);
+
+      if (existingLeads && existingLeads.length > 0) {
+        await supabase
+          .from('leads')
+          .update({ name: fullName, email, phone_number: phoneNumber, page: 'real-estate-checkout' })
+          .eq('id', existingLeads[0].id);
+      } else {
+        await supabase
+          .from('leads')
+          .insert([{ name: fullName, email, phone_number: phoneNumber, page: 'real-estate-checkout' }]);
+      }
+    } catch (err) {
+      console.error('Failed to auto-save lead:', err);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) return;
@@ -154,6 +184,7 @@ export function CheckoutPageRealEstate() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Full Name / اسمك بالكامل"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
@@ -165,6 +196,7 @@ export function CheckoutPageRealEstate() {
                   type="tel"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Phone Number / رقم تليفونك"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
@@ -176,6 +208,7 @@ export function CheckoutPageRealEstate() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onBlur={(e) => { if (e.target.value) saveLead(); }}
                   placeholder="Your Email Address / بريدك الإلكتروني"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black placeholder-gray-400 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors"
                   required
