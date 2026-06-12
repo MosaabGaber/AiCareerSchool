@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, PlayCircle } from 'lucide-react';
 
 const COURSE_CONTENT = [
   {
-    chapter: 'Introduction to Ai',
+    chapter: 'Creating Images & Visuals',
     lessons: [
       { title: 'Introduction to Course', duration: '23m', description: 'مقدمة سريعة بتشرح إيه اللي هتتعلمه في الكورس ده وإزاي هتستفاد منه' },
       { title: 'Lesson 1 - Intro To Image Creation & Prompt Engineering', duration: '25m', description: 'هتتعلم إزاي تفكر وتكتب برومبت صح عشان توصل للصورة اللي في دماغك' },
@@ -74,7 +74,7 @@ const COURSE_CONTENT = [
 
 export function CourseContentSection() {
   const [openChapter, setOpenChapter] = useState<number | null>(0);
-  const [openLesson, setOpenLesson] = useState<{chapter: number, lesson: number} | null>(null);
+  const [openLesson, setOpenLesson] = useState<{ chapter: number, lesson: number } | null>(null);
 
   const toggleChapter = (index: number) => {
     setOpenChapter(openChapter === index ? null : index);
@@ -100,7 +100,7 @@ export function CourseContentSection() {
         </p>
       </div>
 
-      <div 
+      <div
         className="rounded-2xl border border-blue-500/30 p-4 md:p-6 lg:p-8"
         style={{
           backgroundColor: 'rgba(10, 15, 35, 0.8)',
@@ -128,8 +128,8 @@ export function CourseContentSection() {
             <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-3 md:p-4 lg:max-h-[600px] lg:overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-thumb]:bg-neongreen/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-neongreen/80 transition-colors">
               <div className="flex flex-col gap-2">
                 {COURSE_CONTENT.map((chapter, chapterIdx) => (
-                  <div 
-                    key={chapterIdx} 
+                  <div
+                    key={chapterIdx}
                     className="rounded-xl overflow-hidden bg-black/20 border border-white/5 transition-all duration-300"
                     dir="ltr"
                   >
@@ -150,16 +150,15 @@ export function CourseContentSection() {
                       </div>
                     </button>
 
-                    <div 
-                      className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                        openChapter === chapterIdx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}
+                    <div
+                      className={`transition-all duration-300 ease-in-out overflow-hidden ${openChapter === chapterIdx ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                        }`}
                     >
                       <div className="p-2 pt-0 pb-3 flex flex-col gap-2">
                         {chapter.lessons.map((lesson, lessonIdx) => {
                           const isLessonOpen = openLesson?.chapter === chapterIdx && openLesson?.lesson === lessonIdx;
                           return (
-                            <div 
+                            <div
                               key={lessonIdx}
                               className="rounded-lg overflow-hidden border border-white/5 bg-white/5 hover:border-white/10 transition-all cursor-pointer"
                               onClick={(e) => toggleLesson(chapterIdx, lessonIdx, e)}
@@ -171,11 +170,10 @@ export function CourseContentSection() {
                                 </div>
                                 <span className="text-gray-500 text-[10px] sm:text-xs shrink-0 font-mono mt-0.5 sm:mt-0">{lesson.duration}</span>
                               </div>
-                              
-                              <div 
-                                className={`transition-all duration-300 ease-in-out bg-black/30 overflow-hidden ${
-                                  isLessonOpen ? 'max-h-40 opacity-100 p-2' : 'max-h-0 opacity-0 px-2 py-0'
-                                }`}
+
+                              <div
+                                className={`transition-all duration-300 ease-in-out bg-black/30 overflow-hidden ${isLessonOpen ? 'max-h-40 opacity-100 p-2' : 'max-h-0 opacity-0 px-2 py-0'
+                                  }`}
                                 dir="rtl"
                               >
                                 <p className="text-gray-400 text-xs">{lesson.description}</p>
