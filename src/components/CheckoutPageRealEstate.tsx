@@ -323,7 +323,7 @@ export function CheckoutPageRealEstate() {
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
-                              (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                              (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                               (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                               (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                               window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
@@ -385,7 +385,7 @@ export function CheckoutPageRealEstate() {
                           type="button"
                           onClick={(e) => {
                             e.preventDefault();
-                            (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                            (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                             (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                             (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                             window.open('https://wa.link/hc7cmh', '_blank');
@@ -421,7 +421,7 @@ export function CheckoutPageRealEstate() {
                         type="button"
                         onClick={(e) => {
                           e.preventDefault();
-                          (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                          (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                           (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                           (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                           window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
@@ -462,7 +462,7 @@ export function CheckoutPageRealEstate() {
                       type="button"
                       onClick={(e) => {
                         e.preventDefault();
-                        (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+                        (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                         (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                         window.open('https://wa.link/hc7cmh', '_blank');
