@@ -70,6 +70,24 @@ export function CheckoutPageRealEstate() {
         .from('payment-screenshots')
         .upload(fileName, file);
       if (error) throw error;
+
+      const { data: urlData } = supabase.storage
+        .from('payment-screenshots')
+        .getPublicUrl(fileName);
+      const screenshotUrl = urlData.publicUrl;
+
+      if (email || phoneNumber) {
+        let query = supabase.from('leads').select('id');
+        if (email) query = query.eq('email', email);
+        else query = query.eq('phone_number', phoneNumber);
+        const { data: existingLeads } = await query.limit(1);
+        if (existingLeads && existingLeads.length > 0) {
+          await supabase.from('leads').update({ screenshot_url: screenshotUrl }).eq('id', existingLeads[0].id);
+        } else {
+          await supabase.from('leads').insert([{ name: fullName, email, phone_number: phoneNumber, page: 'real-estate-checkout', screenshot_url: screenshotUrl }]);
+        }
+      }
+
       (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
       (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       await saveLead();
