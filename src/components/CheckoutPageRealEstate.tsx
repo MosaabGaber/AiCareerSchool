@@ -337,13 +337,6 @@ export function CheckoutPageRealEstate() {
                           Pay EGP 1,500 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
                         </p>
 
-                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          احفظ صورة التحويل وابعتها على الواتساب
-                        </p>
-                        <p className="text-gray-600 text-sm mb-5 text-left">
-                          Save the transaction screenshot and send it on WhatsApp
-                        </p>
-
                         <div className="flex flex-col gap-3">
                           <button
                             type="button"
@@ -358,24 +351,23 @@ export function CheckoutPageRealEstate() {
                           >
                             Open Instapay Link
                           </button>
-                          <a
-                            href="https://wa.link/hc7cmh"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
-                          >
-                            Send on WhatsApp
-                          </a>
                         </div>
 
                         <div className="mt-4 border-t border-gray-200 pt-4">
                           {!uploadSuccess ? (
                             <>
+                              <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                                احفظ صورة التحويل
+                              </p>
+                              <p className="text-gray-600 text-sm mb-5 text-left">
+                                Save the transaction screenshot
+                              </p>
+
                               <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
-                                ارفع صورة التحويل هنا بعد الدفع
+                                ارفع صورة التحويل هنا بعد الدفع و هنتواصل معاك و هندخلك الكورس
                               </p>
                               <p className="text-gray-600 text-xs mb-3 text-left">
-                                Upload your payment screenshot here after paying
+                                Upload your payment screenshot here after paying and we will contact you to enter the course
                               </p>
                               <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -450,35 +442,21 @@ export function CheckoutPageRealEstate() {
                           Pay EGP 1,500 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                         </p>
 
-                        <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                          احفظ صورة التحويل وابعتها على الواتساب
-                        </p>
-                        <p className="text-gray-600 text-sm mb-5 text-left">
-                          Save the transaction screenshot and send it on WhatsApp
-                        </p>
-
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
-                            (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                            (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
-                            window.open('https://wa.link/hc7cmh', '_blank');
-                          }}
-                          className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
-                        >
-                          Send on WhatsApp
-                        </button>
-
                         <div className="mt-4 border-t border-gray-200 pt-4">
                           {!uploadSuccess ? (
                             <>
+                              <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                                احفظ صورة التحويل
+                              </p>
+                              <p className="text-gray-600 text-sm mb-5 text-left">
+                                Save the transaction screenshot
+                              </p>
+
                               <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
-                                ارفع صورة التحويل هنا بعد الدفع
+                                ارفع صورة التحويل هنا بعد الدفع و هنتواصل معاك و هندخلك الكورس
                               </p>
                               <p className="text-gray-600 text-xs mb-3 text-left">
-                                Upload your payment screenshot here after paying
+                                Upload your payment screenshot here after paying and we will contact you to enter the course
                               </p>
                               <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -534,13 +512,6 @@ export function CheckoutPageRealEstate() {
                       Pay EGP 1,500 via InstaPay to <a href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF" target="_blank" rel="noopener noreferrer" className="text-[#1a9a46] font-semibold underline">@mosaabgaber2</a>
                     </p>
 
-                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                      احفظ صورة التحويل وابعتها على الواتساب
-                    </p>
-                    <p className="text-gray-600 text-sm mb-5 text-left">
-                      Save the transaction screenshot and send it on WhatsApp
-                    </p>
-
                     <div className="flex flex-col sm:flex-row gap-3">
                       <button
                         type="button"
@@ -555,24 +526,23 @@ export function CheckoutPageRealEstate() {
                       >
                         Open Instapay Link
                       </button>
-                      <a
-                        href="https://wa.link/hc7cmh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
-                      >
-                        Send on WhatsApp
-                      </a>
                     </div>
 
                     <div className="mt-4 border-t border-gray-200 pt-4">
                       {!uploadSuccess ? (
                         <>
+                          <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                            احفظ صورة التحويل
+                          </p>
+                          <p className="text-gray-600 text-sm mb-5 text-left">
+                            Save the transaction screenshot
+                          </p>
+
                           <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
-                            ارفع صورة التحويل هنا بعد الدفع
+                            ارفع صورة التحويل هنا بعد الدفع و هنتواصل معاك و هندخلك الكورس
                           </p>
                           <p className="text-gray-600 text-xs mb-3 text-left">
-                            Upload your payment screenshot here after paying
+                            Upload your payment screenshot here after paying and we will contact you to enter the course
                           </p>
                           <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -625,35 +595,21 @@ export function CheckoutPageRealEstate() {
                       Pay EGP 1,500 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                     </p>
 
-                    <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
-                      احفظ صورة التحويل وابعتها على الواتساب
-                    </p>
-                    <p className="text-gray-600 text-sm mb-5 text-left">
-                      Save the transaction screenshot and send it on WhatsApp
-                    </p>
-
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
-                        (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
-                        window.open('https://wa.link/hc7cmh', '_blank');
-                      }}
-                      className="w-full block text-center bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#1a9a46] border border-[#25D366]/50 px-4 py-3 rounded-lg transition-colors text-sm font-medium"
-                    >
-                      Send on WhatsApp
-                    </button>
-
                     <div className="mt-4 border-t border-gray-200 pt-4">
                       {!uploadSuccess ? (
                         <>
+                          <p className="text-black font-semibold text-sm mb-1 text-right" dir="rtl">
+                            احفظ صورة التحويل
+                          </p>
+                          <p className="text-gray-600 text-sm mb-5 text-left">
+                            Save the transaction screenshot
+                          </p>
+
                           <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
-                            ارفع صورة التحويل هنا بعد الدفع
+                            ارفع صورة التحويل هنا بعد الدفع و هنتواصل معاك و هندخلك الكورس
                           </p>
                           <p className="text-gray-600 text-xs mb-3 text-left">
-                            Upload your payment screenshot here after paying
+                            Upload your payment screenshot here after paying and we will contact you to enter the course
                           </p>
                           <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
