@@ -25,6 +25,10 @@ export function CheckoutPageRealEstate() {
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay' | 'vodafone'>('card');
   const [showPaymobIframe, setShowPaymobIframe] = useState(false);
   const [clientSecret, setClientSecret] = useState('');
+  const [screenshotFile, setScreenshotFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [uploadError, setUploadError] = useState('');
 
   const saveLead = async () => {
     try {
@@ -53,6 +57,28 @@ export function CheckoutPageRealEstate() {
       }
     } catch (err) {
       console.error('Failed to auto-save lead:', err);
+    }
+  };
+
+  const uploadScreenshot = async (file: File) => {
+    setIsUploading(true);
+    setUploadError('');
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Date.now()}_${fullName.replace(/\s+/g, '_')}.${fileExt}`;
+      const { data, error } = await supabase.storage
+        .from('payment-screenshots')
+        .upload(fileName, file);
+      if (error) throw error;
+      (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+      (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+      await saveLead();
+      setUploadSuccess(true);
+    } catch (err: any) {
+      setUploadError('حدث خطأ أثناء الرفع. حاول تاني.');
+      console.error('Upload error:', err);
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -341,8 +367,58 @@ export function CheckoutPageRealEstate() {
                             Send on WhatsApp
                           </a>
                         </div>
+
+                        <div className="mt-4 border-t border-gray-200 pt-4">
+                          {!uploadSuccess ? (
+                            <>
+                              <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
+                                ارفع صورة التحويل هنا بعد الدفع
+                              </p>
+                              <p className="text-gray-600 text-xs mb-3 text-left">
+                                Upload your payment screenshot here after paying
+                              </p>
+                              <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                                <span className="text-sm text-gray-500">{screenshotFile ? screenshotFile.name : 'اختار الصورة / Choose image'}</span>
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  className="hidden"
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0];
+                                    if (file) setScreenshotFile(file);
+                                  }}
+                                />
+                              </label>
+                              {screenshotFile && (
+                                <button
+                                  type="button"
+                                  onClick={() => uploadScreenshot(screenshotFile)}
+                                  disabled={isUploading}
+                                  className="w-full mt-3 bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all text-sm"
+                                >
+                                  {isUploading ? 'جاري الرفع...' : 'ارفع صورة التحويل'}
+                                </button>
+                              )}
+                              {uploadError && <p className="text-red-500 text-xs mt-2 text-center">{uploadError}</p>}
+                            </>
+                          ) : (
+                            <div className="flex flex-col items-center gap-2 py-4">
+                              <div className="w-12 h-12 bg-[#f0fdf4] rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#1a9a46]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <p className="text-[#1a9a46] font-bold text-sm text-center" dir="rtl">تم رفع الصورة بنجاح! هنتواصل معاك قريباً.</p>
+                              <p className="text-gray-500 text-xs text-center">Screenshot uploaded successfully! We will contact you soon.</p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     )}
+
                   </div>
 
                   {/* Vodafone Cash Column */}
@@ -394,6 +470,55 @@ export function CheckoutPageRealEstate() {
                         >
                           Send on WhatsApp
                         </button>
+
+                        <div className="mt-4 border-t border-gray-200 pt-4">
+                          {!uploadSuccess ? (
+                            <>
+                              <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
+                                ارفع صورة التحويل هنا بعد الدفع
+                              </p>
+                              <p className="text-gray-600 text-xs mb-3 text-left">
+                                Upload your payment screenshot here after paying
+                              </p>
+                              <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                                <span className="text-sm text-gray-500">{screenshotFile ? screenshotFile.name : 'اختار الصورة / Choose image'}</span>
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  className="hidden"
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0];
+                                    if (file) setScreenshotFile(file);
+                                  }}
+                                />
+                              </label>
+                              {screenshotFile && (
+                                <button
+                                  type="button"
+                                  onClick={() => uploadScreenshot(screenshotFile)}
+                                  disabled={isUploading}
+                                  className="w-full mt-3 bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all text-sm"
+                                >
+                                  {isUploading ? 'جاري الرفع...' : 'ارفع صورة التحويل'}
+                                </button>
+                              )}
+                              {uploadError && <p className="text-red-500 text-xs mt-2 text-center">{uploadError}</p>}
+                            </>
+                          ) : (
+                            <div className="flex flex-col items-center gap-2 py-4">
+                              <div className="w-12 h-12 bg-[#f0fdf4] rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#1a9a46]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <p className="text-[#1a9a46] font-bold text-sm text-center" dir="rtl">تم رفع الصورة بنجاح! هنتواصل معاك قريباً.</p>
+                              <p className="text-gray-500 text-xs text-center">Screenshot uploaded successfully! We will contact you soon.</p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -439,6 +564,55 @@ export function CheckoutPageRealEstate() {
                         Send on WhatsApp
                       </a>
                     </div>
+
+                    <div className="mt-4 border-t border-gray-200 pt-4">
+                      {!uploadSuccess ? (
+                        <>
+                          <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
+                            ارفع صورة التحويل هنا بعد الدفع
+                          </p>
+                          <p className="text-gray-600 text-xs mb-3 text-left">
+                            Upload your payment screenshot here after paying
+                          </p>
+                          <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                            </svg>
+                            <span className="text-sm text-gray-500">{screenshotFile ? screenshotFile.name : 'اختار الصورة / Choose image'}</span>
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (file) setScreenshotFile(file);
+                              }}
+                            />
+                          </label>
+                          {screenshotFile && (
+                            <button
+                              type="button"
+                              onClick={() => uploadScreenshot(screenshotFile)}
+                              disabled={isUploading}
+                              className="w-full mt-3 bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all text-sm"
+                            >
+                              {isUploading ? 'جاري الرفع...' : 'ارفع صورة التحويل'}
+                            </button>
+                          )}
+                          {uploadError && <p className="text-red-500 text-xs mt-2 text-center">{uploadError}</p>}
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center gap-2 py-4">
+                          <div className="w-12 h-12 bg-[#f0fdf4] rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#1a9a46]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <p className="text-[#1a9a46] font-bold text-sm text-center" dir="rtl">تم رفع الصورة بنجاح! هنتواصل معاك قريباً.</p>
+                          <p className="text-gray-500 text-xs text-center">Screenshot uploaded successfully! We will contact you soon.</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 
@@ -471,6 +645,55 @@ export function CheckoutPageRealEstate() {
                     >
                       Send on WhatsApp
                     </button>
+
+                    <div className="mt-4 border-t border-gray-200 pt-4">
+                      {!uploadSuccess ? (
+                        <>
+                          <p className="text-black font-semibold text-sm mb-2 text-right" dir="rtl">
+                            ارفع صورة التحويل هنا بعد الدفع
+                          </p>
+                          <p className="text-gray-600 text-xs mb-3 text-left">
+                            Upload your payment screenshot here after paying
+                          </p>
+                          <label className="w-full flex flex-col items-center justify-center gap-2 p-4 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-[#1a9a46] hover:bg-[#f0fdf4] transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                            </svg>
+                            <span className="text-sm text-gray-500">{screenshotFile ? screenshotFile.name : 'اختار الصورة / Choose image'}</span>
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (file) setScreenshotFile(file);
+                              }}
+                            />
+                          </label>
+                          {screenshotFile && (
+                            <button
+                              type="button"
+                              onClick={() => uploadScreenshot(screenshotFile)}
+                              disabled={isUploading}
+                              className="w-full mt-3 bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all text-sm"
+                            >
+                              {isUploading ? 'جاري الرفع...' : 'ارفع صورة التحويل'}
+                            </button>
+                          )}
+                          {uploadError && <p className="text-red-500 text-xs mt-2 text-center">{uploadError}</p>}
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center gap-2 py-4">
+                          <div className="w-12 h-12 bg-[#f0fdf4] rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#1a9a46]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <p className="text-[#1a9a46] font-bold text-sm text-center" dir="rtl">تم رفع الصورة بنجاح! هنتواصل معاك قريباً.</p>
+                          <p className="text-gray-500 text-xs text-center">Screenshot uploaded successfully! We will contact you soon.</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
