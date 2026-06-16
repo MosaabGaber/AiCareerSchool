@@ -70,7 +70,7 @@ export function CheckoutPageRealEstate() {
         .from('payment-screenshots')
         .upload(fileName, file);
       if (error) throw error;
-      (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+      (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
       (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       await saveLead();
       setUploadSuccess(true);
