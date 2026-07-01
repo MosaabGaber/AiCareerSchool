@@ -369,19 +369,18 @@ export function CheckoutPageRealEstate() {
                         </p>
 
                         <div className="flex flex-col gap-3">
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.preventDefault();
+                          <a
+                            href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
+                            target="_blank"
+                            onClick={() => {
                               (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                               (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                               (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
-                              window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
                             }}
-                            className="w-full text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                            className="w-full block text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                           >
                             Open Instapay Link
-                          </button>
+                          </a>
                         </div>
 
                         <div className="mt-4 border-t border-gray-200 pt-4">
@@ -566,19 +565,18 @@ export function CheckoutPageRealEstate() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
+                      <a
+                        href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
+                        target="_blank"
+                        onClick={() => {
                           (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
                           (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
                           (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
-                          window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
                         }}
-                        className="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
+                        className="flex-1 block text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                       >
                         Open Instapay Link
-                      </button>
+                      </a>
                     </div>
 
                     <div className="mt-4 border-t border-gray-200 pt-4">
