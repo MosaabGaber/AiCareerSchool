@@ -132,7 +132,7 @@ export function CheckoutPageRealEstate() {
       if (data.client_secret) {
         setClientSecret(data.client_secret);
         setShowPaymobIframe(true);
-        (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
+        (window as any).fbq?.('track', 'InitiateCheckout', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
         (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       } else {
