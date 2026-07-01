@@ -321,7 +321,7 @@ export function CheckoutPage() {
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
-                              fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                              (window as any).fbq?.('track', 'AddToCart', {currency: 'EGP', value: 1200});
                               (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
                               (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
                               window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
@@ -349,7 +349,7 @@ export function CheckoutPage() {
                       type="button"
                       onClick={() => {
                         setPaymentMethod('vodafone');
-                        fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                        (window as any).fbq?.('track', 'AddToCart', {currency: 'EGP', value: 1200});
                         (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
                       }}
                       className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
@@ -419,7 +419,7 @@ export function CheckoutPage() {
                         type="button"
                         onClick={(e) => {
                           e.preventDefault();
-                          fbq('track', 'Purchase', {currency: 'EGP', value: 1200}, {eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)});
+                          (window as any).fbq?.('track', 'AddToCart', {currency: 'EGP', value: 1200});
                           (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
                           (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
                           window.open('https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF', '_blank');
