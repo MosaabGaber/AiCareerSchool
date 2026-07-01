@@ -55,6 +55,11 @@ export function CheckoutPageRealEstate() {
           .from('leads')
           .insert([{ name: fullName, email, phone_number: phoneNumber, page: 'real-estate-checkout' }]);
       }
+
+      (window as any).fbq?.('init', '916550307848753', {
+        em: email,
+        ph: phoneNumber,
+      });
     } catch (err) {
       console.error('Failed to auto-save lead:', err);
     }
@@ -88,6 +93,10 @@ export function CheckoutPageRealEstate() {
         }
       }
 
+      (window as any).fbq?.('init', '916550307848753', {
+        em: email,
+        ph: phoneNumber,
+      });
       (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
       (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       await saveLead();
@@ -132,6 +141,10 @@ export function CheckoutPageRealEstate() {
       if (data.client_secret) {
         setClientSecret(data.client_secret);
         setShowPaymobIframe(true);
+        (window as any).fbq?.('init', '916550307848753', {
+          em: email,
+          ph: phoneNumber,
+        });
         (window as any).fbq?.('track', 'InitiateCheckout', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
         (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
         (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
