@@ -44,8 +44,8 @@ export function HomeRealEstate({
         <section className="py-8 flex flex-col items-center justify-center text-center px-4 relative z-10">
           <span className="text-gray-400 font-medium tracking-widest uppercase mb-4 text-sm mt-8">Course Price:</span>
           <div className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 mb-3 mt-2">
-            <span className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 tracking-tight">Pay 1,500 EGP</span>
-            <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-400">instead of LE 2,500</span>
+            <span className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 tracking-tight">Pay 2,500 EGP</span>
+            <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-400">instead of LE 4,500</span>
           </div>
           <span className="text-[#00944d] font-medium text-lg tracking-wide mb-8">for a limited time</span>
 
