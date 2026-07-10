@@ -97,8 +97,8 @@ export function CheckoutPageRealEstate() {
         em: email,
         ph: phoneNumber,
       });
-      (window as any).fbq?.('track', 'Purchase', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
-      (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+      (window as any).fbq?.('track', 'Purchase', { value: 2500, currency: 'EGP', content_name: 'Real Estate Course' }, { eventID: 'event_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9) });
+      (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       await saveLead();
       setUploadSuccess(true);
     } catch (err: any) {
@@ -132,7 +132,7 @@ export function CheckoutPageRealEstate() {
         body: JSON.stringify({
           name: fullName,
           email,
-          amount: 150000,
+          amount: 250000,
         }),
       });
 
@@ -145,9 +145,9 @@ export function CheckoutPageRealEstate() {
           em: email,
           ph: phoneNumber,
         });
-        (window as any).fbq?.('track', 'InitiateCheckout', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
-        (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-        (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+        (window as any).fbq?.('track', 'InitiateCheckout', { value: 2500, currency: 'EGP', content_name: 'Real Estate Course' });
+        (window as any).ttq?.track('InitiateCheckout', { value: 2500, currency: 'EGP' });
+        (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
       } else {
         throw new Error(data.error || 'Failed to initialize payment');
       }
@@ -302,7 +302,7 @@ export function CheckoutPageRealEstate() {
                   <div className="flex-1 w-full">
                     <div className="text-center md:text-left mb-6">
                       <p className="text-lg md:text-xl text-gray-800">
-                        Step #2: Pay <span className="text-[#1a9a46] font-bold">EGP 2,500</span> instead of <span className="line-through text-gray-500">LE 2,500</span>
+                        Step #2: Pay <span className="text-[#1a9a46] font-bold">EGP 2,500</span> instead of <span className="line-through text-gray-500">LE 4,500</span>
                       </p>
                       <h3 className="text-black text-xl font-bold mt-8 mb-4">Payment Methods:</h3>
                     </div>
@@ -333,7 +333,7 @@ export function CheckoutPageRealEstate() {
                               disabled={isSubmitting}
                               className="w-full bg-[#1a9a46] hover:bg-[#15803d] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 text-base"
                             >
-                              {isSubmitting ? 'Processing...' : 'Pay Now - EGP 1,500'}
+                              {isSubmitting ? 'Processing...' : 'Pay Now - EGP 2,500'}
                             </button>
                           </div>
                         )}
@@ -345,7 +345,7 @@ export function CheckoutPageRealEstate() {
                           type="button"
                           onClick={() => {
                             setPaymentMethod('instapay');
-                            (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                            (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                           }}
                           className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'instapay'
                             ? 'border-[#1a9a46] bg-[#f0fdf4]'
@@ -373,9 +373,9 @@ export function CheckoutPageRealEstate() {
                                 href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                                 target="_blank"
                                 onClick={() => {
-                                  (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
-                                  (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                                  (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                                  (window as any).fbq?.('track', 'AddToCart', { value: 2500, currency: 'EGP', content_name: 'Real Estate Course' });
+                                  (window as any).ttq?.track('InitiateCheckout', { value: 2500, currency: 'EGP' });
+                                  (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                                 }}
                                 className="w-full block text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                               >
@@ -460,7 +460,7 @@ export function CheckoutPageRealEstate() {
                           type="button"
                           onClick={() => {
                             setPaymentMethod('vodafone');
-                            (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                            (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                           }}
                           className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer min-h-[120px] ${paymentMethod === 'vodafone'
                             ? 'border-[#1a9a46] bg-[#f0fdf4]'
@@ -480,7 +480,7 @@ export function CheckoutPageRealEstate() {
                               ادفع 2,500 جنيه على رقم فودافون كاش <span className="text-[#1a9a46]">01008176408</span>
                             </p>
                             <p className="text-gray-600 text-sm mb-4 text-left">
-                              Pay EGP 1,500 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
+                              Pay EGP 2,500 to Vodafone Cash number <span className="text-[#1a9a46] font-semibold">01008176408</span>
                             </p>
 
                             <div className="mt-4 border-t border-gray-200 pt-4">
@@ -569,9 +569,9 @@ export function CheckoutPageRealEstate() {
                             href="https://ipn.eg/S/mosaabgaber2/instapay/6i3fZF"
                             target="_blank"
                             onClick={() => {
-                              (window as any).fbq?.('track', 'AddToCart', { value: 1500, currency: 'EGP', content_name: 'Real Estate Course' });
-                              (window as any).ttq?.track('InitiateCheckout', { value: 1500, currency: 'EGP' });
-                              (window as any).ttq?.track('Purchase', { value: 1500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
+                              (window as any).fbq?.('track', 'AddToCart', { value: 2500, currency: 'EGP', content_name: 'Real Estate Course' });
+                              (window as any).ttq?.track('InitiateCheckout', { value: 2500, currency: 'EGP' });
+                              (window as any).ttq?.track('Purchase', { value: 2500, currency: 'EGP', content_type: 'product', content_id: 'ai-real-estate-course', content_name: 'AI for Real Estate Course' });
                             }}
                             className="flex-1 block text-center bg-gray-100 hover:bg-gray-200 text-black px-4 py-3 rounded-lg transition-colors text-sm font-medium border border-gray-200"
                           >
