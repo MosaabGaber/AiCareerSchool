@@ -65,11 +65,15 @@ export function CheckoutPage() {
     setIsSubmitting(true);
     setErrorMsg('');
     try {
-      const { error } = await supabase
-        .from('Enrollments')
-        .insert([{ name: fullName, email, phone_number: phoneNumber }]);
+      try {
+        const { error } = await supabase
+          .from('Enrollments')
+          .insert([{ name: fullName, email, phone_number: phoneNumber }]);
 
-      if (error) throw error;
+        if (error) throw error;
+      } catch (enrollError) {
+        console.error('Failed to save enrollment, continuing to payment:', enrollError);
+      }
 
       const response = await fetch('/api/create-intention', {
         method: 'POST',
