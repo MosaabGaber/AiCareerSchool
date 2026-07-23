@@ -7,39 +7,47 @@ export default async function handler(req, res) {
   const finalAmount = amount || 120000;
 
   try {
-    const response = await fetch('https://accept.paymob.com/v1/intention/', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Token ${process.env.PAYMOB_SECRET_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        amount: finalAmount,
-        currency: 'EGP',
-        payment_methods: [parseInt(process.env.PAYMOB_INTEGRATION_ID)],
-        items: [{
-          name: 'AI Career School Course',
-          amount: finalAmount,
-          description: 'Lifetime access to AI Career School',
-          quantity: 1
-        }],
-        billing_data: {
-          first_name: name.split(' ')[0],
-          last_name: name.split(' ')[1] || 'N/A',
-          email: email,
-          phone_number: 'N/A',
-          street: address || 'N/A',
-          building: 'N/A',
-          floor: 'N/A',
-          apartment: 'N/A',
-          city: 'Cairo',
-          country: 'EG',
-          state: 'Cairo',
+    console.log('Starting Paymob fetch...');
+    let response;
+    try {
+      response = await fetch('https://accept.paymob.com/v1/intention/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Token ${process.env.PAYMOB_SECRET_KEY}`,
+          'Content-Type': 'application/json',
         },
-        redirection_url: 'https://www.aicareerschool.com/thank-you',
-        notification_url: 'https://www.aicareerschool.com/api/paymob-webhook',
-      }),
-    });
+        body: JSON.stringify({
+          amount: finalAmount,
+          currency: 'EGP',
+          payment_methods: [parseInt(process.env.PAYMOB_INTEGRATION_ID)],
+          items: [{
+            name: 'AI Career School Course',
+            amount: finalAmount,
+            description: 'Lifetime access to AI Career School',
+            quantity: 1
+          }],
+          billing_data: {
+            first_name: name.split(' ')[0],
+            last_name: name.split(' ')[1] || 'N/A',
+            email: email,
+            phone_number: 'N/A',
+            street: address || 'N/A',
+            building: 'N/A',
+            floor: 'N/A',
+            apartment: 'N/A',
+            city: 'Cairo',
+            country: 'EG',
+            state: 'Cairo',
+          },
+          redirection_url: 'https://www.aicareerschool.com/thank-you',
+          notification_url: 'https://www.aicareerschool.com/api/paymob-webhook',
+        }),
+      });
+      console.log('Paymob fetch complete', response.status);
+    } catch (error) {
+      console.error('Fetch failed:', error);
+      throw error;
+    }
 
     const data = await response.json();
     
