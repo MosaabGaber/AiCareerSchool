@@ -219,7 +219,7 @@ export function CheckoutPageRealEstate() {
                 </button>
               </div>
               <iframe
-                src={`https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_live_XUoAxwNsU13axDyyPivhFkPAh6EDSwIy&clientSecret=${clientSecret}`}
+                src={`https://accept.paymob.com/unifiedcheckout/?publicKey=${process.env.NEXT_PUBLIC_PAYMOB_PUBLIC_KEY}&clientSecret=${clientSecret}`}
                 className="w-full h-[500px] md:h-[700px] rounded-xl border border-gray-200 shadow-sm"
               />
             </div>
