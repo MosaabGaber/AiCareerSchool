@@ -87,7 +87,7 @@ export function CheckoutPage() {
       const data = await response.json();
 
       if (data.client_secret) {
-        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_test_IkJizSwsZKedwtNA8eypxlIxH9xqxcJ1&clientSecret=${data.client_secret}`;
+        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_live_XUoAxwNsU13axDyyPivhFkPAh6EDSwIy&clientSecret=${data.client_secret}`;
         (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
         (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
       } else {

@@ -141,7 +141,7 @@ export function CheckoutPageRealEstate() {
       const data = await response.json();
 
       if (data.client_secret) {
-        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_test_IkJizSwsZKedwtNA8eypxlIxH9xqxcJ1&clientSecret=${data.client_secret}`;
+        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_live_XUoAxwNsU13axDyyPivhFkPAh6EDSwIy&clientSecret=${data.client_secret}`;
         (window as any).fbq?.('init', '916550307848753', {
           em: email,
           ph: phoneNumber,
