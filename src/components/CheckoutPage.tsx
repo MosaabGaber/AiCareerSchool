@@ -23,8 +23,6 @@ export function CheckoutPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'instapay' | 'vodafone'>('card');
-  const [showPaymobIframe, setShowPaymobIframe] = useState(false);
-  const [clientSecret, setClientSecret] = useState('');
 
   const saveLead = async () => {
     try {
@@ -89,8 +87,7 @@ export function CheckoutPage() {
       const data = await response.json();
 
       if (data.client_secret) {
-        setClientSecret(data.client_secret);
-        setShowPaymobIframe(true);
+        window.location.href = `https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_test_IkJizSwsZKedwtNA8eypxlIxH9xqxcJ1&clientSecret=${data.client_secret}`;
         (window as any).ttq?.track('InitiateCheckout', { value: 1200, currency: 'EGP' });
         (window as any).ttq?.track('Purchase', { value: 1200, currency: 'EGP', content_type: 'product', content_id: 'ai-career-school-course', content_name: 'AI Career School Course' });
       } else {
@@ -147,26 +144,7 @@ export function CheckoutPage() {
         </div>
 
         <div className="bg-gray-50 rounded-xl p-6 md:p-8 mb-6 border border-gray-100">
-
-          {showPaymobIframe ? (
-            <div className="flex flex-col items-center w-full">
-              <div className="w-full flex justify-end mb-4">
-                <button
-                  onClick={() => setShowPaymobIframe(false)}
-                  className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded-lg font-bold text-sm transition-colors cursor-pointer"
-                  dir="rtl"
-                >
-                  رجوع
-                </button>
-              </div>
-              <iframe
-                src={`https://accept.paymob.com/unifiedcheckout/?publicKey=egy_pk_test_IkJizSwsZKedwtNA8eypxlIxH9xqxcJ1&clientSecret=${clientSecret}`}
-                className="w-full h-[500px] md:h-[700px] rounded-xl border border-gray-200 shadow-sm"
-              />
-            </div>
-          ) : (
-            <>
-              <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="space-y-4 mb-8">
               {errorMsg && (
                 <div className="text-center mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -483,8 +461,6 @@ export function CheckoutPage() {
               More payment methods coming soon / طرق دفع إضافية قريباً
             </p>
           </div>
-            </>
-          )}
         </div>
       </motion.div>
 
