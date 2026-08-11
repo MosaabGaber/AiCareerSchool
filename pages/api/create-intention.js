@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const response = await fetch('https://accept.paymob.com/v1/intention/', {
       method: 'POST',
       headers: {
-        'Authorization': `Token ${process.env.PAYMOB_API_KEY}`,
+        'Authorization': `Token ${process.env.PAYMOB_SECRET_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
