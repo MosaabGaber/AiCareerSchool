@@ -29,9 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | AI Career School`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://www.aicareerschool.com/blog/${params.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `https://www.aicareerschool.com/blog/${params.slug}`,
       images: [
         {
           url: post.image,

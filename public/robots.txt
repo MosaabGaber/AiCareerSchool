@@ -36,4 +36,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://aicareerschool.com/sitemap.xml
+Sitemap: https://www.aicareerschool.com/sitemap.xml

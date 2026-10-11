@@ -5,8 +5,9 @@ import { ModalProvider } from '../src/context/ModalContext';
 import { FloatingNav } from '../src/components/FloatingNav';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.aicareerschool.com'),
   title: 'كورس الذكاء الاصطناعي للصور والفيديو | AI Career School',
-  description: 'تعلم إنشاء صور وفيديوهات احترافية بالذكاء الاصطناعي. كورس عربي شامل بأدوات Kling و Veo و ElevenLabs. محتوى يتحدث كل 3-5 أيام. ابدأ بـ 950 جنيه.',
+  description: 'تعلم إنشاء صور وفيديوهات احترافية بالذكاء الاصطناعي. كورس عربي شامل بأدوات Kling و Veo و ElevenLabs. محتوى يتحدث كل 3-5 أيام. ابدأ من 1,200 جنيه.',
   keywords: 'كورس ذكاء اصطناعي, تعلم الذكاء الاصطناعي, AI course Arabic, كورس إنشاء صور بالذكاء الاصطناعي, كورس فيديو بالذكاء الاصطناعي, Kling, Veo, ElevenLabs, AI image generation, AI video generation, AI Career School',
   authors: [{ name: 'AI Career School' }],
   robots: {
@@ -14,21 +15,21 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://aicareerschool.com/',
+    canonical: 'https://www.aicareerschool.com/',
     languages: {
-      'ar': 'https://aicareerschool.com/',
-      'en': 'https://aicareerschool.com/',
-      'x-default': 'https://aicareerschool.com/',
+      'ar': 'https://www.aicareerschool.com/',
+      'en': 'https://www.aicareerschool.com/',
+      'x-default': 'https://www.aicareerschool.com/',
     },
   },
   openGraph: {
     title: 'كورس الذكاء الاصطناعي للصور والفيديو | AI Career School',
     description: 'تعلم إنشاء صور وفيديوهات احترافية بالذكاء الاصطناعي. كورس عربي شامل بأدوات Kling و Veo و ElevenLabs. محتوى يتحدث كل 3-5 أيام.',
-    url: 'https://aicareerschool.com/',
+    url: 'https://www.aicareerschool.com/',
     siteName: 'AI Career School',
     images: [
       {
-        url: 'https://aicareerschool.com/og-image.png',
+        url: 'https://www.aicareerschool.com/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'كورس الذكاء الاصطناعي للصور والفيديو | AI Career School',
     description: 'تعلم إنشاء صور وفيديوهات احترافية بالذكاء الاصطناعي. كورس عربي شامل بأدوات Kling و Veo و ElevenLabs.',
-    images: ['https://aicareerschool.com/og-image.png'],
+    images: ['https://www.aicareerschool.com/og-image.png'],
   },
   icons: {
     icon: '/logo.png',
@@ -54,13 +55,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aicareerschool.com/#organization",
+      "@id": "https://www.aicareerschool.com/#organization",
       "name": "AI Career School",
       "alternateName": "أكاديمية AI Career School",
-      "url": "https://aicareerschool.com",
+      "url": "https://www.aicareerschool.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://aicareerschool.com/logo.png"
+        "url": "https://www.aicareerschool.com/logo.png"
       },
       "description": "أكاديمية عربية متخصصة في تعليم إنشاء الصور والفيديوهات الاحترافية باستخدام أدوات الذكاء الاصطناعي مثل Kling 3.0 و Veo 3.1 و ElevenLabs. المحتوى يتحدث كل 3-5 أيام لمواكبة أحدث التطورات.",
       "foundingDate": "2024",
@@ -72,25 +73,25 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://aicareerschool.com/#website",
+      "@id": "https://www.aicareerschool.com/#website",
       "name": "AI Career School",
-      "url": "https://aicareerschool.com",
-      "publisher": { "@id": "https://aicareerschool.com/#organization" },
+      "url": "https://www.aicareerschool.com",
+      "publisher": { "@id": "https://www.aicareerschool.com/#organization" },
       "inLanguage": ["ar", "en"]
     },
     {
       "@type": "Course",
-      "@id": "https://aicareerschool.com/#course-basic",
+      "@id": "https://www.aicareerschool.com/#course-basic",
       "name": "كورس الذكاء الاصطناعي للصور والفيديو - الباقة الأساسية",
       "description": "كورس عربي شامل لتعلم إنشاء صور وفيديوهات احترافية باستخدام أحدث أدوات الذكاء الاصطناعي مثل Kling 3.0 و Veo 3.1 و ElevenLabs و Nano Banana Pro.",
-      "provider": { "@id": "https://aicareerschool.com/#organization" },
+      "provider": { "@id": "https://www.aicareerschool.com/#organization" },
       "educationalLevel": "Beginner",
       "inLanguage": "ar",
       "offers": {
         "@type": "Offer",
-        "price": "950",
+        "price": "1200",
         "priceCurrency": "EGP",
-        "url": "https://aicareerschool.com/checkout"
+        "url": "https://www.aicareerschool.com/checkout"
       }
     }
   ]
