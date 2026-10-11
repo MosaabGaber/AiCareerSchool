@@ -21,6 +21,7 @@ const COURSES = [
     badge: 'متاح الآن',
     badgeColor: 'bg-[#00944d]',
     thumbnailText: 'AI Content Creation',
+    vslVideo: 'https://player.mediadelivery.net/embed/631325/71395d57-c96a-40fe-b62a-c2def1c653a6?autoplay=false&loop=false&muted=false&preload=true&responsive=true',
     date: '2023-01-01',
     rating: 5,
     sales: 1200
@@ -39,6 +40,7 @@ const COURSES = [
     badge: 'متاح الآن',
     badgeColor: 'bg-[#00944d]',
     thumbnailText: 'AI for Real Estate',
+    vslVideo: 'https://player.mediadelivery.net/embed/631325/969c4fa3-19d7-4d88-b745-b7789c98afe5?autoplay=false&loop=false&muted=false&preload=true&responsive=true',
     date: '2023-02-01',
     rating: 4.8,
     sales: 800
@@ -306,14 +308,31 @@ export default function HomePage() {
                     className={`bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col group relative h-full ${course.status === 'coming_soon' ? 'opacity-90' : 'cursor-pointer'}`}
                   >
                     
-                    <div className={`h-56 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden ${course.status === 'coming_soon' ? 'bg-gray-50' : 'bg-[#eff6ff]'}`}>
-                      <span className={`font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#1e3a5f]'}`}>
-                        {course.thumbnailText}
-                      </span>
-                      <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 ${course.badgeColor}`}>
-                        {course.badge}
+                    {course.vslVideo ? (
+                      <div className="relative border-b border-gray-100 overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                        <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                          <iframe
+                            src={course.vslVideo}
+                            loading="lazy"
+                            style={{ border: 0, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}
+                            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                            allowFullScreen={true}
+                          />
+                        </div>
+                        <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 pointer-events-none ${course.badgeColor}`}>
+                          {course.badge}
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className={`h-56 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden ${course.status === 'coming_soon' ? 'bg-gray-50' : 'bg-[#eff6ff]'}`}>
+                        <span className={`font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#1e3a5f]'}`}>
+                          {course.thumbnailText}
+                        </span>
+                        <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 ${course.badgeColor}`}>
+                          {course.badge}
+                        </div>
+                      </div>
+                    )}
                     
                     <div className="p-8 flex flex-col flex-grow relative z-10">
                       <h3 className={`text-[1.4rem] font-outfit font-bold mb-2 leading-snug ${course.status === 'coming_soon' ? 'text-gray-500' : 'text-[#0f172a]'}`}>
