@@ -290,7 +290,14 @@
     "configFileName": "next.config.mjs",
     "turbopack": {
       "root": "/Users/mosaabgaber/Desktop/AI-CAREER-SCHOOL-WEB"
-    }
+    },
+    "_originalRedirects": [
+      {
+        "source": "/courses",
+        "destination": "/",
+        "permanent": true
+      }
+    ]
   },
   "appDir": "/Users/mosaabgaber/Desktop/AI-CAREER-SCHOOL-WEB",
   "relativeAppDir": "",

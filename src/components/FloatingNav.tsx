@@ -11,10 +11,10 @@ export function FloatingNav() {
   const handleJoinNow = () => {
     if (pathname === '/real-estate') {
       window.location.href = '/real-estate-checkout';
-    } else if (pathname === '/v2') {
+    } else if (pathname === '/v2' || pathname === '/ai-content') {
       window.location.href = '/checkout';
     } else {
-      router.push('/checkout');
+      router.push('/ai-content');
     }
   };
 
@@ -77,7 +77,7 @@ export function FloatingNav() {
               : 'bg-blue-500 hover:bg-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_28px_rgba(59,130,246,0.7)]'
           }`}
         >
-          {pathname === '/v2' || pathname === '/' || pathname === '/real-estate' ? 'إشترك الآن' : 'JOIN NOW'}
+          {pathname === '/v2' || pathname === '/ai-content' || pathname === '/real-estate' ? 'إشترك الآن' : 'JOIN NOW'}
         </button>
       </nav>
     </div>

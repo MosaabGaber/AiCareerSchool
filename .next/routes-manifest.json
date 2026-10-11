@@ -10,6 +10,12 @@
       "internal": true,
       "statusCode": 308,
       "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/courses",
+      "destination": "/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/courses(?:/)?$"
     }
   ],
   "headers": [],
@@ -40,6 +46,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/ai-content",
+      "regex": "^/ai\\-content(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai\\-content(?:/)?$"
     },
     {
       "page": "/blog",
