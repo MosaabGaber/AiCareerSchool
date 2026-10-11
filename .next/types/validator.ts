@@ -135,6 +135,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/web-creation-checkout/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/web-creation-checkout">> = Specific
+  const handler = {} as typeof import("../../app/web-creation-checkout/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/web-creation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/web-creation">> = Specific
+  const handler = {} as typeof import("../../app/web-creation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 
 
 

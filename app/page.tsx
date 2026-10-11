@@ -46,6 +46,24 @@ const COURSES = [
     sales: 800
   },
   {
+    id: 5,
+    title: 'إنشاء المواقع بالذكاء الاصطناعي',
+    subtitle: 'Web Creation with AI',
+    description: 'تعلم تبني مواقع ويب مذهلة بدون كود - وتبيعها بآلاف الجنيهات.',
+    price: 1200,
+    priceStr: '1,200 EGP',
+    status: 'available',
+    link: '/web-creation',
+    categories: ['Web Development', 'تصميم', 'Marketing'],
+    level: 'كل المستويات',
+    badge: 'متاح الآن',
+    badgeColor: 'bg-[#00944d]',
+    thumbnailText: 'Web Creation with AI',
+    date: '2024-03-01',
+    rating: 5,
+    sales: 450
+  },
+  {
     id: 3,
     title: 'الأتمتة بالذكاء الاصطناعي',
     subtitle: 'أتمتة المهام، الـ workflows، وتوفير الوقت',

@@ -100,6 +100,18 @@
       "regex": "^/v2(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/v2(?:/)?$"
+    },
+    {
+      "page": "/web-creation",
+      "regex": "^/web\\-creation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/web\\-creation(?:/)?$"
+    },
+    {
+      "page": "/web-creation-checkout",
+      "regex": "^/web\\-creation\\-checkout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/web\\-creation\\-checkout(?:/)?$"
     }
   ],
   "dataRoutes": [],
