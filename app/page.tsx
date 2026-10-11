@@ -22,9 +22,27 @@ const COURSES = [
     badgeColor: 'bg-[#00944d]',
     thumbnailText: 'AI Content Creation',
     vslVideo: 'https://player.mediadelivery.net/embed/631325/71395d57-c96a-40fe-b62a-c2def1c653a6?autoplay=false&loop=false&muted=false&preload=true&responsive=true',
-    date: '2023-01-01',
+    date: '2024-05-01',
     rating: 5,
     sales: 1200
+  },
+  {
+    id: 5,
+    title: 'إنشاء مواقع احترافية بالذكاء الاصطناعي',
+    subtitle: 'Web Creation with AI',
+    description: 'تعلم تبني مواقع ويب مذهلة بدون كود - وتبيعها بآلاف الجنيهات.',
+    price: 1200,
+    priceStr: '1,200 EGP',
+    status: 'available',
+    link: '/web-creation',
+    categories: ['Web Development', 'تصميم', 'Marketing'],
+    level: 'كل المستويات',
+    badge: 'متاح الآن',
+    badgeColor: 'bg-[#00944d]',
+    thumbnailText: 'Web Creation with AI',
+    date: '2024-04-01',
+    rating: 5,
+    sales: 450
   },
   {
     id: 2,
@@ -41,27 +59,9 @@ const COURSES = [
     badgeColor: 'bg-[#00944d]',
     thumbnailText: 'AI for Real Estate',
     vslVideo: 'https://player.mediadelivery.net/embed/631325/969c4fa3-19d7-4d88-b745-b7789c98afe5?autoplay=false&loop=false&muted=false&preload=true&responsive=true',
-    date: '2023-02-01',
+    date: '2024-03-01',
     rating: 4.8,
     sales: 800
-  },
-  {
-    id: 5,
-    title: 'إنشاء المواقع بالذكاء الاصطناعي',
-    subtitle: 'Web Creation with AI',
-    description: 'تعلم تبني مواقع ويب مذهلة بدون كود - وتبيعها بآلاف الجنيهات.',
-    price: 1200,
-    priceStr: '1,200 EGP',
-    status: 'available',
-    link: '/web-creation',
-    categories: ['Web Development', 'تصميم', 'Marketing'],
-    level: 'كل المستويات',
-    badge: 'متاح الآن',
-    badgeColor: 'bg-[#00944d]',
-    thumbnailText: 'Web Creation with AI',
-    date: '2024-03-01',
-    rating: 5,
-    sales: 450
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ const COURSES = [
     badge: 'قريباً',
     badgeColor: 'bg-amber-500',
     thumbnailText: 'AI Automation',
-    date: '2024-01-01',
+    date: '2024-02-01',
     rating: 0,
     sales: 0
   },
@@ -95,7 +95,7 @@ const COURSES = [
     badge: 'قريباً',
     badgeColor: 'bg-amber-500',
     thumbnailText: 'General AI',
-    date: '2024-02-01',
+    date: '2024-01-01',
     rating: 0,
     sales: 0
   }
