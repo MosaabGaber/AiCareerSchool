@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "/_not-found",
-  "/ai-content/page": "/ai-content",
   "/checkout/page": "/checkout",
+  "/page": "/",
   "/blog/page": "/blog",
   "/courses/page": "/courses",
   "/real-estate-checkout/page": "/real-estate-checkout",
-  "/contact/page": "/contact",
-  "/page": "/",
+  "/ai-content/page": "/ai-content",
   "/real-estate/page": "/real-estate",
   "/v2/page": "/v2",
-  "/thank-you/page": "/thank-you",
-  "/blog/[slug]/page": "/blog/[slug]"
+  "/contact/page": "/contact",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/thank-you/page": "/thank-you"
 }

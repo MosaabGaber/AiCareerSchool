@@ -293,81 +293,92 @@ export default function HomePage() {
                 لم يتم العثور على كورسات تطابق بحثك.
               </motion.div>
             ) : (
-              filteredCourses.map(course => (
-                <motion.div 
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  key={course.id}
-                  className={`bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col group relative ${course.status === 'coming_soon' ? 'opacity-90' : ''}`}
-                >
-                  
-                  <div className={`h-56 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden ${course.status === 'coming_soon' ? 'bg-gray-50' : 'bg-[#eff6ff]'}`}>
-                    <span className={`font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#1e3a5f]'}`}>
-                      {course.thumbnailText}
-                    </span>
-                    <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 ${course.badgeColor}`}>
-                      {course.badge}
+              filteredCourses.map(course => {
+                const isClickable = course.status === 'available';
+                const cardElement = (
+                  <motion.div 
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    key={course.id}
+                    className={`bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col group relative h-full ${course.status === 'coming_soon' ? 'opacity-90' : 'cursor-pointer'}`}
+                  >
+                    
+                    <div className={`h-56 flex flex-col items-center justify-center border-b border-gray-100 relative overflow-hidden ${course.status === 'coming_soon' ? 'bg-gray-50' : 'bg-[#eff6ff]'}`}>
+                      <span className={`font-outfit font-bold text-xl md:text-2xl relative z-10 tracking-wide uppercase ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#1e3a5f]'}`}>
+                        {course.thumbnailText}
+                      </span>
+                      <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 ${course.badgeColor}`}>
+                        {course.badge}
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="p-8 flex flex-col flex-grow relative z-10">
-                    <h3 className={`text-[1.4rem] font-outfit font-bold mb-2 leading-snug ${course.status === 'coming_soon' ? 'text-gray-500' : 'text-[#0f172a]'}`}>
-                      {course.title}
-                    </h3>
-                    <p className={`text-sm font-semibold mb-5 tracking-wide ${course.status === 'coming_soon' ? 'text-amber-600' : 'text-[#2563eb]'}`}>
-                      {course.subtitle}
-                    </p>
-                    <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed font-inter">
-                      {course.description}
-                    </p>
+                    
+                    <div className="p-8 flex flex-col flex-grow relative z-10">
+                      <h3 className={`text-[1.4rem] font-outfit font-bold mb-2 leading-snug ${course.status === 'coming_soon' ? 'text-gray-500' : 'text-[#0f172a]'}`}>
+                        {course.title}
+                      </h3>
+                      <p className={`text-sm font-semibold mb-5 tracking-wide ${course.status === 'coming_soon' ? 'text-amber-600' : 'text-[#2563eb]'}`}>
+                        {course.subtitle}
+                      </p>
+                      <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed font-inter">
+                        {course.description}
+                      </p>
 
-                    {course.status === 'available' && (
-                      <div className="bg-[#eff6ff] rounded-xl p-3 mt-2 mb-6 flex flex-col items-center border border-blue-100">
-                        <span className="text-xs text-[#2563eb] font-bold mb-2">ينتهي العرض خلال</span>
-                        <div className="flex items-center justify-center gap-3 text-[#0f172a] font-bold font-outfit text-sm">
-                          <div className="flex flex-col items-center">
-                            <span>{timeLeft.days}</span>
-                            <span className="text-[0.6rem] text-gray-500 font-normal">أيام</span>
-                          </div>
-                          <span>:</span>
-                          <div className="flex flex-col items-center">
-                            <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
-                            <span className="text-[0.6rem] text-gray-500 font-normal">ساعات</span>
-                          </div>
-                          <span>:</span>
-                          <div className="flex flex-col items-center">
-                            <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                            <span className="text-[0.6rem] text-gray-500 font-normal">دقائق</span>
-                          </div>
-                          <span>:</span>
-                          <div className="flex flex-col items-center">
-                            <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                            <span className="text-[0.6rem] text-gray-500 font-normal">ثواني</span>
+                      {course.status === 'available' && (
+                        <div className="bg-[#eff6ff] rounded-xl p-3 mt-2 mb-6 flex flex-col items-center border border-blue-100">
+                          <span className="text-xs text-[#2563eb] font-bold mb-2">ينتهي العرض خلال</span>
+                          <div className="flex items-center justify-center gap-3 text-[#0f172a] font-bold font-outfit text-sm">
+                            <div className="flex flex-col items-center">
+                              <span>{timeLeft.days}</span>
+                              <span className="text-[0.6rem] text-gray-500 font-normal">أيام</span>
+                            </div>
+                            <span>:</span>
+                            <div className="flex flex-col items-center">
+                              <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
+                              <span className="text-[0.6rem] text-gray-500 font-normal">ساعات</span>
+                            </div>
+                            <span>:</span>
+                            <div className="flex flex-col items-center">
+                              <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                              <span className="text-[0.6rem] text-gray-500 font-normal">دقائق</span>
+                            </div>
+                            <span>:</span>
+                            <div className="flex flex-col items-center">
+                              <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                              <span className="text-[0.6rem] text-gray-500 font-normal">ثواني</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    )}
-
-                    <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                      <span className={`text-2xl font-bold font-outfit tracking-tight ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#0f172a]'}`}>
-                        {course.priceStr}
-                      </span>
-                      {course.status === 'available' ? (
-                        <Link href={course.link} className="bg-[#2563eb] text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold hover:bg-[#1d4ed8] transition-all duration-300">
-                          اشترك الآن
-                        </Link>
-                      ) : (
-                        <button disabled className="bg-gray-200 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
-                          قريباً
-                        </button>
                       )}
+
+                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+                        <span className={`text-2xl font-bold font-outfit tracking-tight ${course.status === 'coming_soon' ? 'text-gray-400' : 'text-[#0f172a]'}`}>
+                          {course.priceStr}
+                        </span>
+                        {course.status === 'available' ? (
+                          <span className="bg-[#2563eb] text-white px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold group-hover:bg-[#1d4ed8] transition-all duration-300">
+                            اشترك الآن
+                          </span>
+                        ) : (
+                          <button disabled className="bg-gray-200 text-gray-500 px-6 md:px-8 py-2.5 rounded-xl text-sm font-bold cursor-not-allowed">
+                            قريباً
+                          </button>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))
+                  </motion.div>
+                );
+
+                return isClickable ? (
+                  <Link key={course.id} href={course.link} className="block h-full cursor-pointer">
+                    {cardElement}
+                  </Link>
+                ) : (
+                  cardElement
+                );
+              })
             )}
           </AnimatePresence>
         </motion.div>
