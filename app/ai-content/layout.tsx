@@ -26,6 +26,10 @@ export default function AiContentLayout({ children }: { children: React.ReactNod
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "ratingCount": "1200"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".course-description", ".faq-section"]
     }
   };
 
@@ -66,10 +70,30 @@ export default function AiContentLayout({ children }: { children: React.ReactNod
     ]
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://www.aicareerschool.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "صناعة المحتوى بالذكاء الاصطناعي",
+        "item": "https://www.aicareerschool.com/ai-content"
+      }
+    ]
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {children}
     </>
   );
