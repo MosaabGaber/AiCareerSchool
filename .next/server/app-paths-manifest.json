@@ -1,16 +1,16 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/checkout/page": "app/checkout/page.js",
-  "/real-estate-checkout/page": "app/real-estate-checkout/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/v2/page": "app/v2/page.js",
-  "/web-creation-checkout/page": "app/web-creation-checkout/page.js",
   "/courses/page": "app/courses/page.js",
+  "/blog/page": "app/blog/page.js",
   "/page": "app/page.js",
+  "/v2/page": "app/v2/page.js",
+  "/real-estate-checkout/page": "app/real-estate-checkout/page.js",
   "/contact/page": "app/contact/page.js",
+  "/web-creation-checkout/page": "app/web-creation-checkout/page.js",
   "/thank-you/page": "app/thank-you/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/web-creation/page": "app/web-creation/page.js",
   "/ai-content/page": "app/ai-content/page.js",
-  "/real-estate/page": "app/real-estate/page.js"
+  "/real-estate/page": "app/real-estate/page.js",
+  "/web-creation/page": "app/web-creation/page.js"
 }

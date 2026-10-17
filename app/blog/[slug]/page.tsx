@@ -26,15 +26,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const title = post.metaTitle ? `${post.metaTitle} | AI Career School` : `${post.title} | AI Career School`;
+  const description = post.metaDescription || post.excerpt;
+
   return {
-    title: `${post.title} | AI Career School`,
-    description: post.excerpt,
+    title,
+    description,
     alternates: {
       canonical: `https://www.aicareerschool.com/blog/${params.slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: post.metaTitle || post.title,
+      description,
       url: `https://www.aicareerschool.com/blog/${params.slug}`,
       images: [
         {
@@ -46,8 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
+      title: post.metaTitle || post.title,
+      description,
       images: [post.image],
     },
   };
@@ -60,6 +63,51 @@ export default function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  // Pass slug down to the existing component if it relies on use params or just render component
-  return <BlogPost />;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.metaDescription || post.excerpt,
+    "author": {
+      "@type": "Organization",
+      "name": "AI Career School",
+      "url": "https://www.aicareerschool.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Career School"
+    },
+    "datePublished": post.datePublished || "2026-10-18",
+    "inLanguage": "ar",
+    "mainEntityOfPage": `https://www.aicareerschool.com/blog/${post.slug}`
+  };
+
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <BlogPost />
+    </>
+  );
 }
