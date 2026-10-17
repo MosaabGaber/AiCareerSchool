@@ -132,19 +132,71 @@
           </a>
         </div>
       </div>
-    `,faqs:[{question:"هل محتاج خبرة برمجية عشان أربح من الذكاء الاصطناعي؟",answer:"لا، أغلب أدوات AI الحديثة مصممة للمستخدم العادي. مش محتاج تعرف برمجة — محتاج بس تتعلم إزاي تستخدم الأدوات صح."},{question:"كم ممكن أربح من الذكاء الاصطناعي شهرياً؟",answer:"الدخل بيتفاوت حسب المجال والخبرة. المبتدئين ممكن يبدأوا من 500 دولار شهرياً، والمتخصصين بيوصلوا لـ 5,000 دولار وأكتر."},{question:"إيه أفضل مجال أبدأ فيه؟",answer:"صناعة المحتوى المرئي (صور وفيديوهات) هو الأسهل في البداية والأكتر طلباً. بعد كده تقدر تتوسع لبناء المواقع أو التصوير العقاري."},{question:"هل الذكاء الاصطناعي هياخد شغلي؟",answer:"الذكاء الاصطناعي مش هياخد شغل اللي يتعلمه — هياخد شغل اللي يتجاهله. حسب بيانات Brookings، الطلب على متخصصي AI زاد 24% بينما الوظائف التقليدية قلّت."}]},{slug:"best-ai-tools-video-images-2026",title:"أفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور في 2026",excerpt:"دليل شامل لأفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور مع مقارنة شاملة.",metaTitle:"أفضل أدوات الذكاء الاصطناعي لصناعة الفيديو والصور 2026 | مقارنة شاملة",metaDescription:"دليل شامل لأفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور في 2026. مقارنة بين Runway و Kling و Veo و Midjourney مع أمثلة عملية وأسعار.",image:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",date:"18 أكتوبر 2026",datePublished:"2026-10-18",readTime:"12 دقيقة قراءة",content:`
+    `,faqs:[{question:"هل محتاج خبرة برمجية عشان أربح من الذكاء الاصطناعي؟",answer:"لا، أغلب أدوات AI الحديثة مصممة للمستخدم العادي. مش محتاج تعرف برمجة — محتاج بس تتعلم إزاي تستخدم الأدوات صح."},{question:"كم ممكن أربح من الذكاء الاصطناعي شهرياً؟",answer:"الدخل بيتفاوت حسب المجال والخبرة. المبتدئين ممكن يبدأوا من 500 دولار شهرياً، والمتخصصين بيوصلوا لـ 5,000 دولار وأكتر."},{question:"إيه أفضل مجال أبدأ فيه؟",answer:"صناعة المحتوى المرئي (صور وفيديوهات) هو الأسهل في البداية والأكتر طلباً. بعد كده تقدر تتوسع لبناء المواقع أو التصوير العقاري."},{question:"هل الذكاء الاصطناعي هياخد شغلي؟",answer:"الذكاء الاصطناعي مش هياخد شغل اللي يتعلمه — هياخد شغل اللي يتجاهله. حسب بيانات Brookings، الطلب على متخصصي AI زاد 24% بينما الوظائف التقليدية قلّت."}]},{slug:"best-ai-tools-video-images-2026",title:"أفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور في 2026",excerpt:"دليل شامل لأفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور في 2026. مقارنة بين Seedance 2.5 و Kling 3.0 و Gemini Omni و Midjourney مع أمثلة عملية وأسعار.",metaTitle:"أفضل أدوات الذكاء الاصطناعي لصناعة الفيديو والصور 2026 | مقارنة شاملة",metaDescription:"دليل شامل لأفضل 10 أدوات ذكاء اصطناعي لصناعة الفيديو والصور في 2026. مقارنة بين Seedance 2.5 و Kling 3.0 و Gemini Omni و Midjourney مع أمثلة عملية وأسعار.",image:"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",date:"18 أكتوبر 2026",datePublished:"2026-10-18",readTime:"12 دقيقة قراءة",content:`
       <p>أدوات الذكاء الاصطناعي لصناعة الفيديو والصور اتطورت بشكل جنوني في 2026. اللي كان بياخد فريق إنتاج كامل وميزانية كبيرة، دلوقتي تقدر تعمله لوحدك من اللابتوب.</p>
 
       <p class="mt-4">سوق أدوات الفيديو بالذكاء الاصطناعي وصل لـ <strong>847 مليون دولار في 2026</strong> وبينمو بمعدل 18.8% سنوياً، وفقاً لـ Fortune Business Insights. و<strong>63% من المسوقين</strong> اللي بيشتغلوا بالفيديو بقوا يستخدموا أدوات AI في إنتاجهم، حسب تقرير Wyzowl 2026.</p>
 
-      <p class="mt-4">في المقال ده، هنقارن بين أفضل 10 أدوات وهنقولك كل أداة مناسبة لإيه بالظبط.</p>
+      <p class="mt-4">في المقال ده، هنقارن بين أفضل 10 أدوات — من الأحدث زي Seedance 2.5 و Gemini Omni لحد الأدوات المجربة زي Kling 3.0 و Midjourney — وهنقولك كل أداة مناسبة لإيه بالظبط.</p>
 
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أدوات صناعة الفيديو بالـ AI</h2>
 
       <div class="space-y-8">
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">1. Runway Gen-3 Alpha</h3>
-          <p class="text-gray-300 mb-4">Runway هي الأداة الأشهر في صناعة الفيديو بالذكاء الاصطناعي. Gen-3 Alpha بتقدم فيديوهات عالية الجودة من نصوص أو صور.</p>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">1. Seedance 2.5 (الأفضل في 2026)</h3>
+          <p class="text-gray-300 mb-4">Seedance 2.5 من ByteDance هي أقوى أداة فيديو بالذكاء الاصطناعي في 2026. اتأطلقت في يوليو 2026 وبتقدم فيديوهات تصل لـ 30 ثانية في طلب واحد — ضعف الجيل السابق — مع إمكانية تمديد المشاهد لفيديوهات أطول مع الحفاظ على تناسق الشخصيات والمشاهد.</p>
+          <div class="text-sm space-y-2 mb-4">
+            <p><strong class="text-neongreen">المميزات:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 mr-2">
+              <li>فيديوهات حتى 30 ثانية في طلب واحد، مع تمديد متعدد لمحتوى أطول</li>
+              <li>دعم حتى 30 صورة و10 مقاطع فيديو و10 مقاطع صوت كمرجع في طلب واحد</li>
+              <li>توليد صوت مدمج مع الفيديو تلقائياً</li>
+              <li>تعديل على مستوى الثواني — تقدر توجّه أحداث الفيديو لحظة بلحظة</li>
+              <li>خلفية خضراء (Green Screen) وتغيير زوايا الكاميرا</li>
+              <li>جودة تصل لـ 1080p مع تفاصيل مذهلة في الجلد والعيون والإضاءة</li>
+            </ul>
+            <p class="pt-2"><strong class="text-blue-400">مناسبة لـ:</strong> إعلانات احترافية، محتوى سينمائي، فيديوهات طويلة، إنتاج بمراجع متعددة.</p>
+            <p><strong class="text-purple-400">السعر:</strong> يبدأ من 0.12 دولار للثانية (480p) حتى 0.59 دولار للثانية (1080p) عبر بوابات API.</p>
+          </div>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">2. Kling 3.0</h3>
+          <p class="text-gray-300 mb-4">Kling 3.0 من Kuaishou الصينية نقلة نوعية عن الإصدارات السابقة. وفقاً لـ TechNode، شركة Kuaishou جمعت تمويل بقيمة 3 مليار دولار لتطوير Kling AI في يوليو 2026. Kling 3.0 بقت نظام متكامل بيعالج نص وصور وصوت وفيديو في نموذج واحد.</p>
+          <div class="text-sm space-y-2 mb-4">
+            <p><strong class="text-neongreen">المميزات:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 mr-2">
+              <li>فيديوهات حتى 15 ثانية بجودة Ultra HD وصور بدقة 4K</li>
+              <li>توليد صوت متزامن تلقائياً مع مزامنة شفاه بـ 5 لغات (إنجليزي، صيني، ياباني، كوري، إسباني)</li>
+              <li>Motion Brush للتحكم في مسار حركة عناصر معينة</li>
+              <li>Storyboard Tool لتخطيط المشاهد وزوايا الكاميرا والمدة</li>
+              <li>4 إصدارات: Video 3.0, Video 3.0 Omni, Image 3.0, Image 3.0 Omni</li>
+            </ul>
+            <p class="pt-2"><strong class="text-blue-400">مناسبة لـ:</strong> فيديوهات عقارية، محتوى إبداعي، إعلانات بصوت متزامن.</p>
+            <p><strong class="text-purple-400">السعر:</strong> خطة مجانية (66 كريديت يومياً بـ 720p) | Standard بـ 6.99$ شهرياً | Pro بـ 29.99$ شهرياً | Ultra بـ 59.99$ شهرياً مع 60fps و Ultra HD.</p>
+          </div>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">3. Gemini Omni (جوجل)</h3>
+          <p class="text-gray-300 mb-4">Gemini Omni أعلنت عنه جوجل في مؤتمر Google I/O في مايو 2026. رئيس DeepMind ديميس حسابيس وصفه بأنه "النموذج اللي يقدر يخلق أي حاجة من أي مدخل." Omni بيجمع بين قدرات Gemini الذكية ونماذج الميديا زي Veo و Nano Banana و Genie في نموذج واحد موحد.</p>
+          <div class="text-sm space-y-2 mb-4">
+            <p><strong class="text-neongreen">المميزات:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 mr-2">
+              <li>توليد فيديو بأي أسلوب (كلايميشن، واقعي، كارتون) من نص أو صور أو فيديو</li>
+              <li>تعديل فيديو بالمحادثة — تقدر تقوله "غيّر الخلفية لشاطئ" وهو يعمل كده</li>
+              <li>حفاظ على تناسق الشخصيات والخلفيات بعد التعديلات</li>
+              <li>Flow Agent مساعد ذكي يقترح مشاهد ويعدّل مشاريع كاملة</li>
+              <li>متكامل مع منصة Flow لصناعة الأفلام بالـ AI</li>
+            </ul>
+            <p class="pt-2"><strong class="text-blue-400">مناسبة لـ:</strong> صناعة أفلام قصيرة، محتوى تعليمي، تعديل فيديوهات بالمحادثة.</p>
+            <p><strong class="text-purple-400">السعر:</strong> متاح مع اشتراك Google One AI Premium (حوالي 20$ شهرياً).</p>
+          </div>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">4. Runway Gen-3 Alpha</h3>
+          <p class="text-gray-300 mb-4">Runway لسه من أشهر الأدوات في صناعة الفيديو بالذكاء الاصطناعي. Gen-3 Alpha بتقدم فيديوهات عالية الجودة من نصوص أو صور مع أدوات تعديل قوية.</p>
           <div class="text-sm space-y-2 mb-4">
             <p><strong class="text-neongreen">المميزات:</strong> تحويل نص لفيديو بجودة سينمائية، تحويل صورة لفيديو متحرك، أدوات تعديل متقدمة (إزالة خلفية، إضافة حركة)، Motion Brush للتحكم في حركة عناصر معينة.</p>
             <p><strong class="text-blue-400">مناسبة لـ:</strong> إعلانات السوشيال ميديا، محتوى يوتيوب، فيديوهات المنتجات.</p>
@@ -153,27 +205,24 @@
         </div>
 
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">2. Kling 2.0</h3>
-          <p class="text-gray-300 mb-4">Kling من شركة Kuaishou الصينية حققت نتائج مذهلة. وفقاً لنتائج Kuaishou المالية للربع الثاني 2026، إيرادات Kling تخطت 850 مليون يوان صيني ربع سنوياً بنمو يتجاوز 200% سنوياً.</p>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">5. Higgsfield (+ Genjutsu)</h3>
+          <p class="text-gray-300 mb-4">Higgsfield منصة أسسها مهندسين سابقين من Google Brain وجمعت تمويل 400 مليون دولار بتقييم 5.4 مليار دولار في 2026، مع إيرادات سنوية 700 مليون دولار و30 مليون مستخدم. الميزة الرئيسية إنها بتجمع أكتر من 15 نموذج AI (Sora 2, Kling 3.0, Seedance 2.5 وغيرهم) في اشتراك واحد.</p>
           <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> فيديوهات طويلة تصل لـ 3 دقائق، جودة حركة واقعية جداً، دعم الوجوه البشرية بشكل ممتاز، أسعار أرخص من Runway.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> فيديوهات عقارية، محتوى إبداعي، إعلانات تجارية.</p>
-            <p><strong class="text-purple-400">السعر:</strong> تبدأ من 5 دولار شهرياً.</p>
+            <p><strong class="text-neongreen">المميزات:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 mr-2">
+              <li>أكتر من 15 نموذج فيديو وصور في منصة واحدة</li>
+              <li>Soul ID: حافظ على نفس الوجه والشخصية عبر كل الفيديوهات والنماذج</li>
+              <li>Cinema Studio: أكتر من 70 حركة كاميرا جاهزة (dolly, crane, drone)</li>
+              <li>Genjutsu: نموذج تحويل فيديو — خد فيديو موجود وغيّر الشخصيات أو الخلفية أو الأسلوب مع الحفاظ على الحركة الأصلية</li>
+              <li>Marketing Studio: يعمل إعلانات فيديو متعددة من لينك منتج واحد</li>
+            </ul>
+            <p class="pt-2"><strong class="text-blue-400">مناسبة لـ:</strong> وكالات إعلانية، صناع محتوى محترفين، إنتاج فيديو بكميات كبيرة.</p>
+            <p><strong class="text-purple-400">السعر:</strong> Starter بـ 15$ شهرياً | Plus بـ 39$ شهرياً | Ultra بـ 99$ شهرياً.</p>
           </div>
         </div>
 
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">3. Google Veo 2</h3>
-          <p class="text-gray-300 mb-4">Veo 2 من جوجل بتقدم فيديوهات واقعية جداً مع فهم عميق للفيزياء والحركة الطبيعية والعدسات السينمائية.</p>
-          <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> فهم ممتاز للإضاءة والظلال، حركة كاميرا سينمائية، متكاملة مع Google Workspace، جودة تصل لـ 4K.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> فيديوهات احترافية، محتوى تسويقي، عروض منتجات فاخرة.</p>
-            <p><strong class="text-purple-400">السعر:</strong> متاحة مع اشتراك Google One AI Premium.</p>
-          </div>
-        </div>
-
-        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">4. HeyGen</h3>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">6. HeyGen</h3>
           <p class="text-gray-300 mb-4">HeyGen متخصصة في فيديوهات الأفاتار الرقمي. وفقاً لبيانات الشركة (يونيو 2026)، HeyGen تخطت 200 مليون دولار إيرادات سنوية متكررة مع أكتر من 30 مليون مستخدم و118 مليون فيديو تم إنتاجه.</p>
           <div class="text-sm space-y-2 mb-4">
             <p><strong class="text-neongreen">المميزات:</strong> أفاتار رقمي يتكلم بصوتك، ترجمة فيديو لأكتر من 40 لغة مع مزامنة الشفاه، قوالب جاهزة للإعلانات والشروحات، استنساخ صوتك بالذكاء الاصطناعي.</p>
@@ -183,8 +232,8 @@
         </div>
 
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">5. CapCut AI</h3>
-          <p class="text-gray-300 mb-4">CapCut من ByteDance (نفس شركة TikTok) بتقدم أدوات تعديل فيديو مجانية مدعومة بالذكاء الاصطناعي وسريعة للغاية.</p>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">7. CapCut AI</h3>
+          <p class="text-gray-300 mb-4">CapCut من ByteDance (نفس شركة TikTok و Seedance) بتقدم أدوات تعديل فيديو مجانية مدعومة بالذكاء الاصطناعي.</p>
           <div class="text-sm space-y-2 mb-4">
             <p><strong class="text-neongreen">المميزات:</strong> إزالة خلفية تلقائية، ترجمة وتفريغ صوتي تلقائي، تأثيرات وفلاتر AI مبتكرة، مجانية بالكامل للاستخدام الأساسي.</p>
             <p><strong class="text-blue-400">مناسبة لـ:</strong> ريلز انستجرام، تيك توك، محتوى سوشيال ميديا يومي.</p>
@@ -197,8 +246,26 @@
 
       <div class="space-y-8">
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">6. Midjourney v7</h3>
-          <p class="text-gray-300 mb-4">Midjourney لسه الأداة الأقوى عالمياً في إنتاج صور فنية وإبداعية بالذكاء الاصطناعي. v7 بتقدم تفاصيل مذهلة وتحكم غير مسبوق في الإضاءة والكاميرات.</p>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">8. Nano Banana Pro (جوجل)</h3>
+          <p class="text-gray-300 mb-4">Nano Banana Pro هو مولّد الصور بالذكاء الاصطناعي من جوجل، مبني على Gemini 2.5 Flash Image. الاسم جاي من المجتمع، لكنه بقى الاسم الرسمي. بيتميز بإنه متكامل مع Gemini مباشرة — تكتب اللي عايزه بالعربي وهو يفهمك ويعمل الصورة.</p>
+          <div class="text-sm space-y-2 mb-4">
+            <p><strong class="text-neongreen">المميزات:</strong></p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 mr-2">
+              <li>تناسق شخصيات عبر صور متعددة (Character Consistency)</li>
+              <li>دمج من 2 لـ 4 صور مرجعية في صورة واحدة</li>
+              <li>تعديل تفاعلي بالمحادثة (غيّر الإضاءة، اللون، زاوية الكاميرا)</li>
+              <li>التحكم في وضعية الجسم باستخدام رسم عصا بسيط (Pose Control)</li>
+              <li>علامة مائية SynthID غير مرئية لحماية المحتوى</li>
+              <li>جودة تصل لـ 2K، و4K عبر Higgsfield</li>
+            </ul>
+            <p class="pt-2"><strong class="text-blue-400">مناسبة لـ:</strong> بوستات سوشيال ميديا، صور منتجات متناسقة، محتوى بالعربي.</p>
+            <p><strong class="text-purple-400">السعر:</strong> مجاني مع Gemini (حد يومي) | الميزات الكاملة مع Google One AI Premium (حوالي 20$ شهرياً).</p>
+          </div>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">9. Midjourney v7</h3>
+          <p class="text-gray-300 mb-4">Midjourney لسه الأداة الأقوى عالمياً في إنتاج صور فنية وإبداعية بالذكاء الاصطناعي. v7 بتقدم تفاصيل مذهلة وتحكم غير مسبوق في الإضاءة والتكوين.</p>
           <div class="text-sm space-y-2 mb-4">
             <p><strong class="text-neongreen">المميزات:</strong> جودة صور استثنائية، أنماط فنية متنوعة (واقعي، كارتون، سينمائي)، تحكم متقدم في التفاصيل، محرر ويب مدمج للتعديلات.</p>
             <p><strong class="text-blue-400">مناسبة لـ:</strong> تصميمات إبداعية، صور منتجات، محتوى سوشيال ميديا جذاب.</p>
@@ -207,47 +274,17 @@
         </div>
 
         <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">7. DALL-E 3 (في ChatGPT)</h3>
-          <p class="text-gray-300 mb-4">DALL-E 3 من OpenAI متكاملة مع ChatGPT، وده بيخلّيها سهلة الاستخدام جداً — تكتب اللي عايزه بالعربي وهي تفهمك وتحقق خيالك بدقة.</p>
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">10. ElevenLabs (صوت)</h3>
+          <p class="text-gray-300 mb-4">ElevenLabs مش أداة صور أو فيديو، لكنها ضرورية لأي صانع محتوى — بتحوّل النص لصوت بشري واقعي جداً بالعربي وبأي لغة.</p>
           <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> فهم ممتاز للنصوص العربية، متكاملة مع شات جي بي تي، تعديل أجزاء معينة من الصورة بسهولة، كتابة نصوص واضحة داخل الصور.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> بوستات سوشيال ميديا، شروحات، إنفوجرافيك سريع.</p>
-            <p><strong class="text-purple-400">السعر:</strong> متاحة مع ChatGPT Plus (20 دولار شهرياً).</p>
-          </div>
-        </div>
-
-        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">8. Adobe Firefly 3</h3>
-          <p class="text-gray-300 mb-4">Adobe Firefly متكاملة مباشرة داخل برامج Adobe (فوتوشوب، إليستريتور)، وده بيخلّيها الاختيار الأول للمصممين المحترفين والوكالات.</p>
-          <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> متكاملة مع فوتوشوب وإليستريتور، آمنة تجارياً 100% (مدربة على محتوى مرخص)، Generative Fill و Generative Expand مذهلين.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> تصميم جرافيك احترافي، تعديل صور تجارية، دمج منتجات حقيقية.</p>
-            <p><strong class="text-purple-400">السعر:</strong> متاحة مع اشتراك Adobe Creative Cloud.</p>
-          </div>
-        </div>
-
-        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">9. Leonardo AI</h3>
-          <p class="text-gray-300 mb-4">Leonardo AI بتقدم توازن ممتاز بين الجودة والسرعة والسعر، مع أدوات متقدمة للتحكم في النماذج والأبعاد.</p>
-          <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> نماذج متعددة (Photoreal، Anime، Artistic)، Canvas للتعديل المباشر، خطة مجانية سخية يومياً، سرعة إنتاج فائقة.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> محتوى سوشيال ميديا، تصميمات سريعة، نماذج أولية ومفاهيم فنية.</p>
-            <p><strong class="text-purple-400">السعر:</strong> مجانية (الخطة المدفوعة تبدأ من 10 دولار شهرياً).</p>
-          </div>
-        </div>
-
-        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
-          <h3 class="text-xl font-bold text-white mb-2 font-outfit">10. ElevenLabs (صوت بالذكاء الاصطناعي)</h3>
-          <p class="text-gray-300 mb-4">ElevenLabs مش أداة صور أو فيديو، لكنها ضرورية جداً لأي صانع محتوى — بتحوّل النص لصوت بشري واقعي جداً بالعربي وبلهجات مختلفة.</p>
-          <div class="text-sm space-y-2 mb-4">
-            <p><strong class="text-neongreen">المميزات:</strong> أصوات عربية واقعية للغاية، استنساخ صوتك الشخصي، تحكم كامل في النبرة والسرعة والمشاعر، API للتكامل مع التطبيقات.</p>
-            <p><strong class="text-blue-400">مناسبة لـ:</strong> فويس أوفر إعلاني، بودكاست، فيديوهات تعليمية وسينمائية.</p>
+            <p><strong class="text-neongreen">المميزات:</strong> أصوات عربية واقعية جداً، استنساخ صوتك الشخصي، تحكم في النبرة والسرعة والمشاعر، API للتكامل مع أدوات تانية.</p>
+            <p><strong class="text-blue-400">مناسبة لـ:</strong> فويس أوفر، بودكاست، فيديوهات تعليمية.</p>
             <p><strong class="text-purple-400">السعر:</strong> تبدأ من 5 دولار شهرياً.</p>
           </div>
         </div>
       </div>
 
-      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">جدول مقارنة سريع بين الأدوات</h2>
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">جدول مقارنة سريع</h2>
 
       <div class="overflow-x-auto my-8">
         <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
@@ -261,106 +298,112 @@
           </thead>
           <tbody class="divide-y divide-white/5 text-sm">
             <tr>
+              <td class="p-4 font-bold text-white">Seedance 2.5</td>
+              <td class="p-4 text-gray-300">فيديو</td>
+              <td class="p-4 text-gray-300">من 0.12$/ثانية</td>
+              <td class="p-4 text-gray-300">فيديوهات طويلة وسينمائية</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">Kling 3.0</td>
+              <td class="p-4 text-gray-300">فيديو + صور</td>
+              <td class="p-4 text-gray-300">مجاني / من 6.99$/شهر</td>
+              <td class="p-4 text-gray-300">فيديوهات بصوت متزامن</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">Gemini Omni</td>
+              <td class="p-4 text-gray-300">فيديو</td>
+              <td class="p-4 text-gray-300">Google One AI (~20$/شهر)</td>
+              <td class="p-4 text-gray-300">تعديل فيديو بالمحادثة</td>
+            </tr>
+            <tr>
               <td class="p-4 font-bold text-white">Runway Gen-3</td>
               <td class="p-4 text-gray-300">فيديو</td>
               <td class="p-4 text-gray-300">من 12$/شهر</td>
               <td class="p-4 text-gray-300">إعلانات وفيديو سينمائي</td>
             </tr>
             <tr>
-              <td class="p-4 font-bold text-white">Kling 2.0</td>
-              <td class="p-4 text-gray-300">فيديو</td>
-              <td class="p-4 text-gray-300">من 5$/شهر</td>
-              <td class="p-4 text-gray-300">فيديوهات طويلة وعقارية</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-bold text-white">Veo 2</td>
-              <td class="p-4 text-gray-300">فيديو</td>
-              <td class="p-4 text-gray-300">Google One AI</td>
-              <td class="p-4 text-gray-300">فيديوهات واقعية سينمائية</td>
+              <td class="p-4 font-bold text-white">Higgsfield</td>
+              <td class="p-4 text-gray-300">كل النماذج</td>
+              <td class="p-4 text-gray-300">من 15$/شهر</td>
+              <td class="p-4 text-gray-300">وكالات ومنتجين محترفين</td>
             </tr>
             <tr>
               <td class="p-4 font-bold text-white">HeyGen</td>
               <td class="p-4 text-gray-300">فيديو أفاتار</td>
               <td class="p-4 text-gray-300">من 24$/شهر</td>
-              <td class="p-4 text-gray-300">شروحات ومحتوى تسويقي</td>
+              <td class="p-4 text-gray-300">شروحات وتعليم</td>
             </tr>
             <tr>
               <td class="p-4 font-bold text-white">CapCut AI</td>
               <td class="p-4 text-gray-300">تعديل فيديو</td>
-              <td class="p-4 text-gray-300">مجانية (Pro بـ 8$)</td>
+              <td class="p-4 text-gray-300">مجانية</td>
               <td class="p-4 text-gray-300">ريلز وتيك توك</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">Nano Banana Pro</td>
+              <td class="p-4 text-gray-300">صور</td>
+              <td class="p-4 text-gray-300">مجاني / ~20$/شهر</td>
+              <td class="p-4 text-gray-300">صور بالعربي وتناسق شخصيات</td>
             </tr>
             <tr>
               <td class="p-4 font-bold text-white">Midjourney v7</td>
               <td class="p-4 text-gray-300">صور</td>
               <td class="p-4 text-gray-300">من 10$/شهر</td>
-              <td class="p-4 text-gray-300">صور إبداعية وتجارية</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-bold text-white">DALL-E 3</td>
-              <td class="p-4 text-gray-300">صور</td>
-              <td class="p-4 text-gray-300">20$/شهر (ChatGPT+)</td>
-              <td class="p-4 text-gray-300">سهولة الاستخدام وكتابة النصوص</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-bold text-white">Adobe Firefly</td>
-              <td class="p-4 text-gray-300">صور</td>
-              <td class="p-4 text-gray-300">Adobe CC</td>
-              <td class="p-4 text-gray-300">تصميم وتعديل احترافي تجاري</td>
-            </tr>
-            <tr>
-              <td class="p-4 font-bold text-white">Leonardo AI</td>
-              <td class="p-4 text-gray-300">صور</td>
-              <td class="p-4 text-gray-300">مجانية (Pro بـ 10$)</td>
-              <td class="p-4 text-gray-300">سرعة وتنوع فني</td>
+              <td class="p-4 text-gray-300">صور إبداعية واحترافية</td>
             </tr>
             <tr>
               <td class="p-4 font-bold text-white">ElevenLabs</td>
               <td class="p-4 text-gray-300">صوت</td>
               <td class="p-4 text-gray-300">من 5$/شهر</td>
-              <td class="p-4 text-gray-300">فويس أوفر عربي واقعي</td>
+              <td class="p-4 text-gray-300">فويس أوفر عربي</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">إزاي تختار الأداة المناسبة؟</h2>
-      <ul class="list-disc list-inside mt-4 mb-8 space-y-3 marker:text-neongreen">
-        <li><strong>لو بتبدأ من الصفر:</strong> ابدأ بـ Kling (فيديو) + Midjourney (صور) + ElevenLabs (صوت). التكلفة الإجمالية حوالي 20 دولار شهرياً وهتقدر تنتج محتوى احترافي متكامل.</li>
-        <li><strong>لو عايز تشتغل في العقارات والتصميم الداخلي:</strong> Kling + Midjourney هم الأفضل لإنتاج صور وفيديوهات عقارية بدقة مبهرة.</li>
-        <li><strong>لو عايز تعمل محتوى سوشيال ميديا سريع:</strong> CapCut (مجاني) + DALL-E 3 في ChatGPT هيكفوك جداً في البداية.</li>
+      <ul class="list-disc list-inside mt-4 mb-8 space-y-3 marker:text-neongreen text-gray-300">
+        <li><strong>لو بتبدأ من الصفر:</strong> ابدأ بـ Kling 3.0 (فيديو مجاني) + Nano Banana Pro في Gemini (صور مجانية) + ElevenLabs (صوت). تقدر تنتج محتوى احترافي بتكلفة صفر تقريباً.</li>
+        <li><strong>لو عايز أعلى جودة فيديو:</strong> Seedance 2.5 هو الأقوى حالياً في الفيديوهات الطويلة والسينمائية.</li>
+        <li><strong>لو عايز تشتغل في العقارات:</strong> Kling 3.0 + Midjourney هم الأفضل لإنتاج صور وفيديوهات عقارية.</li>
+        <li><strong>لو وكالة أو منتج محترف:</strong> Higgsfield بيديك كل النماذج في اشتراك واحد مع أدوات إنتاج متقدمة.</li>
+        <li><strong>لو عايز تعمل محتوى سوشيال ميديا:</strong> CapCut (مجاني) + Nano Banana Pro في Gemini هيكفوك في البداية بدون أي تكلفة.</li>
       </ul>
 
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
       <div class="space-y-6">
         <div class="border-b border-white/10 pb-4">
-          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه أفضل أداة ذكاء اصطناعي لصناعة الفيديو للمبتدئين؟</h3>
-          <p class="text-gray-300">Kling 2.0 هي الأسهل في البداية — واجهة بسيطة، نتائج ممتازة، وسعر معقول يبدأ من 5 دولار شهرياً.</p>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه أفضل أداة ذكاء اصطناعي لصناعة الفيديو في 2026؟</h3>
+          <p class="text-gray-300">Seedance 2.5 من ByteDance هي الأقوى حالياً — فيديوهات حتى 30 ثانية، توليد صوت مدمج، وجودة 1080p. لو عايز بديل مجاني، Kling 3.0 عنده خطة مجانية ممتازة.</p>
         </div>
         <div class="border-b border-white/10 pb-4">
           <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل أقدر أستخدم الصور والفيديوهات تجارياً؟</h3>
-          <p class="text-gray-300">نعم، أغلب الأدوات (Midjourney، Runway، Kling، Adobe Firefly) بتسمح بالاستخدام التجاري في الخطط المدفوعة. اقرأ شروط كل أداة قبل ما تستخدمها لعميل.</p>
+          <p class="text-gray-300">نعم، أغلب الأدوات (Midjourney، Runway، Kling، Seedance) بتسمح بالاستخدام التجاري في الخطط المدفوعة. اقرأ شروط كل أداة قبل ما تستخدمها لعميل.</p>
         </div>
         <div class="border-b border-white/10 pb-4">
           <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه الأدوات المجانية اللي ممكن أبدأ بيها؟</h3>
-          <p class="text-gray-300">CapCut AI لتعديل الفيديو، Leonardo AI للصور، و DALL-E 3 لو عندك ChatGPT. الثلاثة عندهم خطط مجانية كويسة.</p>
+          <p class="text-gray-300">CapCut AI لتعديل الفيديو، Kling 3.0 (66 كريديت يومي مجاني)، و Nano Banana Pro في Gemini للصور. الثلاثة مجانية وكافية لأي حد بيبدأ.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه الفرق بين Seedance 2.5 و Kling 3.0؟</h3>
+          <p class="text-gray-300">Seedance 2.5 أفضل للفيديوهات الطويلة (حتى 30 ثانية) والإنتاج اللي محتاج مراجع كتيرة. Kling 3.0 أفضل في الصوت المتزامن ومزامنة الشفاه وعنده خطة مجانية ممتازة. الاتنين ممتازين لكن لأغراض مختلفة.</p>
         </div>
         <div>
           <h3 class="text-lg font-bold text-white mb-2 font-outfit">إزاي أتعلم الأدوات دي بالعربي؟</h3>
-          <p class="text-gray-300">أغلب المصادر بالإنجليزي، لكن <a href="/ai-content" class="text-neongreen font-bold hover:underline">كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School</a> بيشرح كل الأدوات دي بالعربي مع تطبيق عملي خطوة بخطوة.</p>
+          <p class="text-gray-300">أغلب المصادر بالإنجليزي، لكن <a href="/ai-content" class="text-neongreen font-bold hover:underline">كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School</a> بيشرح أدوات الفيديو والصور بالعربي مع تطبيق عملي خطوة بخطوة.</p>
         </div>
       </div>
 
       <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-neongreen/10 border border-white/10 text-center">
         <h3 class="text-2xl font-bold text-white mb-4 font-outfit">عايز تتعلم كل الأدوات دي بالعربي مع تطبيق عملي؟</h3>
         <p class="text-gray-300 mb-6 max-w-xl mx-auto">
-          كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School بيغطي Runway و Kling و Veo و Midjourney و ElevenLabs وأكتر — بتقييم 4.9 من 5 من أكتر من 1,200 طالب.
+          كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School بيغطي Seedance و Kling و Runway و Midjourney و ElevenLabs وأكتر — بتقييم 4.9 من 5 من أكتر من 1,200 طالب.
         </p>
         <a href="/ai-content" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
           اشترك في الكورس الآن بـ 1,200 جنيه فقط ←
         </a>
       </div>
-    `,faqs:[{question:"إيه أفضل أداة ذكاء اصطناعي لصناعة الفيديو للمبتدئين؟",answer:"Kling 2.0 هي الأسهل في البداية — واجهة بسيطة، نتائج ممتازة، وسعر معقول يبدأ من 5 دولار شهرياً."},{question:"هل أقدر أستخدم الصور والفيديوهات تجارياً؟",answer:"نعم، أغلب الأدوات (Midjourney، Runway، Kling، Adobe Firefly) بتسمح بالاستخدام التجاري في الخطط المدفوعة. اقرأ شروط كل أداة قبل ما تستخدمها لعميل."},{question:"إيه الأدوات المجانية اللي ممكن أبدأ بيها؟",answer:"CapCut AI لتعديل الفيديو، Leonardo AI للصور، و DALL-E 3 لو عندك ChatGPT. الثلاثة عندهم خطط مجانية كويسة."},{question:"إزاي أتعلم الأدوات دي بالعربي؟",answer:"أغلب المصادر بالإنجليزي، لكن كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School بيشرح كل الأدوات دي بالعربي مع تطبيق عملي خطوة بخطوة."}]},{slug:"build-website-ai-no-code-2026",title:"كيف تبني موقع احترافي بالذكاء الاصطناعي بدون برمجة في 2026 (شرح خطوة بخطوة)",excerpt:"تعلم كيف تبني موقع احترافي أو متجر إلكتروني بالذكاء الاصطناعي بدون أي خبرة برمجية.",metaTitle:"كيف تبني موقع احترافي بالذكاء الاصطناعي بدون برمجة | دليل 2026",metaDescription:"تعلم كيف تبني موقع احترافي أو متجر إلكتروني بالذكاء الاصطناعي بدون أي خبرة برمجية. شرح خطوة بخطوة مع أفضل الأدوات المجانية والمدفوعة في 2026.",image:"https://images.unsplash.com/photo-1581291518655-9523c932deb4?q=80&w=1200&auto=format&fit=crop",date:"18 أكتوبر 2026",datePublished:"2026-10-18",readTime:"10 دقائق قراءة",content:`
+    `,faqs:[{question:"إيه أفضل أداة ذكاء اصطناعي لصناعة الفيديو في 2026؟",answer:"Seedance 2.5 من ByteDance هي الأقوى حالياً — فيديوهات حتى 30 ثانية، توليد صوت مدمج، وجودة 1080p. لو عايز بديل مجاني، Kling 3.0 عنده خطة مجانية ممتازة."},{question:"هل أقدر أستخدم الصور والفيديوهات تجارياً؟",answer:"نعم، أغلب الأدوات (Midjourney، Runway، Kling، Seedance) بتسمح بالاستخدام التجاري في الخطط المدفوعة. اقرأ شروط كل أداة قبل ما تستخدمها لعميل."},{question:"إيه الأدوات المجانية اللي ممكن أبدأ بيها؟",answer:"CapCut AI لتعديل الفيديو، Kling 3.0 (66 كريديت يومي مجاني)، و Nano Banana Pro في Gemini للصور. الثلاثة مجانية وكافية لأي حد بيبدأ."},{question:"إيه الفرق بين Seedance 2.5 و Kling 3.0؟",answer:"Seedance 2.5 أفضل للفيديوهات الطويلة (حتى 30 ثانية) والإنتاج اللي محتاج مراجع كتيرة. Kling 3.0 أفضل في الصوت المتزامن ومزامنة الشفاه وعنده خطة مجانية ممتازة. الاتنين ممتازين لكن لأغراض مختلفة."},{question:"إزاي أتعلم الأدوات دي بالعربي؟",answer:"أغلب المصادر بالإنجليزي، لكن كورس صناعة المحتوى بالذكاء الاصطناعي في AI Career School بيشرح أدوات الفيديو والصور بالعربي مع تطبيق عملي خطوة بخطوة."}]},{slug:"build-website-ai-no-code-2026",title:"كيف تبني موقع احترافي بالذكاء الاصطناعي بدون برمجة في 2026 (شرح خطوة بخطوة)",excerpt:"تعلم كيف تبني موقع احترافي أو متجر إلكتروني بالذكاء الاصطناعي بدون أي خبرة برمجية.",metaTitle:"كيف تبني موقع احترافي بالذكاء الاصطناعي بدون برمجة | دليل 2026",metaDescription:"تعلم كيف تبني موقع احترافي أو متجر إلكتروني بالذكاء الاصطناعي بدون أي خبرة برمجية. شرح خطوة بخطوة مع أفضل الأدوات المجانية والمدفوعة في 2026.",image:"https://images.unsplash.com/photo-1581291518655-9523c932deb4?q=80&w=1200&auto=format&fit=crop",date:"18 أكتوبر 2026",datePublished:"2026-10-18",readTime:"10 دقائق قراءة",content:`
       <p>بناء موقع احترافي كان زمان محتاج مبرمج ومصمم وميزانية كبيرة. في 2026، تقدر تبني موقع كامل بالذكاء الاصطناعي في ساعات بدل أسابيع — وبدون ما تكتب سطر كود واحد.</p>
 
       <p class="mt-4">وفقاً لـ Hostinger، سوق بناء المواقع بالذكاء الاصطناعي متوقع يوصل لـ <strong>8.66 مليار دولار بحلول 2030</strong>. الأدوات اتطورت لدرجة إنك تقدر تقول للـ AI "عايز موقع لمطعم في القاهرة بالعربي" وهو يبنيه لك بالكامل في دقائق معدودة.</p>
