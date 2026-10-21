@@ -1,16 +1,16 @@
 {
   "/_not-found/page": "/_not-found",
-  "/courses/page": "/courses",
-  "/real-estate-checkout/page": "/real-estate-checkout",
-  "/blog/page": "/blog",
   "/checkout/page": "/checkout",
+  "/courses/page": "/courses",
   "/contact/page": "/contact",
   "/page": "/",
+  "/real-estate-checkout/page": "/real-estate-checkout",
+  "/blog/page": "/blog",
   "/v2/page": "/v2",
   "/web-creation-checkout/page": "/web-creation-checkout",
-  "/blog/[slug]/page": "/blog/[slug]",
   "/thank-you/page": "/thank-you",
-  "/ai-content/page": "/ai-content",
+  "/blog/[slug]/page": "/blog/[slug]",
   "/real-estate/page": "/real-estate",
+  "/ai-content/page": "/ai-content",
   "/web-creation/page": "/web-creation"
 }
