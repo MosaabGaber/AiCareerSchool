@@ -39,6 +39,7 @@ const COURSES = [
     level: 'كل المستويات',
     badge: 'متاح الآن',
     badgeColor: 'bg-[#00944d]',
+    thumbnail: '/webdev.jpg',
     thumbnailText: 'Web Creation with AI',
     date: '2024-04-01',
     rating: 5,
@@ -335,6 +336,19 @@ export default function HomePage() {
                             style={{ border: 0, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}
                             allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
                             allowFullScreen={true}
+                          />
+                        </div>
+                        <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 pointer-events-none ${course.badgeColor}`}>
+                          {course.badge}
+                        </div>
+                      </div>
+                    ) : course.thumbnail ? (
+                      <div className="relative border-b border-gray-100 overflow-hidden">
+                        <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                          <img
+                            src={course.thumbnail}
+                            alt={course.title}
+                            className="absolute top-0 left-0 w-full h-full object-cover"
                           />
                         </div>
                         <div className={`absolute top-4 right-4 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide z-10 pointer-events-none ${course.badgeColor}`}>
