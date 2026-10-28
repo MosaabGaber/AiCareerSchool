@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, RefreshCw, Infinity as InfinityIcon, Award, Search, CheckCircle, ChevronLeft, Star } from 'lucide-react';
 import { Footer } from '../src/components/Footer';
+import { getAutoResetCountdown } from '../src/utils/countdown';
 
 const COURSES = [
   {
@@ -126,7 +127,7 @@ export default function HomePage() {
   const [selectedSort, setSelectedSort] = useState('الأحدث');
 
   const [studentCount, setStudentCount] = useState(0);
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState(getAutoResetCountdown());
   const [notification, setNotification] = useState<string | null>(null);
   const [enrolledCourse, setEnrolledCourse] = useState<string | null>(null);
 
@@ -151,22 +152,9 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    const targetDate = new Date('2026-06-01T23:59:59+02:00').getTime();
+    setTimeLeft(getAutoResetCountdown());
     const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        clearInterval(interval);
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      setTimeLeft(getAutoResetCountdown());
     }, 1000);
     return () => clearInterval(interval);
   }, []);

@@ -2,25 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-
-const TARGET_DATE = new Date('2026-08-11T23:59:59+02:00').getTime();
-
-function getTimeLeft() {
-  const now = Date.now();
-  const diff = TARGET_DATE - now;
-
-  if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
-  }
-
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-    expired: false,
-  };
-}
+import { getAutoResetCountdown } from '../utils/countdown';
 
 function pad(n: number) {
   return n.toString().padStart(2, '0');
@@ -41,13 +23,14 @@ function TimeBox({ value, label }: { value: string; label: string }) {
 }
 
 export function CountdownBanner() {
-  const [time, setTime] = useState(getTimeLeft());
+  const [time, setTime] = useState(getAutoResetCountdown());
   const pathname = usePathname();
   const isRealEstate = pathname === '/real-estate';
 
   useEffect(() => {
+    setTime(getAutoResetCountdown());
     const interval = setInterval(() => {
-      setTime(getTimeLeft());
+      setTime(getAutoResetCountdown());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
