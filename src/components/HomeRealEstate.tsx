@@ -94,7 +94,7 @@ export function HomeRealEstate({
                 </div>
                 <span className="text-sm font-outfit text-gray-400 line-through mb-5" dir="rtl">بدل 4,000</span>
                 <button
-                  onClick={() => setIsPaymentOpen(true)}
+                  onClick={() => window.location.href = '/real-estate-checkout'}
                   className="w-full bg-[#00944d] hover:bg-[#007a3e] text-white py-3.5 px-6 rounded-xl font-outfit font-bold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
                   dir="rtl"
                 >
@@ -111,7 +111,7 @@ export function HomeRealEstate({
 
               <div className="text-right mb-6" dir="rtl">
                 <h3 className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 mb-2">
-                  الكوهورت اللايف
+                  الكورس اللايف
                 </h3>
                 <p className="text-sm md:text-base text-gray-500 font-inter">
                   تدريب شخصي ونتايج أسرع
@@ -160,7 +160,7 @@ export function HomeRealEstate({
                 </div>
                 <span className="text-sm font-outfit text-gray-400 line-through mb-5" dir="rtl">بدل 12,000</span>
                 <button
-                  onClick={() => setIsPaymentOpen(true)}
+                  onClick={() => window.location.href = '/real-estate-live-checkout'}
                   className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white py-3.5 px-6 rounded-xl font-outfit font-bold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
                   dir="rtl"
                 >

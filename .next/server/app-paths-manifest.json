@@ -1,16 +1,17 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/checkout/page": "app/checkout/page.js",
   "/blog/page": "app/blog/page.js",
-  "/courses/page": "app/courses/page.js",
   "/page": "app/page.js",
   "/contact/page": "app/contact/page.js",
+  "/courses/page": "app/courses/page.js",
+  "/real-estate-live-checkout/page": "app/real-estate-live-checkout/page.js",
   "/real-estate-checkout/page": "app/real-estate-checkout/page.js",
-  "/checkout/page": "app/checkout/page.js",
   "/web-creation-checkout/page": "app/web-creation-checkout/page.js",
   "/v2/page": "app/v2/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/thank-you/page": "app/thank-you/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/real-estate/page": "app/real-estate/page.js",
-  "/ai-content/page": "app/ai-content/page.js",
-  "/web-creation/page": "app/web-creation/page.js"
+  "/web-creation/page": "app/web-creation/page.js",
+  "/ai-content/page": "app/ai-content/page.js"
 }

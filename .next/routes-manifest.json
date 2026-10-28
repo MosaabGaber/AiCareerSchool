@@ -90,6 +90,12 @@
       "namedRegex": "^/real\\-estate\\-checkout(?:/)?$"
     },
     {
+      "page": "/real-estate-live-checkout",
+      "regex": "^/real\\-estate\\-live\\-checkout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/real\\-estate\\-live\\-checkout(?:/)?$"
+    },
+    {
       "page": "/thank-you",
       "regex": "^/thank\\-you(?:/)?$",
       "routeKeys": {},
