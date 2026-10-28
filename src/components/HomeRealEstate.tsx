@@ -41,15 +41,136 @@ export function HomeRealEstate({
         <LearnToCreateRealEstate />
 
         {/* Pricing Section */}
-        <section className="py-8 flex flex-col items-center justify-center text-center px-4 relative z-10">
-          <span className="text-gray-400 font-medium tracking-widest uppercase mb-4 text-sm mt-8">Course Price:</span>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 mb-3 mt-2">
-            <span className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 tracking-tight">Pay 2,500 EGP</span>
-            <span className="text-2xl md:text-3xl font-outfit text-gray-500 line-through decoration-gray-400">instead of LE 4,500</span>
+        <section id="pricing" className="py-16 px-4 relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-outfit font-extrabold text-gray-900 tracking-tight" dir="rtl">
+              اختار الباقة المناسبة ليك 👇
+            </h2>
           </div>
-          <span className="text-[#00944d] font-medium text-lg tracking-wide mb-8">for a limited time</span>
 
-          <div className="mt-2 flex flex-col items-center gap-3">
+          <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 max-w-5xl mx-auto w-full pt-4" dir="rtl">
+            {/* Card 1 — Recorded Course */}
+            <div className="order-2 md:order-1 flex-1 flex flex-col bg-white border border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow relative">
+              <div className="text-right mb-6" dir="rtl">
+                <h3 className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 mb-2">
+                  🎓 الكورس المسجل
+                </h3>
+                <p className="text-sm md:text-base text-gray-500 font-inter">
+                  تعلم بنفسك في أي وقت
+                </p>
+              </div>
+
+              <ul className="space-y-3.5 mb-8 text-right font-inter text-sm md:text-[0.95rem] text-gray-700 leading-relaxed" dir="rtl">
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>6 ساعات مسجلة كاملة</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>صور وفيديوهات عقارية احترافية</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>تصميم داخلي وخارجي بالـ AI</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>موقع بورتفوليو مجاني</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>بدون خبرة سابقة</span>
+                </li>
+                <li className="flex items-center gap-3 text-gray-900 font-semibold">
+                  <span className="text-base shrink-0">🛡️</span>
+                  <span>ضمان كامل في أول ساعة</span>
+                </li>
+              </ul>
+
+              <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col items-center">
+                <div className="flex items-baseline justify-center gap-2 mb-1" dir="rtl">
+                  <span className="text-3xl md:text-4xl font-outfit font-extrabold text-gray-900 tracking-tight">2,500</span>
+                  <span className="text-lg font-outfit font-bold text-gray-700">جنيه</span>
+                </div>
+                <span className="text-sm font-outfit text-gray-400 line-through mb-5" dir="rtl">بدل 4,000</span>
+                <button
+                  onClick={() => setIsPaymentOpen(true)}
+                  className="w-full bg-[#00944d] hover:bg-[#007a3e] text-white py-3.5 px-6 rounded-xl font-outfit font-bold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+                  dir="rtl"
+                >
+                  سجّل دلوقتي
+                </button>
+              </div>
+            </div>
+
+            {/* Card 2 — Live Cohort */}
+            <div className="order-1 md:order-2 flex-1 flex flex-col bg-white border-2 border-[#00944d] rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-[0_10px_35px_rgba(0,148,77,0.15)] ring-1 ring-[#00944d]/30 relative">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#00944d] text-white px-4 py-1 rounded-full text-xs md:text-sm font-bold font-outfit shadow-md flex items-center gap-1.5 whitespace-nowrap">
+                <span>⭐ الأكثر طلباً</span>
+              </div>
+
+              <div className="text-right mb-6" dir="rtl">
+                <h3 className="text-2xl md:text-3xl font-outfit font-bold text-gray-900 mb-2">
+                  الكوهورت اللايف
+                </h3>
+                <p className="text-sm md:text-base text-gray-500 font-inter">
+                  تدريب شخصي ونتايج أسرع
+                </p>
+              </div>
+
+              <ul className="space-y-3.5 mb-8 text-right font-inter text-sm md:text-[0.95rem] text-gray-700 leading-relaxed" dir="rtl">
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>جلستين أونلاين في الأسبوع لمدة شهر</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>8 جلسات تدريبية مباشرة</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>تطبيق على مشاريعك الحقيقية</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>فيدباك مباشر على شغلك</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>جروب خاص للطلاب</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-base shrink-0">✅</span>
+                  <span>كل محتوى الكورس المسجل كمان</span>
+                </li>
+                <li className="flex items-center gap-3 text-[#00944d] font-bold">
+                  <span className="text-base shrink-0">🗓️</span>
+                  <span>يبدأ 10 نوفمبر 2026</span>
+                </li>
+                <li className="flex items-center gap-3 text-amber-600 font-bold">
+                  <span className="text-base shrink-0">⚠️</span>
+                  <span>مقاعد محدودة</span>
+                </li>
+              </ul>
+
+              <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col items-center">
+                <div className="flex items-baseline justify-center gap-2 mb-1" dir="rtl">
+                  <span className="text-3xl md:text-4xl font-outfit font-extrabold text-gray-900 tracking-tight">7,500</span>
+                  <span className="text-lg font-outfit font-bold text-gray-700">جنيه</span>
+                </div>
+                <span className="text-sm font-outfit text-gray-400 line-through mb-5" dir="rtl">بدل 12,000</span>
+                <button
+                  onClick={() => setIsPaymentOpen(true)}
+                  className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white py-3.5 px-6 rounded-xl font-outfit font-bold text-base md:text-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+                  dir="rtl"
+                >
+                  احجز مكانك دلوقتي
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-col items-center gap-3">
             <span className="text-gray-600 font-medium text-sm" dir="rtl">طرق الدفع المتاحة</span>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <img src="/payment/insta.png" alt="Instapay" className="h-[50px] w-auto object-contain" />

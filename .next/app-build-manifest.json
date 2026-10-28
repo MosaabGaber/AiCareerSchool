@@ -12,7 +12,7 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-38b49df12a94ee57.js",
       "static/chunks/main-app-e4247296c21ad79c.js",
-      "static/css/ded096ade774cecc.css",
+      "static/css/495ce91e0adaf2c6.css",
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/211-bc842ab3acc7c9de.js",
       "static/chunks/917-8ac1c4ac236ac045.js",
@@ -27,6 +27,13 @@
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/841-2a705302f7644c41.js",
       "static/chunks/app/blog/page-0cac11098548bc91.js"
+    ],
+    "/courses/page": [
+      "static/chunks/webpack-74c939c87fa0092a.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-38b49df12a94ee57.js",
+      "static/chunks/main-app-e4247296c21ad79c.js",
+      "static/chunks/app/courses/page-b751c419ee94612d.js"
     ],
     "/page": [
       "static/chunks/webpack-74c939c87fa0092a.js",
@@ -47,6 +54,18 @@
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/app/contact/page-b55107aabda4640f.js"
     ],
+    "/real-estate-checkout/page": [
+      "static/chunks/webpack-74c939c87fa0092a.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-38b49df12a94ee57.js",
+      "static/chunks/main-app-e4247296c21ad79c.js",
+      "static/chunks/44530001-06db68a5a9898251.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/211-bc842ab3acc7c9de.js",
+      "static/chunks/917-8ac1c4ac236ac045.js",
+      "static/chunks/863-78d10625ef1bbe7e.js",
+      "static/chunks/app/real-estate-checkout/page-eae9daf0ec1e6aef.js"
+    ],
     "/checkout/page": [
       "static/chunks/webpack-74c939c87fa0092a.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
@@ -59,14 +78,7 @@
       "static/chunks/863-78d10625ef1bbe7e.js",
       "static/chunks/app/checkout/page-4453feec550b1a56.js"
     ],
-    "/courses/page": [
-      "static/chunks/webpack-74c939c87fa0092a.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-38b49df12a94ee57.js",
-      "static/chunks/main-app-e4247296c21ad79c.js",
-      "static/chunks/app/courses/page-b751c419ee94612d.js"
-    ],
-    "/real-estate-checkout/page": [
+    "/web-creation-checkout/page": [
       "static/chunks/webpack-74c939c87fa0092a.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-38b49df12a94ee57.js",
@@ -76,7 +88,7 @@
       "static/chunks/211-bc842ab3acc7c9de.js",
       "static/chunks/917-8ac1c4ac236ac045.js",
       "static/chunks/863-78d10625ef1bbe7e.js",
-      "static/chunks/app/real-estate-checkout/page-eae9daf0ec1e6aef.js"
+      "static/chunks/app/web-creation-checkout/page-be4aedeb6d2923a2.js"
     ],
     "/v2/page": [
       "static/chunks/webpack-74c939c87fa0092a.js",
@@ -90,18 +102,6 @@
       "static/chunks/240-bc4c6353c8fa9e61.js",
       "static/chunks/207-9f766a35a1bd6908.js",
       "static/chunks/app/v2/page-9c2b906f4480189e.js"
-    ],
-    "/web-creation-checkout/page": [
-      "static/chunks/webpack-74c939c87fa0092a.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-38b49df12a94ee57.js",
-      "static/chunks/main-app-e4247296c21ad79c.js",
-      "static/chunks/44530001-06db68a5a9898251.js",
-      "static/chunks/619-ba102abea3e3d0e4.js",
-      "static/chunks/211-bc842ab3acc7c9de.js",
-      "static/chunks/917-8ac1c4ac236ac045.js",
-      "static/chunks/863-78d10625ef1bbe7e.js",
-      "static/chunks/app/web-creation-checkout/page-be4aedeb6d2923a2.js"
     ],
     "/blog/[slug]/page": [
       "static/chunks/webpack-74c939c87fa0092a.js",
@@ -138,7 +138,7 @@
       "static/chunks/917-8ac1c4ac236ac045.js",
       "static/chunks/460-9a6ab16aea985b63.js",
       "static/chunks/207-9f766a35a1bd6908.js",
-      "static/chunks/app/real-estate/page-71551708f1598d2e.js"
+      "static/chunks/app/real-estate/page-27d56c9215a88d07.js"
     ],
     "/ai-content/layout": [
       "static/chunks/webpack-74c939c87fa0092a.js",
