@@ -854,5 +854,396 @@ export const blogPosts: BlogPost[] = [
         </a>
       </div>
     `
+  },
+  {
+    slug: 'best-ai-tools-real-estate-2026',
+    title: 'أفضل 10 أدوات ذكاء اصطناعي للعقارات في 2026 — دليل السمسار العربي',
+    excerpt: 'دليل شامل لأفضل أدوات الذكاء الاصطناعي للسماسرة والمطورين العقاريين في 2026. تعرف على أفضل الأدوات لصناعة المحتوى والتسويق العقاري بالـ AI.',
+    metaTitle: 'أفضل 10 أدوات ذكاء اصطناعي للعقارات في 2026',
+    metaDescription: 'دليل شامل لأفضل أدوات الذكاء الاصطناعي للسماسرة والمطورين العقاريين في 2026. تعرف على أفضل الأدوات لصناعة المحتوى والتسويق العقاري بالـ AI.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop',
+    date: '29 أكتوبر 2026',
+    datePublished: '2026-10-29',
+    readTime: '9 دقائق قراءة',
+    content: `
+      <p>السوق العقاري في 2026 اتغير بشكل جذري. العميل دلوقتي بيتخذ قراره من أول إعلان يشوفه — قبل ما يزور الوحدة أصلاً. والسماسرة اللي بيستخدموا الذكاء الاصطناعي في تسويقهم بيبيعوا أسرع وبيجيبوا عملاء أكتر من اللي مش بيستخدموه.</p>
+
+      <p class="mt-4">في المقال ده هنكلمك عن أفضل 10 أدوات AI ممكن تستخدمها كسمسار أو مطور عقاري دلوقتي.</p>
+
+      <div class="space-y-8 mt-10">
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">1. Kling AI — لعمل فيديوهات عقارية سينمائية</h3>
+          <p class="text-gray-300 mb-3">Kling من أقوى أدوات توليد الفيديو بالذكاء الاصطناعي في 2026. تقدر تحوّل أي صورة ثابتة لشقة أو فيلا لفيديو سينمائي بحركة كاميرا احترافية في دقائق.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> عمل فيديوهات جولات افتراضية، فيديوهات إعلانية للوحدات، محتوى سوشيال ميديا</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية متاحة، النسخة المدفوعة من 8$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">2. Midjourney — لصور العقارات الفوتوريالستيك</h3>
+          <p class="text-gray-300 mb-3">Midjourney بيعمل صور عقارية بجودة تنافس أفضل مصورين العالم. تقدر تعمل صور للوحدة قبل ما تتبنى، وتصاميم داخلية واقعية تبهر العميل.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> صور تسويقية للوحدات، فيجوالز إنتريور، صور للمشاريع الجديدة</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> من 10$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">3. Veo — لفيديوهات عالية الجودة</h3>
+          <p class="text-gray-300 mb-3">Veo من Google من أحدث أدوات الفيديو AI. بيعمل فيديوهات بجودة سينمائية عالية مع تحكم كامل في حركة الكاميرا والإضاءة.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> فيديوهات إعلانية للمشاريع الكبيرة، محتوى يوتيوب عن العقارات</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> متاح من خلال Google AI</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">4. ElevenLabs — للفويس أوفر العربي</h3>
+          <p class="text-gray-300 mb-3">ElevenLabs بيعمل أصوات بشرية واقعية بالعربي والإنجليزي. تقدر تضيف تعليق صوتي احترافي لأي فيديو عقاري من غير ما تسجّل صوتك.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> فويس أوفر للفيديوهات الإعلانية، محتوى يوتيوب، إعلانات صوتية</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية، المدفوع من 5$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">5. ChatGPT — لكتابة إعلانات العقارات</h3>
+          <p class="text-gray-300 mb-3">ChatGPT بيساعدك تكتب إعلانات عقارية مقنعة، ردود على العملاء، محتوى سوشيال ميديا، وأوصاف الوحدات في ثوان.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> كتابة إعلانات، ردود على استفسارات العملاء، منشورات سوشيال ميديا</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية متاحة</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">6. Runway ML — للتأثيرات السينمائية</h3>
+          <p class="text-gray-300 mb-3">Runway من أقوى أدوات تحرير الفيديو بالذكاء الاصطناعي. بيضيف تأثيرات سينمائية على فيديوهاتك ويحسن جودتها بشكل ملحوظ.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> تحسين جودة الفيديوهات، إضافة تأثيرات احترافية، تلوين وإضاءة الصور</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية، المدفوع من 12$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">7. Flux — لصور المنتجات والعقارات</h3>
+          <p class="text-gray-300 mb-3">Flux من أسرع وأدق أدوات توليد الصور. بيعمل صور عقارية بتفاصيل دقيقة جداً وبسرعة أعلى من Midjourney.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> صور الوحدات، تصاميم واجهات المباني، صور التسويق الرقمي</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية متاحة</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">8. HeyGen — للأفاتار العقاري</h3>
+          <p class="text-gray-300 mb-3">HeyGen بيخليك تعمل فيديوهات بأفاتار AI بيشرح وحداتك بالعربي أو الإنجليزي. مش محتاج تظهر أمام الكاميرا خالص.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> فيديوهات تقديم الوحدات، تسويق للعملاء الأجانب، محتوى متعدد اللغات</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> من 29$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">9. Canva AI — للتصاميم التسويقية</h3>
+          <p class="text-gray-300 mb-3">Canva أضاف أدوات AI قوية بتساعدك تعمل بروشورات عقارية، بوسترات، وتصاميم سوشيال ميديا احترافية في دقائق.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> بروشورات الوحدات، تصاميم سوشيال ميديا، لوجو المكتب العقاري</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية، Canva Pro من 15$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">10. Leonardo AI — لصور التصميم الداخلي</h3>
+          <p class="text-gray-300 mb-3">Leonardo AI متخصص في الصور الواقعية وبيعمل فيجوالز إنتريور بجودة عالية جداً. مثالي للمصممين ومطوري العقارات.</p>
+          <p class="text-sm text-gray-400"><strong class="text-blue-400">الاستخدام العقاري:</strong> تصاميم داخلية للوحدات، عروض الديكور للعملاء، فيجوالز المشاريع الجديدة</p>
+          <p class="text-sm text-gray-400"><strong class="text-purple-400">السعر:</strong> نسخة مجانية، المدفوع من 10$ شهرياً</p>
+          <p class="text-neongreen mt-2">التقييم: ⭐⭐⭐⭐⭐</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الخلاصة</h2>
+      <p>الذكاء الاصطناعي مش هيحل محل السمسار الناجح — لكنه هيحل محل السمسار اللي مش بيستخدمه.</p>
+      <p class="mt-4">الأدوات دي متاحة دلوقتي، ومعظمها مجانية أو رخيصة. السمسار اللي بيبدأ يستخدمها دلوقتي هو اللي هيتميز في السوق خلال الأشهر الجاية.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه أفضل أداة AI للعقارات؟</h3>
+          <p class="text-gray-300">Kling للفيديو وMidjourney للصور هما الأقوى للمحتوى العقاري في 2026.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل أدوات AI للعقارات مجانية؟</h3>
+          <p class="text-gray-300">معظمها عنده نسخة مجانية كافية للبداية.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل الذكاء الاصطناعي بيحل محل المصور العقاري؟</h3>
+          <p class="text-gray-300">مش بيحل محله بالكامل لكن بيقلل التكلفة بنسبة 80% ويسرع الإنتاج.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">عايز تتعلم إزاي تستخدم كل الأدوات دي؟</h3>
+        <p class="text-gray-300 mb-6">كورس AI للعقارات والإنتريور بيعلمك تعمل محتوى عقاري احترافي من الصفر.</p>
+        <a href="/real-estate" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          كورس AI للعقارات والإنتريور — ابدأ دلوقتي ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'إيه أفضل أداة AI للعقارات؟',
+        answer: 'Kling للفيديو وMidjourney للصور هما الأقوى للمحتوى العقاري في 2026.'
+      },
+      {
+        question: 'هل أدوات AI للعقارات مجانية؟',
+        answer: 'معظمها عنده نسخة مجانية كافية للبداية.'
+      },
+      {
+        question: 'هل الذكاء الاصطناعي بيحل محل المصور العقاري؟',
+        answer: 'مش بيحل محله بالكامل لكن بيقلل التكلفة بنسبة 80% ويسرع الإنتاج.'
+      }
+    ]
+  },
+  {
+    slug: 'sell-more-real-estate-ai-2026',
+    title: 'إزاي تبيع عقارات أكتر في 2026 — 7 طرق بالذكاء الاصطناعي',
+    excerpt: 'اكتشف 7 طرق عملية تساعدك تبيع عقارات أكتر وأسرع في 2026 باستخدام الذكاء الاصطناعي. نصائح حقيقية للسماسرة والمطورين العقاريين.',
+    metaTitle: 'إزاي تبيع عقارات أكتر في 2026 — 7 طرق بالذكاء الاصطناعي',
+    metaDescription: 'اكتشف 7 طرق عملية تساعدك تبيع عقارات أكتر وأسرع في 2026 باستخدام الذكاء الاصطناعي. نصائح حقيقية للسماسرة والمطورين العقاريين.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+    date: '29 أكتوبر 2026',
+    datePublished: '2026-10-29',
+    readTime: '8 دقائق قراءة',
+    content: `
+      <p>السؤال اللي كل سمسار بيسأله: إزاي أبيع أكتر وأسرع؟</p>
+
+      <p class="mt-4">الإجابة في 2026 واضحة — اللي بيبيع أكتر هو اللي بيعرض وحداته أحسن. مش اللي عنده أكتر وحدات. مش اللي بيدفع أكتر إعلانات. اللي عنده محتوى احترافي بيجيب عملاء من غير ما يتعب.</p>
+
+      <p class="mt-4">وده بالظبط اللي الذكاء الاصطناعي بيعمله.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">1. صور احترافية بدون مصور</h2>
+      <p>97% من المشترين بيبحثوا عن العقار أونلاين قبل ما يتصلوا بالسمسار. وأول حاجة بيشوفوها هي الصور.</p>
+      <p class="mt-4">الصورة الواحدة الاحترافية ممكن تجيب عميل بالملايين — والصورة الرديئة ممكن تخلّي وحدة مميزة تعدّي عليها من غير ما حد يهتم.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> صوّر الوحدة بموبايلك، ارفع الصور على Midjourney أو Flux، وفي 10 دقائق عندك صور فوتوريالستيك احترافية.</p>
+      <p class="text-neongreen font-semibold mt-4 mb-6">التوفير: 3,000–10,000 جنيه تكلفة مصور في كل وحدة.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">2. فيديوهات جولات افتراضية</h2>
+      <p>الفيديو بيجيب تفاعل أكتر من الصور بنسبة 300% على السوشيال ميديا. والعميل اللي بيشوف فيديو للوحدة بيكون أكتر استعداد للزيارة والشراء.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> استخدم Kling أو Veo عشان تحوّل صورك الثابتة لفيديو سينمائي بحركة كاميرا احترافية. الفيديو بيتعمل في أقل من ساعة.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">3. إعلانات مكتوبة بتبيع نفسها</h2>
+      <p>معظم إعلانات العقارات مكتوبة بشكل ممل — "شقة للبيع، 3 غرف، موقع مميز." ده مش بيبيع.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> استخدم ChatGPT عشان يكتبلك إعلانات تحكي قصة الوحدة وتخلي العميل يتخيل نفسه فيها. الفرق بين إعلان عادي وإعلان بيبيع هو الكلمات الصح.</p>
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 mt-4 mb-6">
+        <p class="text-sm text-gray-400"><strong class="text-blue-400">مثال على برومبت:</strong> "اكتب إعلان عقاري لشقة 3 غرف في التجمع الخامس، 150 متر، تشطيب سوبر لوكس، موقع قريب من المحور. الإعلان لازم يكون بالعربي وبيخلي العميل يحس إن الشقة دي حلمه."</p>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">4. رد فوري على العملاء بالواتساب</h2>
+      <p>70% من العملاء بيشتروا من أول سمسار رد عليهم. اللي بيتأخر في الرد — بيخسر العميل.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> استخدم ChatGPT عشان يجهزلك ردود جاهزة على كل الأسئلة الشائعة. كمان ممكن تعمل بوت واتساب أوتوماتيك يرد على العملاء على طول.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">5. تصاميم داخلية للوحدات الفارغة</h2>
+      <p>الوحدات الفارغة بتتباع أصعب من الوحدات المفروشة. العميل صعب يتخيل الوحدة مفروشة.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> استخدم Leonardo AI أو Midjourney عشان تعمل فيجوالز إنتريور للوحدة — تبين للعميل إزاي ممكن تبان بعد الفرش. ده بيسرّع القرار بشكل كبير.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">6. محتوى سوشيال ميديا منتظم</h2>
+      <p>السمسار اللي بينشر محتوى منتظم على إنستجرام وتيك توك بيبني ثقة مع جمهوره — وبيجيب عملاء من غير ما يدفع إعلانات.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> Canva AI بيساعدك تعمل منشورات احترافية في دقائق. ChatGPT بيكتبلك كابشن لكل منشور. وKling بيعمل ريلز قصيرة من صور الوحدات.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">7. فيديوهات إعلانية ممولة بتكلفة أقل</h2>
+      <p>الفيديو الإعلاني المحترف بيكلف 5,000–20,000 جنيه مع شركة إنتاج. وبالذكاء الاصطناعي تقدر تعمله بتكلفة شبه صفر.</p>
+      <p class="mt-4"><strong class="text-neongreen">الحل بالذكاء الاصطناعي:</strong> استخدم Kling للفيديو، ElevenLabs للفويس أوفر، وCanva للتصميم. النتيجة فيديو إعلاني احترافي تقدر تشغّله على ميتا وتيك توك.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الخلاصة</h2>
+      <p>بيع العقارات في 2026 مش بس عن العقار نفسه — عن إزاي بتعرضه.</p>
+      <p class="mt-4">الذكاء الاصطناعي بيديك نفس الأدوات اللي الشركات الكبيرة بتستخدمها — بتكلفة أقل بكتير وبسرعة أعلى بكتير.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إزاي أبيع عقاراتي أسرع؟</h3>
+          <p class="text-gray-300">الصور والفيديوهات الاحترافية هي أسرع طريقة لجذب المشترين في 2026.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل الذكاء الاصطناعي بيساعد في بيع العقارات؟</h3>
+          <p class="text-gray-300">أيوه، بيساعد في المحتوى التسويقي والردود الأوتوماتيكية والإعلانات.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه أفضل طريقة تسويق عقاري في 2026؟</h3>
+          <p class="text-gray-300">المزج بين الفيديو الاحترافي والمحتوى المنتظم على السوشيال ميديا.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">عايز تتعلم إزاي تطبق كل ده خطوة بخطوة؟</h3>
+        <p class="text-gray-300 mb-6">كورس AI للعقارات والإنتريور بيوريك إزاي تستخدم الأدوات دي عملياً على وحداتك.</p>
+        <a href="/real-estate" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          كورس AI للعقارات والإنتريور — ابدأ دلوقتي ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'إزاي أبيع عقاراتي أسرع؟',
+        answer: 'الصور والفيديوهات الاحترافية هي أسرع طريقة لجذب المشترين في 2026.'
+      },
+      {
+        question: 'هل الذكاء الاصطناعي بيساعد في بيع العقارات؟',
+        answer: 'أيوه، بيساعد في المحتوى التسويقي والردود الأوتوماتيكية والإعلانات.'
+      },
+      {
+        question: 'إيه أفضل طريقة تسويق عقاري في 2026؟',
+        answer: 'المزج بين الفيديو الاحترافي والمحتوى المنتظم على السوشيال ميديا.'
+      }
+    ]
+  },
+  {
+    slug: 'ai-real-estate-photos-videos-guide',
+    title: 'دليل صور وفيديوهات العقارات بالذكاء الاصطناعي — من الموبايل للمحتوى الاحترافي',
+    excerpt: 'تعلم إزاي تعمل صور وفيديوهات عقارية احترافية بالذكاء الاصطناعي من موبايلك. دليل عملي خطوة بخطوة للسماسرة والمطورين.',
+    metaTitle: 'دليل صور وفيديوهات العقارات بالذكاء الاصطناعي 2026',
+    metaDescription: 'تعلم إزاي تعمل صور وفيديوهات عقارية احترافية بالذكاء الاصطناعي من موبايلك. دليل عملي خطوة بخطوة للسماسرة والمطورين.',
+    image: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?q=80&w=1200&auto=format&fit=crop',
+    date: '29 أكتوبر 2026',
+    datePublished: '2026-10-29',
+    readTime: '10 دقائق قراءة',
+    content: `
+      <p>المصور العقاري بياخد 3,000–10,000 جنيه لجلسة تصوير واحدة. وبيستنى أسبوع لتسليم الصور. وفي بعض الأحيان النتيجة مش بالمستوى المطلوب.</p>
+
+      <p class="mt-4">في 2026، فيه طريقة أسرع وأرخص وأكثر مرونة — الذكاء الاصطناعي.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الجزء الأول: صور العقارات بالذكاء الاصطناعي</h2>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 1: صوّر الوحدة بموبايلك</h3>
+      <p>مش محتاج كاميرا احترافية. موبايلك كفاية لو اتبعت النصائح دي:</p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>صوّر في النهار بإضاءة طبيعية</li>
+        <li>افتح كل الستائر والنوافذ</li>
+        <li>رتّب الأوضة قبل التصوير</li>
+        <li>صوّر من زوايا متعددة</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 2: حسّن الصور بالذكاء الاصطناعي</h3>
+      <p>ارفع صورك على Midjourney أو Flux واستخدم البرومبت ده:</p>
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 mt-4 mb-6">
+        <p class="text-sm text-gray-400 font-mono">"photorealistic real estate interior photography, luxury apartment, [وصف الأوضة], professional lighting, high-end finishes, architectural photography style, 4K quality"</p>
+      </div>
+      <p class="text-neongreen font-semibold mb-6">النتيجة: صور فوتوريالستيك احترافية في أقل من 5 دقائق.</p>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 3: اعمل فيجوالز إنتريور للوحدات الفارغة</h3>
+      <p>لو الوحدة فارغة، استخدم Leonardo AI:</p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>ارفع صورة الأوضة الفارغة</li>
+        <li>اختار ستايل الفرش اللي تحبه</li>
+        <li>اختار اللون والأسلوب</li>
+        <li>النتيجة: أوضة مفروشة بالكامل في 2 دقيقة</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الجزء التاني: فيديوهات العقارات بالذكاء الاصطناعي</h2>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 1: من الصورة للفيديو مع Kling</h3>
+      <p>Kling بيحوّل أي صورة ثابتة لفيديو بحركة كاميرا سينمائية. الخطوات:</p>
+      <ul class="list-decimal list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>ارفع صورة الوحدة على Kling</li>
+        <li>اختار حركة الكاميرا: Pan Left / Pan Right / Zoom In / Zoom Out</li>
+        <li>حدد مدة الفيديو: 5 ثواني أو 10 ثواني</li>
+        <li>اضغط Generate</li>
+        <li>في أقل من دقيقتين عندك فيديو سينمائي</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 2: اعمل جولة افتراضية كاملة</h3>
+      <p>اعمل 5–8 فيديوهات قصيرة لكل أوضة، اجمعهم مع بعض في أي برنامج مونتاج بسيط. النتيجة: جولة افتراضية كاملة للوحدة من غير ما تحجز مصور.</p>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">الخطوة 3: أضف فويس أوفر عربي</h3>
+      <p>استخدم ElevenLabs عشان تضيف تعليق صوتي احترافي بالعربي يشرح مميزات الوحدة. اختار صوت يناسب جمهورك — رجالي أو نسائي، مصري أو خليجي.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الجزء التالت: المحتوى اللي بيبيع على السوشيال ميديا</h2>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">إنستجرام وتيك توك</h3>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>فيديوهات قصيرة 15–30 ثانية من الجولة الافتراضية</li>
+        <li>Before/After — صورة الموبايل العادية مقابل الصورة بعد الـ AI</li>
+        <li>Timelapse لعملية تحويل الصورة للفيديو — ده بيجيب تفاعل عالي</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-white mt-6 mb-3 font-outfit">يوتيوب</h3>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>فيديو جولة افتراضية كاملة 2–3 دقائق</li>
+        <li>فيديوهات تعليمية عن الوحدة والمنطقة</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">كم بيكلف المحتوى بالذكاء الاصطناعي مقارنة بالتقليدي؟</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">المحتوى</th>
+              <th class="p-4">التقليدي</th>
+              <th class="p-4">بالذكاء الاصطناعي</th>
+              <th class="p-4">وقت التسليم</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">جلسة تصوير</td>
+              <td class="p-4 text-gray-300">3,000–10,000 جنيه</td>
+              <td class="p-4 text-gray-300">0–200 جنيه</td>
+              <td class="p-4 text-gray-300">أقل من ساعة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">فيديو إعلاني</td>
+              <td class="p-4 text-gray-300">5,000–20,000 جنيه</td>
+              <td class="p-4 text-gray-300">0–500 جنيه</td>
+              <td class="p-4 text-gray-300">أقل من ساعة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">فيجوالز إنتريور</td>
+              <td class="p-4 text-gray-300">2,000–8,000 جنيه</td>
+              <td class="p-4 text-gray-300">0–200 جنيه</td>
+              <td class="p-4 text-gray-300">أقل من ساعة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">وقت التسليم العام</td>
+              <td class="p-4 text-gray-300">3–7 أيام</td>
+              <td class="p-4 text-gray-300">أقل من ساعة</td>
+              <td class="p-4 text-gray-300">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">الخطوة الجاية</h2>
+      <p>كل اللي اتكلمنا عنه في المقال ده هتتعلمه بالتفصيل في كورس AI للعقارات والإنتريور.</p>
+      <p class="mt-4">الكورس بيعلمك إزاي تطبق كل الأدوات دي خطوة بخطوة على وحداتك الحقيقية — من الصفر للنتيجة النهائية.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إزاي أعمل صور عقارية احترافية من غير مصور؟</h3>
+          <p class="text-gray-300">صوّر بموبايلك وحسّن الصور بـ Midjourney أو Flux — النتيجة فوتوريالستيك في دقائق.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">إيه أفضل أداة لعمل فيديوهات عقارية بالذكاء الاصطناعي؟</h3>
+          <p class="text-gray-300">Kling هي الأقوى لعمل فيديوهات جولات افتراضية من صور ثابتة.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل الذكاء الاصطناعي بيغني عن المصور العقاري؟</h3>
+          <p class="text-gray-300">بيقلل التكلفة بنسبة 80% ووقت الإنتاج من أيام لساعات.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">جاهز تطبق كل ده على وحداتك؟</h3>
+        <p class="text-gray-300 mb-6">اعرف أكتر عن كورس AI للعقارات والإنتريور وابدأ تطبق عملياً من أول يوم.</p>
+        <a href="/real-estate" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          اعرف أكتر عن الكورس دلوقتي ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'إزاي أعمل صور عقارية احترافية من غير مصور؟',
+        answer: 'صوّر بموبايلك وحسّن الصور بـ Midjourney أو Flux — النتيجة فوتوريالستيك في دقائق.'
+      },
+      {
+        question: 'إيه أفضل أداة لعمل فيديوهات عقارية بالذكاء الاصطناعي؟',
+        answer: 'Kling هي الأقوى لعمل فيديوهات جولات افتراضية من صور ثابتة.'
+      },
+      {
+        question: 'هل الذكاء الاصطناعي بيغني عن المصور العقاري؟',
+        answer: 'بيقلل التكلفة بنسبة 80% ووقت الإنتاج من أيام لساعات.'
+      }
+    ]
   }
 ];
