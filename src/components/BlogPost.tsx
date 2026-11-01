@@ -46,7 +46,11 @@ export function BlogPost() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold text-white mb-6 leading-tight">
               {articleInfo.title}
             </h1>
-            
+
+            {articleInfo.lastUpdated && (
+              <p className="text-sm text-neongreen font-inter mb-4">آخر تحديث: {articleInfo.lastUpdated}</p>
+            )}
+
             {/* Meta Row */}
             <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm font-inter">
               <div className="flex items-center gap-2">
@@ -83,6 +87,28 @@ export function BlogPost() {
             className="prose prose-invert prose-lg max-w-none font-inter text-gray-300 leading-relaxed mb-12 blog-content-wrapper"
             dangerouslySetInnerHTML={{ __html: articleInfo.content }}
           />
+
+          {/* Sources */}
+          {articleInfo.sources && articleInfo.sources.length > 0 && (
+            <div className="border-t border-white/10 pt-8 mb-4">
+              <h2 className="text-sm font-bold text-gray-400 font-outfit mb-3">المصادر</h2>
+              <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 font-inter">
+                {articleInfo.sources.map((source, index) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      className="hover:text-neongreen transition-colors underline"
+                    >
+                      {source.label}
+                    </a>
+                    {index < articleInfo.sources!.length - 1 && <span className="mx-1 text-gray-600">·</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Bottom Call To Action */}
           <div className="border-t border-white/10 pt-10 pb-4">
