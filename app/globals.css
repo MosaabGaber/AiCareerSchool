@@ -122,3 +122,77 @@
   background-image: none !important;
   background-color: #F5F5F7 !important;
 }
+
+/* ==========================================================================
+   Web Creation hero: 3D side carousels
+   Scoped to the /web-creation hero only.
+   ========================================================================== */
+
+@keyframes hero-scroll-y {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes hero-scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-carousel-track {
+  animation-name: hero-scroll-y;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.hero-carousel-track.hero-scroll-down {
+  animation-direction: reverse;
+}
+
+.hero-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.hero-carousel-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-carousel-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(37, 99, 235, 0.45);
+  z-index: 10;
+}
+
+.hero-carousel-col-left {
+  mask-image:
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to right, transparent, black 45%);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to right, transparent, black 45%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-carousel-col-right {
+  mask-image:
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to left, transparent, black 45%);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to left, transparent, black 45%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-mobile-row {
+  animation: hero-scroll-x 26s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-track,
+  .hero-mobile-row {
+    animation: none !important;
+  }
+}
