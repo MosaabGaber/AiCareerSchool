@@ -124,33 +124,15 @@
 }
 
 /* ==========================================================================
-   Web Creation hero: 3D side carousels
-   Scoped to the /web-creation hero only.
+   Web Creation hero: 3D side corridors
+   Scoped to the /web-creation hero only. The corridor rows themselves are
+   driven by Framer Motion (JS) for scroll-velocity coupling; this file only
+   holds the static 3D/mask styling and the CSS-only mobile fallback.
    ========================================================================== */
-
-@keyframes hero-scroll-y {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
 
 @keyframes hero-scroll-x {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-.hero-carousel-track {
-  animation-name: hero-scroll-y;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: transform;
-}
-
-.hero-carousel-track.hero-scroll-down {
-  animation-direction: reverse;
-}
-
-.hero-carousel-track:hover {
-  animation-play-state: paused;
 }
 
 .hero-carousel-card {
@@ -163,35 +145,34 @@
   z-index: 10;
 }
 
-.hero-carousel-col-left {
+.hero-corridor-left {
   mask-image:
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to right, transparent, black 45%);
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to right, black 55%, transparent);
   -webkit-mask-image:
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to right, transparent, black 45%);
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to right, black 55%, transparent);
   mask-composite: intersect;
   -webkit-mask-composite: source-in;
 }
 
-.hero-carousel-col-right {
+.hero-corridor-right {
   mask-image:
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to left, transparent, black 45%);
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to left, black 55%, transparent);
   -webkit-mask-image:
-    linear-gradient(to bottom, transparent, black 12%, black 88%, transparent),
-    linear-gradient(to left, transparent, black 45%);
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to left, black 55%, transparent);
   mask-composite: intersect;
   -webkit-mask-composite: source-in;
 }
 
 .hero-mobile-row {
-  animation: hero-scroll-x 26s linear infinite;
+  animation: hero-scroll-x 28s linear infinite;
   will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-carousel-track,
   .hero-mobile-row {
     animation: none !important;
   }
