@@ -106,7 +106,7 @@ function MarqueeRow({
       {looped.map((src, i) => (
         <div
           key={`${src}-${i}`}
-          className="hero-carousel-card relative flex-shrink-0 aspect-[16/10] overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-lg"
+          className="hero-carousel-card relative flex-shrink-0 aspect-[16/10] overflow-hidden rounded-xl border border-[#E5E5E5] bg-[#F5F5F7] shadow-lg"
           style={{ width: `${widths[i % widths.length]}px` }}
         >
           <Image src={src} alt="" aria-hidden="true" fill sizes="300px" className="object-cover" />
@@ -125,7 +125,7 @@ export function WebCreationHero({ onCheckout }: WebCreationHeroProps) {
   const parallaxY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, 40]);
 
   return (
-    <div className="bg-[#0a0a0a]" ref={heroRef}>
+    <div className="bg-white" ref={heroRef}>
       <section
         className="relative w-full overflow-hidden min-h-[75vh] md:min-h-[80vh] flex items-center justify-center pt-32 pb-10 md:pt-28"
         style={{ perspective: '1200px' }}
@@ -154,14 +154,14 @@ export function WebCreationHero({ onCheckout }: WebCreationHeroProps) {
         <motion.div className="container mx-auto px-6 relative z-10 text-center max-w-4xl" style={{ y: parallaxY }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <h1
-              className="text-[2.2rem] md:text-[3.8rem] font-outfit font-extrabold text-white leading-tight mb-6 tracking-tight"
+              className="text-[2.2rem] md:text-[3.8rem] font-outfit font-extrabold text-[#111111] leading-tight mb-6 tracking-tight"
               dir="rtl"
             >
               إنشاء مواقع احترافية بالذكاء الاصطناعي
             </h1>
 
             <p
-              className="text-lg md:text-2xl font-outfit font-medium text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg md:text-2xl font-outfit font-medium text-[#333333] mb-10 max-w-3xl mx-auto leading-relaxed"
               dir="rtl"
             >
               تعلم تبني مواقع ويب مذهلة بدون كود — وتبيعها بآلاف الجنيهات
@@ -184,7 +184,7 @@ export function WebCreationHero({ onCheckout }: WebCreationHeroProps) {
                 {[...MOBILE_ROW, ...MOBILE_ROW].map((src, i) => (
                   <div
                     key={`${src}-m-${i}`}
-                    className="relative aspect-[16/10] w-32 sm:w-36 flex-shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-lg"
+                    className="relative aspect-[16/10] w-32 sm:w-36 flex-shrink-0 overflow-hidden rounded-xl border border-[#E5E5E5] bg-[#F5F5F7] shadow-lg"
                   >
                     <Image src={src} alt="" aria-hidden="true" fill sizes="150px" className="object-cover" />
                   </div>
@@ -196,57 +196,57 @@ export function WebCreationHero({ onCheckout }: WebCreationHeroProps) {
       </section>
 
       {/* Secondary hero content: badge, English lines, quick-jump pills, guarantees */}
-      <div className="relative z-10 bg-[#0a0a0a] pb-14 md:pb-20">
+      <div className="relative z-10 bg-white pb-14 md:pb-20">
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold mb-6 shadow-sm">
             <Sparkles size={16} />
             <span>كورس شامل بدون كود • Web Creation Course</span>
           </div>
 
-          <h2 className="text-[1.3rem] md:text-[1.8rem] font-outfit font-semibold text-blue-400 mb-4 tracking-wide">
+          <h2 className="text-[1.3rem] md:text-[1.8rem] font-outfit font-semibold text-blue-600 mb-4 tracking-wide">
             Build Professional Websites with AI
           </h2>
 
-          <p className="text-sm md:text-base text-gray-400 font-inter mb-10 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-500 font-inter mb-10 max-w-2xl mx-auto">
             Learn to build stunning websites without code — and sell them for thousands
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
             <button
               onClick={() => document.getElementById('highlights')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white/5 border border-white/15 text-gray-200 rounded-full px-5 py-2 font-outfit text-sm hover:bg-white/10 hover:border-white/25 transition-all cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
             >
               مميزات الكورس
             </button>
             <button
               onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white/5 border border-white/15 text-gray-200 rounded-full px-5 py-2 font-outfit text-sm hover:bg-white/10 hover:border-white/25 transition-all cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
             >
               تفاصيل المحتوى
             </button>
             <button
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white/5 border border-white/15 text-gray-200 rounded-full px-5 py-2 font-outfit text-sm hover:bg-white/10 hover:border-white/25 transition-all cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
             >
               الأسعار
             </button>
             <button
               onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white/5 border border-white/15 text-gray-200 rounded-full px-5 py-2 font-outfit text-sm hover:bg-white/10 hover:border-white/25 transition-all cursor-pointer"
+              className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
             >
               أسئلة شائعة
             </button>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400" dir="rtl">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500" dir="rtl">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-blue-400" /> وصول فوري ومدى الحياة
+              <CheckCircle2 size={16} className="text-blue-600" /> وصول فوري ومدى الحياة
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-blue-400" /> بدون أي خبرة برمجة
+              <CheckCircle2 size={16} className="text-blue-600" /> بدون أي خبرة برمجة
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-blue-400" /> شهادة إتمام معتمدة
+              <CheckCircle2 size={16} className="text-blue-600" /> شهادة إتمام معتمدة
             </span>
           </div>
         </div>
