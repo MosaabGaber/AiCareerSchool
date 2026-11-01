@@ -18,12 +18,11 @@ import {
   Palette,
   Users,
   Layers,
-  ArrowRight,
-  Globe,
-  CheckCircle2
+  Globe
 } from 'lucide-react';
 import { CountdownBanner } from './CountdownBanner';
 import { InfoModal } from './InfoModal';
+import { WebCreationHero } from './WebCreationHero';
 
 interface HomeWebCreationProps {
   setIsPromptsModalOpen: (val: boolean) => void;
@@ -222,98 +221,7 @@ export function HomeWebCreation({
 
       <main className="mt-6">
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] md:min-h-0 flex items-center justify-center pt-32 pb-12 md:pt-28 md:pb-16 overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* Top Tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold mb-6 shadow-sm">
-                <Sparkles size={16} />
-                <span>كورس شامل بدون كود • Web Creation Course</span>
-              </div>
-
-              {/* Headlines */}
-              <h1
-                className="text-[2.2rem] md:text-[3.8rem] font-outfit font-extrabold text-gray-900 leading-tight mb-4 tracking-tight"
-                dir="rtl"
-              >
-                إنشاء مواقع احترافية بالذكاء الاصطناعي
-              </h1>
-
-              <h2 className="text-[1.3rem] md:text-[1.8rem] font-outfit font-semibold text-blue-600 mb-6 tracking-wide">
-                Build Professional Websites with AI
-              </h2>
-
-              {/* Subtitles */}
-              <p
-                className="text-lg md:text-2xl font-outfit font-medium text-gray-700 mb-3 max-w-3xl mx-auto leading-relaxed"
-                dir="rtl"
-              >
-                تعلم تبني مواقع ويب مذهلة بدون كود — وتبيعها بآلاف الجنيهات
-              </p>
-
-              <p className="text-sm md:text-base text-gray-500 font-inter mb-10 max-w-2xl mx-auto">
-                Learn to build stunning websites without code — and sell them for thousands
-              </p>
-
-              {/* Quick Jump Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-                <button
-                  onClick={() => document.getElementById('highlights')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
-                >
-                  مميزات الكورس
-                </button>
-                <button
-                  onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
-                >
-                  تفاصيل المحتوى
-                </button>
-                <button
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
-                >
-                  الأسعار
-                </button>
-                <button
-                  onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white border border-gray-300 shadow-sm hover:border-gray-400 hover:shadow-md text-gray-800 rounded-full px-5 py-2 font-outfit text-sm hover:bg-gray-50 transition-all cursor-pointer"
-                >
-                  أسئلة شائعة
-                </button>
-              </div>
-
-              {/* CTA Button */}
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="inline-block">
-                <button
-                  onClick={handleCheckout}
-                  className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-10 py-4 rounded-2xl text-lg md:text-xl font-bold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35 transition-all duration-300 flex items-center gap-3 cursor-pointer"
-                  dir="rtl"
-                >
-                  <span>اشترك الآن بـ 1,200 EGP</span>
-                  <ArrowRight size={22} className="rtl:rotate-180" />
-                </button>
-              </motion.div>
-
-              {/* Guarantees / Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-500" dir="rtl">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 size={16} className="text-blue-600" /> وصول فوري ومدى الحياة
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 size={16} className="text-blue-600" /> بدون أي خبرة برمجة
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 size={16} className="text-blue-600" /> شهادة إتمام معتمدة
-                </span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <WebCreationHero onCheckout={handleCheckout} />
 
         {/* Learn to Create showcase */}
         <section className="py-8 bg-gray-50 border-y border-gray-200">

@@ -122,3 +122,58 @@
   background-image: none !important;
   background-color: #F5F5F7 !important;
 }
+
+/* ==========================================================================
+   Web Creation hero: 3D side corridors
+   Scoped to the /web-creation hero only. The corridor rows themselves are
+   driven by Framer Motion (JS) for scroll-velocity coupling; this file only
+   holds the static 3D/mask styling and the CSS-only mobile fallback.
+   ========================================================================== */
+
+@keyframes hero-scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-carousel-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-carousel-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(37, 99, 235, 0.45);
+  z-index: 10;
+}
+
+.hero-corridor-left {
+  mask-image:
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to right, black 55%, transparent);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to right, black 55%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-corridor-right {
+  mask-image:
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to left, black 55%, transparent);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to left, black 55%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-mobile-row {
+  animation: hero-scroll-x 28s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mobile-row {
+    animation: none !important;
+  }
+}
