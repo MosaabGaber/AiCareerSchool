@@ -20,21 +20,21 @@ export function BlogPost() {
   }
 
   return (
-    <main className="pt-32 pb-24 min-h-screen relative z-10" dir="rtl">
+    <main className="pt-32 pb-24 min-h-screen relative z-10 bg-white" dir="rtl">
       <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
-        
+
         {/* SEO Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-gray-400 font-inter">
+          <ol className="flex items-center gap-2 text-sm text-[#555555] font-inter">
             <li>
-              <Link href="/" className="hover:text-neongreen transition-colors">الرئيسية</Link>
+              <Link href="/" className="hover:text-[#067A4E] transition-colors">الرئيسية</Link>
             </li>
-            <li className="text-gray-600">/</li>
+            <li className="text-[#BBBBBB]">/</li>
             <li>
-              <Link href="/blog" className="hover:text-neongreen transition-colors">المدونة</Link>
+              <Link href="/blog" className="hover:text-[#067A4E] transition-colors">المدونة</Link>
             </li>
-            <li className="text-gray-600">/</li>
-            <li className="text-gray-200" aria-current="page">
+            <li className="text-[#BBBBBB]">/</li>
+            <li className="text-[#111111]" aria-current="page">
               {articleInfo.title.substring(0, 30)}...
             </li>
           </ol>
@@ -43,33 +43,33 @@ export function BlogPost() {
         <article>
           {/* Article Header */}
           <header className="mb-10">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold text-[#111111] mb-6 leading-tight">
               {articleInfo.title}
             </h1>
 
             {articleInfo.lastUpdated && (
-              <p className="text-sm text-neongreen font-inter mb-4">آخر تحديث: {articleInfo.lastUpdated}</p>
+              <p className="text-sm text-[#555555] font-inter mb-4">آخر تحديث: {articleInfo.lastUpdated}</p>
             )}
 
             {/* Meta Row */}
-            <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm font-inter">
+            <div className="flex flex-wrap items-center gap-4 text-[#555555] text-sm font-inter">
               <div className="flex items-center gap-2">
                 {/* Author Avatar Placeholder */}
                 <div className="w-8 h-8 rounded-full bg-gradient-to-r from-neongreen to-blue-500 flex items-center justify-center">
                   <span className="text-darkspace font-bold uppercase text-xs">AI</span>
                 </div>
-                <span className="font-semibold text-white">AI Career School</span>
+                <span className="font-semibold text-[#111111]">AI Career School</span>
               </div>
-              <span className="hidden sm:inline text-gray-600">•</span>
+              <span className="hidden sm:inline text-[#BBBBBB]">•</span>
               <span>تاريخ النشر: {articleInfo.date}</span>
-              <span className="hidden sm:inline text-gray-600">•</span>
+              <span className="hidden sm:inline text-[#BBBBBB]">•</span>
               <span>{articleInfo.readTime}</span>
             </div>
           </header>
 
           {/* Top Video Embed */}
           {articleInfo.videoId && (
-            <div className="w-full aspect-video rounded-2xl overflow-hidden mb-12 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/5">
+            <div className="w-full aspect-video rounded-2xl overflow-hidden mb-12 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-[#E5E5E5]">
               <iframe 
                 src={`https://www.youtube.com/embed/${articleInfo.videoId}`}
                 title="YouTube video player"
@@ -90,20 +90,20 @@ export function BlogPost() {
 
           {/* Sources */}
           {articleInfo.sources && articleInfo.sources.length > 0 && (
-            <div className="border-t border-white/10 pt-8 mb-4">
-              <h2 className="text-sm font-bold text-gray-400 font-outfit mb-3">المصادر</h2>
-              <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 font-inter">
+            <div className="border-t border-[#E5E5E5] pt-8 mb-4">
+              <h2 className="text-sm font-bold text-[#555555] font-outfit mb-3">المصادر</h2>
+              <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-[#555555] font-inter">
                 {articleInfo.sources.map((source, index) => (
                   <li key={source.url}>
                     <a
                       href={source.url}
                       target="_blank"
                       rel="noopener nofollow"
-                      className="hover:text-neongreen transition-colors underline"
+                      className="hover:text-[#067A4E] transition-colors underline"
                     >
                       {source.label}
                     </a>
-                    {index < articleInfo.sources!.length - 1 && <span className="mx-1 text-gray-600">·</span>}
+                    {index < articleInfo.sources!.length - 1 && <span className="mx-1 text-[#BBBBBB]">·</span>}
                   </li>
                 ))}
               </ul>
@@ -111,11 +111,11 @@ export function BlogPost() {
           )}
 
           {/* Bottom Call To Action */}
-          <div className="border-t border-white/10 pt-10 pb-4">
-            <div className="glassmorphism p-8 md:p-10 rounded-2xl flex flex-col items-center text-center border border-white/10 relative overflow-hidden">
+          <div className="border-t border-[#E5E5E5] pt-10 pb-4">
+            <div className="blog-card-light p-8 md:p-10 rounded-2xl flex flex-col items-center text-center border border-[#E5E5E5] relative overflow-hidden">
               <div className="absolute inset-0 bg-blue-500/5 pointer-events-none"></div>
-              <h3 className="text-2xl md:text-3xl font-bold font-outfit text-white mb-4 relative z-10">ارفع من قيمة شغلك النهارده</h3>
-              <p className="text-gray-300 md:text-lg mb-8 max-w-xl mx-auto relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold font-outfit text-[#111111] mb-4 relative z-10">ارفع من قيمة شغلك النهارده</h3>
+              <p className="text-[#111111] md:text-lg mb-8 max-w-xl mx-auto relative z-10">
                 جاهز تحترف أدوات الذكاء الاصطناعي وتنتج محتوى تجاري؟ اشترك في الكورس الشامل اللي بيتحدث كل 3-5 أيام بـ 950 جنيه بس.
               </p>
               <Link href="/checkout" 
