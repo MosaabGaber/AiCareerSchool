@@ -3,6 +3,16 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface SourceLink {
+  label: string;
+  url: string;
+}
+
+export interface ItemListEntry {
+  name: string;
+  url?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -12,13 +22,829 @@ export interface BlogPost {
   image: string;
   date: string;
   datePublished?: string;
+  dateModified?: string;
+  lastUpdated?: string;
   readTime: string;
   videoId?: string;
   content: string;
   faqs?: FAQItem[];
+  sources?: SourceLink[];
+  itemList?: ItemListEntry[];
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'ai-content-creation-beginners-guide',
+    title: 'صناعة محتوى بالذكاء الاصطناعي: دليل المبتدئين الكامل (2026)',
+    excerpt: 'تعلم صناعة محتوى بالذكاء الاصطناعي خطوة بخطوة: أفضل الأدوات المجانية للصور والفيديو والصوت، مثال عملي كامل، وخطة 30 يوم لأول محتوى لك.',
+    metaTitle: 'صناعة محتوى بالذكاء الاصطناعي: دليل المبتدئين الكامل 2026',
+    metaDescription: 'تعلم صناعة محتوى بالذكاء الاصطناعي خطوة بخطوة: أفضل الأدوات المجانية للصور والفيديو والصوت، مثال عملي كامل، وخطة 30 يوم لأول محتوى لك.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop',
+    date: '1 نوفمبر 2026',
+    datePublished: '2026-11-01',
+    dateModified: '2026-11-01',
+    lastUpdated: 'نوفمبر 2026',
+    readTime: '10 دقائق قراءة',
+    content: `
+      <p>صناعة المحتوى بالذكاء الاصطناعي يعني أن تستخدم أدوات مثل ChatGPT وGemini وKling وElevenLabs لكتابة الأفكار وعمل الصور والفيديو والصوت، بدل الكاميرا والاستوديو والفريق. تقدر تبدأ اليوم بموبايل وأدوات مجانية. في الدليل ده هتعرف أنهي أداة تستخدم لكل خطوة، وهتشوف مثال عملي من الفكرة لحد النشر، وهتخرج بخطة 30 يوم.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أولاً: إيه اللي الذكاء الاصطناعي يقدر يعمله فعلاً؟</h2>
+      <p>الذكاء الاصطناعي ممتاز في التنفيذ، وضعيف في الفكرة. يعني:</p>
+      <ul class="list-disc list-inside mt-4 mb-8 space-y-2 marker:text-neongreen">
+        <li><strong>يقدر يعمل:</strong> أفكار وسكريبتات، صور واقعية للمنتجات والأشخاص، فيديوهات قصيرة بحركة سينمائية، تعليق صوتي بلهجة مصرية أو خليجية، وترجمة ومونتاج سريع.</li>
+        <li><strong>مايقدرش يعمل:</strong> يفهم جمهورك أكتر منك، أو يختار الفكرة اللي تشد الناس، أو يضمن إن المعلومة صح. ده شغلك إنت.</li>
+      </ul>
+      <p>المحتوى اللي بينجح دلوقتي هو فكرة بشرية قوية + تنفيذ بالذكاء الاصطناعي. المحتوى المصنوع بالكامل آلياً من غير رأي أو زاوية خاصة بيبان شبه بعضه، والناس بتعديه بسرعة.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أفضل أدوات صناعة المحتوى بالذكاء الاصطناعي في 2026</h2>
+      <p>مش محتاج 20 أداة. محتاج أداة واحدة لكل خطوة:</p>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">الخطوة</th>
+              <th class="p-4">الأداة المقترحة</th>
+              <th class="p-4">هل فيها نسخة مجانية؟</th>
+              <th class="p-4">ملاحظة</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">الأفكار والسكريبت</td>
+              <td class="p-4 text-gray-300">ChatGPT أو Claude أو Gemini</td>
+              <td class="p-4 text-gray-300">نعم</td>
+              <td class="p-4 text-gray-300">كلهم بيفهموا العربي واللهجة المصرية كويس</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">الصور</td>
+              <td class="p-4 text-gray-300">Nano Banana داخل تطبيق Gemini</td>
+              <td class="p-4 text-gray-300">نعم، بحدود استخدام</td>
+              <td class="p-4 text-gray-300">النسخة الأقوى Nano Banana Pro بقت مدفوعة غالباً</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">الفيديو</td>
+              <td class="p-4 text-gray-300">Kling 3.0</td>
+              <td class="p-4 text-gray-300">نعم، رصيد يومي بعلامة مائية</td>
+              <td class="p-4 text-gray-300">أفضل سعر مقابل جودة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">فيديو واقعي بصوت</td>
+              <td class="p-4 text-gray-300">Google Veo 3.1</td>
+              <td class="p-4 text-gray-300">محدودة</td>
+              <td class="p-4 text-gray-300">بيطلع الفيديو ومعاه صوت من نفس الأمر</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">إعلانات المنتجات</td>
+              <td class="p-4 text-gray-300">Seedance 2.0</td>
+              <td class="p-4 text-gray-300">رصيد تجربة عند التسجيل</td>
+              <td class="p-4 text-gray-300">قوي في ثبات الشخصيات والمنتج</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">التعليق الصوتي</td>
+              <td class="p-4 text-gray-300">ElevenLabs</td>
+              <td class="p-4 text-gray-300">نعم، للاستخدام الشخصي فقط</td>
+              <td class="p-4 text-gray-300">فيه أصوات بلهجة مصرية وسعودية</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">المونتاج والترجمة</td>
+              <td class="p-4 text-gray-300">CapCut</td>
+              <td class="p-4 text-gray-300">نعم</td>
+              <td class="p-4 text-gray-300">ترجمة عربي تلقائية على الفيديو</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>ملاحظات مهمة قبل ما تبدأ:</p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li><strong>النسخ المجانية غالباً للاستخدام الشخصي.</strong> الخطة المجانية في ElevenLabs مش بتديك حق الاستخدام التجاري، ونفس الكلام مع رصيد Kling المجاني. لو هتشتغل لعميل أو تكسب من القناة، اشترك في أقل خطة مدفوعة.</li>
+        <li><strong>لو قريت عن Sora:</strong> OpenAI قفلت نسخة الويب في أبريل 2026، فماتضيعش وقتك في شروحاته القديمة.</li>
+        <li><strong>الأسعار والحدود بتتغير كل شهر تقريباً.</strong> الجدول ده محدث نوفمبر 2026.</li>
+      </ul>
+      <p>لو عايز مقارنة أعمق بين أدوات الفيديو، اقرأ <a href="/blog/ai-video-tools-kling-veo" class="text-neongreen font-bold hover:underline">مقارنة Kling وVeo</a>.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">مثال عملي: ريلز 30 ثانية لكافيه من غير كاميرا</h2>
+      <p>خلينا نطبق الكلام على مثال حقيقي: ريلز إعلاني لكافيه صغير. نفس الخطوات تنفع لأي مجال.</p>
+      <ol class="list-decimal list-inside mt-4 mb-6 space-y-3 marker:text-neongreen">
+        <li><strong>الفكرة.</strong> اكتب لـ ChatGPT: "أنا بعمل محتوى لكافيه في القاهرة، جمهوره طلاب جامعة. اديني 10 أفكار ريلز مدتها 30 ثانية، كل فكرة فيها جملة افتتاحية تشد الانتباه في أول 3 ثواني." اختار أفضل فكرة، وعدّلها بأسلوبك.</li>
+        <li><strong>السكريبت.</strong> اطلب منه سكريبت مقسم لـ 4 مشاهد، لكل مشهد: اللي بيظهر على الشاشة + الجملة اللي بتتقال. أول 3 ثواني أهم حاجة في الفيديو كله.</li>
+        <li><strong>الصور.</strong> اعمل صورة لكل مشهد في Gemini. اكتب الوصف بالإنجليزي لأنه بيدي نتيجة أدق، وحدد مصدر الإضاءة ومكان الكاميرا. مثال: <em class="text-gray-400">Iced latte on a wooden table, morning sunlight from a window on the left, camera at table height, shallow depth of field, realistic photo.</em></li>
+        <li><strong>الفيديو.</strong> ارفع كل صورة على Kling واختار "صورة إلى فيديو". اكتب حركة واحدة بسيطة، زي: <em class="text-gray-400">slow push-in, ice cubes moving</em>. تحويل الصورة لفيديو بيديك تحكم أكتر بكتير من كتابة الفيديو من الصفر.</li>
+        <li><strong>الصوت.</strong> سجل بصوتك لو تقدر، لأن الصوت الحقيقي بيبني ثقة. أو استخدم صوت بلهجة مصرية من ElevenLabs.</li>
+        <li><strong>المونتاج.</strong> ركب المشاهد في CapCut، ضيف ترجمة تلقائية وموسيقى من مكتبته. أغلب الناس بتتفرج من غير صوت، فالترجمة مش اختيارية.</li>
+        <li><strong>النشر والقياس.</strong> انشر وبص بعد 48 ساعة على نسبة المشاهدة للآخر. ده أهم رقم عندك، مش عدد اللايكات.</li>
+      </ol>
+      <p class="text-neongreen font-semibold mb-6">الوقت المتوقع لأول فيديو: من ساعتين لـ 3 ساعات. بعد أول 5 فيديوهات هتنزل لأقل من ساعة.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">6 أخطاء بتبوظ المحتوى المصنوع بالذكاء الاصطناعي</h2>
+      <ol class="list-decimal list-inside mt-4 mb-8 space-y-3 marker:text-neongreen">
+        <li><strong>وصف عام جداً.</strong> "صورة حلوة لقهوة" بتدي نتيجة شبه ملايين الصور. حدد الإضاءة والزاوية والخلفية.</li>
+        <li><strong>مفيش بداية قوية.</strong> لو أول 3 ثواني مملة، محدش هيشوف الباقي مهما كانت الجودة.</li>
+        <li><strong>أيادي ووشوش غريبة.</strong> راجع كل صورة قبل النشر. غلطة واحدة واضحة بتخلي الناس تفقد الثقة في البراند.</li>
+        <li><strong>تنسخ التريند زي ما هو.</strong> خد شكل التريند، لكن حط فيه رأيك أو معلومة مفيدة من مجالك.</li>
+        <li><strong>تستخدم النسخة المجانية في شغل عميل.</strong> راجع شروط الاستخدام التجاري لكل أداة.</li>
+        <li><strong>ماتقولش إنه مصنوع بالذكاء الاصطناعي.</strong> لما يكون المحتوى واقعي جداً (أشخاص أو أحداث)، فعّل علامة "مصنوع بالذكاء الاصطناعي" اللي في تيك توك وميتا. ده بيحمي حسابك.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">خطة 30 يوم لبداية صناعة المحتوى بالذكاء الاصطناعي</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">الأسبوع</th>
+              <th class="p-4">الهدف</th>
+              <th class="p-4">الناتج في آخر الأسبوع</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">1</td>
+              <td class="p-4 text-gray-300">اختار مجال وجمهور، وافتح حسابات الأدوات</td>
+              <td class="p-4 text-gray-300">30 فكرة محتوى مكتوبة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">2</td>
+              <td class="p-4 text-gray-300">اتعلم الصور: الإضاءة والزاوية وثبات الشخصية</td>
+              <td class="p-4 text-gray-300">20 صورة بمستوى تقدر تنشره</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">3</td>
+              <td class="p-4 text-gray-300">حوّل الصور لفيديو وضيف صوت ومونتاج</td>
+              <td class="p-4 text-gray-300">3 ريلز جاهزين</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">4</td>
+              <td class="p-4 text-gray-300">انشر 3 مرات في الأسبوع وقيس النتائج</td>
+              <td class="p-4 text-gray-300">تعرف أنهي نوع محتوى بينجح مع جمهورك</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>الاستمرار أهم من الجودة في الأول. 12 فيديو عاديين هيعلموك أكتر من فيديو واحد مثالي مانشرتهوش.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">إزاي تكسب من صناعة المحتوى بالذكاء الاصطناعي؟</h2>
+      <p>في 3 طرق واضحة:</p>
+      <ul class="list-disc list-inside mt-4 mb-8 space-y-2 marker:text-neongreen">
+        <li><strong>خدمات للشركات والمحلات:</strong> صور منتجات، ريلز لمطاعم وكافيهات، إعلانات لشركات العقارات. ده أسرع طريق لأول دخل. شوف <a href="/blog/ai-product-photography" class="text-neongreen font-bold hover:underline">دليل تصوير المنتجات بالذكاء الاصطناعي</a>.</li>
+        <li><strong>العمل الحر:</strong> بيع نفس الخدمات لعملاء بره مصر والتحصيل بالدولار. التفاصيل في <a href="/blog/earn-online-with-ai-egypt-2026" class="text-neongreen font-bold hover:underline">دليل الربح من الإنترنت بالذكاء الاصطناعي في مصر</a>.</li>
+        <li><strong>قناتك الخاصة:</strong> أبطأ طريق، لكن أكبر عائد على المدى الطويل. قنوات "بدون ظهور" بقت ممكنة بالصوت والفيديو المصنوع بالذكاء الاصطناعي.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">عايز تتعلم ده بشكل منظم؟</h2>
+      <p>كل اللي في المقال ده تقدر تتعلمه لوحدك بالتجربة. لو عايز تختصر الوقت، <a href="/ai-content" class="text-neongreen font-bold hover:underline">كورس صناعة المحتوى بالذكاء الاصطناعي</a> بيمشي معاك بالعربي من أول صورة لحد فيديو إعلاني كامل، بنفس الأدوات اللي بنستخدمها في شغل عملاء حقيقيين.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل صناعة المحتوى بالذكاء الاصطناعي مجانية؟</h3>
+          <p class="text-gray-300">تقدر تبدأ مجاناً. ChatGPT وGemini وKling وCapCut كلهم فيهم نسخ مجانية تكفي للتعلم. لكن لو هتستخدم المحتوى تجارياً أو لعميل، هتحتاج خطة مدفوعة في بعض الأدوات.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل لازم أعرف إنجليزي؟</h3>
+          <p class="text-gray-300">مش ضروري. أدوات الكتابة بتفهم العربي كويس. لكن أوامر الصور والفيديو بتدي نتايج أدق بالإنجليزي، وتقدر تطلب من ChatGPT يترجمها لك.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل المنصات بتقلل وصول المحتوى المصنوع بالذكاء الاصطناعي؟</h3>
+          <p class="text-gray-300">المنصات مش بتعاقب المحتوى لأنه مصنوع بالذكاء الاصطناعي. اللي بيقل وصوله هو المحتوى المكرر والضعيف. ولما يكون الفيديو واقعي جداً، فعّل علامة المحتوى المصنوع بالذكاء الاصطناعي.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">محتاج لابتوب قوي؟</h3>
+          <p class="text-gray-300">لأ. أغلب الأدوات بتشتغل على الإنترنت، والموبايل كفاية للبداية. اللابتوب بيسهل المونتاج بس.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هاخد وقت قد إيه لحد ما أتعلم؟</h3>
+          <p class="text-gray-300">لو اتدربت ساعة يومياً، هتقدر تعمل محتوى مقبول في حوالي شهر، ومحتوى تقدر تبيعه لعميل في 2 لـ 3 شهور.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">عايز تختصر شهور من التجربة والخطأ؟</h3>
+        <p class="text-gray-300 mb-6">كورس صناعة المحتوى بالذكاء الاصطناعي بيمشي معاك بالعربي من أول صورة لحد فيديو إعلاني كامل.</p>
+        <a href="/ai-content" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          اشترك في كورس صناعة المحتوى الآن ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'هل صناعة المحتوى بالذكاء الاصطناعي مجانية؟',
+        answer: 'تقدر تبدأ مجاناً. ChatGPT وGemini وKling وCapCut كلهم فيهم نسخ مجانية تكفي للتعلم. لكن لو هتستخدم المحتوى تجارياً أو لعميل، هتحتاج خطة مدفوعة في بعض الأدوات.'
+      },
+      {
+        question: 'هل لازم أعرف إنجليزي؟',
+        answer: 'مش ضروري. أدوات الكتابة بتفهم العربي كويس. لكن أوامر الصور والفيديو بتدي نتايج أدق بالإنجليزي، وتقدر تطلب من ChatGPT يترجمها لك.'
+      },
+      {
+        question: 'هل المنصات بتقلل وصول المحتوى المصنوع بالذكاء الاصطناعي؟',
+        answer: 'المنصات مش بتعاقب المحتوى لأنه مصنوع بالذكاء الاصطناعي. اللي بيقل وصوله هو المحتوى المكرر والضعيف. ولما يكون الفيديو واقعي جداً، فعّل علامة المحتوى المصنوع بالذكاء الاصطناعي.'
+      },
+      {
+        question: 'محتاج لابتوب قوي؟',
+        answer: 'لأ. أغلب الأدوات بتشتغل على الإنترنت، والموبايل كفاية للبداية. اللابتوب بيسهل المونتاج بس.'
+      },
+      {
+        question: 'هاخد وقت قد إيه لحد ما أتعلم؟',
+        answer: 'لو اتدربت ساعة يومياً، هتقدر تعمل محتوى مقبول في حوالي شهر، ومحتوى تقدر تبيعه لعميل في 2 لـ 3 شهور.'
+      }
+    ],
+    sources: [
+      { label: 'Kling, Seedance, Veo 3.1 releases', url: 'https://fliki.ai/masterclass/tutorials/best-ai-video-generators' },
+      { label: 'Kling free tier terms', url: 'https://pixo.video/blog/best-ai-video-generators' },
+      { label: 'Sora discontinued', url: 'https://rangy.ai/blog/ai-video-generators-compared-2026' },
+      { label: 'Nano Banana free vs Pro', url: 'https://krater.ai/blog/is-nano-banana-free' },
+      { label: 'ElevenLabs free plan is non-commercial', url: 'https://sawankr.com/courses/ai/elevenlabs-arabic-voice-cloning-uae-business-uses' },
+      { label: 'ElevenLabs Egyptian accents', url: 'https://elevenlabs.io/blog/egyptian-accent-text-to-speech' }
+    ]
+  },
+  {
+    slug: 'earn-online-with-ai-egypt-2026',
+    title: 'الربح من الإنترنت بالذكاء الاصطناعي في مصر (2026): دليل عملي للعمل الحر',
+    excerpt: 'إزاي تشتغل عمل حر على الإنترنت من مصر بالذكاء الاصطناعي: الخدمات المطلوبة، المنصات، سحب الفلوس، الضرايب، وخطة 60 يوم لأول عميل.',
+    metaTitle: 'الربح من الإنترنت بالذكاء الاصطناعي في مصر 2026: دليل العمل الحر',
+    metaDescription: 'إزاي تشتغل عمل حر على الإنترنت من مصر بالذكاء الاصطناعي: الخدمات المطلوبة، المنصات، سحب الفلوس، الضرايب، وخطة 60 يوم لأول عميل.',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop',
+    date: '1 نوفمبر 2026',
+    datePublished: '2026-11-01',
+    dateModified: '2026-11-01',
+    lastUpdated: 'نوفمبر 2026',
+    readTime: '11 دقيقة قراءة',
+    content: `
+      <p>الربح من الإنترنت بالذكاء الاصطناعي حقيقي، لكنه مش دخل سلبي ولا زرار بتدوس عليه. الفكرة ببساطة: تتعلم خدمة واحدة الشركات محتاجاها، زي فيديوهات إعلانية أو مواقع، وتبيعها لعملاء جوه وبره مصر. الذكاء الاصطناعي بيخليك تنفذها أسرع وبتكلفة أقل.</p>
+
+      <p class="mt-4">والطلب موجود فعلاً. تقرير Upwork للمهارات المطلوبة في 2026 لقى إن الطلب على مهارات الذكاء الاصطناعي زاد 109% في سنة واحدة. أسرع فئة نمواً كانت <strong>عمل وتعديل الفيديو بالذكاء الاصطناعي بزيادة 329%</strong>، وبعدها ربط الذكاء الاصطناعي بأنظمة الشركات بزيادة 178%.</p>
+
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 my-6">
+        <p class="text-gray-300 text-sm">ملحوظة: لو بحثت عن "عمل حر" ولقيت كلام عن وثيقة العمل الحر السعودية، المقال ده مختلف. ده دليل للي عايش في مصر وعايز يشتغل أونلاين ويستلم فلوسه هنا.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">5 خدمات بالذكاء الاصطناعي عليها طلب حقيقي</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">الخدمة</th>
+              <th class="p-4">مين بيشتريها</th>
+              <th class="p-4">أهم الأدوات</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">فيديوهات وإعلانات بالذكاء الاصطناعي</td>
+              <td class="p-4 text-gray-300">متاجر أونلاين، مطاعم، براندات صغيرة ما عندهاش ميزانية تصوير</td>
+              <td class="p-4 text-gray-300">Kling، Veo، Seedance، CapCut</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">صور منتجات احترافية</td>
+              <td class="p-4 text-gray-300">أي حد بيبيع على إنستجرام أو أمازون أو نون</td>
+              <td class="p-4 text-gray-300">Nano Banana، Midjourney</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">مواقع وصفحات هبوط</td>
+              <td class="p-4 text-gray-300">شركات صغيرة، عيادات، مكاتب عقارات</td>
+              <td class="p-4 text-gray-300">أدوات بناء المواقع بالذكاء الاصطناعي</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">رد آلي وأتمتة واتساب</td>
+              <td class="p-4 text-gray-300">أي بيزنس بيستقبل رسايل كتير</td>
+              <td class="p-4 text-gray-300">ChatGPT، أدوات الأتمتة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">تعليق صوتي ودبلجة بالمصري</td>
+              <td class="p-4 text-gray-300">صناع محتوى، شركات بتستهدف مصر</td>
+              <td class="p-4 text-gray-300">ElevenLabs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>نصيحة مهمة: اختار خدمة واحدة بس في الأول. اللي بيبدأ بـ 5 خدمات بيبان ضعيف في الخمسة.</p>
+      <p class="mt-4">ولو مش عارف تختار: الفيديو هو الأسرع نمواً، والمواقع هي الأثبت طلباً. Upwork بيحط تصميم المواقع ضمن أكثر المهارات طلباً كل سنة.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أنهي منصة تبدأ عليها؟</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">المنصة</th>
+              <th class="p-4">مناسبة لـ</th>
+              <th class="p-4">العمولة</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">Upwork</td>
+              <td class="p-4 text-gray-300">مشاريع أكبر وعملاء أجانب</td>
+              <td class="p-4 text-gray-300">متغيرة من 0% لـ 15% لكل عقد، غالباً حوالي 10%، وبتدفع على Connects عشان تقدم</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">Fiverr</td>
+              <td class="p-4 text-gray-300">خدمات بسعر ثابت (باكدجات)</td>
+              <td class="p-4 text-gray-300">20% ثابتة من كل طلب</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">مستقل وخمسات</td>
+              <td class="p-4 text-gray-300">عملاء عرب، ومحتوى بالعربي</td>
+              <td class="p-4 text-gray-300">راجع صفحة الشروط</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">LinkedIn والعملاء المباشرين</td>
+              <td class="p-4 text-gray-300">أعلى سعر، لكن محتاج سابقة أعمال</td>
+              <td class="p-4 text-gray-300">مفيش</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>أغلب الناس بتبدأ بـ Fiverr أو خمسات لأن الخدمة بتبيع نفسها من غير ما تقدم على مشاريع. بعد ما يبقى عندك تقييمات وسابقة أعمال، ابدأ تقدم على Upwork والعملاء المباشرين.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">إزاي تستلم فلوسك في مصر؟</h2>
+      <p>ده السؤال اللي محدش بيشرحه كويس. الفرق بين طريقة والتانية ممكن يوصل لأكتر من 5% من دخلك:</p>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">الطريقة</th>
+              <th class="p-4">رسوم Upwork</th>
+              <th class="p-4">بتوصلك إزاي</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">تحويل لحسابك في بنك مصري (Direct to Local Bank)</td>
+              <td class="p-4 text-gray-300">0.99 دولار</td>
+              <td class="p-4 text-gray-300">بالجنيه المصري، بسعر التحويل بتاع المنصة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">حساب دولار أمريكي أونلاين (Direct to U.S. Bank)</td>
+              <td class="p-4 text-gray-300">2.99 دولار من سبتمبر 2026</td>
+              <td class="p-4 text-gray-300">بالدولار، وإنت تختار امتى تحول</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">Payoneer</td>
+              <td class="p-4 text-gray-300">حوالي 2 دولار</td>
+              <td class="p-4 text-gray-300">بالدولار، لكن فيه رسوم تانية عند السحب وتحويل العملة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">تحويل بنكي دولي (Wire)</td>
+              <td class="p-4 text-gray-300">50 دولار</td>
+              <td class="p-4 text-gray-300">بالدولار، مناسب للمبالغ الكبيرة بس</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>بشكل عملي:</p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li><strong>لو محتاج الفلوس بالجنيه علطول:</strong> التحويل المباشر لبنكك المصري أسهل وأرخص طريقة.</li>
+        <li><strong>لو عايز تحتفظ بالدولار:</strong> افتح حساب دولار أونلاين من الخدمات اللي بتشتغل مع المصريين. كده تختار إنت وقت التحويل، وده مهم مع تغير سعر الجنيه.</li>
+        <li><strong>PayPal:</strong> عليه قيود في مصر، فماتعتمدش عليه كطريقة أساسية.</li>
+      </ul>
+      <p>قبل ما تختار، احسب التكلفة الكاملة: رسوم المنصة + رسوم الاستلام + فرق سعر العملة. مش بس الرقم الأول.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">هل الفريلانسر في مصر بيدفع ضرايب؟</h2>
+      <p>أيوه. الفريلانسر وصناع المحتوى مطالبين يسجلوا في مصلحة الضرائب. الخبر الكويس إن فيه <strong>نظام ضريبي مبسط</strong> بقانون 6 لسنة 2025، لكل اللي دخلهم السنوي أقل من 20 مليون جنيه. بدل ما تدفع على الربح، بتدفع نسبة صغيرة من إجمالي الدخل:</p>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">إجمالي الدخل السنوي</th>
+              <th class="p-4">نسبة الضريبة</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">حتى 500 ألف جنيه</td>
+              <td class="p-4 text-gray-300">0.4%</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">من 500 ألف لـ 2 مليون</td>
+              <td class="p-4 text-gray-300">0.5%</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">من 2 لـ 3 مليون</td>
+              <td class="p-4 text-gray-300">0.75%</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">من 3 لـ 10 مليون</td>
+              <td class="p-4 text-gray-300">1%</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">من 10 لـ 20 مليون</td>
+              <td class="p-4 text-gray-300">1.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>مثال: لو دخلك السنوي 400 ألف جنيه، الضريبة 1,600 جنيه بس في السنة. القواعد اتعدلت كذا مرة في 2026، فاسأل محاسب قبل ما تسجل. المعلومات دي للتوضيح، مش استشارة قانونية.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">خطة 60 يوم من الصفر لأول عميل</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">الفترة</th>
+              <th class="p-4">المطلوب منك</th>
+              <th class="p-4">الناتج</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">الأسبوع 1–2</td>
+              <td class="p-4 text-gray-300">اختار خدمة واحدة واتعلم أدواتها</td>
+              <td class="p-4 text-gray-300">تقدر تنفذ الخدمة من الأول للآخر</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">الأسبوع 3–4</td>
+              <td class="p-4 text-gray-300">اعمل 5 نماذج شغل، منهم 2 لبيزنس حقيقي تعرفه</td>
+              <td class="p-4 text-gray-300">سابقة أعمال حقيقية</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">الأسبوع 5–6</td>
+              <td class="p-4 text-gray-300">اعمل بروفايل على منصتين، وقدم على 20 مشروع</td>
+              <td class="p-4 text-gray-300">أول ردود ومقابلات</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">الأسبوع 7–8</td>
+              <td class="p-4 text-gray-300">نفذ أول مشروع بأعلى جودة، واطلب تقييم</td>
+              <td class="p-4 text-gray-300">أول دخل وأول تقييم</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>المشروع الأول أصعب واحد. بعد أول 3 تقييمات، الطلبات بتيجي أسهل بكتير.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">5 أخطاء بتضيع أول شهورك</h2>
+      <ol class="list-decimal list-inside mt-4 mb-8 space-y-3 marker:text-neongreen">
+        <li><strong>عرض مكتوب بالكامل بـ ChatGPT.</strong> العملاء بيشوفوا مئات العروض اللي شبه بعض. ابدأ بجملة عن مشروعهم هم، مش عنك.</li>
+        <li><strong>تنافس بأقل سعر.</strong> السعر القليل جداً بيجيب أصعب عملاء. نافس بالنماذج وسرعة التسليم.</li>
+        <li><strong>تاخد الفلوس بره المنصة.</strong> ده مخالف لشروط Upwork وممكن يقفل حسابك نهائياً.</li>
+        <li><strong>مفيش سابقة أعمال.</strong> العميل بيشتري اللي شافه، مش اللي بتوصفه.</li>
+        <li><strong>تبيع "ذكاء اصطناعي" بدل نتيجة.</strong> العميل مش عايز أداة، عايز مبيعات أكتر أو وقت أقل. اكتب النتيجة في أول سطر.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">تبدأ منين؟</h2>
+      <p>لو عايز تبدأ بالفيديو والصور، اقرأ <a href="/blog/ai-content-creation-beginners-guide" class="text-neongreen font-bold hover:underline">دليل صناعة المحتوى بالذكاء الاصطناعي للمبتدئين</a>. ولو عايز تتعلم الخدمة بشكل منظم مع مشاريع تنفع كسابقة أعمال:</p>
+      <ul class="list-disc list-inside mt-4 mb-8 space-y-2 marker:text-neongreen">
+        <li><a href="/ai-content" class="text-neongreen font-bold hover:underline">كورس صناعة المحتوى بالذكاء الاصطناعي</a>: فيديوهات وإعلانات وصور منتجات.</li>
+        <li><a href="/web-creation" class="text-neongreen font-bold hover:underline">كورس بناء المواقع بالذكاء الاصطناعي</a>: مواقع وصفحات هبوط للعملاء.</li>
+        <li><a href="/real-estate" class="text-neongreen font-bold hover:underline">كورس الذكاء الاصطناعي للعقارات</a>: لو عايز تتخصص في سوق بيدفع كويس.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل الربح من الإنترنت بالذكاء الاصطناعي حقيقي؟</h3>
+          <p class="text-gray-300">أيوه، لو بتبيع خدمة لعملاء. طلب مهارات الذكاء الاصطناعي على Upwork زاد 109% في سنة. لكن أي حد بيوعدك بدخل من غير شغل غالباً بيبيعلك وهم.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">محتاج فلوس قد إيه عشان أبدأ؟</h3>
+          <p class="text-gray-300">تقدر تتعلم بالنسخ المجانية. لما تبدأ تشتغل لعملاء، هتحتاج اشتراك في أداة أو اتنين، لأن النسخ المجانية غالباً ما بتسمحش بالاستخدام التجاري.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">أسحب فلوسي من Upwork إزاي في مصر؟</h3>
+          <p class="text-gray-300">أسهل طريقة Direct to Local Bank، بتحول لحسابك البنكي بالجنيه مقابل 0.99 دولار. لو عايز تحتفظ بالدولار، اسحب على حساب دولار أونلاين أو Payoneer.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل لازم أدفع ضرايب على شغل الفريلانس؟</h3>
+          <p class="text-gray-300">أيوه. النظام المبسط بقانون 6 لسنة 2025 بيبدأ من 0.4% من إجمالي الدخل للي دخله أقل من 500 ألف جنيه في السنة. اسأل محاسب قبل التسجيل.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">لازم أبقى شاطر في الإنجليزي؟</h3>
+          <p class="text-gray-300">للعملاء الأجانب محتاج إنجليزي مقبول في الكتابة، والذكاء الاصطناعي هيساعدك. لو إنجليزيتك ضعيفة، ابدأ بالعملاء العرب على خمسات ومستقل والسوق المصري.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">جاهز تجيب أول عميل؟</h3>
+        <p class="text-gray-300 mb-6">اتعلم خدمة واحدة كويس وابني سابقة أعمال تقدر تبيعها من أول شهر.</p>
+        <a href="/ai-content" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          ابدأ بكورس صناعة المحتوى بالذكاء الاصطناعي ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'هل الربح من الإنترنت بالذكاء الاصطناعي حقيقي؟',
+        answer: 'أيوه، لو بتبيع خدمة لعملاء. طلب مهارات الذكاء الاصطناعي على Upwork زاد 109% في سنة. لكن أي حد بيوعدك بدخل من غير شغل غالباً بيبيعلك وهم.'
+      },
+      {
+        question: 'محتاج فلوس قد إيه عشان أبدأ؟',
+        answer: 'تقدر تتعلم بالنسخ المجانية. لما تبدأ تشتغل لعملاء، هتحتاج اشتراك في أداة أو اتنين، لأن النسخ المجانية غالباً ما بتسمحش بالاستخدام التجاري.'
+      },
+      {
+        question: 'أسحب فلوسي من Upwork إزاي في مصر؟',
+        answer: 'أسهل طريقة Direct to Local Bank، بتحول لحسابك البنكي بالجنيه مقابل 0.99 دولار. لو عايز تحتفظ بالدولار، اسحب على حساب دولار أونلاين أو Payoneer.'
+      },
+      {
+        question: 'هل لازم أدفع ضرايب على شغل الفريلانس؟',
+        answer: 'أيوه. النظام المبسط بقانون 6 لسنة 2025 بيبدأ من 0.4% من إجمالي الدخل للي دخله أقل من 500 ألف جنيه في السنة. اسأل محاسب قبل التسجيل.'
+      },
+      {
+        question: 'لازم أبقى شاطر في الإنجليزي؟',
+        answer: 'للعملاء الأجانب محتاج إنجليزي مقبول في الكتابة، والذكاء الاصطناعي هيساعدك. لو إنجليزيتك ضعيفة، ابدأ بالعملاء العرب على خمسات ومستقل والسوق المصري.'
+      }
+    ],
+    sources: [
+      { label: 'Upwork In-Demand Skills 2026 (press release)', url: 'https://www.upwork.com/press/releases/upworks-in-demand-skills-2026-demand-for-top-ai-skills-more-than-doubles-as-ai-is-embedded-into-everyday-work' },
+      { label: 'AI video +329%, AI integration +178%', url: 'https://www.selfemployed.com/news/upwork-ai-freelance-skills-demand-2026/' },
+      { label: 'Upwork fees and withdrawal options in Egypt', url: 'https://www.elevatepay.co/blog/upwork-fees-egypt' },
+      { label: 'Upwork Direct to Local Bank', url: 'https://support.upwork.com/hc/en-us/articles/211063888' },
+      { label: 'Upwork vs Fiverr fees', url: 'https://www.upwork.com/resources/upwork-vs-fiverr' },
+      { label: 'Law 6 of 2025 rate bands', url: 'https://beancount.io/blog/2026/07/26/egypt-law-6-2025-sme-simplified-tax-regime-guide' },
+      { label: 'Simplified regime covers freelancers (ETA head)', url: 'https://www.dailynewsegypt.com/?p=834351' },
+      { label: 'Freelancer registration guide, Oct 2026', url: 'https://enterpriseam.com/egypt/2026/10/11/your-guide-to-registering-as-a-freelancer-in-egypt/' }
+    ]
+  },
+  {
+    slug: 'ai-course-worth-it-2026',
+    title: 'كورس ذكاء اصطناعي: هل يستاهل في 2026؟ (إجابة صريحة + أفضل 7 كورسات)',
+    excerpt: 'هل كورس الذكاء الاصطناعي يستاهل فلوسه؟ إجابة صريحة، علامات الكورس النصب، ومقارنة أفضل 7 كورسات ذكاء اصطناعي مجانية ومدفوعة في 2026.',
+    metaTitle: 'كورس ذكاء اصطناعي: هل يستاهل في 2026؟ + أفضل 7 كورسات',
+    metaDescription: 'هل كورس الذكاء الاصطناعي يستاهل فلوسه؟ إجابة صريحة، علامات الكورس النصب، ومقارنة أفضل 7 كورسات ذكاء اصطناعي مجانية ومدفوعة في 2026.',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop',
+    date: '1 نوفمبر 2026',
+    datePublished: '2026-11-01',
+    dateModified: '2026-11-01',
+    lastUpdated: 'نوفمبر 2026',
+    readTime: '13 دقيقة قراءة',
+    content: `
+      <p>الإجابة المختصرة: كورس الذكاء الاصطناعي يستاهل لو هدفك واضح وعملي، زي إنك تشتغل لعملاء أو تطور شغلك. وما يستاهلش لو كل اللي عايزه تفهم الذكاء الاصطناعي بشكل عام، لأن فيه كورسات مجانية ممتازة للهدف ده. في المقال ده هنساعدك تعرف إنت في أنهي حالة، ونقارن 7 كورسات فعلية.</p>
+
+      <div class="p-4 rounded-xl bg-white/5 border border-white/10 my-6">
+        <p class="text-gray-300 text-sm">إفصاح: إحنا AI Career School، واتنين من الكورسات في القايمة بتوعنا. هنقولك بوضوح مين مش مناسب له كورساتنا، وإمتى الأفضل لك تاخد كورس مجاني.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">امتى كورس الذكاء الاصطناعي يستاهل فلوسه؟</h2>
+      <p><strong>يستاهل لو:</strong></p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>عايز تبيع خدمة (فيديوهات، صور، مواقع) ومحتاج توصل لمستوى يتباع بسرعة.</li>
+        <li>بتشتغل في تسويق أو محتوى أو <a href="/real-estate" class="text-neongreen font-bold hover:underline">عقارات</a>، وعايز تعمل نفس الشغل في وقت أقل.</li>
+        <li>جربت تتعلم من يوتيوب وتهت بين فيديوهات متلخبطة وأدوات بتتغير كل شهر.</li>
+        <li>الكورس سعره أقل من مشروع واحد هتاخده بعده. كده أول عميل بيرجعلك فلوسك.</li>
+      </ul>
+      <p><strong>ما يستاهلش لو:</strong></p>
+      <ul class="list-disc list-inside mt-2 mb-6 space-y-2 marker:text-neongreen">
+        <li>عايز تفهم الذكاء الاصطناعي كثقافة عامة بس. الكورسات المجانية في القايمة تحت كفاية.</li>
+        <li>مش هتلاقي ساعة في اليوم تتدرب فيها. الكورس من غير تطبيق ملوش لازمة.</li>
+        <li>الكورس بيوعدك بدخل مضمون أو "ربح سلبي". ده مش كورس، ده إعلان.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">6 علامات إن الكورس مش هيفيدك</h2>
+      <ol class="list-decimal list-inside mt-4 mb-8 space-y-3 marker:text-neongreen">
+        <li><strong>محتواه قديم.</strong> لو بيشرح أدوات اتقفلت زي Sora (اتوقفت نسخة الويب بتاعتها في أبريل 2026)، المحتوى مااتحدثش.</li>
+        <li><strong>مفيهوش مشاريع.</strong> المشاهدة مش تعلم. لازم تخرج بشغل تقدر توريه لعميل.</li>
+        <li><strong>وعود بدخل محدد.</strong> محدش يقدر يضمن دخلك.</li>
+        <li><strong>مفيش نماذج شغل للمدرب.</strong> اسأل: المدرب بيشتغل بالأدوات دي لعملاء حقيقيين؟</li>
+        <li><strong>مفيش طريقة تسأل فيها.</strong> الكورس المسجل من غير دعم بيوقفك عند أول مشكلة.</li>
+        <li><strong>بيعلمك "الذكاء الاصطناعي" كله.</strong> الكورس اللي بيغطي كل حاجة غالباً مش بيعمق في حاجة.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أفضل 7 كورسات ذكاء اصطناعي في 2026</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">#</th>
+              <th class="p-4">الكورس</th>
+              <th class="p-4">اللغة</th>
+              <th class="p-4">التكلفة</th>
+              <th class="p-4">مناسب لـ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white">1</td>
+              <td class="p-4 text-gray-300">صناعة المحتوى بالذكاء الاصطناعي (AI Career School)</td>
+              <td class="p-4 text-gray-300">عربي</td>
+              <td class="p-4 text-gray-300">مدفوع</td>
+              <td class="p-4 text-gray-300">صناع المحتوى والمسوقين والفريلانسرز</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">2</td>
+              <td class="p-4 text-gray-300">Google AI Essentials</td>
+              <td class="p-4 text-gray-300">إنجليزي</td>
+              <td class="p-4 text-gray-300">اشتراك Coursera، مع تجربة مجانية</td>
+              <td class="p-4 text-gray-300">أي موظف عايز يستخدم الذكاء الاصطناعي في شغله</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">3</td>
+              <td class="p-4 text-gray-300">AI For Everyone (Andrew Ng)</td>
+              <td class="p-4 text-gray-300">إنجليزي</td>
+              <td class="p-4 text-gray-300">مجاني للمشاهدة، الشهادة مدفوعة</td>
+              <td class="p-4 text-gray-300">المديرين وأصحاب البيزنس</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">4</td>
+              <td class="p-4 text-gray-300">بناء المواقع بالذكاء الاصطناعي (AI Career School)</td>
+              <td class="p-4 text-gray-300">عربي</td>
+              <td class="p-4 text-gray-300">مدفوع</td>
+              <td class="p-4 text-gray-300">اللي عايز يبيع مواقع من غير ما يبقى مبرمج</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">5</td>
+              <td class="p-4 text-gray-300">مبادرة رواد مصر الرقمية (DEPI)</td>
+              <td class="p-4 text-gray-300">عربي وإنجليزي</td>
+              <td class="p-4 text-gray-300">مجاني</td>
+              <td class="p-4 text-gray-300">المصريين اللي عايزين مسار طويل ووظيفة</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">6</td>
+              <td class="p-4 text-gray-300">Elements of AI (جامعة هلسنكي)</td>
+              <td class="p-4 text-gray-300">إنجليزي ولغات تانية</td>
+              <td class="p-4 text-gray-300">مجاني</td>
+              <td class="p-4 text-gray-300">فهم الأساسيات بهدوء</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white">7</td>
+              <td class="p-4 text-gray-300">كورسات DeepLearning.AI القصيرة</td>
+              <td class="p-4 text-gray-300">إنجليزي</td>
+              <td class="p-4 text-gray-300">الفيديوهات مجانية</td>
+              <td class="p-4 text-gray-300">اللي عايز يدخل الجانب التقني</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-6 mt-10">
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">1. كورس صناعة المحتوى بالذكاء الاصطناعي — AI Career School</h3>
+          <p class="text-gray-300 mb-3">كورس عملي بالعربي بيعلمك تعمل صور وفيديوهات وإعلانات بأدوات 2026 زي Nano Banana وKling وVeo وElevenLabs. المركز مش "إيه هو الذكاء الاصطناعي"، المركز إنك تخرج بشغل يتباع. مبني على شغل حقيقي لعملاء في العقارات والأزياء والمأكولات.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2 mb-3">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> صناع المحتوى، المسوقين، أصحاب البراندات، واللي عايز يبدأ فريلانس.</li>
+            <li><strong class="text-purple-400">مش مناسب لـ:</strong> اللي عايز يتعلم برمجة أو Machine Learning.</li>
+          </ul>
+          <a href="/ai-content" class="text-neongreen font-bold hover:underline text-sm">شوف تفاصيل الكورس ←</a>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">2. Google AI Essentials — Google على Coursera</h3>
+          <p class="text-gray-300 mb-3">كورس قصير بيخلص في أقل من 10 ساعات ومش محتاج خلفية تقنية. بيغطي استخدام الذكاء الاصطناعي في الشغل اليومي وكتابة الأوامر والاستخدام المسؤول. الشهادة باشتراك Coursera الشهري، والسعر بيختلف حسب الدولة. ولو عايز حاجة أشمل، Google عندها "شهادة احتراف الذكاء الاصطناعي" وليها صفحة بالعربي.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> الموظفين اللي عايزين شهادة معروفة على LinkedIn.</li>
+            <li><strong class="text-purple-400">العيب:</strong> عام شوية، ومش هيعلمك تنفذ خدمة تبيعها.</li>
+          </ul>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">3. AI For Everyone — Andrew Ng</h3>
+          <p class="text-gray-300 mb-3">أشهر كورس ذكاء اصطناعي لغير المتخصصين، ومدته حوالي 6 ساعات. تقدر تتفرج عليه مجاناً على Coursera، والشهادة بس هي المدفوعة.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> المديرين وأصحاب الشركات اللي عايزين يفهموا إزاي يستخدموه في البيزنس.</li>
+            <li><strong class="text-purple-400">العيب:</strong> نظري، وأغلبه اتسجل قبل ظهور ChatGPT، فمش هتلاقي فيه أدوات النهارده.</li>
+          </ul>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">4. كورس بناء المواقع بالذكاء الاصطناعي — AI Career School</h3>
+          <p class="text-gray-300 mb-3">بيعلمك تبني مواقع وصفحات هبوط كاملة بمساعدة الذكاء الاصطناعي، من غير ما تكون مبرمج. تصميم المواقع من أثبت المهارات طلباً على Upwork كل سنة، وكل بيزنس صغير محتاج موقع.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2 mb-3">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> الفريلانسرز وأصحاب المشاريع الصغيرة.</li>
+            <li><strong class="text-purple-400">مش مناسب لـ:</strong> اللي عايز يبقى مطور برمجيات محترف. للهدف ده DEPI أنسب.</li>
+          </ul>
+          <a href="/web-creation" class="text-neongreen font-bold hover:underline text-sm">شوف تفاصيل الكورس ←</a>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">5. مبادرة رواد مصر الرقمية (DEPI)</h3>
+          <p class="text-gray-300 mb-3">مبادرة مجانية من وزارة الاتصالات، ومن مساراتها الأتمتة التسويقية بالذكاء الاصطناعي وتطوير البرمجيات بالذكاء الاصطناعي. التقديم بيفتح على دفعات، والمقاعد محدودة.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> طلاب وخريجين مصريين عندهم وقت لبرنامج طويل وعايزين وظيفة.</li>
+            <li><strong class="text-purple-400">العيب:</strong> مدته طويلة، والقبول بامتحان ومواعيد محددة.</li>
+          </ul>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">6. Elements of AI — جامعة هلسنكي</h3>
+          <p class="text-gray-300 mb-3">كورس مجاني بالكامل خلصه أكتر من مليون شخص في 170 دولة. بيشرح الذكاء الاصطناعي بهدوء من غير برمجة ولا رياضيات معقدة.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> اللي عايز يفهم الأساسيات قبل ما يدفع في أي حاجة.</li>
+            <li><strong class="text-purple-400">العيب:</strong> ما فيهوش أدوات عملية.</li>
+          </ul>
+        </div>
+
+        <div class="glassmorphism p-6 rounded-2xl border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2 font-outfit">7. كورسات DeepLearning.AI القصيرة</h3>
+          <p class="text-gray-300 mb-3">منصة Andrew Ng، وفيها أكتر من 100 كورس قصير. الفيديوهات مجانية، والاختبارات والشهادات باشتراك. ابدأ بـ Generative AI for Everyone.</p>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mr-2">
+            <li><strong class="text-blue-400">مناسب لـ:</strong> اللي عايز يروح للجانب التقني بعد كده.</li>
+            <li><strong class="text-purple-400">العيب:</strong> إنجليزي بس، وبعضه محتاج برمجة.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">تختار أنهي كورس؟</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-right border-collapse border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-white/5 border-b border-white/10 text-neongreen font-outfit">
+              <th class="p-4">هدفك</th>
+              <th class="p-4">ابدأ بـ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-sm">
+            <tr>
+              <td class="p-4 text-gray-300">تعمل محتوى أو إعلانات وتبيعها</td>
+              <td class="p-4 font-bold text-white">كورس صناعة المحتوى بالذكاء الاصطناعي (#1)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">تبيع مواقع للشركات</td>
+              <td class="p-4 font-bold text-white">كورس بناء المواقع بالذكاء الاصطناعي (#4)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">شهادة للسي في وتستخدمه في وظيفتك</td>
+              <td class="p-4 font-bold text-white">Google AI Essentials (#2)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">تفهم الذكاء الاصطناعي كمدير</td>
+              <td class="p-4 font-bold text-white">AI For Everyone (#3)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">وظيفة تقنية في مصر وعندك وقت</td>
+              <td class="p-4 font-bold text-white">DEPI (#5)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">مش عارف لسه ومش عايز تدفع</td>
+              <td class="p-4 font-bold text-white">Elements of AI (#6)</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-gray-300">تبقى مطور ذكاء اصطناعي</td>
+              <td class="p-4 font-bold text-white">DeepLearning.AI (#7)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>ولو لسه متردد، اقرأ <a href="/blog/ai-content-creation-beginners-guide" class="text-neongreen font-bold hover:underline">دليل صناعة المحتوى بالذكاء الاصطناعي</a> وجرب الأدوات المجانية أسبوع. لو حبيت الشغل وعايز توصل أسرع، ساعتها الكورس هيبقى قرار منطقي. ولو هدفك الدخل، شوف <a href="/blog/earn-online-with-ai-egypt-2026" class="text-neongreen font-bold hover:underline">دليل الربح من الإنترنت بالذكاء الاصطناعي في مصر</a>.</p>
+
+      <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">أسئلة شائعة</h2>
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل فيه كورس ذكاء اصطناعي مجاني وكويس؟</h3>
+          <p class="text-gray-300">أيوه. Elements of AI مجاني بالكامل، وAI For Everyone مجاني للمشاهدة على Coursera، ومبادرة DEPI مجانية للمصريين. لكن أغلب الكورسات المجانية نظرية وبالإنجليزي.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">هل شهادة كورس الذكاء الاصطناعي مهمة؟</h3>
+          <p class="text-gray-300">في الوظائف، شهادة من Google أو برنامج معروف بتفرق شوية. في الفريلانس، العميل مش بيسأل على الشهادة، بيسأل على سابقة الأعمال.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">أتعلم الذكاء الاصطناعي من يوتيوب ولا آخد كورس؟</h3>
+          <p class="text-gray-300">يوتيوب ممتاز لأفكار محددة. الكورس بيديك ترتيب ومشاريع وحد تسأله. لو عندك وقت وصبر، يوتيوب كفاية. لو عايز توصل لشغل يتباع أسرع، الكورس أوفر.</p>
+        </div>
+        <div class="border-b border-white/10 pb-4">
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">محتاج أعرف برمجة عشان أاخد كورس ذكاء اصطناعي؟</h3>
+          <p class="text-gray-300">لأ، أغلب الكورسات في القايمة مش محتاجة برمجة. البرمجة بس لو عايز تبني أنظمة ذكاء اصطناعي بنفسك.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2 font-outfit">أنهي أفضل كورس ذكاء اصطناعي بالعربي؟</h3>
+          <p class="text-gray-300">حسب هدفك. لصناعة المحتوى والفيديو العملي، كورس AI Career School. ولمسار وظيفي طويل ومجاني في مصر، مبادرة DEPI.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-white/10 text-center">
+        <h3 class="text-2xl font-bold text-white mb-4 font-outfit">قررت إن الكورس يستاهل؟</h3>
+        <p class="text-gray-300 mb-6">كورس صناعة المحتوى بالذكاء الاصطناعي بيخرجك بشغل تقدر تبيعه من أول شهر.</p>
+        <a href="/ai-content" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
+          شوف تفاصيل كورس صناعة المحتوى ←
+        </a>
+      </div>
+    `,
+    faqs: [
+      {
+        question: 'هل فيه كورس ذكاء اصطناعي مجاني وكويس؟',
+        answer: 'أيوه. Elements of AI مجاني بالكامل، وAI For Everyone مجاني للمشاهدة على Coursera، ومبادرة DEPI مجانية للمصريين. لكن أغلب الكورسات المجانية نظرية وبالإنجليزي.'
+      },
+      {
+        question: 'هل شهادة كورس الذكاء الاصطناعي مهمة؟',
+        answer: 'في الوظائف، شهادة من Google أو برنامج معروف بتفرق شوية. في الفريلانس، العميل مش بيسأل على الشهادة، بيسأل على سابقة الأعمال.'
+      },
+      {
+        question: 'أتعلم الذكاء الاصطناعي من يوتيوب ولا آخد كورس؟',
+        answer: 'يوتيوب ممتاز لأفكار محددة. الكورس بيديك ترتيب ومشاريع وحد تسأله. لو عندك وقت وصبر، يوتيوب كفاية. لو عايز توصل لشغل يتباع أسرع، الكورس أوفر.'
+      },
+      {
+        question: 'محتاج أعرف برمجة عشان أاخد كورس ذكاء اصطناعي؟',
+        answer: 'لأ، أغلب الكورسات في القايمة مش محتاجة برمجة. البرمجة بس لو عايز تبني أنظمة ذكاء اصطناعي بنفسك.'
+      },
+      {
+        question: 'أنهي أفضل كورس ذكاء اصطناعي بالعربي؟',
+        answer: 'حسب هدفك. لصناعة المحتوى والفيديو العملي، كورس AI Career School. ولمسار وظيفي طويل ومجاني في مصر، مبادرة DEPI.'
+      }
+    ],
+    sources: [
+      { label: 'Google AI Essentials: under 10 hours, certificate via Coursera subscription', url: 'https://www.buildfastwithai.com/best/free-ai-courses-by-google' },
+      { label: 'Google AI Professional Certificate (Arabic page)', url: 'https://grow.google/intl/mena/google-career-certificates/ai-professional/' },
+      { label: 'AI For Everyone on Coursera', url: 'https://www.coursera.org/learn/ai-for-everyone?aid=true' },
+      { label: 'AI For Everyone length and pre-ChatGPT recording', url: 'https://aiagentrank.io/learn/course/coursera-ai-for-everyone' },
+      { label: 'DEPI 2026 tracks and registration', url: 'https://www.egypttelegraph.com/article/251653/تفاصيل-التسجيل-في-مبادرة-رواد-مصر-الرقمية' },
+      { label: 'Elements of AI completions', url: 'https://is4.ai/blog/our-blog-1/top-10-ai-learning-resources-beginners-100' },
+      { label: 'DeepLearning.AI free vs Pro', url: 'https://pasqualepillitteri.it/en/news/25098/free-ai-courses-deeplearning-ai-hugging-face-guide' }
+    ],
+    itemList: [
+      { name: 'صناعة المحتوى بالذكاء الاصطناعي (AI Career School)', url: 'https://www.aicareerschool.com/ai-content' },
+      { name: 'Google AI Essentials' },
+      { name: 'AI For Everyone (Andrew Ng)', url: 'https://www.coursera.org/learn/ai-for-everyone?aid=true' },
+      { name: 'بناء المواقع بالذكاء الاصطناعي (AI Career School)', url: 'https://www.aicareerschool.com/web-creation' },
+      { name: 'مبادرة رواد مصر الرقمية (DEPI)' },
+      { name: 'Elements of AI (جامعة هلسنكي)' },
+      { name: 'كورسات DeepLearning.AI القصيرة' }
+    ]
+  },
   {
     slug: 'earn-from-ai-2026',
     title: 'كيف تربح من الذكاء الاصطناعي في 2026؟ 7 طرق عملية للمبتدئين',
@@ -766,6 +1592,8 @@ export const blogPosts: BlogPost[] = [
 
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">دليلك للبدء: دورة الذكاء الاصطناعي التوليدي في مصر</h2>
       <p>لو عايز توفر على نفسك شهور من التجربة والخطأ، منصة AI Career School بتقدملك الحل. الآن تقدر تشترك في أقوى <strong>دورة الذكاء الاصطناعي التوليدي في مصر</strong>. الكورس ده مصمم عشان ياخدك من الصفر لحد ما تقدر تطلع محتوى تجاري تقدر تبيعه للعملاء.</p>
+
+      <p class="mt-4">لو عايز دليل عملي أوسع عن الخدمات المطلوبة والمنصات وسحب الفلوس والضرايب، <a href="/blog/earn-online-with-ai-egypt-2026" class="text-neongreen font-bold hover:underline">اقرأ دليل الربح من الإنترنت بالذكاء الاصطناعي في مصر</a>.</p>
       <ul class="list-disc list-inside mt-4 mb-8 space-y-2 marker:text-neongreen">
         <li><strong>تحديث مستمر:</strong> المحتوى بيتحدث كل 3 إلى 5 أيام عشان تفضل مواكب أحدث الأدوات.</li>
         <li><strong>استثمار مضمون:</strong> اشترك الآن وابدأ في بناء بورتفوليو احترافي يجيبلك عملاء من أول شهر.</li>
@@ -810,6 +1638,8 @@ export const blogPosts: BlogPost[] = [
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">احترف صناعة الفيديو التجاري اليوم</h2>
       <p>قراءة المقالات لن تجعلك محترفاً دون تطبيق عملي وأسرار حصرية. إذا كنت تبحث عن تطبيق عملي مباشر، انضم إلى منصتنا. نحن نقدم أفضل منهج تدريبي يغطي كل ما تحتاجه للبدء.</p>
 
+      <p class="mt-4">لو عايز تطبق Kling وVeo في محتوى كامل من الفكرة للنشر، وخطة 30 يوم تبدأ بيها، <a href="/blog/ai-content-creation-beginners-guide" class="text-neongreen font-bold hover:underline">اقرأ دليل صناعة المحتوى بالذكاء الاصطناعي للمبتدئين</a>.</p>
+
       <div class="mt-8 text-center">
         <a href="/checkout" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">
           اكتشف أسرار إنتاج الفيديوهات السينمائية – انضم للكورس الشامل بـ 1,200 ج.م فقط! ←
@@ -847,6 +1677,8 @@ export const blogPosts: BlogPost[] = [
 
       <h2 class="text-2xl font-bold font-outfit text-white mt-12 mb-6">ارتقِ بمتجرك الإلكتروني إلى المستوى التالي</h2>
       <p>إذا كنت تريد تعلم كيفية دمج منتجاتك الحقيقية داخل هذه الخلفيات المذهلة وتجنب الأخطاء الشائعة، فإن انضمامك إلى <strong>دورة إنشاء صور بالذكاء الاصطناعي</strong> هو خطوتك القادمة. ستتعلم في هذا الكورس أسرار هندسة الأوامر المتقدمة وكيفية توليد صور تطابق هوية علامتك التجارية بدقة تامة. الكورس يتم تحديثه كل 3-5 أيام لتظل دائماً متقدماً على منافسيك.</p>
+
+      <p class="mt-4">وإذا كنت تريد تحويل هذه المهارة لمصدر دخل حقيقي وبيع خدمة تصوير المنتجات لعملاء داخل مصر وخارجها، <a href="/blog/earn-online-with-ai-egypt-2026" class="text-neongreen font-bold hover:underline">اقرأ دليل الربح من الإنترنت بالذكاء الاصطناعي في مصر</a>.</p>
 
       <div class="mt-8 text-center">
         <a href="/checkout" class="inline-flex items-center justify-center bg-gradient-to-r from-neongreen to-blue-500 text-darkspace font-bold px-8 py-4 rounded-full text-lg hover:shadow-[0_0_20px_rgba(1,240,142,0.4)] transition-all hover:-translate-y-1">

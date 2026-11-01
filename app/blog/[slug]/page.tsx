@@ -28,12 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = post.metaTitle ? `${post.metaTitle} | AI Career School` : `${post.title} | AI Career School`;
   const description = post.metaDescription || post.excerpt;
+  const canonicalUrl = `https://www.aicareerschool.com/blog/${params.slug}`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: `https://www.aicareerschool.com/blog/${params.slug}`,
+      canonical: canonicalUrl,
+      languages: {
+        'ar': canonicalUrl,
+        'en': canonicalUrl,
+        'x-default': canonicalUrl,
+      },
     },
     openGraph: {
       title: post.metaTitle || post.title,
@@ -63,6 +69,8 @@ export default function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const canonicalUrl = `https://www.aicareerschool.com/blog/${post.slug}`;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -78,8 +86,9 @@ export default function BlogPostPage({ params }: Props) {
       "name": "AI Career School"
     },
     "datePublished": post.datePublished || "2026-10-18",
+    "dateModified": post.dateModified || post.datePublished || "2026-10-18",
     "inLanguage": "ar",
-    "mainEntityOfPage": `https://www.aicareerschool.com/blog/${post.slug}`
+    "mainEntityOfPage": canonicalUrl
   };
 
   const faqSchema = post.faqs && post.faqs.length > 0 ? {
@@ -95,16 +104,65 @@ export default function BlogPostPage({ params }: Props) {
     }))
   } : null;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://www.aicareerschool.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "المدونة",
+        "item": "https://www.aicareerschool.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+
+  const itemListSchema = post.itemList && post.itemList.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": post.itemList.map((entry, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Course",
+        "name": entry.name,
+        ...(entry.url ? { "url": entry.url } : {})
+      }
+    }))
+  } : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {itemListSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
       )}
       <BlogPost />
