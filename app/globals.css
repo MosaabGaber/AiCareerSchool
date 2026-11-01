@@ -65,3 +65,60 @@
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* ==========================================================================
+   Blog pages light theme
+   Scoped to blog article content only (/blog/[slug] body HTML rendered via
+   dangerouslySetInnerHTML). Does not affect any other page. Left unlayered
+   so it reliably wins over the Tailwind utility classes baked into that
+   stored HTML, which were authored for a dark background.
+   ========================================================================== */
+
+.blog-card-light {
+  background: #F5F5F7;
+  border: 1px solid #E5E5E5;
+}
+
+.blog-content-wrapper {
+  color: #111111 !important;
+}
+
+.blog-content-wrapper .text-white,
+.blog-content-wrapper .text-gray-300 {
+  color: #111111 !important;
+}
+
+.blog-content-wrapper .text-gray-400,
+.blog-content-wrapper .text-gray-500 {
+  color: #555555 !important;
+}
+
+.blog-content-wrapper .text-neongreen {
+  color: #067A4E !important;
+}
+
+.blog-content-wrapper .text-blue-400 {
+  color: #1D4ED8 !important;
+}
+
+.blog-content-wrapper .text-purple-400 {
+  color: #7E22CE !important;
+}
+
+.blog-content-wrapper .bg-white\/5,
+.blog-content-wrapper .bg-white\/10 {
+  background-color: #F5F5F7 !important;
+}
+
+.blog-content-wrapper .border-white\/10 {
+  border-color: #E5E5E5 !important;
+}
+
+.blog-content-wrapper .divide-white\/5 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #E5E5E5 !important;
+}
+
+.blog-content-wrapper .from-blue-900\/30 {
+  background-image: none !important;
+  background-color: #F5F5F7 !important;
+}
