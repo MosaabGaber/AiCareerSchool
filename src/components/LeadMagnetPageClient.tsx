@@ -254,49 +254,62 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
   return (
     <>
       <main
-        className="min-h-screen pt-28 sm:pt-32 pb-16 px-4 sm:px-6 relative z-10"
+        className="min-h-screen pt-28 sm:pt-32 pb-16 px-4 sm:px-6 relative z-10 bg-white text-[#111111]"
         dir="rtl"
       >
         <div className="max-w-3xl mx-auto space-y-8">
           {/* Header */}
           <header className="text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neongreen/10 border border-neongreen/30 text-neongreen text-xs sm:text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8FBF2] border border-[#067A4E]/30 text-[#067A4E] text-xs sm:text-sm font-medium">
               <Sparkles className="w-4 h-4 shrink-0" />
               <span>جايد مجاني خطوة بخطوة</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-[2.6rem] font-outfit font-extrabold text-white leading-snug tracking-tight">
+            <h1 className="text-2xl sm:text-4xl md:text-[2.6rem] font-outfit font-extrabold text-[#111111] leading-snug tracking-tight">
               {guide.title}
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-[#111111] max-w-2xl mx-auto leading-relaxed">
               {guide.subtitle}
             </p>
+
+            {guide.subtitleCourseLine && (
+              <p className="text-base sm:text-lg text-[#111111] max-w-2xl mx-auto leading-relaxed">
+                {guide.subtitleCourseLine.before}
+                <Link
+                  href={guide.subtitleCourseLine.href}
+                  className="font-bold text-[#067A4E] underline underline-offset-4 decoration-2 hover:text-[#04593A] transition-colors"
+                >
+                  {guide.subtitleCourseLine.linkText}
+                </Link>
+                {guide.subtitleCourseLine.after}
+              </p>
+            )}
           </header>
 
           {/* Step 1: Always visible */}
           <section
             aria-labelledby="step-1-heading"
-            className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0d1124]/90 p-5 sm:p-8 shadow-xl"
+            className="rounded-2xl sm:rounded-3xl border border-[#E5E5E5] bg-[#F5F5F7] p-5 sm:p-8 shadow-sm"
           >
             <div className="flex items-start gap-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-neongreen/15 border border-neongreen/30 text-neongreen flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-xl bg-[#E8FBF2] border border-[#067A4E]/30 text-[#067A4E] flex items-center justify-center shrink-0 mt-0.5">
                 <FolderOpen className="w-5 h-5" />
               </div>
               <h2
                 id="step-1-heading"
-                className="text-xl sm:text-2xl font-outfit font-bold text-white leading-snug"
+                className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug"
               >
                 {guide.step1.heading}
               </h2>
             </div>
 
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-[#111111] text-sm sm:text-base leading-relaxed mb-4">
               {guide.step1.intro}{' '}
               {guide.step1.inlinePath && (
                 <code
                   dir="ltr"
-                  className="inline-block px-2 py-0.5 mx-1 rounded-md bg-white/10 border border-white/10 text-neongreen font-mono text-xs sm:text-sm"
+                  className="inline-block px-2 py-0.5 mx-1 rounded-md bg-white border border-[#E5E5E5] text-[#111111] font-mono text-xs sm:text-sm"
                 >
                   {guide.step1.inlinePath}
                 </code>
@@ -304,10 +317,10 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
               {guide.step1.introAfterPath}
             </p>
 
-            <ul className="space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed">
+            <ul className="space-y-3 text-[#111111] text-sm sm:text-base leading-relaxed">
               {guide.step1.bullets.map((bullet, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
-                  <span className="text-neongreen font-bold mt-0.5 shrink-0">
+                  <span className="text-[#067A4E] font-bold mt-0.5 shrink-0">
                     •
                   </span>
                   <span>{bullet}</span>
@@ -319,11 +332,11 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
           {/* Step 2: Locked Gate OR Unlocked Guide */}
           <section
             aria-labelledby="step-2-heading"
-            className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0d1124]/90 p-5 sm:p-8 shadow-xl relative overflow-hidden"
+            className="rounded-2xl sm:rounded-3xl border border-[#E5E5E5] bg-[#F5F5F7] p-5 sm:p-8 shadow-sm relative overflow-hidden"
           >
             <h2
               id="step-2-heading"
-              className="text-xl sm:text-2xl font-outfit font-bold text-white leading-snug mb-4"
+              className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug mb-4"
             >
               {guide.step2Heading}
             </h2>
@@ -333,30 +346,30 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                 {/* Blurred preview behind the lock gate */}
                 <div
                   aria-hidden="true"
-                  className="select-none pointer-events-none blur-[6px] opacity-40 space-y-4 pb-6"
+                  className="select-none pointer-events-none blur-[6px] opacity-50 space-y-4 pb-6"
                 >
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-[#555555] text-sm sm:text-base leading-relaxed">
                     افتح مشروعك في أي أداة AI بتكتب كود زي Claude Code أو Cursor
                     أو Antigravity، وانسخ البرومبت كله والصقه زي ما هو.
                   </p>
-                  <div className="rounded-xl border border-white/10 bg-black/40 p-4 font-mono text-xs text-gray-400 text-left" dir="ltr">
+                  <div className="rounded-xl border border-[#E5E5E5] bg-white p-4 font-mono text-xs text-[#555555] text-left" dir="ltr">
                     You are given a task to integrate an existing React component
                     in the codebase. Copy-paste this component to /components/ui
                     folder: product-rail-gallery.tsx ...
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#555555] text-sm">
                     وبعد البرومبت مباشرةً، ضيف السطر ده عشان يستخدم صورك أنت...
                   </p>
                 </div>
 
                 {/* Gradient overlay + Lock icon + Lead capture form card */}
                 <div className="relative -mt-44 sm:-mt-40 pt-6 pb-2 flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-neongreen/15 border border-neongreen/40 text-neongreen flex items-center justify-center mb-4 shadow-[0_0_24px_rgba(1,240,142,0.2)]">
+                  <div className="w-12 h-12 rounded-full bg-[#E8FBF2] border border-[#067A4E]/40 text-[#067A4E] flex items-center justify-center mb-4 shadow-sm">
                     <Lock className="w-5 h-5" />
                   </div>
 
-                  <div className="w-full max-w-md rounded-2xl border border-white/15 bg-[#121731]/95 p-5 sm:p-7 shadow-[0_16px_50px_rgba(0,0,0,0.65)]">
-                    <h3 className="text-lg sm:text-xl font-outfit font-bold text-white text-center mb-5 leading-snug">
+                  <div className="w-full max-w-md rounded-2xl border border-[#E5E5E5] bg-[#F5F5F7] p-5 sm:p-7 shadow-[0_12px_40px_rgba(17,17,17,0.12)]">
+                    <h3 className="text-lg sm:text-xl font-outfit font-bold text-[#111111] text-center mb-5 leading-snug">
                       ادخل رقمك وإيميلك وخد الجايد كامل ببلاش 👇
                     </h3>
 
@@ -369,7 +382,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       <div>
                         <label
                           htmlFor="lead-phone"
-                          className="block text-sm font-medium text-gray-200 mb-1.5"
+                          className="block text-sm font-medium text-[#111111] mb-1.5"
                         >
                           رقم الواتساب
                         </label>
@@ -378,7 +391,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                             aria-label="كود الدولة"
                             value={countryCode}
                             onChange={(e) => setCountryCode(e.target.value)}
-                            className="w-28 shrink-0 rounded-xl bg-[#090d1e] border border-white/15 px-2.5 py-3 text-sm text-white focus:outline-none focus:border-neongreen transition-colors"
+                            className="w-28 shrink-0 rounded-xl bg-white border border-[#D4D4D8] px-2.5 py-3 text-sm text-[#111111] focus:outline-none focus:border-[#067A4E] transition-colors"
                           >
                             {COUNTRY_CODES.map((c) => (
                               <option key={c.code} value={c.code}>
@@ -401,13 +414,13 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                               setPhoneInput(e.target.value);
                               if (phoneError) setPhoneError('');
                             }}
-                            className="flex-1 min-w-0 rounded-xl bg-[#090d1e] border border-white/15 px-3.5 py-3 text-sm sm:text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-neongreen transition-colors"
+                            className="flex-1 min-w-0 rounded-xl bg-white border border-[#D4D4D8] px-3.5 py-3 text-sm sm:text-base text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#067A4E] transition-colors"
                           />
                         </div>
                         {phoneError && (
                           <p
                             role="alert"
-                            className="text-red-400 text-xs mt-1.5"
+                            className="text-red-600 text-xs mt-1.5"
                           >
                             {phoneError}
                           </p>
@@ -418,7 +431,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       <div>
                         <label
                           htmlFor="lead-email"
-                          className="block text-sm font-medium text-gray-200 mb-1.5"
+                          className="block text-sm font-medium text-[#111111] mb-1.5"
                         >
                           الإيميل
                         </label>
@@ -436,12 +449,12 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                             setEmailInput(e.target.value);
                             if (emailError) setEmailError('');
                           }}
-                          className="w-full rounded-xl bg-[#090d1e] border border-white/15 px-3.5 py-3 text-sm sm:text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-neongreen transition-colors"
+                          className="w-full rounded-xl bg-white border border-[#D4D4D8] px-3.5 py-3 text-sm sm:text-base text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#067A4E] transition-colors"
                         />
                         {emailError && (
                           <p
                             role="alert"
-                            className="text-red-400 text-xs mt-1.5"
+                            className="text-red-600 text-xs mt-1.5"
                           >
                             {emailError}
                           </p>
@@ -451,12 +464,12 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-3.5 px-6 rounded-xl bg-neongreen hover:bg-[#19ff9d] text-darkspace font-outfit font-extrabold text-base sm:text-lg transition-all duration-200 shadow-[0_0_24px_rgba(1,240,142,0.3)] hover:shadow-[0_0_32px_rgba(1,240,142,0.5)] active:scale-[0.99] disabled:opacity-70 cursor-pointer"
+                        className="w-full py-3.5 px-6 rounded-xl bg-neongreen hover:bg-[#19ff9d] text-[#111111] font-outfit font-extrabold text-base sm:text-lg transition-all duration-200 shadow-[0_4px_16px_rgba(1,240,142,0.35)] hover:shadow-[0_6px_22px_rgba(1,240,142,0.5)] active:scale-[0.99] disabled:opacity-70 cursor-pointer"
                       >
                         {isSubmitting ? 'جاري فتح الجايد...' : 'افتح الجايد'}
                       </button>
 
-                      <p className="text-center text-xs text-gray-400 leading-relaxed pt-1">
+                      <p className="text-center text-xs text-[#555555] leading-relaxed pt-1">
                         هنبعتلك جايدز وعروض على واتساب والإيميل، وتقدر توقفها
                         في أي وقت.
                       </p>
@@ -466,18 +479,18 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
               </div>
             ) : (
               <div className="space-y-6">
-                <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+                <p className="text-[#111111] text-sm sm:text-base leading-relaxed">
                   {guide.step2Intro}
                 </p>
 
                 {/* Main Prompt Box: Dropdown collapsed by default + always-visible copy button */}
-                <div className="rounded-2xl border border-white/15 bg-[#070a18] overflow-hidden">
-                  <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 sm:p-4 bg-white/[0.03]">
+                <div className="rounded-2xl border border-[#E5E5E5] bg-white overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 sm:p-4 bg-[#F5F5F7]">
                     <button
                       type="button"
                       onClick={() => setIsPromptOpen((prev) => !prev)}
                       aria-expanded={isPromptOpen}
-                      className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-white hover:text-neongreen transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#111111] hover:text-[#067A4E] transition-colors cursor-pointer"
                     >
                       <span>{guide.promptToggleLabel}</span>
                       <ChevronDown
@@ -492,8 +505,8 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       onClick={handleCopyPrompt}
                       className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                         promptCopied
-                          ? 'bg-neongreen text-darkspace'
-                          : 'bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_16px_rgba(37,99,235,0.35)]'
+                          ? 'bg-neongreen text-[#111111]'
+                          : 'bg-blue-600 hover:bg-blue-500 text-white shadow-sm'
                       }`}
                     >
                       {promptCopied ? (
@@ -511,10 +524,10 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                   </div>
 
                   {isPromptOpen && (
-                    <div className="border-t border-white/10 p-4">
+                    <div className="border-t border-[#E5E5E5] bg-[#F5F5F7] p-4">
                       <pre
                         dir="ltr"
-                        className="max-h-96 overflow-y-auto overflow-x-auto font-mono text-xs sm:text-sm text-gray-200 leading-relaxed whitespace-pre-wrap break-words text-left select-all"
+                        className="max-h-96 overflow-y-auto overflow-x-auto font-mono text-xs sm:text-sm text-[#111111] leading-relaxed whitespace-pre-wrap break-words text-left select-all"
                       >
                         {guide.promptText}
                       </pre>
@@ -524,14 +537,14 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
 
                 {/* Follow-up prompt line */}
                 <div className="space-y-3">
-                  <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+                  <p className="text-[#111111] text-sm sm:text-base leading-relaxed">
                     {guide.followUpIntro}
                   </p>
 
-                  <div className="rounded-2xl border border-white/15 bg-[#070a18] p-4 flex flex-col gap-3">
+                  <div className="rounded-2xl border border-[#E5E5E5] bg-white p-4 flex flex-col gap-3">
                     <pre
                       dir="ltr"
-                      className="font-mono text-xs sm:text-sm text-neongreen/95 leading-relaxed whitespace-pre-wrap break-words text-left"
+                      className="font-mono text-xs sm:text-sm text-[#111111] bg-[#F5F5F7] rounded-xl p-3 leading-relaxed whitespace-pre-wrap break-words text-left"
                     >
                       {guide.followUpPrompt}
                     </pre>
@@ -542,8 +555,8 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                         onClick={handleCopyFollowUp}
                         className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                           followUpCopied
-                            ? 'bg-neongreen text-darkspace'
-                            : 'bg-white/10 hover:bg-white/20 text-white border border-white/15'
+                            ? 'bg-neongreen text-[#111111]'
+                            : 'bg-white hover:bg-[#EDEDF0] text-[#111111] border border-[#D4D4D8]'
                         }`}
                       >
                         {followUpCopied ? (
@@ -563,19 +576,19 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                 </div>
 
                 {/* Result excitement text */}
-                <p className="text-base sm:text-lg font-semibold text-white leading-relaxed">
+                <p className="text-base sm:text-lg font-semibold text-[#111111] leading-relaxed">
                   {guide.afterPromptText}
                 </p>
 
                 {/* Quick Tips */}
-                <div className="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-4 sm:p-5 space-y-2.5">
-                  <p className="font-bold text-amber-300 text-sm sm:text-base">
+                <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 sm:p-5 space-y-2.5">
+                  <p className="font-bold text-amber-800 text-sm sm:text-base">
                     {guide.tipsHeading}
                   </p>
-                  <ul className="space-y-2 text-gray-200 text-sm sm:text-base leading-relaxed">
+                  <ul className="space-y-2 text-[#111111] text-sm sm:text-base leading-relaxed">
                     {guide.tips.map((tip, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-amber-300 font-bold shrink-0">
+                        <span className="text-amber-700 font-bold shrink-0">
                           •
                         </span>
                         <span>{tip}</span>
@@ -589,17 +602,17 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
 
           {/* Bottom Course CTA Card (only after unlock? Or always? Let's check requirement) */}
           {isUnlocked && (
-            <section className="rounded-2xl sm:rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-950/70 via-[#0d1430] to-emerald-950/40 p-6 sm:p-8 shadow-xl space-y-4">
-              <h3 className="text-xl sm:text-2xl font-outfit font-bold text-white leading-snug">
+            <section className="rounded-2xl sm:rounded-3xl border border-[#E5E5E5] bg-[#F5F5F7] p-6 sm:p-8 shadow-sm space-y-4">
+              <h3 className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug">
                 {guide.ctaHeading}
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#111111] text-sm sm:text-base leading-relaxed">
                 {guide.ctaBody}
               </p>
               <div className="pt-1">
                 <Link
                   href={guide.ctaHref}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-outfit font-bold text-sm sm:text-base transition-all shadow-[0_0_24px_rgba(37,99,235,0.4)] hover:shadow-[0_0_32px_rgba(37,99,235,0.6)]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-outfit font-bold text-sm sm:text-base transition-all shadow-sm hover:shadow-md"
                 >
                   <span>{guide.ctaButtonLabel}</span>
                   <ArrowLeft className="w-4 h-4" />

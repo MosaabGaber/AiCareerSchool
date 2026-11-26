@@ -9,10 +9,19 @@ export interface LeadMagnetStep1 {
   bullets: string[];
 }
 
+export interface LeadMagnetInlineLinkLine {
+  before: string;
+  linkText: string;
+  href: string;
+  after?: string;
+}
+
 export interface LeadMagnetGuide {
   slug: string;
   title: string;
   subtitle: string;
+  /** Optional line under the subtitle with an inline link (e.g. to a course). */
+  subtitleCourseLine?: LeadMagnetInlineLinkLine;
   seoTitle: string;
   seoDescription: string;
   step1: LeadMagnetStep1;
@@ -47,6 +56,11 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
     title: 'اعمل موقع الهدوم المتعلقة على الشماعة بالذكاء الاصطناعي 🛍️',
     subtitle:
       'ده الجايد اللي هيخليك تعمل نفس الموقع اللي في الفيديو، في خطوتين بس، ومن غير ما تكتب ولا سطر كود.',
+    subtitleCourseLine: {
+      before: 'ولو عايز تتعلم تعمل مواقع بالذكاء الاصطناعي وتبيعها وتكسب منها، شوف ',
+      linkText: 'كورس إنشاء المواقع بالذكاء الاصطناعي',
+      href: '/web-creation',
+    },
     seoTitle:
       'جايد مجاني: موقع الهدوم على الشماعة بالذكاء الاصطناعي | AI Career School',
     seoDescription:
