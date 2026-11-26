@@ -16,23 +16,73 @@ export interface LeadMagnetInlineLinkLine {
   after?: string;
 }
 
-export interface LeadMagnetGuide {
-  slug: string;
-  title: string;
-  subtitle: string;
-  /** Optional line under the subtitle with an inline link (e.g. to a course). */
-  subtitleCourseLine?: LeadMagnetInlineLinkLine;
-  seoTitle: string;
-  seoDescription: string;
-  step1: LeadMagnetStep1;
-  step2Heading: string;
-  step2Intro: string;
+export interface LeadMagnetStatBlock {
+  value: string;
+  label: string;
+  tagline: string;
+  /** Small chips under the stat (e.g. example names). */
+  chips?: string[];
+}
+
+/** Placeholder content shown blurred behind the unlock form. */
+export interface LeadMagnetLockedPreview {
+  before: string;
+  code?: string;
+  after?: string;
+}
+
+/** Unlocked content: one big prompt to copy + a follow-up line. */
+export interface LeadMagnetPromptUnlock {
+  kind: 'prompt';
+  intro: string;
   promptToggleLabel: string;
   promptCopyLabel: string;
   promptText: string;
   followUpIntro: string;
   followUpPrompt: string;
   afterPromptText: string;
+}
+
+export interface LeadMagnetLinkCard {
+  href: string;
+  display: string;
+  copyLabel: string;
+  /** Small credit line shown under the card. */
+  credit?: string;
+}
+
+export interface LeadMagnetUnlockStep {
+  heading: string;
+  intro?: string;
+  linkCard?: LeadMagnetLinkCard;
+  bullets?: string[];
+}
+
+/** Unlocked content: a list of numbered steps. */
+export interface LeadMagnetStepsUnlock {
+  kind: 'steps';
+  steps: LeadMagnetUnlockStep[];
+}
+
+export interface LeadMagnetGuide {
+  slug: string;
+  /** Small pill label above the title. */
+  badgeLabel: string;
+  title: string;
+  subtitle: string;
+  /** Optional line under the subtitle with an inline link (e.g. to a course). */
+  subtitleCourseLine?: LeadMagnetInlineLinkLine;
+  statBlock?: LeadMagnetStatBlock;
+  seoTitle: string;
+  seoDescription: string;
+  /** Optional step shown before the lock (always visible). */
+  step1?: LeadMagnetStep1;
+  /** Optional heading of the locked section (visible before unlock). */
+  lockedHeading?: string;
+  lockedPreview: LeadMagnetLockedPreview;
+  formHeading: string;
+  formButtonLabel: string;
+  unlocked: LeadMagnetPromptUnlock | LeadMagnetStepsUnlock;
   tipsHeading: string;
   tips: string[];
   ctaHeading: string;
@@ -41,8 +91,12 @@ export interface LeadMagnetGuide {
   ctaHref: string;
 }
 
-interface LeadMagnetConfig extends Omit<LeadMagnetGuide, 'promptText'> {
+type PromptUnlockConfig = Omit<LeadMagnetPromptUnlock, 'promptText'> & {
   promptFile: string;
+};
+
+interface LeadMagnetConfig extends Omit<LeadMagnetGuide, 'unlocked'> {
+  unlocked: PromptUnlockConfig | LeadMagnetStepsUnlock;
 }
 
 function loadPromptExact(relativeFilePath: string): string {
@@ -53,6 +107,7 @@ function loadPromptExact(relativeFilePath: string): string {
 const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
   {
     slug: 'clothing-rail',
+    badgeLabel: 'جايد مجاني خطوة بخطوة',
     title: 'اعمل موقع الهدوم المتعلقة على الشماعة بالذكاء الاصطناعي 🛍️',
     subtitle:
       'ده الجايد اللي هيخليك تعمل نفس الموقع اللي في الفيديو، في خطوتين بس، ومن غير ما تكتب ولا سطر كود.',
@@ -77,17 +132,28 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
         'المقاس الأنسب: 400 × 620 بيكسل (طولي)، ونفس المقاس لكل صور القطعة الواحدة.',
       ],
     },
-    step2Heading: 'الخطوة 2: الصق البرومبت في مساعد الكود بتاعك',
-    step2Intro:
-      'افتح مشروعك في أي أداة AI بتكتب كود زي Claude Code أو Cursor أو Antigravity، وانسخ البرومبت كله والصقه زي ما هو.',
-    promptToggleLabel: '📋 اعرض البرومبت',
-    promptCopyLabel: 'انسخ البرومبت',
-    promptFile: 'content/lead-magnets/clothing-rail-prompt.txt',
-    followUpIntro: 'وبعد البرومبت مباشرةً، ضيف السطر ده عشان يستخدم صورك أنت:',
-    followUpPrompt:
-      'Use my own product photos from the folder public/images/products instead of Unsplash. Use the -front, -back and -side photo of each piece as its image, backImage and sideImage, and change the product names and prices to mine.',
-    afterPromptText:
-      'وبس كده! الأداة هتركّب الموقع، وهتلاقي الهدوم متعلقة وبتتحرك وتلف لما تقف عليها 🔥',
+    lockedHeading: 'الخطوة 2: الصق البرومبت في مساعد الكود بتاعك',
+    lockedPreview: {
+      before:
+        'افتح مشروعك في أي أداة AI بتكتب كود زي Claude Code أو Cursor أو Antigravity، وانسخ البرومبت كله والصقه زي ما هو.',
+      code: 'You are given a task to integrate an existing React component in the codebase. Copy-paste this component to /components/ui folder: product-rail-gallery.tsx ...',
+      after: 'وبعد البرومبت مباشرةً، ضيف السطر ده عشان يستخدم صورك أنت...',
+    },
+    formHeading: 'ادخل رقمك وإيميلك وخد الجايد كامل ببلاش 👇',
+    formButtonLabel: 'افتح الجايد',
+    unlocked: {
+      kind: 'prompt',
+      intro:
+        'افتح مشروعك في أي أداة AI بتكتب كود زي Claude Code أو Cursor أو Antigravity، وانسخ البرومبت كله والصقه زي ما هو.',
+      promptToggleLabel: '📋 اعرض البرومبت',
+      promptCopyLabel: 'انسخ البرومبت',
+      promptFile: 'content/lead-magnets/clothing-rail-prompt.txt',
+      followUpIntro: 'وبعد البرومبت مباشرةً، ضيف السطر ده عشان يستخدم صورك أنت:',
+      followUpPrompt:
+        'Use my own product photos from the folder public/images/products instead of Unsplash. Use the -front, -back and -side photo of each piece as its image, backImage and sideImage, and change the product names and prices to mine.',
+      afterPromptText:
+        'وبس كده! الأداة هتركّب الموقع، وهتلاقي الهدوم متعلقة وبتتحرك وتلف لما تقف عليها 🔥',
+    },
     tipsHeading: '💡 نصايح سريعة:',
     tips: [
       'لو صورك فيها شماعة أصلًا، قول للأداة: use hanger="none".',
@@ -99,13 +165,83 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
     ctaButtonLabel: 'اعرف تفاصيل الكورس',
     ctaHref: '/web-creation',
   },
+  {
+    slug: 'video-editing-styles',
+    badgeLabel: 'جايد مجاني من AI Career School',
+    title: '100 ستايل للمونتاج وصناعة الفيديوهات 🎬',
+    subtitle:
+      'مجموعة فيها 100 ستايل للمونتاج والموشن ديزاين في Skill واحدة. كل اللي عليك إنك تديها للـ AI اللي بتستخدمه.',
+    statBlock: {
+      value: '100',
+      label: 'ستايل للمونتاج والموشن ديزاين',
+      tagline: 'Skill واحدة. 100 ستايل.',
+      // Real style names from the MotionForge README (github.com/aykutucesai/motionforge)
+      chips: [
+        'creator-reels-dark',
+        'talking-head-pop',
+        'product-hero-turntable',
+        'cinematic-quote',
+        'matchday-graphics',
+        'true-crime-board',
+      ],
+    },
+    seoTitle:
+      '100 ستايل مونتاج وموشن ديزاين في Skill واحدة (مجاناً) | AI Career School',
+    seoDescription:
+      'مجموعة فيها 100 ستايل للمونتاج والموشن ديزاين في Skill واحدة. كل اللي عليك إنك تديها للـ AI اللي بتستخدمه.',
+    lockedPreview: {
+      before: 'الخطوة 1: حمّل الـ Skill. الـ Skill اسمها MotionForge وموجودة على GitHub:',
+      code: 'github.com/••••••••/••••••••••',
+      after: 'الخطوة 2: اديها للـ AI بتاعك، وبعدين اطلب منه أي ستايل بالاسم...',
+    },
+    formHeading: 'ادخل رقمك وإيميلك وخد الـ Skill ببلاش 👇',
+    formButtonLabel: 'افتح الجايد',
+    unlocked: {
+      kind: 'steps',
+      steps: [
+        {
+          heading: 'الخطوة 1: حمّل الـ Skill',
+          intro: 'الـ Skill اسمها MotionForge وموجودة على GitHub:',
+          linkCard: {
+            href: 'https://github.com/aykutucesai/motionforge',
+            display: 'github.com/aykutucesai/motionforge',
+            copyLabel: 'انسخ اللينك',
+            credit:
+              'الـ Skill من عمل aykutucesai ومتاحة على GitHub — إحنا جمعناهالك وبنشرح إزاي تستخدمها.',
+          },
+        },
+        {
+          heading: 'الخطوة 2: اديها للـ AI بتاعك',
+          bullets: [
+            'لو بتستخدم Claude Code: حط فولدر الـ Skill جوه \u2066.claude/skills\u2069 في مشروعك.', // \u2066…\u2069 keeps the path left-to-right inside Arabic text
+            'لو بتستخدم Claude على الويب أو الديسكتوب: ارفع الـ Skill من إعدادات الـ Skills.',
+            'وبعدين اطلب منه أي ستايل بالاسم، وهو يمشي معاك خطوة بخطوة.',
+          ],
+        },
+      ],
+    },
+    tipsHeading: '💡 نصيحة:',
+    tips: [
+      'ابدأ بستايل واحد وطبّقه على فيديو حقيقي عندك، بدل ما تجرب الـ 100 مرة واحدة.',
+    ],
+    ctaHeading: '🚀 عايز تتعلم تعمل فيديوهات بالذكاء الاصطناعي للبراندات والعملاء؟',
+    ctaBody: 'كورسات AI Career School بالعربي، من الصفر لحد أول عميل.',
+    ctaButtonLabel: 'اعرف تفاصيل الكورس',
+    ctaHref: '/ai-content',
+  },
 ];
 
 export const leadMagnets: LeadMagnetGuide[] = LEAD_MAGNET_CONFIGS.map(
-  ({ promptFile, ...rest }) => ({
-    ...rest,
-    promptText: loadPromptExact(promptFile),
-  })
+  (config) => {
+    if (config.unlocked.kind === 'prompt') {
+      const { promptFile, ...unlockedRest } = config.unlocked;
+      return {
+        ...config,
+        unlocked: { ...unlockedRest, promptText: loadPromptExact(promptFile) },
+      };
+    }
+    return { ...config, unlocked: config.unlocked };
+  }
 );
 
 export function getLeadMagnetBySlug(slug: string): LeadMagnetGuide | undefined {
