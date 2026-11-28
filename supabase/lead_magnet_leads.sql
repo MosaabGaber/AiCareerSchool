@@ -24,3 +24,7 @@ CREATE POLICY "Allow insert only for lead_magnet_leads"
   FOR INSERT
   TO anon, authenticated
   WITH CHECK (true);
+
+-- Email-only guides (e.g. ai-video-editor) send no phone.
+-- Optional: run this so those rows store NULL instead of ''.
+ALTER TABLE public.lead_magnet_leads ALTER COLUMN phone DROP NOT NULL;

@@ -13,8 +13,11 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import type {
+  GuideBlock,
+  GuideSection,
   LeadMagnetGuide,
   LeadMagnetPromptUnlock,
+  LeadMagnetSectionsUnlock,
   LeadMagnetStepsUnlock,
 } from '../data/leadMagnets';
 import { Footer } from './Footer';
@@ -106,6 +109,7 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
 
 export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
   const storageKey = `lead_magnet_unlocked_${guide.slug}`;
+  const askPhone = guide.formFields !== 'email';
 
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [countryCode, setCountryCode] = useState('+20');
@@ -142,7 +146,10 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
     const trimmedEmail = emailInput.trim().toLowerCase();
 
     let hasError = false;
-    if (!phoneInput.trim() || !isValidPhone(normalizedPhone, countryCode)) {
+    if (
+      askPhone &&
+      (!phoneInput.trim() || !isValidPhone(normalizedPhone, countryCode))
+    ) {
       setPhoneError('من فضلك أدخل رقم واتساب صحيح (مثال: 01012345678).');
       hasError = true;
     } else {
@@ -206,7 +213,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           guide_slug: guide.slug,
-          phone: normalizedPhone,
+          ...(askPhone ? { phone: normalizedPhone } : {}),
           email: trimmedEmail,
           utm_source: utmSource,
           utm_medium: utmMedium,
@@ -256,6 +263,192 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
         <span>{label}</span>
       </>
     );
+
+  const renderBlock = (block: GuideBlock, key: string) => {
+    switch (block.kind) {
+      case 'paragraph':
+        return (
+          <p
+            key={key}
+            className={`text-[#111111] leading-relaxed ${
+              block.strong
+                ? 'text-base sm:text-lg font-semibold'
+                : 'text-sm sm:text-base'
+            }`}
+          >
+            {block.text}
+          </p>
+        );
+      case 'bullets':
+        return (
+          <ul
+            key={key}
+            className="space-y-2.5 text-[#111111] text-sm sm:text-base leading-relaxed"
+          >
+            {block.items.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2.5">
+                <span className="text-[#067A4E] font-bold mt-0.5 shrink-0">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      case 'numbered':
+        return (
+          <ol
+            key={key}
+            className="space-y-2.5 text-[#111111] text-sm sm:text-base leading-relaxed"
+          >
+            {block.items.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-[#E8FBF2] border border-[#067A4E]/30 text-[#067A4E] text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5">
+                  {idx + 1}
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
+        );
+      case 'codeBox':
+        return (
+          <pre
+            key={key}
+            dir="ltr"
+            className="rounded-xl border border-[#E5E5E5] bg-white p-3.5 font-mono text-xs sm:text-sm text-[#111111] leading-relaxed whitespace-pre-wrap break-words text-left"
+          >
+            {block.text}
+          </pre>
+        );
+      case 'prompt':
+        return (
+          <div
+            key={key}
+            className="rounded-2xl border border-[#E5E5E5] bg-white overflow-hidden"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 px-3.5 py-3 sm:px-4 bg-[#F5F5F7] border-b border-[#E5E5E5]">
+              <span
+                dir="ltr"
+                className="font-mono text-xs sm:text-sm font-bold text-[#111111]"
+              >
+                {block.title}
+              </span>
+              <button
+                type="button"
+                onClick={() => handleCopy(key, block.text)}
+                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  copiedKey === key
+                    ? 'bg-neongreen text-[#111111]'
+                    : 'bg-blue-600 hover:bg-blue-500 text-white shadow-sm'
+                }`}
+              >
+                {copyButtonContent(key, block.copyLabel)}
+              </button>
+            </div>
+            <pre
+              dir="ltr"
+              className="p-4 font-mono text-xs sm:text-sm text-[#111111] leading-relaxed whitespace-pre-wrap break-words text-left"
+            >
+              {block.text}
+            </pre>
+          </div>
+        );
+      case 'callout':
+        return (
+          <div
+            key={key}
+            className="rounded-2xl border border-[#067A4E]/30 bg-[#E8FBF2] p-4 sm:p-5 space-y-2"
+          >
+            <p className="text-[#111111] text-sm sm:text-base leading-relaxed">
+              {block.text}
+            </p>
+            <Link
+              href={block.href}
+              className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-[#067A4E] underline underline-offset-4 decoration-2 hover:text-[#04593A] transition-colors"
+            >
+              <span>{block.linkText}</span>
+              <ArrowLeft className="w-4 h-4" />
+            </Link>
+          </div>
+        );
+      case 'toolsTable':
+        return (
+          <div
+            key={key}
+            className="w-full max-w-full overflow-x-auto rounded-2xl border border-[#E5E5E5] bg-white"
+          >
+            <table className="w-full min-w-[680px] text-right text-sm text-[#111111]">
+              <thead className="bg-[#F5F5F7]">
+                <tr>
+                  {block.columns.map((col) => (
+                    <th
+                      key={col}
+                      scope="col"
+                      className="px-4 py-3 font-bold whitespace-nowrap border-b border-[#E5E5E5]"
+                    >
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row) => (
+                  <tr key={row.name} className="border-b border-[#E5E5E5] last:border-b-0 align-top">
+                    <td className="px-4 py-3 font-bold whitespace-nowrap">
+                      {row.name}
+                    </td>
+                    <td className="px-4 py-3 leading-relaxed min-w-[220px]">{row.description}</td>
+                    <td className="px-4 py-3 whitespace-nowrap">
+                      <a
+                        href={row.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        dir="ltr"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#067A4E] underline underline-offset-4 hover:text-[#04593A]"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                        <span>{row.display}</span>
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      case 'note':
+        return (
+          <p key={key} className="text-xs sm:text-sm text-[#555555] leading-relaxed">
+            {block.text}
+          </p>
+        );
+    }
+  };
+
+  const renderSectionBody = (section: GuideSection, sectionKey: string) => (
+    <div className="space-y-4">
+      {section.blocks.map((block, idx) =>
+        renderBlock(block, `${sectionKey}-${idx}`)
+      )}
+    </div>
+  );
+
+  const renderSectionsUnlock = (unlocked: LeadMagnetSectionsUnlock) => (
+    <>
+      {unlocked.sections.map((section, idx) => (
+        <div
+          key={idx}
+          className={`space-y-4 ${idx > 0 ? 'pt-6 border-t border-[#E5E5E5]' : ''}`}
+        >
+          {section.heading && (
+            <h3 className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug">
+              {section.heading}
+            </h3>
+          )}
+          {renderSectionBody(section, `unlocked-${idx}`)}
+        </div>
+      ))}
+    </>
+  );
 
   const renderPromptUnlock = (unlocked: LeadMagnetPromptUnlock) => (
     <>
@@ -520,6 +713,22 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
             </section>
           )}
 
+          {/* Always-visible sections (optional) */}
+          {guide.visibleSections?.map((section, idx) => (
+            <section
+              key={idx}
+              aria-label={section.heading}
+              className="rounded-2xl sm:rounded-3xl border border-[#E5E5E5] bg-[#F5F5F7] p-5 sm:p-8 shadow-sm space-y-4 min-w-0"
+            >
+              {section.heading && (
+                <h2 className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug">
+                  {section.heading}
+                </h2>
+              )}
+              {renderSectionBody(section, `visible-${idx}`)}
+            </section>
+          ))}
+
           {/* Locked Gate OR Unlocked Guide */}
           <section
             aria-labelledby={guide.lockedHeading ? 'locked-heading' : undefined}
@@ -576,6 +785,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       className="space-y-4"
                     >
                       {/* WhatsApp Phone Field */}
+                      {askPhone && (
                       <div>
                         <label
                           htmlFor="lead-phone"
@@ -623,6 +833,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                           </p>
                         )}
                       </div>
+                      )}
 
                       {/* Email Field */}
                       <div>
@@ -667,8 +878,8 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
                       </button>
 
                       <p className="text-center text-xs text-[#555555] leading-relaxed pt-1">
-                        هنبعتلك جايدز وعروض على واتساب والإيميل، وتقدر توقفها
-                        في أي وقت.
+                        {guide.formDisclaimer ??
+                          'هنبعتلك جايدز وعروض على واتساب والإيميل، وتقدر توقفها في أي وقت.'}
                       </p>
                     </form>
                   </div>
@@ -678,7 +889,9 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
               <div className="space-y-6">
                 {guide.unlocked.kind === 'prompt'
                   ? renderPromptUnlock(guide.unlocked)
-                  : renderStepsUnlock(guide.unlocked)}
+                  : guide.unlocked.kind === 'sections'
+                    ? renderSectionsUnlock(guide.unlocked)
+                    : renderStepsUnlock(guide.unlocked)}
 
                 {/* Tips */}
                 <div className="rounded-2xl border border-amber-300 bg-amber-50 p-4 sm:p-5 space-y-2.5">
@@ -713,7 +926,13 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
 
           {/* Bottom Course CTA Card (after unlock) */}
           {isUnlocked && (
-            <section className="rounded-2xl sm:rounded-3xl border border-[#E5E5E5] bg-[#F5F5F7] p-6 sm:p-8 shadow-sm space-y-4">
+            <section
+              className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 ${
+                guide.ctaProminent
+                  ? 'border-2 border-[#067A4E]/40 bg-[#E8FBF2] shadow-[0_12px_40px_rgba(6,122,78,0.12)] text-center'
+                  : 'border border-[#E5E5E5] bg-[#F5F5F7] shadow-sm'
+              }`}
+            >
               <h3 className="text-xl sm:text-2xl font-outfit font-bold text-[#111111] leading-snug">
                 {guide.ctaHeading}
               </h3>

@@ -40,7 +40,12 @@ export async function POST(req: NextRequest) {
     const rawPhone = cleanOptionalText(body?.phone, 40) ?? '';
     const phone = rawPhone.replace(/[\s\-()]/g, '');
 
-    if (!guideSlug || !EMAIL_REGEX.test(email) || !PHONE_REGEX.test(phone)) {
+    // Phone is optional (email-only guides), but must be valid when sent.
+    if (
+      !guideSlug ||
+      !EMAIL_REGEX.test(email) ||
+      (phone !== '' && !PHONE_REGEX.test(phone))
+    ) {
       return NextResponse.json(
         { ok: false, error: 'Invalid guide_slug, phone, or email' },
         { status: 400 }
@@ -53,17 +58,23 @@ export async function POST(req: NextRequest) {
     const referrer = cleanOptionalText(body?.referrer, 500);
 
     const supabase = getServerSupabase();
-    const { error } = await supabase.from('lead_magnet_leads').insert([
-      {
-        guide_slug: guideSlug,
-        phone,
-        email,
-        utm_source: utmSource,
-        utm_medium: utmMedium,
-        utm_campaign: utmCampaign,
-        referrer,
-      },
-    ]);
+    const row = {
+      guide_slug: guideSlug,
+      phone: phone || null,
+      email,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      referrer,
+    };
+    let { error } = await supabase.from('lead_magnet_leads').insert([row]);
+
+    // Email-only lead while the phone column is still NOT NULL: store ''.
+    if (error?.code === '23502' && row.phone === null) {
+      ({ error } = await supabase
+        .from('lead_magnet_leads')
+        .insert([{ ...row, phone: '' }]));
+    }
 
     if (error) {
       console.error('Failed to insert into lead_magnet_leads:', error);
