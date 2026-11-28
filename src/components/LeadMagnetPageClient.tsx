@@ -107,9 +107,14 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
   }
 }
 
+const makeEventId = () =>
+  'event_' + Date.now() + '_' + Math.random().toString(36).slice(2, 11);
+
 export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
   const storageKey = `lead_magnet_unlocked_${guide.slug}`;
   const askPhone = guide.formFields !== 'email';
+  const isGated = guide.gated !== false;
+  const viewTrackedRef = useRef(false);
 
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [countryCode, setCountryCode] = useState('+20');
@@ -123,6 +128,58 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
   // Which copy button was clicked last (shows "✓ اتنسخ" for 2s)
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Open guides: ViewContent / view_item once per page load
+  useEffect(() => {
+    if (isGated || viewTrackedRef.current) return;
+    viewTrackedRef.current = true;
+    try {
+      (window as any).fbq?.(
+        'track',
+        'ViewContent',
+        { content_name: guide.slug, content_type: 'guide' },
+        { eventID: makeEventId() }
+      );
+      (window as any).ttq?.track('ViewContent', {
+        content_id: guide.slug,
+        content_name: guide.title,
+      });
+      (window as any).gtag?.('event', 'view_item', {
+        guide_slug: guide.slug,
+      });
+    } catch (err) {
+      console.error('Tracking error:', err);
+    }
+  }, [isGated, guide.slug, guide.title]);
+
+  // Open guides: InitiateCheckout / begin_checkout on any course link click
+  const handleMainClickCapture = (e: React.MouseEvent<HTMLElement>) => {
+    if (isGated) return;
+    const link = (e.target as HTMLElement).closest('a');
+    if (!link || link.getAttribute('href') !== guide.ctaHref) return;
+    try {
+      (window as any).fbq?.(
+        'track',
+        'InitiateCheckout',
+        {
+          currency: 'EGP',
+          content_name: guide.courseName ?? guide.ctaHref,
+          guide_slug: guide.slug,
+        },
+        { eventID: makeEventId() }
+      );
+      (window as any).ttq?.track('InitiateCheckout', {
+        content_id: guide.slug,
+        currency: 'EGP',
+      });
+      (window as any).gtag?.('event', 'begin_checkout', {
+        guide_slug: guide.slug,
+        currency: 'EGP',
+      });
+    } catch (err) {
+      console.error('Tracking error:', err);
+    }
+  };
 
   useEffect(() => {
     try {
@@ -605,6 +662,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
   return (
     <>
       <main
+        onClickCapture={handleMainClickCapture}
         className="min-h-screen pt-28 sm:pt-32 pb-16 px-4 sm:px-6 relative z-10 bg-white text-[#111111]"
         dir="rtl"
       >
@@ -744,7 +802,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
               </h2>
             )}
 
-            {!isUnlocked ? (
+            {isGated && !isUnlocked ? (
               <div className="relative">
                 {/* Blurred preview behind the lock gate */}
                 <div
@@ -925,7 +983,7 @@ export function LeadMagnetPageClient({ guide }: LeadMagnetPageClientProps) {
           </section>
 
           {/* Bottom Course CTA Card (after unlock) */}
-          {isUnlocked && (
+          {(!isGated || isUnlocked) && (
             <section
               className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4 ${
                 guide.ctaProminent

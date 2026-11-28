@@ -121,6 +121,12 @@ export interface LeadMagnetGuide {
   formButtonLabel: string;
   /** Always-visible sections shown after step1 and before the lock. */
   visibleSections?: GuideSection[];
+  /**
+   * false = open guide: no form, lock or blur; everything shows right away,
+   * with ViewContent on load and InitiateCheckout on course-link clicks.
+   * Default: true (form + unlock).
+   */
+  gated?: boolean;
   /** Which fields the unlock form asks for. Default: 'phone-email'. */
   formFields?: 'phone-email' | 'email';
   /** Line under the form button. Default mentions WhatsApp and email. */
@@ -134,6 +140,8 @@ export interface LeadMagnetGuide {
   ctaHref: string;
   /** Green highlighted CTA card instead of the default gray one. */
   ctaProminent?: boolean;
+  /** content_name for InitiateCheckout on open (gated: false) guides. */
+  courseName?: string;
 }
 
 export interface CourseTeaserPart {
@@ -311,6 +319,8 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
   {
     slug: 'ai-video-editor',
     tags: ['مونتاج'],
+    gated: false,
+    courseName: 'AI Content Course',
     badgeLabel: 'جايد مجاني من AI Career School',
     title: 'اعمل المونتير بتاعك بالذكاء الاصطناعي 🎬',
     subtitle:
