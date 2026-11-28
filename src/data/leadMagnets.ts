@@ -65,7 +65,11 @@ export interface LeadMagnetStepsUnlock {
 }
 
 export interface LeadMagnetGuide {
+  /** Omitted = classic lead magnet (form + unlock). */
+  type?: 'lead-magnet';
   slug: string;
+  /** Topic tags shown on /guides (e.g. "موقع", "فيديو"). */
+  tags: string[];
   /** Small pill label above the title. */
   badgeLabel: string;
   title: string;
@@ -91,6 +95,38 @@ export interface LeadMagnetGuide {
   ctaHref: string;
 }
 
+export interface CourseTeaserPart {
+  title: string;
+  body: string;
+}
+
+/** Explainer page with no form/lock that leads to a course. */
+export interface CourseTeaserGuide {
+  type: 'course-teaser';
+  slug: string;
+  tags: string[];
+  badgeLabel: string;
+  title: string;
+  subtitle: string;
+  seoTitle: string;
+  seoDescription: string;
+  partsHeading: string;
+  parts: CourseTeaserPart[];
+  partsOutro: string;
+  ctaHeading: string;
+  ctaBody: string;
+  ctaButtonLabel: string;
+  ctaHref: string;
+  ctaNote: string;
+  /** Used for InitiateCheckout / begin_checkout on the course button. */
+  courseName: string;
+  coursePrice: number;
+  footerLinkText: string;
+  footerLinkHref: string;
+}
+
+export type Guide = LeadMagnetGuide | CourseTeaserGuide;
+
 type PromptUnlockConfig = Omit<LeadMagnetPromptUnlock, 'promptText'> & {
   promptFile: string;
 };
@@ -107,6 +143,7 @@ function loadPromptExact(relativeFilePath: string): string {
 const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
   {
     slug: 'clothing-rail',
+    tags: ['موقع'],
     badgeLabel: 'جايد مجاني خطوة بخطوة',
     title: 'اعمل موقع الهدوم المتعلقة على الشماعة بالذكاء الاصطناعي 🛍️',
     subtitle:
@@ -167,6 +204,7 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
   },
   {
     slug: 'video-editing-styles',
+    tags: ['فيديو'],
     badgeLabel: 'جايد مجاني من AI Career School',
     title: '100 ستايل للمونتاج وصناعة الفيديوهات 🎬',
     subtitle:
@@ -231,6 +269,44 @@ const LEAD_MAGNET_CONFIGS: LeadMagnetConfig[] = [
   },
 ];
 
+const COURSE_TEASERS: CourseTeaserGuide[] = [
+  {
+    type: 'course-teaser',
+    slug: 'live-try-on',
+    tags: ['موقع'],
+    badgeLabel: 'من AI Career School',
+    title: 'إزاي تعمل موقع الـ Live Try-On اللي الكل بيدور عليه 👕✨',
+    subtitle:
+      'العميل يجرب اللبس على نفسه قبل ما يشتري. ده اللي محتاجه عشان تعمل موقع زيه.',
+    seoTitle: 'إزاي تعمل موقع Live Try-On بالذكاء الاصطناعي | AI Career School',
+    seoDescription:
+      'العميل يجرب اللبس على نفسه قبل ما يشتري. ده اللي محتاجه عشان تعمل موقع زيه.',
+    partsHeading: 'الموقع ده معمول من حاجتين:',
+    parts: [
+      {
+        title: 'موقع بالذكاء الاصطناعي',
+        body: 'صفحات المنتجات، الصور، والتصميم. بيتعمل بأدوات بتكتب الكود بدالك، من غير ما تكون مبرمج.',
+      },
+      {
+        title: 'موديل Virtual Try-On',
+        body: 'أداة ذكاء اصطناعي بتاخد صورة العميل وصورة القطعة، وتطلعلك صورة العميل لابسها.',
+      },
+    ],
+    partsOutro:
+      'وبعد كده بتربط الاتنين ببعض، فالعميل يرفع صورته من الموقع ويشوف النتيجة.',
+    ctaHeading: '🚀 عايز تتعلم تعمل الموقع ده خطوة بخطوة؟',
+    ctaBody:
+      'في كورس إنشاء المواقع بالذكاء الاصطناعي هتتعلم تبني مواقع احترافية من الصفر من غير كود، وتضيف عليها مميزات زي الـ Try-On، وتبيعها للبراندات والعملاء.',
+    ctaButtonLabel: 'اشترك في الكورس',
+    ctaHref: '/web-creation',
+    ctaNote: 'بالعربي، ومن غير أي خبرة برمجة.',
+    courseName: 'Web Creation Course',
+    coursePrice: 1200,
+    footerLinkText: 'شوف باقي الجايدز المجانية',
+    footerLinkHref: '/guides',
+  },
+];
+
 export const leadMagnets: LeadMagnetGuide[] = LEAD_MAGNET_CONFIGS.map(
   (config) => {
     if (config.unlocked.kind === 'prompt') {
@@ -244,6 +320,13 @@ export const leadMagnets: LeadMagnetGuide[] = LEAD_MAGNET_CONFIGS.map(
   }
 );
 
+/** Every page under /guides, newest first. */
+export const allGuides: Guide[] = [...COURSE_TEASERS, ...leadMagnets.slice().reverse()];
+
 export function getLeadMagnetBySlug(slug: string): LeadMagnetGuide | undefined {
   return leadMagnets.find((guide) => guide.slug === slug);
+}
+
+export function getGuideBySlug(slug: string): Guide | undefined {
+  return allGuides.find((guide) => guide.slug === slug);
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getLeadMagnetBySlug, leadMagnets } from '../../../src/data/leadMagnets';
+import { allGuides, getGuideBySlug } from '../../../src/data/leadMagnets';
 import { LeadMagnetPageClient } from '../../../src/components/LeadMagnetPageClient';
+import { CourseTeaserPageClient } from '../../../src/components/CourseTeaserPageClient';
 
 interface GuidePageProps {
   params: Promise<{
@@ -12,7 +13,7 @@ interface GuidePageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return leadMagnets.map((guide) => ({
+  return allGuides.map((guide) => ({
     slug: guide.slug,
   }));
 }
@@ -21,7 +22,7 @@ export async function generateMetadata({
   params,
 }: GuidePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const guide = getLeadMagnetBySlug(slug);
+  const guide = getGuideBySlug(slug);
 
   if (!guide) {
     return {
@@ -63,10 +64,14 @@ export async function generateMetadata({
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const { slug } = await params;
-  const guide = getLeadMagnetBySlug(slug);
+  const guide = getGuideBySlug(slug);
 
   if (!guide) {
     notFound();
+  }
+
+  if (guide.type === 'course-teaser') {
+    return <CourseTeaserPageClient guide={guide} />;
   }
 
   return <LeadMagnetPageClient guide={guide} />;
